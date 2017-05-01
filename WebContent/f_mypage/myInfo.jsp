@@ -13,9 +13,9 @@
 <!-- <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> -->
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-<script src="../c_common/header.js"></script>
-<script src="f_mypage_js/myInfo.js"></script>
-<script src="f_mypage_js/my.js"></script>
+<script src="${pageContext.request.contextPath}/c_common/header.js"></script>
+<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/myInfo.js"></script>
+<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/my.js"></script>
 
 </head>
 <body>
@@ -69,7 +69,7 @@
 						<tr>
 							<th scope="row" class="ac"><span class="txt_or">*</span>
 								회원아이디</th>
-							<td colspan="3">nks000000</td>
+							<td colspan="3">${freelancer.f_id}</td>
 						</tr>
 						<tr>
 							<th scope="row" class="ac"><label for="fm_passwd1"><span
@@ -118,11 +118,23 @@
 							<th scope="row"><label for=""><span class="txt_or">*</span>
 									생년월일</label></th>
 							<td colspan="3"><input type="text" id="fm_jumin1"
-								name="fm_jumin1" class="wid04" maxlength="6" value="">
-								<span> - </span> <select name="fm_jumin2" id="fm_jumin2">
+								name="fm_jumin1" class="wid04" maxlength="6" value="${freelancer.f_birth}">
+								<span> - </span> 
+								<select name="fm_jumin2" id="fm_jumin2">
+								<c:choose>
+									<c:when test="${freelancer.f_sex == '남'}">
 									<option value="1" selected="">남자</option>
 									<option value="2">여자</option>
-							</select></td>
+									</c:when>
+									
+									<c:when test="${freelancer.f_sex == '여'}">
+									<option value="1" >남자</option>
+									<option value="2" selected="">여자</option>
+									</c:when>
+								</c:choose>
+									
+								</select>
+							</td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="fm_tel1"><span
@@ -153,10 +165,13 @@
 									<option value="0505">0505</option>
 									<option value="0506">0506</option>
 									<option value="0130">0130</option>
-							</select> <span>-</span> <label for="fm_tel2"></label> <input type="text"
-								id="fm_tel2" name="fm_tel2" maxlength="4" class="wid03" value="">
-								<span>-</span> <label for="fm_tel3"></label> <input type="text"
-								id="fm_tel3" name="fm_tel3" maxlength="4" class="wid03" value="">
+							</select>
+							<span>-</span> 
+							<label for="fm_tel2"></label> 
+							<input type="text" id="fm_tel2" name="fm_tel2" maxlength="4" class="wid03" value="">
+							<span>-</span> 
+							<label for="fm_tel3"></label> 
+							<input type="text" id="fm_tel3" name="fm_tel3" maxlength="4" class="wid03" value="">
 							</td>
 						</tr>
 						<tr>

@@ -30,7 +30,8 @@ public class FreelancerDao {
 	
 	public Freelancer showFreelancerInfo(int f_num){
 		SqlSession session = getSqlSessionFactory().openSession();
-		try {
+		String f_id="rhkd";
+		try {			
 			return session.getMapper(FreelancerMapper.class).showFreelancerInfo(f_num);
 		} catch (Exception e) {
 			e.printStackTrace();
