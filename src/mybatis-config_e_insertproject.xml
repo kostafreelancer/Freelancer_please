@@ -5,8 +5,8 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="lancer.c_membercenter.model.memberCenter" alias="memberCenter"/>
-		<!-- <typeAlias type="kosta.model.Search" alias="Search"/> -->
+		<typeAlias type="kosta.model.Board" alias="Board"/>
+		<typeAlias type="kosta.model.Search" alias="Search"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -19,7 +19,7 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="lancer/c_membercenter/mapper/member.xml"/>
+		<mapper resource="kosta/mapper/Board.xml"/>
 	</mappers>
 	
 </configuration>

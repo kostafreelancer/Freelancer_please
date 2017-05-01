@@ -33,7 +33,7 @@
                 	<div class="log_box">
                     	<div class="log_lef">
                         	<p>로그인을 위해 아이디와 패스워드를 입력해 주세요.</p>
-							<form method="post" name="MemberLoginFm" action="checking.c_login" >
+							<form method="post" name="MemberLoginFm" action="insert.c_login" >
 							<input type="hidden" name="fm_url" value="">
 							<input type="hidden" name="fm_str" value="">
                             <label for="fm_id" class="tx_skip">아이디 입력</label>
@@ -43,7 +43,12 @@
                             <div class="login_check">
                                 <p class="fl">
                                     <input type="checkbox" id="saveID" name="saveID" value="Y" checked="checked"/>
-                                    <label for="saveID">로그인 상태유지</label>
+                                    <label for="saveID">로그인 상태유지</label><br>
+                                    
+                                    <input type="radio" name="checking" value="freelancer" checked="checked">프리랜서<br>
+                                    
+                                    <input type="radio" name="checking" value="enterprise">기업
+                                    
                                 </p>
                                 <a href="javascript:FindID();" class="pass_find">아이디 패스워드 찾기 &gt;</a>
                              </div>

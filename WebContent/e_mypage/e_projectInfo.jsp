@@ -10,6 +10,13 @@
 	type="text/css" media="screen" />
 <link rel="stylesheet" href="e_mypage_css/memberlist.css"
 	type="text/css" media="screen" />
+	
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/e_projectInfo.css"
+	type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/e_leftmenu.css"
+	type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/memberlist.css"
+	type="text/css" media="screen" />
 
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="e_mypage_js/tabs.js"></script>
@@ -359,7 +366,7 @@
 						<tr>
 							<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>
 								희망 경력년수</th>
-							<td colspan="5">3 년차 <span>~</span> 7 년차
+							<td colspan="5">3 년차
 							</td>
 						</tr>
 
