@@ -7,7 +7,7 @@
 <mapper namespace="kosta.mapper.BoardMapper">
 	<cache />
 	
-	<select id="getFname" resultType="memberCenter" parameterType="int">
+	<select id="getFname" resultType="String" parameterType="memberCenter">
 		select f_name from freelancer where f_num = #{f_num}
 	</select>
 	

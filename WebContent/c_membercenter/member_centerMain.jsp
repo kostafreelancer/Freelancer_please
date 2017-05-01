@@ -70,7 +70,7 @@
 							<col style="width: 35%">
 						</colgroup>
 						<tbody>
-							<form name="" method="post" action=""></form>
+							<form name="" method="post" action="Fname"></form>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
