@@ -578,29 +578,7 @@
 										<option value="18">18 년차</option>
 										<option value="19">19 년차</option>
 										<option value="20">20 년차</option>
-								</select> <span>~</span> <select class="wid03" name="fm_career2">
-										<option value="">------</option>
-										<option value="01">1 년차</option>
-										<option value="02">2 년차</option>
-										<option value="03">3 년차</option>
-										<option value="04">4 년차</option>
-										<option value="05">5 년차</option>
-										<option value="06">6 년차</option>
-										<option value="07">7 년차</option>
-										<option value="08">8 년차</option>
-										<option value="09">9 년차</option>
-										<option value="10">10 년차</option>
-										<option value="11">11 년차</option>
-										<option value="12">12 년차</option>
-										<option value="13">13 년차</option>
-										<option value="14">14 년차</option>
-										<option value="15">15 년차</option>
-										<option value="16">16 년차</option>
-										<option value="17">17 년차</option>
-										<option value="18">18 년차</option>
-										<option value="19">19 년차</option>
-										<option value="20">20 년차</option>
-
+								</select> 
 								</select></td>
 							</tr>
 
