@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lancer.c_join.mapper.e_joinMapper">
+<cache />
+	<insert id="insert_e_join" parameterType="e_join">
+		insert into e_join(
+			e_num, e_id, e_pwd, e_mail, e_name, e_ename, e_owner,
+			e_ownerfile, e_regno, e_phone, e_bf, manager_name, manager_hphone,
+			manager_mail, e_address, e_homepage, start_year, e_enum, 
+			e_listing, e_capital, e_sales, e_scale, e_licensefile, e_check
+		)
+		values(
+			#{e_num}, #{e_id}, #{e_pwd}, #{e_mail}, #{e_name}, 
+			#{e_ename}, #{e_owner}, #{e_ownerfile}, #{e_regno}, 
+			#{e_phone}, #{e_bf}, #{manager_name}, #{manager_hphone},
+			#{manager_mail}, #{e_address}, #{e_homepage}, #{start_year}, 
+			#{e_enum}, #{e_listing}, #{e_capital}, #{e_sales}, #{e_scale}, 
+			#{e_licensefile}, #{e_check}
+		)
+	</insert>
+
+</mapper>

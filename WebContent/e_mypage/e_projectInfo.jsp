@@ -366,7 +366,7 @@
 						<tr>
 							<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>
 								희망 경력년수</th>
-							<td colspan="5">3 년차 <span>~</span> 7 년차
+							<td colspan="5">3 년차
 							</td>
 						</tr>
 

@@ -3,7 +3,6 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-
 <mapper namespace="lancer.e_insertproject.mapper">
 	<cache />
 
@@ -12,7 +11,7 @@
 		e_pr_num,e_num,p_name, p_content,p_lowerAge, p_upperAge,p_academic,p_requireNum,p_regDate,p_exDate,p_lowerCos,p_upperCos,p_startDate,p_endDate,p_location,p_experience
 		)
 		values(
-		board_seq.nextval, #{title}, #{writer}, #{contents}, sysdate, 0	<!-- #변수명# 으로 사용. -->
+		1, 1,#{p_name}, #{p_content}, #{p_lowerAge}, #{p_upperAge},#{p_academic},#{p_requireNum},#{p_regDate},#{p_exDate},#{p_lowerCos},#{p_upperCos},#{p_startDate},#{p_endDate},#{p_location},#{p_experience}	<!-- #변수명# 으로 사용. -->
 		)
 	</insert>
 	

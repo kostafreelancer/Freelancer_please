@@ -14,7 +14,6 @@ public class E_InsertAction implements Action {
 		E_InsertDao dao = E_InsertDao.getInstance();
 		E_Insert project = new E_Insert();
 		request.setCharacterEncoding("utf-8");
-		
 
 		
 		project.setE_pr_num(Integer.parseInt(request.getParameter("e_pr_num")));
