@@ -11,6 +11,5 @@ $(document).ready(function() {
         $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
     });
     
-    location.href("f_name.mc");
 });
 

@@ -4,7 +4,7 @@
 
 
 
-<mapper namespace="kosta.mapper.BoardMapper">
+<mapper namespace="lancer.c_membercenter.mapper.memberCenter_mapper">
 	<cache />
 	
 	<select id="getFname" resultType="String" parameterType="memberCenter">

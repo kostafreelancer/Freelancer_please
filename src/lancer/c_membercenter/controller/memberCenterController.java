@@ -27,26 +27,28 @@ public class memberCenterController extends HttpServlet {
 	public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		String requestURI= request.getRequestURI();
-		System.out.println(requestURI + "aa");
+		System.out.println(requestURI+"aa");
 		String contextPath = request.getContextPath();
 		
 		String command = requestURI.substring(contextPath.length()+1);
-		System.out.println(command + "BB");
+		System.out.println(command+"bb");
 		
 		
 		ActionForward forward = null;
 		Action action = null;
 		
 		
-		if(command.equals("memberCenter/Fname")){
+		if(command.equals("c_common/f_name.mc")){
 			
 			action = new getFnameAction();
 			try {
-				System.out.println(request.getParameter("f_name"));
+				/*System.out.println(request.getParameter("f_name"+"cc"));*/
 				forward = action.execute(request, response);
+				System.out.println("성공");
 				
 			} catch (Exception e) {
 				e.printStackTrace();
+				System.out.println("실패");
 			}
 			System.out.println(forward);
 		}

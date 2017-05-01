@@ -16,7 +16,6 @@ public class getFnameAction implements Action {
 		
 		mc.setF_name(request.getParameter("f_name"));
 		name = cDao.f_name(mc);
-		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
 		forward.setPath("/Matching_Project/c_membercenter/member_centerMain.jsp");
