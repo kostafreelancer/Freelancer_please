@@ -19,10 +19,20 @@ public class ShowFreelancerInfoAction implements Action {
 		FreelancerDao dao = FreelancerDao.getInstance();
 		Freelancer freelancer = dao.showFreelancerInfo(f_num);
 		
-		String[] values = freelancer.getF_phone().split("-");
-		for(int i=0;i<values.length; i++){
-			System.out.println(values[i]);
+		String[] ph = freelancer.getF_phone().split("-");
+		for(int i=0;i<ph.length; i++){
+			request.setAttribute("ph"+(i+1), ph[i]);
 		}
+		String[] hph = freelancer.getF_hphone().split("-");
+		for(int i=0;i<hph.length; i++){
+			request.setAttribute("hph"+(i+1), hph[i]);
+		}
+		String[] email = freelancer.getF_email().split("@");
+		for(int i=0; i<email.length; i++){
+			request.setAttribute("email" + (i+1), email[i]);
+		}
+		
+		
 		request.setAttribute("freelancer", freelancer);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);

@@ -139,39 +139,39 @@
 						<tr>
 							<th scope="row"><label for="fm_tel1"><span
 									class="txt_or">*</span> 연락처(전화)</label></th>
-							<td colspan="3"><label for="fm_tel1"></label> <select
-								class="wid03" name="fm_tel1" id="fm_tel1">
+							<td colspan="3"><label for="fm_tel1"></label> 
+							<select class="wid03" name="fm_tel1" id="fm_tel1">
 									<option value="">--------</option>
-									<option value="02">02 서울</option>
-									<option value="031">031 경기</option>
-									<option value="032">032 인천</option>
-									<option value="033">033 강원</option>
-									<option value="041">041 충남</option>
-									<option value="042">042 대전</option>
-									<option value="043">043 충북</option>
-									<option value="051">051 부산</option>
-									<option value="052">052 울산</option>
-									<option value="053">053 대구</option>
-									<option value="054">054 경북</option>
-									<option value="055">055 경남</option>
-									<option value="061">061 전남</option>
-									<option value="062">062 광주</option>
-									<option value="063">063 전북</option>
-									<option value="064">064 제주</option>
-									<option value="070">070</option>
+									<option value="02" <c:if test="${ph1 == '02'}">selected</c:if>>02</option>
+									<option value="031" <c:if test="${ph1 == '031'}">selected</c:if>>031</option>
+									<option value="032" <c:if test="${ph1 == '032'}">selected</c:if>>032</option>
+									<option value="033" <c:if test="${ph1 == '033'}">selected</c:if>>033</option>
+									<option value="041" <c:if test="${ph1 == '041'}">selected</c:if>>041</option>
+									<option value="042" <c:if test="${ph1 == '042'}">selected</c:if>>042</option>
+									<option value="043" <c:if test="${ph1 == '043'}">selected</c:if>>043</option>
+									<option value="051" <c:if test="${ph1 == '051'}">selected</c:if>>051</option>
+									<option value="052" <c:if test="${ph1 == '052'}">selected</c:if>>052</option>
+									<option value="053" <c:if test="${ph1 == '053'}">selected</c:if>>053</option>
+									<option value="054" <c:if test="${ph1 == '054'}">selected</c:if>>054</option>
+									<option value="055" <c:if test="${ph1 == '055'}">selected</c:if>>055</option>
+									<option value="061" <c:if test="${ph1 == '061'}">selected</c:if>>061</option>
+									<option value="062" <c:if test="${ph1 == '062'}">selected</c:if>>062</option>
+									<option value="063" <c:if test="${ph1 == '063'}">selected</c:if>>063</option>
+									<option value="064" <c:if test="${ph1 == '064'}">selected</c:if>>064</option>
+									<option value="070" <c:if test="${ph1 == '070'}">selected</c:if>>070</option>
 									<option value="">--------</option>
-									<option value="0502">0502</option>
-									<option value="0504">0504</option>
-									<option value="0505">0505</option>
-									<option value="0506">0506</option>
-									<option value="0130">0130</option>
+									<option value="0502" <c:if test="${ph1 == '0502'}">selected</c:if>>0502</option>
+									<option value="0504" <c:if test="${ph1 == '0504'}">selected</c:if>>0504</option>
+									<option value="0505" <c:if test="${ph1 == '0505'}">selected</c:if>>0505</option>
+									<option value="0506" <c:if test="${ph1 == '0506'}">selected</c:if>>0506</option>
+									<option value="0130" <c:if test="${ph1 == '0130'}">selected</c:if>>0130</option>
 							</select>
 							<span>-</span> 
 							<label for="fm_tel2"></label> 
-							<input type="text" id="fm_tel2" name="fm_tel2" maxlength="4" class="wid03" value="">
+							<input type="text" id="fm_tel2" name="fm_tel2" maxlength="4" class="wid03" value="${ph2}">
 							<span>-</span> 
 							<label for="fm_tel3"></label> 
-							<input type="text" id="fm_tel3" name="fm_tel3" maxlength="4" class="wid03" value="">
+							<input type="text" id="fm_tel3" name="fm_tel3" maxlength="4" class="wid03" value="${ph3}">
 							</td>
 						</tr>
 						<tr>
@@ -180,29 +180,29 @@
 							<td colspan="3"><label for="fm_phone1"></label> <select
 								class="wid03" name="fm_phone1" id="fm_phone1">
 									<option value="">--------</option>
-									<option value="010" selected="">010</option>
-									<option value="011">011</option>
-									<option value="016">016</option>
-									<option value="017">017</option>
-									<option value="018">018</option>
-									<option value="019">019</option>
+									<option value="010" <c:if test="${hph1 == '010'}">selected</c:if>>010</option>
+									<option value="011" <c:if test="${hph1 == '011'}">selected</c:if>>011</option>
+									<option value="016" <c:if test="${hph1 == '016'}">selected</c:if>>016</option>
+									<option value="017" <c:if test="${hph1 == '017'}">selected</c:if>>017</option>
+									<option value="018" <c:if test="${hph1 == '018'}">selected</c:if>>018</option>
+									<option value="019" <c:if test="${hph1 == '019'}">selected</c:if>>019</option>
 							</select> <span>-</span> <label for="fm_phone2"></label> <input
 								type="text" id="fm_phone2" name="fm_phone2" maxlength="4"
-								class="wid03" value="5914"> <span>-</span> <label
+								class="wid03" value="${hph2}">
+								 <span>-</span> <label
 								for="fm_phone3"></label> <input type="text" id="fm_phone3"
-								name="fm_phone3" maxlength="4" class="wid03" value="8532">
+								name="fm_phone3" maxlength="4" class="wid03" value="${hph3}">
 							</td>
 						</tr>
 						<tr>
 							<th><span class="txt_or">*</span> 이메일</th>
 							<td colspan="4"><label for="fm_email11"></label> <input
 								type="text" id="fm_email11" name="fm_email11" class="wid04"
-								value="nks000000"> <span>@</span> <label
+								value="${email1}"> <span>@</span> <label
 								for="fm_email12"></label> <input type="text" id="fm_email12"
-								name="fm_email12" class="wid04" value="naver.com" readonly="">
+								name="fm_email12" class="wid04" value="${email2}" readonly="">
 								<label for="fm_emailSel1"></label> <select class="wid04"
-								name="fm_emailSel1" id="fm_emailSel1"
-								onchange="javascript:ChangeEMailIt('1');">
+								name="fm_emailSel1" id="fm_emailSel1">
 									<option value="">선택해주세요.</option>
 									<option value="etc">직접입력</option>
 									<option value="chollian.net">chollian.net</option>
@@ -219,7 +219,7 @@
 									<option value="kornet.net">kornet.net</option>
 									<option value="lycos.co.kr">lycos.co.kr</option>
 									<option value="nate.com">nate.com</option>
-									<option value="naver.com" selected="">naver.com</option>
+									<option value="naver.com">naver.com</option>
 									<option value="nownuri.net">nownuri.net</option>
 									<option value="paran.com">paran.com</option>
 									<option value="unitel.co.kr">unitel.co.kr</option>
@@ -314,7 +314,7 @@
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="DB" checked=""> DB</td>
+												name="fm_new_keyword[]" value="DB"> DB</td>
 											<td class="td_bor_bott"><input type="checkbox"
 												name="fm_new_keyword[]" value="DELPHI"> DELPHI</td>
 											<td class="td_bor_bott"><input type="checkbox"
@@ -322,8 +322,7 @@
 											<td class="td_bor_bott"><input type="checkbox"
 												name="fm_new_keyword[]" value="IOS"> IOS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="JAVA" checked="">
-												JAVA</td>
+												name="fm_new_keyword[]" value="JAVA">	JAVA</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
