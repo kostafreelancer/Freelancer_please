@@ -57,7 +57,7 @@
 				<li id="point">:</li>
 				<li id="min"></li>
 				<li id="point">:</li>
-				<li id="sec"></li>
+				<li id="sec"></li>	
 			</ul>
 		</div>
 

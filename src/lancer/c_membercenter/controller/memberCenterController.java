@@ -38,17 +38,17 @@ public class memberCenterController extends HttpServlet {
 		Action action = null;
 		
 		
-		if(command.equals("c_common/f_name.mc")){
+		if(command.equals("f_main/f_name.mc")){
 			
 			action = new getFnameAction();
 			try {
 				/*System.out.println(request.getParameter("f_name"+"cc"));*/
 				forward = action.execute(request, response);
-				System.out.println("성공");
+				/*System.out.println(request.getParameter("f_num") + "컨트롤");*/
 				
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("실패");
+				System.out.println("bb");
 			}
 			System.out.println(forward);
 		}
