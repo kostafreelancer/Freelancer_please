@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,12 +12,9 @@
 	type="text/css" media="screen" />
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-<script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/e_insertproject.js"></script>
+<script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/e_insertproject2.js"></script>
+<script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/calendar.js"></script>
 <script type="text/javascript" src="/Matching_Project/c_common/c_common_js/header.js"></script>
-
-
-
-
 </head>
 <body>
 	<%@include file="../c_common/header_enterprise.jsp"%>
@@ -68,11 +65,11 @@
 					<h4>담당자 정보</h4>
 					<table class="tb_st01">
 						<form action="e_finishproject.jsp" method="post" name="ProjectWriteFm">
-							<input type="hidden" name="fm_code" value="상주"> <input
-								type="hidden" name="fm_jobtype" value="상주"> <input
-								type="hidden" name="fm_cuno" value=""> <input
-								type="hidden" name="fm_muno" value=""> <input
-								type="hidden" name="fm_keyword">
+							<input type="hidden" name="fm_code" value="상주"> 
+							<input type="hidden" name="fm_jobtype" value="상주"> 
+							<input type="hidden" name="fm_cuno" value=""> 
+							<input type="hidden" name="fm_muno" value=""> 
+							<input type="hidden" name="fm_keyword">
 							<caption></caption>
 							<colgroup>
 								<col style="width: 15%" />
@@ -502,9 +499,8 @@
 									for="fm_totalnumber">명)</label></td>
 								<th scope="row" class="ac"><span class="txt_or">*</span> <label
 									for="fm_bidedate">모집마감일자</label></th>
-								<td colspan="2"><input type="text" id="fm_bidedate"
-									name="fm_bidedate" class="day_inp"
-									onClick="CalenderIt('ProjectWriteFm', 'fm_bidedate');" readonly />
+								<td colspan="2"><input type="text"  id="txtDate3" name="fm_worksdate" onClick="fnPopUpCalendar(txtDate3,txtDate3,'yyyy/mm/dd')"  class="day_inp" />
+								
 									<input type="hidden" name="fm_bidsdate" value="2017-04-25">
 								</td>
 							</tr>
@@ -530,44 +526,42 @@
 
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>근무기간</th>
-								<td colspan="5"><input type="text" id="fm_worksdate"
-									name="fm_worksdate" class="day_inp"
-									onClick="CalenderIt('ProjectWriteFm', 'fm_worksdate');"
-									readonly /> <span> ~ </span> <input type="text"
-									id="fm_workedate" name="fm_workedate" class="day_inp"
-									onClick="CalenderIt('ProjectWriteFm', 'fm_workedate');"
-									readonly /></td>
+								<td colspan="5">
+								<input type="text"  id="txtDate" name="fm_worksdate" onClick="fnPopUpCalendar(txtDate,txtDate,'yyyy/mm/dd')"  class="day_inp" />
+								<span> ~ </span>
+								<input type="text" id="txtDate2" name="fm_worksdate" onClick="fnPopUpCalendar(txtDate2,txtDate2,'yyyy/mm/dd')"  class="day_inp" />
+								</td>
 							</tr>
 
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>
 									근무지</th>
-								<td colspan="5"><select class="JobPlace" name="JobPlace1"
-									id="JobPlace1">
-										<option value="">시, 도</option>
-										<option value="1">서울특별시</option>
-										<option value="2">부산광역시</option>
-										<option value="3">대구광역시</option>
-										<option value="4">인천광역시</option>
-										<option value="5">광주광역시</option>
-										<option value="6">대전광역시</option>
-										<option value="7">울산광역시</option>
-										<option value="8">세종특별자치시</option>
-										<option value="9">경기도</option>
-										<option value="10">강원도</option>
-										<option value="11">충청북도</option>
-										<option value="12">충청남도</option>
-										<option value="13">전라북도</option>
-										<option value="14">전라남도</option>
-										<option value="15">경상북도</option>
-										<option value="16">경상남도</option>
-										<option value="17">제주특별자치도</option>
-										<option value="18">해외</option>
-								</select> <select id="sigungu" class="selecter-element" name="sigungu"
-									onclick="progress_check()" required="required" tabindex="-1">
-										<option value="">시, 군, 구</option>
-										<!-- 시, 도 선택후 나옴  -->
+								<td colspan="5"><select id="select1" style="width: 80px; margin-top: 10px;" onchange="javscript:fnSelect(this);"> 
+								<option value="">시, 도</option>
+<option>서울특별시</option>
+<option>부산광역시</option>
+<option>대구광역시</option>
+<option>인천광역시</option>
+<option>광주광역시</option>
+<option>대전광역시</option>
+<option>울산광역시</option>
+<option>경기도</option>
+<option>강원도</option>
+<option>충청북도</option>
+<option>충청남도</option>
+<option>전라북도</option>
+<option>전라남도</option>
+<option>경상북도</option>
+<option>경상남도</option>
+<option>제주특별자치도</option>
+								</select> 
+								<select id="select2" style="width: 80px; margin-top: 10px;" onchange="javscript:fnSelect(this);"> 
+								<option>시, 군, 구</option> 
+							
 								</select>
+
+
+
 							</tr>
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>
