@@ -18,10 +18,10 @@ public class c_loginDao {
 		return dao;
 	}
 
-	public SqlSessionFactory getSqlSessionFacotry() { // SqlSessionFactory 가
-														// sqlsession을 만들기 위한
-														// 공장?
-		String resource = "mybatis-config_login.xml"; // src에 넣어서 그냥 이렇게 넣을수 잇음
+	public SqlSessionFactory getSqlSessionFacotry() { // SqlSessionFactory 媛�
+														// sqlsession�쓣 留뚮뱾湲� �쐞�븳
+														// 怨듭옣?
+		String resource = "mybatis-config_login.xml"; // src�뿉 �꽔�뼱�꽌 洹몃깷 �씠�젃寃� �꽔�쓣�닔 �엲�쓬
 		InputStream in = null;
 		try {
 			in = Resources.getResourceAsStream(resource);
@@ -32,15 +32,15 @@ public class c_loginDao {
 		return new SqlSessionFactoryBuilder().build(in);
 
 	}
-	public String select_c_login(c_login client){
+	public int select_c_login(c_login client){
 		SqlSession session = getSqlSessionFacotry().openSession();
-		
-		String name = null;
-		name = session.getMapper(c_loginMapper.class).select_c_login(client);
-		if(name != null){
-			return name;
+		int f_num =0;
+
+		f_num = session.getMapper(c_loginMapper.class).select_c_login(client);
+		if(f_num != 0){
+			return f_num;
 		}else{
-			return null;
+			return 0;
 		}
 		
 	}

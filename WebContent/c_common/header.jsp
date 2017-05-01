@@ -21,7 +21,7 @@
 	<div class="header">
 		<div class="header_top_menu">
 			<div class="header_welcome_content">
-				<span>${name}</span>
+				<span>${f_num}</span>
 			</div>
 			<ul class="header_top_menus">
 				<li><img alt="center_img"
