@@ -11,8 +11,8 @@ public class Enterprise implements Serializable{
 	private String e_name;				// 가입자 명
 	private String e_ename;			// 기업 이름
 	private String e_owner;		// 기업 대표자 명
-	private String e_ownerFile;	// 기업 대표자 사진파일 경로
-	private String e_regNo;			// 사업자등록번호 ( 123-42322)
+	private String e_ownerfile;	// 기업 대표자 사진파일 경로
+	private String e_regno;			// 사업자등록번호 ( 123-42322)
 	private String e_phone;		// 기업 전화번호
 	private String e_bf;					// 업무분야 텍스트
 	private String manager_name;		// 담당자 이름
@@ -21,21 +21,21 @@ public class Enterprise implements Serializable{
 	private String e_address;			// 기업 주소
 	private String e_homepage;			// 기업 홈페이지
 	private int start_year;				// 기업 설립년도
-	private int e_eNum;				// 기업 사원 수
+	private int e_enum;				// 기업 사원 수
 	private String e_listing;			// 상장여부   (상장, 비상장)
 	private int e_capital;		// 자본금
 	private int e_sales;		// 연매출
 	private String e_scale;			// 기업규모 (대기업, 중소기업, 개인)
-	private String e_licenseFile;		// 사업자등록증 사진파일 경로
+	private String e_licensefile;		// 사업자등록증 사진파일 경로
 	private String e_check;		// 이메일인증을 통한 가입승인여부   가입승인됬을시 1,  인증 아직 안했으면 0
 	
 	public Enterprise(){}
 
 	public Enterprise(int e_num, String e_id, String e_pwd, String e_mail, double e_score, String e_name,
-			String e_ename, String e_owner, String e_ownerFile, String e_regNo, String e_phone, String e_bf,
+			String e_ename, String e_owner, String e_ownerfile, String e_regno, String e_phone, String e_bf,
 			String manager_name, String manager_hphone, String manager_mail, String e_address, String e_homepage,
-			int start_year, int e_eNum, String e_listing, int e_capital, int e_sales, String e_scale,
-			String e_licenseFile, String e_check) {
+			int start_year, int e_enum, String e_listing, int e_capital, int e_sales, String e_scale,
+			String e_licensefile, String e_check) {
 		super();
 		this.e_num = e_num;
 		this.e_id = e_id;
@@ -45,8 +45,8 @@ public class Enterprise implements Serializable{
 		this.e_name = e_name;
 		this.e_ename = e_ename;
 		this.e_owner = e_owner;
-		this.e_ownerFile = e_ownerFile;
-		this.e_regNo = e_regNo;
+		this.e_ownerfile = e_ownerfile;
+		this.e_regno = e_regno;
 		this.e_phone = e_phone;
 		this.e_bf = e_bf;
 		this.manager_name = manager_name;
@@ -55,12 +55,12 @@ public class Enterprise implements Serializable{
 		this.e_address = e_address;
 		this.e_homepage = e_homepage;
 		this.start_year = start_year;
-		this.e_eNum = e_eNum;
+		this.e_enum = e_enum;
 		this.e_listing = e_listing;
 		this.e_capital = e_capital;
 		this.e_sales = e_sales;
 		this.e_scale = e_scale;
-		this.e_licenseFile = e_licenseFile;
+		this.e_licensefile = e_licensefile;
 		this.e_check = e_check;
 	}
 
@@ -128,20 +128,20 @@ public class Enterprise implements Serializable{
 		this.e_owner = e_owner;
 	}
 
-	public String getE_ownerFile() {
-		return e_ownerFile;
+	public String getE_ownerfile() {
+		return e_ownerfile;
 	}
 
-	public void setE_ownerFile(String e_ownerFile) {
-		this.e_ownerFile = e_ownerFile;
+	public void setE_ownerfile(String e_ownerfile) {
+		this.e_ownerfile = e_ownerfile;
 	}
 
-	public String getE_regNo() {
-		return e_regNo;
+	public String getE_regno() {
+		return e_regno;
 	}
 
-	public void setE_regNo(String e_regNo) {
-		this.e_regNo = e_regNo;
+	public void setE_regno(String e_regno) {
+		this.e_regno = e_regno;
 	}
 
 	public String getE_phone() {
@@ -208,12 +208,12 @@ public class Enterprise implements Serializable{
 		this.start_year = start_year;
 	}
 
-	public int getE_eNum() {
-		return e_eNum;
+	public int getE_enum() {
+		return e_enum;
 	}
 
-	public void setE_eNum(int e_eNum) {
-		this.e_eNum = e_eNum;
+	public void setE_enum(int e_enum) {
+		this.e_enum = e_enum;
 	}
 
 	public String getE_listing() {
@@ -248,12 +248,12 @@ public class Enterprise implements Serializable{
 		this.e_scale = e_scale;
 	}
 
-	public String getE_licenseFile() {
-		return e_licenseFile;
+	public String getE_licensefile() {
+		return e_licensefile;
 	}
 
-	public void setE_licenseFile(String e_licenseFile) {
-		this.e_licenseFile = e_licenseFile;
+	public void setE_licensefile(String e_licensefile) {
+		this.e_licensefile = e_licensefile;
 	}
 
 	public String getE_check() {
@@ -264,5 +264,5 @@ public class Enterprise implements Serializable{
 		this.e_check = e_check;
 	}
 	
-		
+	
 }

@@ -29,11 +29,9 @@ public class c_loginController extends HttpServlet {
 
     
         String requestURI = request.getRequestURI();
-        System.out.println(requestURI);
         // System.out.println(requestURI); /MVC_project/insert.do 
         String contextPath = request.getContextPath();
         String command = requestURI.substring(contextPath.length() + 1); // +1��
-        System.out.println(command); 
         ActionForward forward = null;
         Action action = null;
     	
@@ -42,7 +40,6 @@ public class c_loginController extends HttpServlet {
         	action = new c_login_checkingAction();
         	
         	try {
-        		System.out.println(request.getParameter("c_id"));
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();

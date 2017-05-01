@@ -8,9 +8,10 @@
 	<cache />
 	
 	<!-- 기업 하나의 정보를 데이터베이스에서 가져오기 -->
-	<select id="selectEnterprise" parameterType="int" resultType="Enterprise">
+	<select id="selectEnterprise" resultType="Enterprise">
 		select * from enterprise where e_num = #{e_num}
 	</select>
+	
 
 	
 
@@ -18,12 +19,12 @@
 
 
 
-	<insert id="insertBoard" parameterType="Board">
+<!-- 	<insert id="insertBoard" parameterType="Board">
 		insert into board(
 		seq, title, writer, contents, regdate, hitcount
 		)
 		values(
-		board_seq.nextval, #{title}, #{writer}, #{contents}, sysdate, 0	<!-- #변수명# 으로 사용. -->
+		board_seq.nextval, #{title}, #{writer}, #{contents}, sysdate, 0	#변수명# 으로 사용.
 		)
 	</insert>
 	
@@ -33,7 +34,7 @@
 			<where>
 				<foreach collection="area" item="item" separator="or"
 						open="(" close=")">
-					<!-- title LIKE %aa% or writer LIKE %aa% -->
+					title LIKE %aa% or writer LIKE %aa%
 						${item} LIKE #{searchKey}
 				</foreach>
 			</where>
@@ -46,7 +47,7 @@
 	
 	<update id="updateBoard" parameterType="Board">
 		update board set title=#{title}, contents=#{contents} where seq = #{seq}
-	</update>
+	</update> -->
 	
 </mapper>
 

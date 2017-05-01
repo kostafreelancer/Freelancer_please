@@ -17,7 +17,6 @@ public class c_loginDao {
 	public static c_loginDao getInstance() {
 		return dao;
 	}
-
 	public SqlSessionFactory getSqlSessionFacotry() { // SqlSessionFactory 媛�
 														// sqlsession�쓣 留뚮뱾湲� �쐞�븳
 														// 怨듭옣?
@@ -32,15 +31,24 @@ public class c_loginDao {
 		return new SqlSessionFactoryBuilder().build(in);
 
 	}
-	public int select_c_login(c_login client){
+	public checking_identity select_c_login(c_login client,String checking){
 		SqlSession session = getSqlSessionFacotry().openSession();
-		int f_num =0;
-
-		f_num = session.getMapper(c_loginMapper.class).select_c_login(client);
-		if(f_num != 0){
-			return f_num;
+		Integer f_num =0;
+		Integer e_num =0;
+		checking_identity identity = new checking_identity();
+		
+		if(checking.equals("freelancer")){
+			f_num = session.getMapper(c_loginMapper.class).select_c_login_f(client);
+			identity.setC_num(f_num);
+			identity.setIdentity("freelancer");
+			return identity;
+		}else if(checking.equals("enterprise")){
+			e_num = session.getMapper(c_loginMapper.class).select_c_login_e(client);
+			identity.setC_num(e_num);
+			identity.setIdentity("enterprise");
+			return identity;
 		}else{
-			return 0;
+			return null;
 		}
 		
 	}
