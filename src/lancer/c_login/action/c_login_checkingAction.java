@@ -14,8 +14,7 @@ public class c_login_checkingAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		int c_num =0;
 		
-		
-		checking_identity identity;
+		/*checking_identity identity;
 		c_loginDao dao = c_loginDao.getInstance();
 		c_login client = new c_login();
 		client.setC_id(request.getParameter("c_id"));
@@ -34,7 +33,8 @@ public class c_login_checkingAction implements Action {
 		HttpSession session = request.getSession();
 		session.setAttribute("num", identity.getC_num());
 		session.setAttribute("identity", identity.getIdentity());
-		return forward;
+		return forward;*/
+		return null;
 	}
 
 }

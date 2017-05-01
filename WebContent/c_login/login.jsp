@@ -33,7 +33,7 @@
                 	<div class="log_box">
                     	<div class="log_lef">
                         	<p>로그인을 위해 아이디와 패스워드를 입력해 주세요.</p>
-							<form method="post" name="MemberLoginFm" action="checking.c_login" >
+							<form method="post" name="MemberLoginFm" action="insert.c_login" >
 							<input type="hidden" name="fm_url" value="">
 							<input type="hidden" name="fm_str" value="">
                             <label for="fm_id" class="tx_skip">아이디 입력</label>
