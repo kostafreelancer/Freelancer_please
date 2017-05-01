@@ -1,21 +1,3 @@
-// 이미지 파일 정의
-function getImageFile() {
-	var arr_image = new Array("GIF","JPG","JPEG","BMP","PNG");
-	return arr_image;
-}
-
-// 압축 파일 정의
-function getZipFile() {
-	var arr_zip = new Array("ZIP","ALZ");
-	return arr_zip;
-}
-
-// 문서 파일 정의
-function getTextFile() {
-	var arr_text = new Array("HWP","DOC","TXT","XLS","PPT","PDF");
-	return arr_text;
-}
-
 // 브라우져 쿠키 생성하기
 function setCookie(name, value, expires, path, domain, secure) {
 	var curCookie = name + "=" + escape(value) +
@@ -92,23 +74,6 @@ function ShowObject(type, Obj, Boolen) {
 	}
 }
 
-// 토글 선택 조절 함수
-function ToggleCheckAll(button, FormName, FieldName) {
-	FormName = eval("document."+ FormName);
-	with(FormName) {
-		var sa=true;
-		if(button.checked) sa=false;
-		for (var i=0;i<FormName.elements.length;i++) {
-			if (FormName.elements[i].name==FieldName+"[]") {
-				var e = FormName.elements[i];
-				if(sa) e.checked=false;
-				else e.checked=true;
-			}
-		}
-		if(sa) button.checked=false;
-		else button.checked=true;
-	}
-}
 
 // 공백 체크 함수
 function IsEmpty(keyword) {
@@ -268,29 +233,6 @@ function StringDel(checkStr1, checkStr2) {
 	return(StrValue);
 }
 
-// 금액 확인 함수
-function CheckMoney(FormName, FieldName) {
-	FormName = eval("document."+ FormName);
-	with(FormName) {
-		FieldName1 = eval(FieldName);
-		FieldName2 = FieldName1.value;
-		FieldValue1 = FieldName2.substring(0,1);
-		if (FieldValue1=="-") FieldValue2 = FieldName2.substring(1);
-		else FieldValue2 = FieldName2;
-		//alert(FieldValue2);
-		FieldValue3 = CommaDel(FieldValue2);
-		if(!IsDigitStr(FieldValue3)) {
-			alert("숫자만 입력 가능합니다.");
-			FieldName1.focus();
-			return;		
-		}
-		FieldValue4 = Comma(FieldValue3)
-		if (FieldValue1=="-") FieldValue = FieldValue1 + FieldValue4;
-		else FieldValue = FieldValue4;
-		FieldName3 = eval(FieldName);
-		FieldName3.value = FieldValue;
-	}
-}
 
 // 메일 확인 함수
 function CheckEmail(checkStr) {
@@ -433,85 +375,6 @@ function CheckJumin2(obj1, obj2) {
 		return false;
 }
 
-// 업로드 파일체크 함수 (PHP/P/HTML/HTM/EXE)
-function CheckFile(fileis) {
-	var filename = fileis;
-
-	if (!IsEmpty(filename)) {		// 파일 선택을 안한경우
-	   return true;
-	} else {						// 파일선택을 한 경우
-		var ext = filename.split(".");
-		if (ext[1].toUpperCase() == "PHP" || ext[1].toUpperCase() == "ASP" || ext[1].toUpperCase() == "HTML" || ext[1].toUpperCase() == "HTM" || ext[1].toUpperCase() == "EXE"){
-			return false;
-		}else{
-			return true;
-		}
-	}
-}
-
-// 업로드 이미지체크 함수 (GIF/JPG/JPEG/BMP/PNG)
-function CheckImage(fileis) {
-	var filename = fileis;
-
-	if (!IsEmpty(filename)) {			// 파일 선택을 안한경우
-	   return true;
-	} else {							// 파일선택을 한 경우
-		var ext = filename.split(".");
-		var extension = ext[ext.length-1];
-		if (extension.toUpperCase()=="GIF" || extension.toUpperCase()=="JPG" || extension.toUpperCase()=="JPEG" || extension.toUpperCase()=="BMP" || extension.toUpperCase()=="PNG") {
-			return false;
-		}else{
-			return true;
-		}
-	}
-}
-
-// 파일 사이즈 체크 : byte
-function getFileSize(path, type)
-{
-	var img = new Image();
-//	img.dynsrc = path;
-	var size = img.fileSize;
-
-	var resize;
-	if (type =="k")
-	{
-		resize = size / 1024;
-	} else if (type == "m")
-	{
-		resize = size / 1024 / 1024;
-	} else {
-		resize = size;
-	}
-
-	return resize;
-}
-
-// 파일 확장자 체크
-function getFileExtension(inp)
-{
-	var lastidx = -1;
-	lastidx = inp.lastIndexOf('.');
-	var extension = inp.substring(lastidx+1, inp.length);
-
-	return extension;
-}
-
-function CheckImage2(fileis) {
-	var filename = fileis;
-
-	if (!IsEmpty(filename)) {			// 파일 선택을 안한경우
-	   return true;
-	} else {							// 파일선택을 한 경우
-		var ext = filename.split(".");
-		var extension = ext[ext.length-1];
-		if (extension.toUpperCase()=="GIF" || extension.toUpperCase()=="JPG" || extension.toUpperCase()=="JPEG" || extension.toUpperCase()=="BMP" || extension.toUpperCase()=="PNG") {
-			return false;
-		}else{
-			return true;
-		}
-	}
-}
 
 // 새창띄우기 함수(사이즈 수동조절)
 function PopupWin(url, name, width, height) {
@@ -561,18 +424,6 @@ function WebEditTagChange(Type) {
 	document.write('</OBJECT>');
 }
 
-// 각종 검색 파업창 띄우기 함수 (달력 검색) : http
-function CalenderIt(formname, fieldname) {
-
-	var url = "/00_include/global/Search_Calender.php?FormName="+ formname +"&FieldName="+ fieldname;
-	window.open(url, 'CALENDER',"toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,left=100,top=100,width=10,height=10");
-}
-
-// 각종 검색 파업창 띄우기 함수 (달력 검색) : https
-function CalenderItSSL(formname, fieldname) {
-	var url = "https://www.elancer.co.kr/00_include/global/Search_Calender.php?FormName="+ formname +"&FieldName="+ fieldname;
-	window.open(url, 'CALENDER',"toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,left=100,top=100,width=10,height=10");
-}
 
 function OnlyNumber()
 {
@@ -599,4 +450,3 @@ function alert_delete(){
 	$('.new_alert_bg').remove();
 }
 
-// 
