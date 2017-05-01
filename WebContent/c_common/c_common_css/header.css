@@ -18,6 +18,8 @@ body {
 	position: absolute;
 	padding-left: 60px;
 	padding-top: 10px;
+	width: 250px;
+	text-align: right;
 }
 
 .header_welcome_content span {

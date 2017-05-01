@@ -4,9 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
 	<typeAliases>
-		<typeAlias type="lancer.c_membercenter.model.memberCenter" alias="memberCenter"/>
-		<!-- <typeAlias type="kosta.model.Search" alias="Search"/> -->
+		<typeAlias type="lancer.e_mypage.model.Enterprise" alias="Enterprise"/>
+		<typeAlias type="lancer.e_mypage.model.E_Request_Project" alias="E_Request_Project"/>
+		<typeAlias type="lancer.e_mypage.model.Administrator" alias="Administrator"/>
+		<typeAlias type="lancer.e_mypage.model.Sign_Project" alias="Sign_Project"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -19,7 +22,7 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="lancer/c_membercenter/mapper/member.xml"/>
+		<mapper resource="lancer/e_mypage/mapper/E_Mypage.xml"/>
 	</mappers>
 	
 </configuration>

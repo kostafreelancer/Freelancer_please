@@ -70,11 +70,11 @@
 							<col style="width: 35%">
 						</colgroup>
 						<tbody>
-							<form name="" method="post" action=""></form>
+						<!-- 	<form name="" method="post" action="Fname"></form> -->
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
-								<td colspan="3" class="join">회원이름</td>
+								<td colspan="3" class="join">${f_name }</td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
