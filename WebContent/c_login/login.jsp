@@ -53,8 +53,8 @@
                                 <a href="javascript:FindID();" class="pass_find">아이디 패스워드 찾기 &gt;</a>
                              </div>
                             <p>
-                                <!-- <a href="javascript:LoginCheckIt();" class="btn_login">로그인</a> -->
-                                <input type="submit" value="로그인 ">
+                                <!-- <a href="javascript:LoginCheckIt();" class="btn_login">로그인</a>  -->
+                           		<input type="submit" value="로그인">
 								<a href="/08_MELC/member/member_join.php" class="btn_join">회원가입</a>
                             </p>
 							</form>

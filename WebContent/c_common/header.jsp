@@ -33,9 +33,10 @@
 				<li><img alt="join_img"
 					src="/Matching_Project/c_common/c_common_img/header_join_icon.jpg">
 					<a href="/Matching_Project/c_join/c_join_step1.jsp">회원가입</a></li>
-				<li><img alt="log_img"
+				<li class="login_checking"><img alt="log_img"
 					src="/Matching_Project/c_common/c_common_img/header_log_icon01.jpg">
-					<a href="/Matching_Project/c_login/login.jsp">로그인</a></li>
+					<a href="/Matching_Project/c_login/login.jsp" >로그인</a></li> 
+					
 				<li><img alt="home_img"
 					src="/Matching_Project/c_common/c_common_img/header_home_icon01.jpg">
 					<a href="/Matching_Project/f_main/f_main.jsp">홈</a></li>
