@@ -14,7 +14,7 @@
 <script type="text/javascript"
 	src="/Matching_Project/c_common/c_common_js/header.js"></script>
 <script type="text/javascript"
-	src="/Matching_Project/c_common/c_common_js/exam.js"></script>
+	src="/Matching_Project/c_common/c_common_js/header_second.js"></script>
 
 </head>
 <body>
@@ -26,7 +26,9 @@
 			<ul class="header_top_menus">
 				<li><img alt="center_img"
 					src="/Matching_Project/c_common/c_common_img/header_center_icon.jpg">
-					<a href="/Matching_Project/c_membercenter/member_centerMain.jsp">고객
+					<!-- <a href="/Matching_Project/c_membercenter/member_centerMain.jsp">고객
+						센터</a></li> -->
+					<a href="f_name.mc">고객
 						센터</a></li>
 				<li><img alt="join_img"
 					src="/Matching_Project/c_common/c_common_img/header_join_icon.jpg">

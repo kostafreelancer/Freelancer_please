@@ -26,13 +26,14 @@ public class c_loginController extends HttpServlet {
 
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
     	
-    	  // 겟과 포스트 따로 해주기 귀찮으니 하나로 모으자!!
-        // 1.url식별
+    	  // 寃잕낵 �룷�뒪�듃 �뵲濡� �빐二쇨린 洹�李��쑝�땲 �븯�굹濡� 紐⑥쑝�옄!!
+        // 1.url�떇蹂�
         String requestURI = request.getRequestURI();
-        // System.out.println(requestURI); /MVC_project/insert.do 이런식으로 uri가 온다
+        System.out.println(requestURI);
+        // System.out.println(requestURI); /MVC_project/insert.do �씠�윴�떇�쑝濡� uri媛� �삩�떎
         String contextPath = request.getContextPath();
-        String command = requestURI.substring(contextPath.length() + 1); // +1은
-     //   System.out.println(command); // 내가 원하는 uri만 insert.do 요롷게 나온다 ~~
+        String command = requestURI.substring(contextPath.length() + 1); // +1��
+        System.out.println(command); // �궡媛� �썝�븯�뒗 uri留� insert.do �슂濡룰쾶 �굹�삩�떎 ~~
         ActionForward forward = null;
         Action action = null;
     	
@@ -47,6 +48,8 @@ public class c_loginController extends HttpServlet {
 				e.printStackTrace();
 			}
         	System.out.println(forward);
+        }else if(command.equals("c_login/insert.c_login")){
+        	
         }
         
         
