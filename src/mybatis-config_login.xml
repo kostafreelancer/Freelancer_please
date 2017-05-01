@@ -6,6 +6,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="lancer.c_login.model.c_login" alias="c_login" />
+		<typeAlias type="lancer.c_login.model.c_login_freelancer" alias="c_login_freelancer"/>
+		<typeAlias type="lancer.c_login.model.c_login_enterprise" alias="c_login_enterprise"/>
 	</typeAliases>
 
 	<environments default="development">

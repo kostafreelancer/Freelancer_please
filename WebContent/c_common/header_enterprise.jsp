@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,10 +13,15 @@
 	src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script type="text/javascript"
 	src="/Matching_Project/c_common/c_common_js/header.js"></script>
+<script type="text/javascript"
+	src="/Matching_Project/c_common/c_common_js/header_second.js"></script>
 </head>
 <body>
 	<div class="header">
 		<div class="header_top_menu">
+			<div class="header_welcome_content">
+				<span>${client.e_name}</span> 
+			</div>
 			<ul class="header_top_menus">
 				<li><img alt="center_img"
 					src="/Matching_Project/c_common/c_common_img/header_center_icon.jpg">
