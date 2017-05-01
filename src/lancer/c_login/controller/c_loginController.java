@@ -26,13 +26,12 @@ public class c_loginController extends HttpServlet {
 
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
     	
-    	  // 겟과 포스트 따로 해주기 귀찮으니 하나로 모으자!!
-        // 1.url식별
+
+    
         String requestURI = request.getRequestURI();
-        // System.out.println(requestURI); /MVC_project/insert.do 이런식으로 uri가 온다
+        // System.out.println(requestURI); /MVC_project/insert.do 
         String contextPath = request.getContextPath();
-        String command = requestURI.substring(contextPath.length() + 1); // +1은
-     //   System.out.println(command); // 내가 원하는 uri만 insert.do 요롷게 나온다 ~~
+        String command = requestURI.substring(contextPath.length() + 1); // +1��
         ActionForward forward = null;
         Action action = null;
     	
@@ -41,12 +40,13 @@ public class c_loginController extends HttpServlet {
         	action = new c_login_checkingAction();
         	
         	try {
-        		System.out.println(request.getParameter("c_id"));
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
         	System.out.println(forward);
+        }else if(command.equals("c_login/insert.c_login")){
+        	
         }
         
         
