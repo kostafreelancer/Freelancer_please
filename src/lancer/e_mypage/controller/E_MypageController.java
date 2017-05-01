@@ -40,16 +40,14 @@ public class E_MypageController extends HttpServlet {
 			
 			action = new E_MypageSelectAction();
 			try {
-				System.out.println("셀렉트액션1");
 				forward = action.execute(request, response);
-				System.out.println("셀렉트액션2");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	
 		
-		/*if (forward != null) {
+		if (forward != null) {
 			try {
 				if (forward.isRedirect()) { // redirect 시키겠다
 					response.sendRedirect(forward.getPath());
@@ -62,7 +60,7 @@ public class E_MypageController extends HttpServlet {
 				e.printStackTrace();
 			}
 
-		}*/
+		}
 	}
 
 	

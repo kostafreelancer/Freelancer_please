@@ -5,15 +5,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="e_mypage_css/e_info.css" type="text/css"
 	media="screen" />
 <link rel="stylesheet" href="e_mypage_css/e_leftmenu.css"
 	type="text/css" media="screen" />
 <link rel="stylesheet" href="e_mypage_css/star.css" type="text/css"
 	media="screen" />
-
+	
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/e_info.css" type="text/css"
+	media="screen" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/e_leftmenu.css"
+	type="text/css" media="screen" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/star.css" type="text/css"
+	media="screen" />
+	
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="e_mypage_js/e_info_star.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info_star.js"></script>
 
 </head>
 <body>
@@ -60,7 +69,7 @@
 				</colgroup>
 				<tr>
 					<th scope="row" class="ac">회원아이디</th>
-					<td colspan="3">데이터베이스에서거내올아이디</td>
+					<td colspan="3">${enterprise.e_id }</td>
 				</tr>
 				<tr>
 					<th scope="row" class="ac">비밀번호</th>
@@ -103,7 +112,7 @@
 					<th>평점</th>
 					<td colspan="3"><span class="star_rating"> <a
 							class="on" href="">★</a> <a class="on" href="">★</a> <a
-							class="on" href="">★</a> <a href="">★</a> <a href="">★</a> 3.14
+							class="on" href="">★</a> <a href="">★</a> <a href="">★</a> ${enterprise.e_score }
 					</span></td>
 				</tr>
 			</table>
@@ -133,17 +142,17 @@
 					</div></td>
 				<th scope="row">가입자 명</th>
 				<td colspan="4"><input type="text" id="fm_korname"
-					name="fm_korname" class="wid02" value=""></td>
+					name="fm_korname" class="wid02" value="${enterprise.e_name }"></td>
 			</tr>
 			<tr>
 				<th scope="row">회사명</th>
 				<td colspan="4"><input type="text" id="fm_comname"
-					name="fm_comname" class="wid" value=""></td>
+					name="fm_comname" class="wid" value="${enterprise.e_ename }"></td>
 			</tr>
 			<tr>
 				<th scope="row"><label for="fm_ceoname">대표자명</label></th>
 				<td><input type="text" id="fm_ceoname" name="fm_ceoname"
-					class="wid" value=""></td>
+					class="wid" value="${enterprise.e_owner }"></td>
 				<th scope="row">사업자등록번호</th>
 				<td colspan="2"><input type="text" id="fm_comssn1"
 					name="fm_comssn1" class="wid03" value="" maxlength="3"> <span>-</span>
@@ -187,12 +196,12 @@
 			<tr>
 				<th scope="row"><label for="fm_bizcontents">주요사업내용</label></th>
 				<td colspan="4"><input type="text" id="fm_bizcontents"
-					name="fm_bizcontents" class="wid" value=""></td>
+					name="fm_bizcontents" class="wid" value="${enterprise.e_bf }"></td>
 			</tr>
 			<tr>
 				<th scope="row"><label for="fm_managername">담당자명</label></th>
 				<td><input type="text" id="fm_managername"
-					name="fm_managername" class="wid07" value=""></td>
+					name="fm_managername" class="wid07" value="${enterprise.manager_name }"></td>
 				<th scope="row"><label for="fm_phone1">담당자 핸드폰</label></th>
 				<td colspan="3"><select class="wid03" name="fm_phone1"
 					id="fm_phone1">
@@ -252,7 +261,7 @@
 					</div>
 					<div>
 						<input type="text" id="fm_address" name="fm_address" class="wid"
-							value="">
+							value="${enterprise.e_address }">
 					</div>
 				</td>
 			</tr>
@@ -261,7 +270,7 @@
 				<td colspan="5">
 					<div>
 						<span>http://</span> <input type="text" id="fm_homepage"
-							name="fm_homepage" class="wid06" value="">
+							name="fm_homepage" class="wid06" value="${enterprise.e_homepage }">
 					</div>
 				</td>
 			</tr>
@@ -275,10 +284,10 @@
 			</tr>
 			<tr>
 				<td><input type="text" id="fm_foundyear" name="fm_foundyear"
-					class="wid03" maxlength="4" value=""><label
+					class="wid03" maxlength="4" value="${enterprise.start_year }"><label
 					for="fm_foundyear"> 년</label></td>
 				<td><input type="text" id="fm_employnum" name="fm_employnum"
-					class="wid03" value=""><label for="fm_employnum"> 명</label>
+					class="wid03" value="${enterprise.e_enum }"><label for="fm_employnum"> 명</label>
 				</td>
 				<td><select class="wid07" name="fm_stockchk" id="fm_stockchk">
 						<option value="비상장" selected="">비상장</option>
@@ -289,12 +298,10 @@
 						<option value="해외기타">해외(기타)</option>
 				</select></td>
 				<td><input type="text" id="fm_capitalmoney"
-					name="fm_capitalmoney" class="wid05" value=""><label
+					name="fm_capitalmoney" class="wid05" value="${enterprise.e_capital }"><label
 					for="fm_capitalmoney"> 만원</label></td>
 				<td><input type="text" id="fm_sellingmoney"
-					name="fm_sellingmoney" class="wid05" value=""> 만원/ <input
-					type="text" id="fm_sellingyear" name="fm_sellingyear" class="wid03"
-					value=""> 년</td>
+					name="fm_sellingmoney" class="wid05" value="${enterprise.e_sales }"> 만원</td>
 			</tr>
 			<tr>
 				<th><label for="fm_comtype">기업 형태</label></th>
