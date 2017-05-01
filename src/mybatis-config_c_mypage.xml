@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="lancer.e_mypage.model.Enterprise" alias="Enterprise"/>
+		<typeAlias type="lancer.e_mypage.model.E_Request_Project" alias="E_Request_Project"/>
+		<typeAlias type="lancer.e_mypage.model.Administrator" alias="Administrator"/>
+		<typeAlias type="lancer.e_mypage.model.Sign_Project" alias="Sign_Project"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="JNDI">
+				<property name="data_source" value="java:comp/env/jdbc/oracle"/>
+			</dataSource>
+		</environment>		
+	</environments>
+	
+	<mappers>
+		<mapper resource="lancer/e_mypage/mapper/E_Mypage.xml"/>
+	</mappers>
+	
+</configuration>
