@@ -10,6 +10,13 @@
 	type="text/css" media="screen" />
 <link rel="stylesheet" href="e_mypage_css/memberlist.css"
 	type="text/css" media="screen" />
+	
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/e_projectInfo.css"
+	type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/e_leftmenu.css"
+	type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_mypage/e_mypage_css/memberlist.css"
+	type="text/css" media="screen" />
 
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="e_mypage_js/tabs.js"></script>
