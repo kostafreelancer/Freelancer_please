@@ -43,7 +43,12 @@
                             <div class="login_check">
                                 <p class="fl">
                                     <input type="checkbox" id="saveID" name="saveID" value="Y" checked="checked"/>
-                                    <label for="saveID">로그인 상태유지</label>
+                                    <label for="saveID">로그인 상태유지</label><br>
+                                    
+                                    <input type="radio" name="checking" value="freelancer" checked="checked">프리랜서<br>
+                                    
+                                    <input type="radio" name="checking" value="enterprise">기업
+                                    
                                 </p>
                                 <a href="javascript:FindID();" class="pass_find">아이디 패스워드 찾기 &gt;</a>
                              </div>
