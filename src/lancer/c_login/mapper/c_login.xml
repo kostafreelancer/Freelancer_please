@@ -4,8 +4,8 @@
 
 <mapper namespace="lancer.c_login.mapper.c_loginMapper">
 <cache />
-	<select id="select_c_login" parameterType="c_login" resultType="String">
-		select f_name from freelancer
+	<select id="select_c_login" parameterType="c_login" resultType="Integer">
+		select f_num from freelancer
 					where f_id = #{c_id} and f_pwd = #{pwd}
 	</select>
 

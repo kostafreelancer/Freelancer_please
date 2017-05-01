@@ -9,11 +9,12 @@ public class memberCenter implements Serializable {
 	public String e_ename;
 	public String e_phone;
 	public String e_email;
+	public int f_num;
 	
 	public memberCenter(){}
 
 	public memberCenter(String f_name, String f_hPhone, String f_email, String e_ename, String e_phone,
-			String e_email) {
+			String e_email, int f_num) {
 		super();
 		this.f_name = f_name;
 		this.f_hPhone = f_hPhone;
@@ -21,6 +22,7 @@ public class memberCenter implements Serializable {
 		this.e_ename = e_ename;
 		this.e_phone = e_phone;
 		this.e_email = e_email;
+		this.f_num = f_num;
 	}
 
 	public String getF_name() {
@@ -42,7 +44,11 @@ public class memberCenter implements Serializable {
 	public String getF_email() {
 		return f_email;
 	}
-
+	
+	public int getF_num(){
+		return f_num;
+	}
+	
 	public void setF_email(String f_email) {
 		this.f_email = f_email;
 	}
@@ -69,6 +75,10 @@ public class memberCenter implements Serializable {
 
 	public void setE_email(String e_email) {
 		this.e_email = e_email;
+	}
+
+	public void setF_num(int f_num) {
+		this.f_num = f_num;
 	}
 	
 	
