@@ -21,7 +21,7 @@ public class ShowFreelancerInfoAction implements Action {
 		
 		String[] values = freelancer.getF_phone().split("-");
 		for(int i=0;i<values.length; i++){
-			System.out.println(values[i]+"dd");
+			System.out.println(values[i]);
 		}
 		request.setAttribute("freelancer", freelancer);
 		ActionForward forward = new ActionForward();
