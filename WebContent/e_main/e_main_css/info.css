@@ -1,0 +1,39 @@
+#info {
+	clear: both;
+}
+
+.tab {
+	background-color: #f1f1f1;
+}
+
+.tab button {
+	background-color: inherit;
+	border: 1px solid lightgray;
+	float: left;
+	padding: 15px;
+	width: 50%;
+}
+
+.tab button.active {
+	background-color: #ccc;
+}
+
+#Project {
+	display: none;
+}
+
+.tabcontent {
+	border: 1px solid #ccc;
+	background-image: url(img/bg_content01.jpg);
+}
+
+.content {
+	margin-top: 70px;
+	margin-left: 150px;
+}
+
+.e_main_content_ul li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 15px;
+}
