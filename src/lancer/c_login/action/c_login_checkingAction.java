@@ -11,18 +11,18 @@ public class c_login_checkingAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String name = null;
-		
+		int f_num =0;
+		int e_num =0;
 		c_loginDao dao = c_loginDao.getInstance();
 		c_login client = new c_login();
 		client.setC_id(request.getParameter("c_id"));
 		client.setPwd(request.getParameter("pwd"));
-		name = dao.select_c_login(client);
+		f_num = dao.select_c_login(client);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
 		forward.setPath("/Matching_Project/f_main/f_main.jsp");
 		HttpSession session = request.getSession();
-		session.setAttribute("name", name);
+		session.setAttribute("f_num", f_num);
 		return forward;
 	}
 
