@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 
-<link rel="stylesheet" href="../common/header.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="../common/footer.css" type="text/css" media="screen" /> -->
-<link rel="stylesheet" href="f_mypage_css/myInfo.css" type="text/css"
-	media="screen" />
+<link rel="stylesheet" href="f_mypage_css/myInfo.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/myInfo.css" type="text/css" media="screen" />
 
 <title>내 정보</title>
 
@@ -114,13 +112,13 @@
 							<th scope="row"><label for="fm_korname"><span
 									class="txt_or">*</span> 성명</label></th>
 							<td colspan="3"><input type="text" id="fm_korname"
-								name="fm_korname" class="wid04" value="남광식"></td>
+								name="fm_korname" class="wid04" value="${freelancer.f_name}"></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for=""><span class="txt_or">*</span>
 									생년월일</label></th>
 							<td colspan="3"><input type="text" id="fm_jumin1"
-								name="fm_jumin1" class="wid04" maxlength="6" value="920314">
+								name="fm_jumin1" class="wid04" maxlength="6" value="">
 								<span> - </span> <select name="fm_jumin2" id="fm_jumin2">
 									<option value="1" selected="">남자</option>
 									<option value="2">여자</option>

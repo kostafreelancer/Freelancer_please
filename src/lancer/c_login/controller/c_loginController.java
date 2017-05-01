@@ -51,9 +51,6 @@ public class c_loginController extends HttpServlet {
         
         
         
-        
-        
-        
         if(forward != null){
 			if(forward.isRedirect()){
 				response.sendRedirect(forward.getPath());
