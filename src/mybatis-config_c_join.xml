@@ -5,9 +5,7 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="lancer.c_login.model.c_login" alias="c_login" />
-		<typeAlias type="lancer.c_login.model.c_login_freelancer" alias="c_login_freelancer"/>
-		<typeAlias type="lancer.c_login.model.c_login_enterprise" alias="c_login_enterprise"/>
+		<typeAlias type="lancer.c_login.model.c_join" alias="c_join" />
 	</typeAliases>
 
 	<environments default="development">
@@ -21,7 +19,7 @@
 
 
 	<mappers>
-		<mapper resource="lancer/c_login/mapper/c_login.xml" />
+		<mapper resource="lancer/c_join/mapper/c_join.xml" />
 	</mappers>
 
 </configuration>

@@ -21,7 +21,7 @@
 	<div class="header">
 		<div class="header_top_menu">
 			<div class="header_welcome_content">
-				<span>${f_num}</span>
+				<span>${client.f_name}</span> 
 			</div>
 			<ul class="header_top_menus">
 				<li><img alt="center_img"

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import lancer.c_login.action.Action;
 import lancer.c_login.action.ActionForward;
+import lancer.c_login.action.c_loginAction;
 import lancer.c_login.action.c_login_checkingAction;
 
 
@@ -46,7 +47,12 @@ public class c_loginController extends HttpServlet {
 			}
         	System.out.println(forward);
         }else if(command.equals("c_login/insert.c_login")){
-        	
+        	action = new c_loginAction();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
         }
         
         

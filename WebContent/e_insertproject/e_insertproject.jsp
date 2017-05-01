@@ -64,65 +64,25 @@
 				<div class="tb_box">
 					<h4>담당자 정보</h4>
 					<table class="tb_st01">
-						<form action="e_finishproject.jsp" method="post" name="ProjectWriteFm">
-							<input type="hidden" name="fm_code" value="상주"> 
-							<input type="hidden" name="fm_jobtype" value="상주"> 
-							<input type="hidden" name="fm_cuno" value=""> 
-							<input type="hidden" name="fm_muno" value=""> 
-							<input type="hidden" name="fm_keyword">
-							<caption></caption>
-							<colgroup>
-								<col style="width: 15%" />
-								<col style="width: 35%" />
-								<col style="width: 15%" />
-								<col style="width: 35%" />
-							</colgroup>
+						<form action="insertForm.e_insertproject" method="post" name="ProjectWriteFm">
 							<tbody>
 								<tr>
 									<th scope="row"><span class="txt_or">*</span><label
 										for="fm_comname">회사명</label></th>
 									<td colspan="3"><input type="text" id="fm_comname"
-										name="fm_comname" class="wid" value="" /></td>
+										name="p_name" class="wid" value="" /></td>
 								</tr>
 								<tr>
 									<th scope="row"><span class="txt_or">*</span> <label
 										for="fm_korname">담당자명</label></th>
 									<td colspan="3"><input type="text" id="fm_korname"
-										name="fm_korname" class="wid01" value="" /></td>
+										name="e_owner" class="wid01" value="" /></td>
 								</tr>
 								<tr>
-									<th scope="row"><span class="txt_or">*</span> 담당자 연락처</th>
-									<td><label for="fm_tel1"></label> <select class="wid03"
-										name="fm_tel1" id="fm_tel1">
-											<option value="02">02</option>
-											<option value="031">031</option>
-											<option value="032">032</option>
-											<option value="033">033</option>
-											<option value="041">041</option>
-											<option value="042">042</option>
-											<option value="043">043</option>
-											<option value="051">051</option>
-											<option value="052">052</option>
-											<option value="053">053</option>
-											<option value="054">054</option>
-											<option value="055">055</option>
-											<option value="061">061</option>
-											<option value="062">062</option>
-											<option value="063">063</option>
-											<option value="064">064</option>
-											<option value="0502">0502</option>
-											<option value="0504">0504</option>
-											<option value="0505">0505</option>
-											<option value="0506">0506</option>
-											<option value="0130">0130</option>
-									</select> <span>-</span> <label for="fm_tel2"></label> <input
-										type="text" id="fm_tel2" name="fm_tel2" class="wid03" value=""
-										maxlength="4" /> <span>-</span> <label for="fm_tel3"></label>
-										<input type="text" id="fm_tel3" name="fm_tel3" class="wid03"
-										value="" maxlength="4" /></td>
 									<th scope="row"><span class="txt_or">*</span> 담당자 휴대폰</th>
-									<td><label for="fm_phone1"></label> <select class="wid03"
-										name="fm_phone1" id="fm_phone1">
+									<td>
+									<label for="fm_phone1"></label> 
+									<select class="wid03" name="fm_phone1" id="fm_phone1">
 											<option value="">----</option>
 											<option value="010">010</option>
 											<option value="011">011</option>
@@ -130,8 +90,10 @@
 											<option value="017">017</option>
 											<option value="018">018</option>
 											<option value="019">019</option>
-									</select> <span>-</span> <label for="fm_phone2"></label> <input
-										type="text" id="fm_phone2" name="fm_phone2" class="wid03"
+									</select> 
+									<span>-</span> 
+									<label for="fm_phone2"></label>
+									 <input type="text" id="fm_phone2" name="fm_phone2" class="wid03"
 										value="" maxlength="4" /> <span>-</span> <label
 										for="fm_phone3"></label> <input type="text" id="fm_phone3"
 										name="fm_phone3" class="wid03" value="" maxlength="4" /></td>
@@ -186,7 +148,7 @@
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span><label
 									for="fm_name">프로젝트 명</label></th>
 								<td colspan="5"><input type="text" id="fm_name"
-									name="fm_name" class="wid" /></td>
+									name="p_name" class="wid" /></td>
 							</tr>
 							<tr>
 								<th scope="row" rowspan="3" class="ac"><span class="txt_or">*</span>기본분야</th>
@@ -203,75 +165,76 @@
 											<col width="20%" />
 										</colgroup>
 										<tr class="che_list011">
+											<td class="td_bor_bott">
+											<input type="checkbox"
+												name="check1" value=".NET"> .NET</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value=".NET"> .NET</td>
+												name="check2" value="ABAP"> ABAP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ABAP"> ABAP</td>
+												name="check3" value="ANDROID"> ANDROID</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ANDROID"> ANDROID</td>
+												name="check4" value="ASP"> ASP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ASP"> ASP</td>
-											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ASP.NET"> ASP.NET</td>
+												name="check5" value="ASP.NET"> ASP.NET</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="C"> C</td>
+												name="check6" value="C"> C</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="C#"> C#</td>
+												name="check7" value="C#"> C#</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="C++"> C++</td>
+												name="check8" value="C++"> C++</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="COBOL"> COBOL</td>
+												name="check9" value="COBOL"> COBOL</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="CSS"> CSS</td>
+												name="check10" value="CSS"> CSS</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="DB"> DB</td>
+												name="check11" value="DB"> DB</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="DELPHI"> DELPHI</td>
+												name="check12" value="DELPHI"> DELPHI</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="HTML"> HTML</td>
+												name="check13" value="HTML"> HTML</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="IOS"> IOS</td>
+												name="check14" value="IOS"> IOS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="JAVA"> JAVA</td>
+												name="check15" value="JAVA"> JAVA</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="JS"> JS</td>
+												name="check16" value="JS"> JS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="JSP"> JSP</td>
+												name="check17" value="JSP"> JSP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="LINUX"> LINUX</td>
+												name="check18" value="LINUX"> LINUX</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="NETWORK"> NETWORK</td>
+												name="check19" value="NETWORK"> NETWORK</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PHP"> PHP</td>
+												name="check20" value="PHP"> PHP</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="POWER BUILDER">
+												name="check21" value="POWER BUILDER">
 												POWER BUILDER</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PYTHON"> PYTHON</td>
+												name="check22" value="PYTHON"> PYTHON</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="QA"> QA</td>
+												name="check23" value="QA"> QA</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="RUBY"> RUBY</td>
+												name="check24" value="RUBY"> RUBY</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="SERVER개발"> SERVER개발</td>
+												name="check25" value="SERVER개발"> SERVER개발</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="VB"> VB</td>
+												name="check26" value="VB"> VB</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="VC++"> VC++</td>
+												name="check27" value="VC++"> VC++</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="WINDOWS"> WINDOWS</td>
+												name="check28" value="WINDOWS"> WINDOWS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="임베디드"> 임베디드</td>
+												name="check29" value="임베디드"> 임베디드</td>
 											<td class="td_bor_bott">&nbsp;</td>
 										</tr>
 									</table> <!--img src="../img/sb_category.gif" width="87" height="18" align="absmiddle"-->
@@ -292,31 +255,31 @@
 										</colgroup>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="HTML5"> HTML5</td>
+												name="check30" value="HTML5"> HTML5</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="그래픽디자인"> 그래픽디자인</td>
+												name="check31" value="그래픽디자인"> 그래픽디자인</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="모바일"> 모바일</td>
+												name="check32" value="모바일"> 모바일</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="액션스크립트"> 액션스크립트</td>
+												name="check33" value="액션스크립트"> 액션스크립트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="웹디자인"> 웹디자인</td>
+												name="check34" value="웹디자인"> 웹디자인</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="웹표준"> 웹표준</td>
+												name="check35" value="웹표준"> 웹표준</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="파워포인트"> 파워포인트</td>
+												name="check36" value="파워포인트"> 파워포인트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="퍼블리싱"> 퍼블리싱</td>
+												name="check37" value="퍼블리싱"> 퍼블리싱</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="포토샵편집"> 포토샵편집</td>
+												name="check38" value="포토샵편집"> 포토샵편집</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="플래시"> 플래시</td>
+												name="check39" value="플래시"> 플래시</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="3D"> 3D</td>
+												name="check40" value="3D"> 3D</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
@@ -340,22 +303,22 @@
 										</colgroup>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="Oracle컨설턴트">
+												name="check41" value="Oracle컨설턴트">
 												Oracle컨설턴트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PM"> PM</td>
+												name="check42" value="PM"> PM</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PMO"> PMO</td>
+												name="check43" value="PMO"> PMO</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="SAP컨설턴트"> SAP컨설턴트</td>
+												name="check44" value="SAP컨설턴트"> SAP컨설턴트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="기획"> 기획</td>
+												name="check45" value="기획"> 기획</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="모바일기획"> 모바일기획</td>
+												name="check46" value="모바일기획"> 모바일기획</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="웹기획"> 웹기획</td>
+												name="check47" value="웹기획"> 웹기획</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
@@ -368,7 +331,7 @@
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span><label
 									for="fm_content">상세내용</label></th>
-								<td colspan="5"><textarea id="fm_content" name="fm_content"
+								<td colspan="5"><textarea id="fm_content" name="p_content"
 										class="txt_area">
 1.프로젝트명:
 
@@ -589,29 +552,6 @@
 										<option value="18">18 년차</option>
 										<option value="19">19 년차</option>
 										<option value="20">20 년차</option>
-								</select> <span>~</span> <select class="wid03" name="fm_career2">
-										<option value="">------</option>
-										<option value="01">1 년차</option>
-										<option value="02">2 년차</option>
-										<option value="03">3 년차</option>
-										<option value="04">4 년차</option>
-										<option value="05">5 년차</option>
-										<option value="06">6 년차</option>
-										<option value="07">7 년차</option>
-										<option value="08">8 년차</option>
-										<option value="09">9 년차</option>
-										<option value="10">10 년차</option>
-										<option value="11">11 년차</option>
-										<option value="12">12 년차</option>
-										<option value="13">13 년차</option>
-										<option value="14">14 년차</option>
-										<option value="15">15 년차</option>
-										<option value="16">16 년차</option>
-										<option value="17">17 년차</option>
-										<option value="18">18 년차</option>
-										<option value="19">19 년차</option>
-										<option value="20">20 년차</option>
-
 								</select></td>
 							</tr>
 
@@ -620,9 +560,7 @@
 				</div>
 				<!-- //tb_box : e -->
 				<div class="btn_box">
-					<input class="btn btn-lg btn-default js-disable-on-click"
-						autocomplete="off" data-loading-text="저장 중" name="save_for_later"
-						value="임시 저장" type="submit"> <input
+					<input
 						class="btn btn-lg btn-client js-disable-on-click btn-submit"
 						autocomplete="off" data-loading-text="제출 중" name="post_a_job"
 						value="프로젝트 정보 등록완료" type="submit">

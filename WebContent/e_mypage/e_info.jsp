@@ -82,8 +82,8 @@
 				<tr>
 					<th scope="row" class="ac">이메일</th>
 					<td colspan="3"><input type="text" id="" name="" class="wid04"
-						value="wldnjf2000"> <span>@</span> <input type="text"
-						id="" name="" class="wid04" value="naver.com"> <select
+						value="${e_mail_1 }"> <span>@</span> <input type="text"
+						id="" name="" class="wid04" value="${e_mail_2 }"> <select
 						class="wid04" name="" id="" onchange="">
 							<option value="">선택해주세요.</option>
 							<option value="etc">직접입력</option>
@@ -155,11 +155,11 @@
 					class="wid" value="${enterprise.e_owner }"></td>
 				<th scope="row">사업자등록번호</th>
 				<td colspan="2"><input type="text" id="fm_comssn1"
-					name="fm_comssn1" class="wid03" value="" maxlength="3"> <span>-</span>
+					name="fm_comssn1" class="wid03" value="${regno_1 }" maxlength="3"> <span>-</span>
 					<input type="text" id="fm_comssn2" name="fm_comssn2" class="wid03"
-					maxlength="2" value=""> <span>-</span> <input type="text"
+					maxlength="2" value="${regno_2 }"> <span>-</span> <input type="text"
 					id="fm_comssn3" name="fm_comssn3" class="wid03" maxlength="5"
-					value=""></td>
+					value="${regno_3 }"></td>
 			</tr>
 			<tr>
 				<th scope="row">연락처(전화)</th>
@@ -189,9 +189,9 @@
 						<option value="0506">0506</option>
 						<option value="0130">0130</option>
 				</select> <span>-</span> <input type="text" id="fm_tel2" name="fm_tel2"
-					class="wid03" maxlength="4" value=""> <span>-</span> <input
+					class="wid03" maxlength="4" value="${e_phone_2 }"> <span>-</span> <input
 					type="text" id="fm_tel3" name="fm_tel3" class="wid03" maxlength="4"
-					value=""></td>
+					value="${e_phone_3 }"></td>
 			</tr>
 			<tr>
 				<th scope="row"><label for="fm_bizcontents">주요사업내용</label></th>
@@ -213,16 +213,16 @@
 						<option value="018">018</option>
 						<option value="019">019</option>
 				</select> <span>-</span> <input type="text" id="fm_phone2" name="fm_phone2"
-					class="wid03" maxlength="4" value=""> <span>-</span> <input
+					class="wid03" maxlength="4" value="${manager_hphone_2 }"> <span>-</span> <input
 					type="text" id="fm_phone3" name="fm_phone3" class="wid03"
-					maxlength="4" value=""></td>
+					maxlength="4" value="${manager_hphone_3 }"></td>
 			</tr>
 			<tr>
 				<th>담당자 이메일</th>
 				<td colspan="5"><input type="text" id="fm_email11"
-					name="fm_email11" class="wid04" value=""> <span>@</span> <input
+					name="fm_email11" class="wid04" value="${manager_mail_1 }"> <span>@</span> <input
 					type="text" id="fm_email12" name="fm_email12" class="wid04"
-					value="" readonly=""> <select class="wid04"
+					value="${manager_mail_2 }" readonly=""> <select class="wid04"
 					name="fm_emailSel1" id="fm_emailSel1"
 					onchange="javascript:ChangeEMailIt('1');">
 						<option value="">선택해주세요.</option>
@@ -254,14 +254,14 @@
 					<div class="mb10">
 						<input type="text" id="fm_zip" name="fm_zip" class="wid60"
 							onclick="openDaumPostCode(); return false;" target="_blank"
-							title="주소검색 새창" value="" readonly=""> <a
+							title="주소검색 새창" value="${e_address_1 }" readonly=""> <a
 							href="javascript:void(0);" class="btn_add"
 							onclick="openDaumPostCode(); return false;" target="_blank"
 							title="주소검색 새창">우편번호찾기</a>
 					</div>
 					<div>
 						<input type="text" id="fm_address" name="fm_address" class="wid"
-							value="${enterprise.e_address }">
+							value="${e_address_2 }">
 					</div>
 				</td>
 			</tr>
