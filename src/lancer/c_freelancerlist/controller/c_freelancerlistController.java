@@ -42,11 +42,6 @@ public class c_freelancerlistController extends HttpServlet {
     		  
     	}
     	
-    	
-    	
-    	
-    	
-    	
     	if(forward != null){
 			if(forward.isRedirect()){
 				response.sendRedirect(forward.getPath());
