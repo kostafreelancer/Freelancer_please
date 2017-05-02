@@ -13,17 +13,14 @@ $(document).ready(function() {
     });
    
     $('#fm_emailSel1').change(function(){
-    	   if($('#fm_emailSel1').val() == "1"){
-    	    $("#fm_email12").val(""); //값 초기화
-    	    $("#fm_email12").prop("readonly",false); //활성화
-    	   } else if($('#fm_emailSel1').val() == ""){
-    	    $("#fm_email12").val(""); //값 초기화
-    	    $("#fm_email12").prop("readonly",true); //textBox 비활성화
-    	   } else {
-    	    $("#fm_email12").val($('#fm_emailSel1').val()); //선택값 입력
-    	    $("#fm_email12").prop("readonly",true); //비활성화
-    	   }
-    });
+        var e_mail = $(this).val();
+        if(e_mail == ""){
+           $('#fm_email12').removeAttr('readonly');
+        }else{
+           $('#fm_email12').attr('readonly', 'true')
+        }
+        $('#fm_email12').val(e_mail);
+     });
 
   
 

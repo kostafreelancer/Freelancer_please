@@ -33,8 +33,14 @@ public class ShowFreelancerInfoAction implements Action {
 		for(int i=0; i<email.length; i++){
 			request.setAttribute("email" + (i+1), email[i]);
 		}
-		freelancer.setF_score((freelancer.getF_score()*100/100));
+		String[] address = freelancer.getF_address().split("&");
+		for(int i=0; i<address.length; i++){
+			request.setAttribute("address" + (i+1), address[i]);
+		}
+		
 		List<Integer> joblist = dao.showFreelancerJobInfo(f_num);
+		
+		
 		request.setAttribute("freelancer", freelancer);
 		request.setAttribute("joblist", joblist);
 		ActionForward forward = new ActionForward();

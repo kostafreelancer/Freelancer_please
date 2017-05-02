@@ -16,8 +16,8 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> -->
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script src="${pageContext.request.contextPath}/c_common/header.js"></script>
-<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/myInfo.js"></script><%-- 
-<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/my.js"></script> --%>
+<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/myInfo.js"></script> 
+<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/my.js"></script>
 <script type="text/javascript">
 $(function(){
 	var checks = document.getElementsByName("fm_new_keyword[]");
@@ -32,12 +32,14 @@ $(function(){
 			checks[arr[i]-1].checked = true;
 	}
 	
-	var hiddenscore = document.getElementById("hiddenscore");
+	/* var hiddenscore = document.getElementById("hiddenscore");
 	for(var i=0; i<hiddenscore; i++){
 		$(".star_rating a").parent().childeren("a").removeClass("on");
 		$(".star_rating a").addClass("on").prevAll("a").addClass("on");
 		return false;
-	}
+	} */
+	
+	
  	/* $( ".star_rating a" ).click(function() {
 	    $(this).parent().children("a").removeClass("on");
 	    $(this).addClass("on").prevAll("a").addClass("on");
@@ -225,12 +227,12 @@ $(function(){
 							<td colspan="4"><label for="fm_email11"></label> <input
 								type="text" id="fm_email11" name="fm_email11" class="wid04"
 								value="${email1}"> <span>@</span> <label
-								for="fm_email12"></label> <input type="text" id="fm_email12"
-								name="fm_email12" class="wid04" value="${email2}" readonly="">
-								<label for="fm_emailSel1"></label> <select class="wid04"
-								name="fm_emailSel1" id="fm_emailSel1">
-									<option value="">선택해주세요.</option>
-									<option value="etc">직접입력</option>
+								for="fm_email12"></label> 
+								<input type="text" id="fm_email12" name="fm_email12" class="wid04" value="${email2}" readonly="">
+								<label for="fm_emailSel1"></label> 
+								<select class="wid04" name="fm_emailSel1" id="fm_emailSel1">
+									<option value="선택해주세요">선택해주세요.</option>
+									<option value="">직접입력</option>
 									<option value="chollian.net">chollian.net</option>
 									<option value="daum.net">daum.net</option>
 									<option value="dreamwiz.com">dreamwiz.com</option>
@@ -256,31 +258,31 @@ $(function(){
 							<th><span class="txt_or">*</span> 주소</th>
 							<td colspan="4">
 								<div class="mb10">
-									<label for="fm_zip"></label> <input type="text" id="fm_zip"
-										name="fm_zip" class="wid60"
+									<label for="fm_zip"></label> 
+									<input type="text" id="fm_zip" name="fm_zip" class="wid60"
 										onclick="openDaumPostCode(); return false;" target="_blank"
-										title="주소검색 새창" value="06918" readonly=""> <a
-										href="javascript:void(0);" class="btn_add"
+										title="주소검색 새창" value="${address1}" readonly=""> 
+										<a href="javascript:void(0);" class="btn_add"
 										onclick="openDaumPostCode(); return false;" target="_blank"
 										title="주소검색 새창">우편번호찾기</a>
 								</div>
 								<div>
 									<label for="fm_address"></label> <input type="text"
 										id="fm_address" name="fm_address" class="wid"
-										value="서울 동작구 만양로 26 (상도동, 건영아파트) 102동 810호">
+										value="${address2}">
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<th><span class="txt_or">*</span> 내가 받은 평가</th>
-							<td colspan="4">${freelancer.f_score}
+							<td colspan="4">
 								<p class="star_rating">
-									<input type="hidden" id="hiddenscore">${freelancer.f_score}
-									<a id="first" class="on" >★ </a>
-									<a id="second" class="on" >★ </a>
-									<a id="third" class="on" >★ </a>
-									<a id="fourth" class="on" >★ </a>
-									<a id="fifth" class="on" >★</a>
+									<input type="hidden" id="hiddenscore" value="${freelancer.f_score}">
+									<a id="first">★ </a>
+									<a id="second">★ </a>
+									<a id="third">★ </a>
+									<a id="fourth">★ </a>
+									<a id="fifth">★</a>
 								</p>
 							</td>
 						</tr>
@@ -663,7 +665,7 @@ $(function(){
 							<tr>
 								<td>어쩌구저쩌구</td>
 								<td>file.zip</td>
-								<td class="last"><input type="button" value="수정">&nbsp;&nbsp;<input
+								<td class="last".><input type="button" value="수정">&nbsp;&nbsp;<input
 									type="button" value="삭제"></td>
 							</tr>
 
