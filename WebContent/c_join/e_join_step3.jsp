@@ -10,28 +10,31 @@
 <link rel="stylesheet" href="../common/footer.css" type="text/css" media="screen" />
 <title>회원가입</title>
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-<script type="text/javascript" src="../common/header.js"></script>
 <script type="text/javascript" src="c_join_js/c_join_step3.js"></script>
+<script type="text/javascript" src="../common/header.js"></script>
+
 
 
 <script type="text/javascript">
-	function checkValue(){
-		if(!document.userInfo.e_name.value){
-			alert("아이디를 입력하세요.");
-			return false;
-		}
-		
-		if(!document.userInfo.e_pwd.value){
-			alert("비밀번호를 입력하세요.");
-			return false;
-		}
-	
-		if(document.userInfo.e_pwd.value != document.userInfo.e_pwd.value){
-			alert("비밀번호를 동일하게 입력하세요.");
-			return false;
-		}
+function checkValue(){
+	if(!document.userInfo.e_name.value){
+		alert("아이디를 입력하세요.");
+		return false;
 	}
-		
+	
+	if(!document.userInfo.e_pwd.value){
+		alert("비밀번호를 입력하세요.");
+		return false;
+	}
+
+	if(document.userInfo.e_pwd.value != document.userInfo.e_pwd.value){
+		alert("비밀번호를 동일하게 입력하세요.");
+		return false;
+	}
+}
+
+
+
 
 </script>
 
@@ -72,7 +75,7 @@
 					</p>
 				</div>
 				<table class="tb_st01">
-					<form name="userInfo" method="post" action="e_join_step3_Action.jsp">
+					<form name="userInfo" method="post" action="e_joinAction.e_join">
 						<input type="hidden" name="fm_type" value="바이어"> 
 						<input type="hidden" name="fm_format" value="기업"> 
 						<input type="hidden" name="fm_str"
@@ -92,10 +95,9 @@
 							<tr>
 								<th scope="row" class="ac"><label for="e_id"><span
 										class="txt_or">*</span> 회원아이디</label></th>
-								<td colspan="3"><input type="text" id="e_id" name="e_id" class="" /> 
-								<input type="button" value="중복확인" class="btn_overlap">
-								<!-- <a href="javascript:IDCheckIt();" class="btn_overlap">중복확인</a> 
-								<input type="hidden" name="idcheck" id="idcheck">  -->
+								<td colspan="3"><input type="text" id="e_id" name="e_id" class="" onkeydown="inputIdChk()"> 
+								<input type="button"  id="idCheckbox" value="중복확인" class="btn_overlap" >							
+								<input type="hidden" name="idDuplication" value="idUncheck" >
 									* 6~15자의 영문, 영문+숫자, 일부 특수문자( _ - )만 사용 가능합니다.</td>
 							</tr>
 							<tr>
@@ -109,6 +111,7 @@
 									name="e_pwdcheck" class="wid02" /></td>
 							</tr>
 						</tbody>
+						
 				</table>
 			</div>
 			<!-- //tb_box01 : e -->
@@ -124,11 +127,9 @@
 					</colgroup>
 					<tbody>
 					   <tr>
-                            <td rowspan="5">
-                              	<img src="c_join_img/join_photo.jpg" alt="사진" />
-								<input type="file" name="e_ownerfile" onchange="PreView(this.value, 'IMG1', '132', '176');" style="width:130px;" />
-                                <!--<a href="#" class="photo_up">사진업로드</a>-->
-                                <span class="e_ownerfile">최적 해상도:132x176 pixel</span>
+							<td rowspan="5">
+                              	<img src="c_join_img/join_photo.jpg" alt="사진" id="img_box"/>
+								<input type="file" name="e_ownerfile"  id="e_ownerfile" style="width:130px;" onchange="fileInfo(this)"/>
                             </td>
 							<th scope="row"><label for="e_name"><span class="txt_or">*</span> 가입자명</label></th>
 							<td colspan="4">
@@ -147,15 +148,14 @@
 						</tr>
 						<tr>
 							<th><span class="txt_or">*</span> 회사 이메일</th>
-							<td colspan="4"><label for="manager_mail1"></label> <input
-								type="text" id="manager_mail1" name="manager_mail1" class="wid02">
-								<span>@</span> <label for="manager_mail2"></label> <input
-								type="text" id="manager_mail2" name="manager_mail2" class="wid02">
-								<label for="manager_mail3"></label> <select class="wid02"
-								name="manager_mail3" id="manager_mail3"
-								onChange="javascript:ChangeEMailIt('1');">
-									<option value="">선택해주세요.</option>
-									<option value="etc">직접입력</option>
+							<td colspan="4"><label for="e_mail1"></label> <input
+								type="text" id="e_mail1" name="e_mail1" class="wid02">
+								<span>@</span> <label for="e_mail2"></label> <input
+								type="text" id="e_mail2" name="e_mail2" class="wid02">
+								<label for="e_mail3"></label> <select class="wid02"
+								name="e_mail3" id="e_mail3">
+									<option value="선택해주세요.">선택해주세요.</option>
+									<option value="">직접입력</option>
 									<option value="gmail.com">gmail.com</option>
 									<option value="naver.com">naver.com</option>
 									<option value="nate.com">nate.com</option>
@@ -185,7 +185,7 @@
 							<th scope="row"><label for="manager_name"><span
 									class="txt_or">*</span> 담당자명</label></th>
 							<td colspan="5"><input type="text" id="manager_name"
-								name="manager_hphone" class="wid02" /></td>
+								name="manager_name" class="wid02" /></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="manager_hphone1"><span
@@ -235,16 +235,15 @@
 							</td>
 						</tr>
 						<tr>
-							<th><span class="txt_or">*</span>담당자 이메일</th>
+							<th><span class="txt_or"></span>담당자 이메일</th>
 							<td colspan="5"><label for="manager_mail1"></label> <input
 								type="text" id="manager_mail1" name="manager_mail1" class="wid04">
 								<span>@</span> <label for="manager_mail2"></label> <input
 								type="text" id="manager_mail2" name="manager_mail2" class="wid04">
 								<label for="manager_mail3"></label> <select class="wid04"
-								name="manager_mail3" id="manager_mail3"
-								onChange="javascript:ChangeEMailIt('1');">
-									<option value="">선택해주세요.</option>
-									<option value="etc">직접입력</option>
+								name="manager_mail3" id="manager_mail3" >
+									<option value="선택해주세요.">선택해주세요.</option>
+									<option value="">직접입력</option>
 									<option value="gmail.com">gmail.com</option>
 									<option value="naver.com">naver.com</option>
 									<option value="nate.com">nate.com</option>
@@ -341,12 +340,13 @@
 				</table>
 			</div>
 
+
 			<div class="btn_box">
-				<a href="c_join_step4.jsp" class="btn_check04">회원가입</a> <a
-					href="javascript:MemberWriteFm.reset();" class="btn_check02">초기화</a>
+			<input type="submit" class="btn_check04" id="checkValue" value="회원가입">
+				<a href="javascript:MemberWriteFm.reset();" class="btn_check02">초기화</a>
 			</div>
 		</div>
-
+</form>
 
 
 <%@include file="../c_common/footer.jsp" %>

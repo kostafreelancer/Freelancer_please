@@ -26,7 +26,9 @@ public class E_join {
 	private String e_licensefile;		// 사업자등록증 사진파일 경로
 	private String e_check;		// 이메일인증을 통한 가입승인여부   가입승인됬을시 1,  인증 아직 안했으면 0
 	
-	public E_join(){}
+	public E_join(){
+		
+	}
 
 	public E_join(int e_num, String e_id, String e_pwd, String e_mail, String e_name, String e_ename, String e_owner,
 			String e_ownerfile, String e_regno, String e_phone, String e_bf, String manager_name, String manager_hphone,

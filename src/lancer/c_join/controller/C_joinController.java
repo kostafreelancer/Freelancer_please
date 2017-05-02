@@ -32,9 +32,9 @@ public class C_joinController extends HttpServlet {
 	    	ActionForword forward=null;
 	    	Action action=null;
 	    	
-	    	if(command.equals("e_joinAction.e_join")){
+	    	if(command.equals("c_join/e_joinAction.e_join")){
 	    		action=new E_joinAction();
-	    		System.out.println("ㅇㅇ");
+	    		
 	    		try{
 	    		forward =action.execute(request, response);
 	    		}catch (Exception e) {
