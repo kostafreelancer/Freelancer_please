@@ -1,5 +1,7 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,12 +16,38 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> -->
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script src="${pageContext.request.contextPath}/c_common/header.js"></script>
-<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/myInfo.js"></script>
-<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/my.js"></script>
+<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/myInfo.js"></script><%-- 
+<script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/my.js"></script> --%>
+<script type="text/javascript">
+$(function(){
+	var checks = document.getElementsByName("fm_new_keyword[]");
 
+	var arr = new Array();
+
+	<c:forEach var="item" items="${joblist}">
+		arr.push("${item}");
+	</c:forEach>
+	console.log(arr[0]);
+	for(var i=0; i<arr.length; i++){
+			checks[arr[i]-1].checked = true;
+	}
+	
+	var hiddenscore = document.getElementById("hiddenscore");
+	for(var i=0; i<hiddenscore; i++){
+		$(".star_rating a").parent().childeren("a").removeClass("on");
+		$(".star_rating a").addClass("on").prevAll("a").addClass("on");
+		return false;
+	}
+ 	/* $( ".star_rating a" ).click(function() {
+	    $(this).parent().children("a").removeClass("on");
+	    $(this).addClass("on").prevAll("a").addClass("on");
+	    return false;
+	});  */
+});
+
+</script>
 </head>
 <body>
-
 
 	<%@include file="../c_common/header.jsp"%>
 
@@ -31,14 +59,12 @@
 			<ul class="left_menu_contents">
 				<li><a href="">일정 관리</a></li>
 				<li><a href="">회계 관리</a></li>
-				<li><a href="">내 정보</a></li>
+				<li><a href="showFreelancerInfo.f_mypage?f_num=1">내 정보</a></li><!-- 세션으로 바꿔야함 -->
 			</ul>
 		</div>
 	</div>
 
 	<section id="firstsection">
-
-
 
 	<ul id="tabs">
 		<li><a href="#" title="tab1">내 정보</a></li>
@@ -247,11 +273,14 @@
 						</tr>
 						<tr>
 							<th><span class="txt_or">*</span> 내가 받은 평가</th>
-							<td colspan="4">
+							<td colspan="4">${freelancer.f_score}
 								<p class="star_rating">
-									<a href="#" class="on">★</a> <a href="#" class="on">★</a> <a
-										href="#" class="on">★</a> <a href="#" class="on">★</a> <a
-										href="#" class="on">★</a>
+									<input type="hidden" id="hiddenscore">${freelancer.f_score}
+									<a id="first" class="on" >★ </a>
+									<a id="second" class="on" >★ </a>
+									<a id="third" class="on" >★ </a>
+									<a id="fourth" class="on" >★ </a>
+									<a id="fifth" class="on" >★</a>
 								</p>
 							</td>
 						</tr>
@@ -290,74 +319,74 @@
 									<tbody>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value=".NET"> .NET</td>
+												name="fm_new_keyword[]" value="1"> .NET</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ABAP"> ABAP</td>
+												name="fm_new_keyword[]" value="2"> ABAP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ANDROID"> ANDROID</td>
+												name="fm_new_keyword[]" value="3"> ANDROID</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ASP"> ASP</td>
+												name="fm_new_keyword[]" value="4"> ASP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="ASP.NET"> ASP.NET</td>
+												name="fm_new_keyword[]" value="5"> ASP.NET</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="C"> C</td>
+												name="fm_new_keyword[]" value="6"> C</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="C#"> C#</td>
+												name="fm_new_keyword[]" value="7"> C#</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="C++"> C++</td>
+												name="fm_new_keyword[]" value="8"> C++</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="COBOL"> COBOL</td>
+												name="fm_new_keyword[]" value="9"> COBOL</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="CSS"> CSS</td>
+												name="fm_new_keyword[]" value="10"> CSS</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="DB"> DB</td>
+												name="fm_new_keyword[]" value="11"> DB</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="DELPHI"> DELPHI</td>
+												name="fm_new_keyword[]" value="12"> DELPHI</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="HTML"> HTML</td>
+												name="fm_new_keyword[]" value="13"> HTML</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="IOS"> IOS</td>
+												name="fm_new_keyword[]" value="14"> IOS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="JAVA">	JAVA</td>
+												name="fm_new_keyword[]" value="15">	JAVA</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="JS"> JS</td>
+												name="fm_new_keyword[]" value="16"> JS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="JSP"> JSP</td>
+												name="fm_new_keyword[]" value="17"> JSP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="LINUX"> LINUX</td>
+												name="fm_new_keyword[]" value="18"> LINUX</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="NETWORK"> NETWORK</td>
+												name="fm_new_keyword[]" value="19"> NETWORK</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PHP"> PHP</td>
+												name="fm_new_keyword[]" value="20"> PHP</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="POWER BUILDER"> POWER
+												name="fm_new_keyword[]" value="21"> POWER
 												BUILDER</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PYTHON"> PYTHON</td>
+												name="fm_new_keyword[]" value="22"> PYTHON</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="QA"> QA</td>
+												name="fm_new_keyword[]" value="23"> QA</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="RUBY"> RUBY</td>
+												name="fm_new_keyword[]" value="24"> RUBY</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="SERVER개발"> SERVER개발</td>
+												name="fm_new_keyword[]" value="25"> SERVER개발</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="VB"> VB</td>
+												name="fm_new_keyword[]" value="26"> VB</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="VC++"> VC++</td>
+												name="fm_new_keyword[]" value="27"> VC++</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="WINDOWS"> WINDOWS</td>
+												name="fm_new_keyword[]" value="28"> WINDOWS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="임베디드"> 임베디드</td>
+												name="fm_new_keyword[]" value="29"> 임베디드</td>
 											<td class="td_bor_bott">&nbsp;</td>
 										</tr>
 									</tbody>
@@ -380,31 +409,31 @@
 									<tbody>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="HTML5"> HTML5</td>
+												name="fm_new_keyword[]" value="30"> HTML5</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="그래픽디자인"> 그래픽디자인</td>
+												name="fm_new_keyword[]" value="31"> 그래픽디자인</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="모바일"> 모바일</td>
+												name="fm_new_keyword[]" value="32"> 모바일</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="액션스크립트"> 액션스크립트</td>
+												name="fm_new_keyword[]" value="33"> 액션스크립트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="웹디자인"> 웹디자인</td>
+												name="fm_new_keyword[]" value="34"> 웹디자인</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="웹표준"> 웹표준</td>
+												name="fm_new_keyword[]" value="35"> 웹표준</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="파워포인트"> 파워포인트</td>
+												name="fm_new_keyword[]" value="36"> 파워포인트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="퍼블리싱"> 퍼블리싱</td>
+												name="fm_new_keyword[]" value="37"> 퍼블리싱</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="포토샵편집"> 포토샵편집</td>
+												name="fm_new_keyword[]" value="38"> 포토샵편집</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="플래시"> 플래시</td>
+												name="fm_new_keyword[]" value="39"> 플래시</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="3D"> 3D</td>
+												name="fm_new_keyword[]" value="40"> 3D</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
@@ -430,22 +459,22 @@
 									<tbody>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="Oracle컨설턴트">
+												name="fm_new_keyword[]" value="41">
 												Oracle컨설턴트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PM"> PM</td>
+												name="fm_new_keyword[]" value="42"> PM</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="PMO"> PMO</td>
+												name="fm_new_keyword[]" value="43"> PMO</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="SAP컨설턴트"> SAP컨설턴트</td>
+												name="fm_new_keyword[]" value="44"> SAP컨설턴트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="기획"> 기획</td>
+												name="fm_new_keyword[]" value="45"> 기획</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="모바일기획"> 모바일기획</td>
+												name="fm_new_keyword[]" value="46"> 모바일기획</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="fm_new_keyword[]" value="웹기획"> 웹기획</td>
+												name="fm_new_keyword[]" value="47"> 웹기획</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
