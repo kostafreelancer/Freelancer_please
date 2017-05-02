@@ -10,7 +10,10 @@
 	<select id="showFreelancerInfo" resultType="Freelancer" parameterType="int">
 		select * from freelancer where f_num = #{f_num}
 	</select>
-
+	
+	<select id="showFreelancerJobInfo" resultType="Integer" parameterType="int">
+		select job_id from f_job where f_num = #{f_num}
+	</select> 
 </mapper>
 
 
