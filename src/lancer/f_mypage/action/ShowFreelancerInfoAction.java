@@ -1,5 +1,7 @@
 package lancer.f_mypage.action;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,7 +12,7 @@ public class ShowFreelancerInfoAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//이 부분 나중에 세션으로 바꿔야 될 수도?
+
 		String num = request.getParameter("f_num");
 		int f_num=1;
 		if(num != null){
@@ -31,9 +33,10 @@ public class ShowFreelancerInfoAction implements Action {
 		for(int i=0; i<email.length; i++){
 			request.setAttribute("email" + (i+1), email[i]);
 		}
-		
-		
+		freelancer.setF_score((freelancer.getF_score()*100/100));
+		List<Integer> joblist = dao.showFreelancerJobInfo(f_num);
 		request.setAttribute("freelancer", freelancer);
+		request.setAttribute("joblist", joblist);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("/f_mypage/myInfo.jsp");

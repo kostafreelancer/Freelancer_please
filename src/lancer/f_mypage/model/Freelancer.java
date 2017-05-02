@@ -17,7 +17,14 @@ public class Freelancer implements Serializable{
 	private String f_major;
 	private String f_nowstate;
 	private Timestamp f_recentlogin;
+	private double f_score;
 	
+	public double getF_score() {
+		return f_score;
+	}
+	public void setF_score(double f_score) {
+		this.f_score = f_score;
+	}
 	public int getF_num() {
 		return f_num;
 	}
