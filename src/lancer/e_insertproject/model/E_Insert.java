@@ -170,6 +170,16 @@ public class E_Insert implements Serializable{
 
 	public void setP_experience(int p_experience) {
 		this.p_experience = p_experience;
+	}
+
+	@Override
+	public String toString() {
+		return "E_Insert [e_pr_num=" + e_pr_num + ", e_num=" + e_num + ", p_name=" + p_name + ", p_content=" + p_content
+				+ ", p_lowerAge=" + p_lowerAge + ", p_upperAge=" + p_upperAge + ", p_academic=" + p_academic
+				+ ", p_requireNum=" + p_requireNum + ", p_regDate=" + p_regDate + ", p_exDate=" + p_exDate
+				+ ", p_lowerCost=" + p_lowerCost + ", p_upperCost=" + p_upperCost + ", p_startDate=" + p_startDate
+				+ ", p_endDate=" + p_endDate + ", p_location=" + p_location + ", p_experience=" + p_experience + "]";
 	};
+	
 	
 }

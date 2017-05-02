@@ -69,7 +69,8 @@
 				<div class="tb_box">
 					<h4>담당자 정보</h4>
 					<table class="tb_st01">
-						<form action="insertForm.e_insertproject" method="post" name="ProjectWriteFm">
+						<form action="insertAction.e_insertproject" method="post" name="ProjectWriteFm">
+						<input type="hidden" name="e_num" value="${client.e_num }"></input>
 							<tbody>
 								<tr>
 									<th scope="row"><span class="txt_or">*</span><label
@@ -336,126 +337,124 @@
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>
 									연령</th>
-								<td colspan="2"><select class="wid03" name="p_lowpage"
-									id="p_lowpage">
+								<td colspan="2"><select class="wid03" name="p_lowerAge"
+									id="p_lowerAge">
 										<option value=''>선택</option>
 										<option value='0000'>연령무관</option>
-										<option value='1998'>20세(1998년생)</option>
-										<option value='1997'>21세(1997년생)</option>
-										<option value='1996'>22세(1996년생)</option>
-										<option value='1995'>23세(1995년생)</option>
-										<option value='1994'>24세(1994년생)</option>
-										<option value='1993'>25세(1993년생)</option>
-										<option value='1992'>26세(1992년생)</option>
-										<option value='1991'>27세(1991년생)</option>
-										<option value='1990'>28세(1990년생)</option>
-										<option value='1989'>29세(1989년생)</option>
-										<option value='1988'>30세(1988년생)</option>
-										<option value='1987'>31세(1987년생)</option>
-										<option value='1986'>32세(1986년생)</option>
-										<option value='1985'>33세(1985년생)</option>
-										<option value='1984'>34세(1984년생)</option>
-										<option value='1983'>35세(1983년생)</option>
-										<option value='1982'>36세(1982년생)</option>
-										<option value='1981'>37세(1981년생)</option>
-										<option value='1980'>38세(1980년생)</option>
-										<option value='1979'>39세(1979년생)</option>
-										<option value='1978'>40세(1978년생)</option>
-										<option value='1977'>41세(1977년생)</option>
-										<option value='1976'>42세(1976년생)</option>
-										<option value='1975'>43세(1975년생)</option>
-										<option value='1974'>44세(1974년생)</option>
-										<option value='1973'>45세(1973년생)</option>
-										<option value='1972'>46세(1972년생)</option>
-										<option value='1971'>47세(1971년생)</option>
-										<option value='1970'>48세(1970년생)</option>
-										<option value='1969'>49세(1969년생)</option>
-										<option value='1968'>50세(1968년생)</option>
+										<option value='20'>20세(1998년생)</option>
+										<option value='21'>21세(1997년생)</option>
+										<option value='22'>22세(1996년생)</option>
+										<option value='23'>23세(1995년생)</option>
+										<option value='24'>24세(1994년생)</option>
+										<option value='25'>25세(1993년생)</option>
+										<option value='26'>26세(1992년생)</option>
+										<option value='27'>27세(1991년생)</option>
+										<option value='28'>28세(1990년생)</option>
+										<option value='29'>29세(1989년생)</option>
+										<option value='30'>30세(1988년생)</option>
+										<option value='31'>31세(1987년생)</option>
+										<option value='32'>32세(1986년생)</option>
+										<option value='33'>33세(1985년생)</option>
+										<option value='34'>34세(1984년생)</option>
+										<option value='35'>35세(1983년생)</option>
+										<option value='36'>36세(1982년생)</option>
+										<option value='37'>37세(1981년생)</option>
+										<option value='38'>38세(1980년생)</option>
+										<option value='39'>39세(1979년생)</option>
+										<option value='40'>40세(1978년생)</option>
+										<option value='41'>41세(1977년생)</option>
+										<option value='42'>42세(1976년생)</option>
+										<option value='43'>43세(1975년생)</option>
+										<option value='44'>44세(1974년생)</option>
+										<option value='45'>45세(1973년생)</option>
+										<option value='46'>46세(1972년생)</option>
+										<option value='47'>47세(1971년생)</option>
+										<option value='48'>48세(1970년생)</option>
+										<option value='49'>49세(1969년생)</option>
+										<option value='50'>50세(1968년생)</option>
 
-								</select> <span>~</span> <select class="wid03" name="p_upperage"
-									id="p_upperage">
+								</select> <span>~</span> <select class="wid03" name="p_upperAge"
+									id="p_upperAge">
 										<option value=''>선택</option>
 										<option value='0000'>연령무관</option>
-										<option value='1998'>20세(1998년생)</option>
-										<option value='1997'>21세(1997년생)</option>
-										<option value='1996'>22세(1996년생)</option>
-										<option value='1995'>23세(1995년생)</option>
-										<option value='1994'>24세(1994년생)</option>
-										<option value='1993'>25세(1993년생)</option>
-										<option value='1992'>26세(1992년생)</option>
-										<option value='1991'>27세(1991년생)</option>
-										<option value='1990'>28세(1990년생)</option>
-										<option value='1989'>29세(1989년생)</option>
-										<option value='1988'>30세(1988년생)</option>
-										<option value='1987'>31세(1987년생)</option>
-										<option value='1986'>32세(1986년생)</option>
-										<option value='1985'>33세(1985년생)</option>
-										<option value='1984'>34세(1984년생)</option>
-										<option value='1983'>35세(1983년생)</option>
-										<option value='1982'>36세(1982년생)</option>
-										<option value='1981'>37세(1981년생)</option>
-										<option value='1980'>38세(1980년생)</option>
-										<option value='1979'>39세(1979년생)</option>
-										<option value='1978'>40세(1978년생)</option>
-										<option value='1977'>41세(1977년생)</option>
-										<option value='1976'>42세(1976년생)</option>
-										<option value='1975'>43세(1975년생)</option>
-										<option value='1974'>44세(1974년생)</option>
-										<option value='1973'>45세(1973년생)</option>
-										<option value='1972'>46세(1972년생)</option>
-										<option value='1971'>47세(1971년생)</option>
-										<option value='1970'>48세(1970년생)</option>
-										<option value='1969'>49세(1969년생)</option>
-										<option value='1968'>50세(1968년생)</option>
+										<option value='20'>20세(1998년생)</option>
+										<option value='21'>21세(1997년생)</option>
+										<option value='22'>22세(1996년생)</option>
+										<option value='23'>23세(1995년생)</option>
+										<option value='24'>24세(1994년생)</option>
+										<option value='25'>25세(1993년생)</option>
+										<option value='26'>26세(1992년생)</option>
+										<option value='27'>27세(1991년생)</option>
+										<option value='28'>28세(1990년생)</option>
+										<option value='29'>29세(1989년생)</option>
+										<option value='30'>30세(1988년생)</option>
+										<option value='31'>31세(1987년생)</option>
+										<option value='32'>32세(1986년생)</option>
+										<option value='33'>33세(1985년생)</option>
+										<option value='34'>34세(1984년생)</option>
+										<option value='35'>35세(1983년생)</option>
+										<option value='36'>36세(1982년생)</option>
+										<option value='37'>37세(1981년생)</option>
+										<option value='38'>38세(1980년생)</option>
+										<option value='39'>39세(1979년생)</option>
+										<option value='40'>40세(1978년생)</option>
+										<option value='41'>41세(1977년생)</option>
+										<option value='42'>42세(1976년생)</option>
+										<option value='43'>43세(1975년생)</option>
+										<option value='44'>44세(1974년생)</option>
+										<option value='45'>45세(1973년생)</option>
+										<option value='46'>46세(1972년생)</option>
+										<option value='47'>47세(1971년생)</option>
+										<option value='48'>48세(1970년생)</option>
+										<option value='49'>49세(1969년생)</option>
+										<option value='50'>50세(1968년생)</option>
 
 								</select></td>
 								<th scope="row" class="ac"><span class="txt_or"></span> 학력</th>
 								<td colspan="2"><select class="wid04" name="p_academic"
 									id="p_academic">
 										<option value=''>선택</option>
-										<option value='0000000'>학력무관</option>
-										<option value='M060100'>고등학교</option>
-										<option value='M060200'>대학(2,3년)</option>
-										<option value='M060300'>대학교(4년)</option>
-										<option value='M060400'>대학원(석사)</option>
-										<option value='M060500'>대학원(박사)</option>
+										<option value='학력무관'>학력무관</option>
+										<option value='고등학교'>고등학교</option>
+										<option value='대학(2,3년)'>대학(2,3년)</option>
+										<option value='대학교(4년)'>대학교(4년)</option>
+										<option value='대학원(석사)'>대학원(석사)</option>
+										<option value='대학원(박사)'>대학원(박사)</option>
 								</select></td>
 							</tr>
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>
 									모집인원</th>
-								<td colspan="2"><input type="text" id="p_requirenum"
-									name="p_requirenum" class="wid05" /> 
-									<label for="p_requirenum">명</label>
+								<td colspan="2"><input type="text" id="p_requireNum"
+									name="p_requireNum" class="wid05" /> 
+									<label for="p_requireNum">명</label>
 									</td>
 								<th scope="row" class="ac"><span class="txt_or">*</span> <label
 									for="fm_bidedate">모집마감일자</label></th>
-								<td colspan="2"><input type="text"  id="txtDate3" name="p_exdate" onClick="fnPopUpCalendar(txtDate3,txtDate3,'yyyy/mm/dd')"  class="day_inp" />
+								<td colspan="2"><input type="text"  id="txtDate3" name="p_exDate" onClick="fnPopUpCalendar(txtDate3,txtDate3,'yyyy/mm/dd')"  class="day_inp" />
 								
 							</td>
 							</tr>
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>프로젝트
 									금액(월단위)</th>
-								<td colspan="5"><input type="radio" name="fm_moneytype" value="A" checked> <label for="fm_minmoney"></label> 
-								<input type="text" id="p_lowercost" name="p_lowercost" class="wid03" onKeyPress="javascript:CheckMoney('ProjectWriteFm','fm_minmoney');" onKeyUp="javascript:CheckMoney('ProjectWriteFm','fm_minmoney');" />
+								<td colspan="5"><label for="fm_minmoney"></label> 
+								<input type="text" id="p_lowerCost" name="p_lowerCost" class="wid03" onKeyPress="javascript:CheckMoney('ProjectWriteFm','fm_minmoney');" onKeyUp="javascript:CheckMoney('ProjectWriteFm','fm_minmoney');" />
 								<span>원 ~ </span>
 								<label for="fm_maxmoney"></label>
-								<input type="text" id="p_uppercost" name="p_uppercost" class="wid03" onKeyPress="javascript:CheckMoney('ProjectWriteFm','fm_maxmoney');" onKeyUp="javascript:CheckMoney('ProjectWriteFm','fm_maxmoney');" />
+								<input type="text" id="p_upperCost" name="p_upperCost" class="wid03" onKeyPress="javascript:CheckMoney('ProjectWriteFm','fm_maxmoney');" onKeyUp="javascript:CheckMoney('ProjectWriteFm','fm_maxmoney');" />
 								<span>원 &nbsp;</span> 
-								<input type="radio" name="fm_moneychk" value="Y" checked> 협의가능&nbsp; 
-								<input type="radio" name="fm_moneychk" value="N"> 협의불가
+							
 								<span class="txt_red">* VAT별도 금액입니다.</span> <br />
-								<input type="radio" name="fm_moneytype" value="B"> <span
-									class="txt_red" style="float: none;">가격제안 요청</span></td>
+							
 							</tr>
 
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>근무기간</th>
 								<td colspan="5">
-								<input type="text"  id="txtDate" name="p_startdate" onClick="fnPopUpCalendar(txtDate,txtDate,'yyyy/mm/dd')"  class="day_inp" />
+								<input type="text"  id="txtDate" name="p_startDate" onClick="fnPopUpCalendar(txtDate,txtDate,'yyyy/mm/dd')"  class="day_inp" />
 								<span> ~ </span>
-								<input type="text" id="txtDate2" name="p_enddate" onClick="fnPopUpCalendar(txtDate2,txtDate2,'yyyy/mm/dd')"  class="day_inp" />
+								<input type="text" id="txtDate2" name="p_endDate" onClick="fnPopUpCalendar(txtDate2,txtDate2,'yyyy/mm/dd')"  class="day_inp" />
 								</td>
 							</tr>
 

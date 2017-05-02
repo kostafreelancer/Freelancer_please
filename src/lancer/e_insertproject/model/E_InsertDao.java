@@ -26,7 +26,7 @@ public class E_InsertDao {
 	}
 	
 	public SqlSessionFactory getSqlSessionFactory(){		// sqlsessionfactory를 얻어옴
-		String resource = "mybatis-config.xml";
+		String resource = "mybatis-config_e_insertproject.xml";
 		InputStream in = null;
 		try {
 			in = Resources.getResourceAsStream(resource);
