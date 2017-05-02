@@ -13,7 +13,7 @@ public class c_login_enterprise {
 	private String e_regno;
 	private String e_phone;
 	private String manager_name;
-	private String manager_phone;
+	private String manager_hphone;
 	private String manager_mail;
 	private String e_address;
 	private String e_homepage;
@@ -28,7 +28,7 @@ public class c_login_enterprise {
 	public c_login_enterprise(){}
 	public c_login_enterprise(int e_num, String e_id, String e_pwd, String e_mail, double e_score, String e_name,
 			String e_ename, String e_owner, String e_ownerfile, String e_regno, String e_phone, String manager_name,
-			String manager_phone, String manager_mail, String e_address, String e_homepage, int start_year, int e_enum,
+			String manager_hphone, String manager_mail, String e_address, String e_homepage, int start_year, int e_enum,
 			String e_listing, int e_capital, int e_sales, String e_scale, String e_licensefile, String e_check) {
 		super();
 		this.e_num = e_num;
@@ -43,7 +43,7 @@ public class c_login_enterprise {
 		this.e_regno = e_regno;
 		this.e_phone = e_phone;
 		this.manager_name = manager_name;
-		this.manager_phone = manager_phone;
+		this.manager_hphone = manager_hphone;
 		this.manager_mail = manager_mail;
 		this.e_address = e_address;
 		this.e_homepage = e_homepage;
@@ -128,11 +128,11 @@ public class c_login_enterprise {
 	public void setManager_name(String manager_name) {
 		this.manager_name = manager_name;
 	}
-	public String getManager_phone() {
-		return manager_phone;
+	public String getManager_hphone() {
+		return manager_hphone;
 	}
-	public void setManager_phone(String manager_phone) {
-		this.manager_phone = manager_phone;
+	public void setManager_hphone(String manager_hphone) {
+		this.manager_hphone = manager_hphone;
 	}
 	public String getManager_mail() {
 		return manager_mail;
@@ -200,7 +200,6 @@ public class c_login_enterprise {
 	public void setE_check(String e_check) {
 		this.e_check = e_check;
 	}
-	
 	
 	
 }

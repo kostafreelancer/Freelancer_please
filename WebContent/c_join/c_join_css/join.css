@@ -5297,10 +5297,13 @@ th.th_bor0{border-bottom:0}
 
 
 .login_submit{
-	
 	width: 160px;
 	font-size : 20px;
 	padding: 9px 0px;
-	background: url("/Matching_Project/c_login/c_login_img/btn_login.jpg")
+	background: url("/Matching_Project/c_login/c_login_img/btn_login.jpg");
+	color: #ffffff;
 }
 
+.nav_txt span:LAST-CHILD {
+	color: #400040;
+}
