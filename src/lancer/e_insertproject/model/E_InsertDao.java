@@ -11,6 +11,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import lancer.e_insertproject.mapper.E_InsertMapper;
+import lancer.e_mypage.mapper.E_MypageMapper;
+import lancer.e_mypage.model.Enterprise;
 
 
 
@@ -52,6 +54,7 @@ public class E_InsertDao {
 			session.close();
 		}
 	}
+
 	
-	
+
 }

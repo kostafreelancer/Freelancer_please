@@ -5,7 +5,7 @@
 
 <mapper namespace="lancer.e_insertproject.mapper">
 	<cache />
-
+	
 	<insert id="insertProject" parameterType="Project">
 		insert into board(
 		e_pr_num,e_num,p_name, p_content,p_lowerAge, p_upperAge,p_academic,p_requireNum,p_regDate,p_exDate,p_lowerCos,p_upperCos,p_startDate,p_endDate,p_location,p_experience

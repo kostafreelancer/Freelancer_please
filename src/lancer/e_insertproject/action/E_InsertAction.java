@@ -2,18 +2,24 @@ package lancer.e_insertproject.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import lancer.c_login.model.c_login_enterprise;
 import lancer.e_insertproject.model.E_Insert;
 import lancer.e_insertproject.model.E_InsertDao;
+import lancer.e_mypage.model.Enterprise;
 
 
 public class E_InsertAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)throws Exception {
+		
 		E_InsertDao dao = E_InsertDao.getInstance();
 		E_Insert project = new E_Insert();
 		request.setCharacterEncoding("utf-8");
+		
+		
 
 		
 		project.setE_pr_num(Integer.parseInt(request.getParameter("e_pr_num")));
@@ -38,7 +44,7 @@ public class E_InsertAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("listAction.do"); //새로운 요청이므로 redirect 한다.
+		forward.setPath("/e_insertproject/e_insertproject.jsp"); //새로운 요청이므로 redirect 한다.
 		
 		return forward;
 	}
