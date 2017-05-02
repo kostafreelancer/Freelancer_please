@@ -11,6 +11,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import lancer.e_insertproject.mapper.E_InsertMapper;
+import lancer.e_mypage.mapper.E_MypageMapper;
+import lancer.e_mypage.model.Enterprise;
 
 
 
@@ -24,7 +26,7 @@ public class E_InsertDao {
 	}
 	
 	public SqlSessionFactory getSqlSessionFactory(){		// sqlsessionfactory를 얻어옴
-		String resource = "mybatis-config.xml";
+		String resource = "mybatis-config_e_insertproject.xml";
 		InputStream in = null;
 		try {
 			in = Resources.getResourceAsStream(resource);
@@ -52,6 +54,7 @@ public class E_InsertDao {
 			session.close();
 		}
 	}
+
 	
-	
+
 }
