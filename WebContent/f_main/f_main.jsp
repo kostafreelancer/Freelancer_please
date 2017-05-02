@@ -45,9 +45,15 @@ function drawMultSeries() {
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
+    
+/* 	window.location.href="f_main.fm" */
    </script>
 </head>
 <body>
+	<%-- <jsp:forward page="f_main.fm"/> --%>
+<%-- 	<%
+		RequestDispatcher dispatcher = request.getRequestDispatcher("f_main.fm");
+	%> --%>
 	<%@ include file="../c_common/header.jsp"%>
 	<section id="slides">
 	<div class="main_slide">
@@ -66,7 +72,7 @@ function drawMultSeries() {
 		<div class="left_news">
 
 			<ul>
-				<li><a href="#"><h3>[자바] 자바경력 10년</h3>
+				<li><a href="#"><h3>[자바] 자바경력 10년${member }</h3>
 						<br>프로젝트 다수</a></li>
 				<li><a href="http://www.daum.net"><h3>[Daum뉴스] 웹 개발자
 							선풍적인 인기~</h3>

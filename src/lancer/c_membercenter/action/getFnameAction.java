@@ -41,6 +41,7 @@ public class getFnameAction implements Action {
 		System.out.println(mc.getF_name() + "이름!!!!!!!!!!!");
 		System.out.println(mc.getF_email() + "이메이@@@@@@@@@@@@");
 		ActionForward forward = new ActionForward();
+		
 		forward.setRedirect(true);
 		forward.setPath("/Matching_Project/c_membercenter/member_centerMain.jsp");
 		
