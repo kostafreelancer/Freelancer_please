@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lancer.c_membercenter.action.ActionForward;
 import lancer.f_main.action.getF_infoAction;
 import lancer.f_main.action.mainAction;
 import lancer.f_main.action.mainActionForward;
@@ -46,6 +45,8 @@ public class f_main_controller extends HttpServlet {
 				forward = action.execute(request, response);
 				
 				System.out.println(request.getAttribute("member") + "이름");
+				
+			
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("실패?");
@@ -53,14 +54,20 @@ public class f_main_controller extends HttpServlet {
     	}
     	
     	
+    	
 		if(forward != null){
 			if(forward.isRedirect()){
+				/*if(forward.getPath().equals("lancer.f_main.action.mainActionForward")){
+					mainActionForward af = new mainActionForward();
+					af.setPath(null);
+				}*/
 				response.sendRedirect(forward.getPath());
 			}else{
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
 		}
+    	
 		System.out.println(forward + "   ffff");
 		
 	}

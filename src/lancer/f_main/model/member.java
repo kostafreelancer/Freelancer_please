@@ -48,11 +48,11 @@ public class member implements Serializable{
 	public void setF_recentlogin(String f_recentlogin) {
 		this.f_recentlogin = f_recentlogin;
 	}
-	@Override
+	/*@Override
 	public String toString() {
 		return "member [f_name=" + f_name + ", f_sex=" + f_sex + ", f_email=" + f_email + ", f_major=" + f_major
 				+ ", f_recentlogin=" + f_recentlogin + "]";
-	}
+	}*/
 	
 	
 	

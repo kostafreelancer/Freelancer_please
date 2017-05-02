@@ -1,6 +1,13 @@
+
+
+
+
 $(document).ready(function() {
-	
-	
+	$('#test').click(function(){
+		window.location.href="f_main.fm";
+		
+	})
+
 	$("#content div").hide(); // Initially hide all content
 	$("#tabs li:first").attr("id","current"); // Activate first tab
 	$("#content div:first").fadeIn(); // Show first tab content

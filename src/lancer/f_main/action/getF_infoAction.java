@@ -1,5 +1,6 @@
 package lancer.f_main.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,10 +19,12 @@ public class getF_infoAction implements mainAction {
 		memberDao dao = memberDao.getInstance();
 		List<member> member = dao.getF_info();
 		System.out.println(member.size() + "사이즈");
-		/*for(int i=0; i<member.size(); i++){
+		/*List<String> test = new ArrayList<String>();*/
+		for(int i=0; i<member.size(); i++){
 			System.out.println("member = " + member.get(i).f_name);
-			request.setAttribute("member", member.get(i).f_name);
-		}*/
+			request.setAttribute("member" + i , member.get(i).f_name);
+		}
+	
 		
 		/*request.setAttribute("member", member);*/
 		/*session.setAttribute("member", member);*/

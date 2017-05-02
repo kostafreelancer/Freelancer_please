@@ -50,7 +50,7 @@ public class memberCenterController extends HttpServlet {
 				e.printStackTrace();
 				System.out.println("bb");
 			}
-			System.out.println(forward);
+			System.out.println(forward + "forward입니다");
 		}
 		
 		
