@@ -12,6 +12,19 @@
 		select * from enterprise where e_num = #{e_num}
 	</select>
 	
+	<update id="updateEnterprise" parameterType="c_login_enterprise">
+		update enterprise set
+		e_pwd=#{e_pwd},
+		e_mail
+		e_name
+		e_ename
+		e_owner
+		e_ownerfile
+		e_regno
+		e_phone
+		e_bf
+	</update>
+	
 
 	
 

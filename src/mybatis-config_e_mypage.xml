@@ -7,9 +7,7 @@
 
 	<typeAliases>
 		<typeAlias type="lancer.e_mypage.model.Enterprise" alias="Enterprise"/>
-		<!-- <typeAlias type="lancer.e_mypage.model.E_Request_Project" alias="E_Request_Project"/>
-		<typeAlias type="lancer.e_mypage.model.Administrator" alias="Administrator"/>
-		<typeAlias type="lancer.e_mypage.model.Sign_Project" alias="Sign_Project"/> -->
+		<typeAlias type="lancer.c_login.model.c_login_enterprise" alias="c_login_enterprise"/>
 	</typeAliases>
 	
 	<environments default="development">

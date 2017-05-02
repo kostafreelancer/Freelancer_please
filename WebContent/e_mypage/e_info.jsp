@@ -58,7 +58,7 @@
 
 	<div class="e_info_table1">
 		<h4>아이디 및 비밀번호</h4>
-		<form action="e_infoEpdateAction.e_mypage" method="post">
+		<form action="e_infoEpdateAction.e_mypage" method="post" enctype="multipart/form-data">
 			<table class="tb_st01">
 				<colgroup>
 					<col style="width: 16%">
