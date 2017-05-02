@@ -1,4 +1,13 @@
+
+
+
+
 $(document).ready(function() {
+	$('#test').click(function(){
+		window.location.href="f_main.fm";
+		
+	})
+
 	$("#content div").hide(); // Initially hide all content
 	$("#tabs li:first").attr("id","current"); // Activate first tab
 	$("#content div:first").fadeIn(); // Show first tab content
@@ -10,6 +19,7 @@ $(document).ready(function() {
         $(this).parent().attr("id","current"); // Activate this
         $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
     });
+   
 });
 
 $(function(){
@@ -130,5 +140,6 @@ function news() {
 setInterval(function() {
 	news();
 }, 2000)  
+
 
 

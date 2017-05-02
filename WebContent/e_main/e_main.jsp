@@ -132,6 +132,6 @@
 	<h3>주요 고객사</h3>
 	<img src="e_main_img/company_img.png"> </section>
 
-	<jsp:include page="../c_common/footer.jsp"></jsp:include>
+	<jsp:include page="../c_common/footer.jsp"></jsp:include> 
 </body>
 </html>

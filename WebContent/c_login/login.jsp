@@ -20,7 +20,7 @@
     	<div id="nav">
         	<div class="nav_txt">
             	<p>
-                	<a href="/index.php">Home</a>
+                	<a href="/Matching_Project/f_main/f_main.jsp">Home</a>
                     <span class="padd">&gt;</span>
                 	<span>로그인</span>
             	</p>
@@ -42,20 +42,23 @@
                             <label for="fm_passwd" class="tx_skip">비밀번호 입력</label>
                             <div class="login_check">
                                 <p class="fl">
-                                    <input type="checkbox" id="saveID" name="saveID" value="Y" checked="checked"/>
-                                    <label for="saveID">로그인 상태유지</label><br>
-                                    
-                                    <input type="radio" name="checking" value="freelancer" checked="checked">프리랜서<br>
-                                    
+                                   <!--  <input type="checkbox" id="saveID" name="saveID" value="Y" checked="checked"/>
+                                    <label for="saveID">로그인 상태유지</label><br> -->
+                                     &nbsp; &nbsp;
+                                    <input type="radio" name="checking" value="freelancer" checked="checked">프리랜서
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
                                     <input type="radio" name="checking" value="enterprise">기업
                                     
                                 </p>
+                                
                                 <a href="javascript:FindID();" class="pass_find">아이디 패스워드 찾기 &gt;</a>
                              </div>
                             <p>
-                                <!-- <a href="javascript:LoginCheckIt();" class="btn_login">로그인</a> -->
-                                <input type="submit" value="로그인 ">
-								<a href="/08_MELC/member/member_join.php" class="btn_join">회원가입</a>
+                                <!-- <a href="javascript:LoginCheckIt();" class="btn_login">로그인
+                                	
+                                </a>   -->
+                           		<input class = "login_submit" type="submit" value="로그인"> 
+								<a href="/Matching_Project/c_join/c_join_step1.jsp" class="btn_join">회원가입</a>
                             </p>
 							</form>
                         </div>

@@ -74,22 +74,24 @@
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
-								<td colspan="3" class="join">${f_name }</td>
+								<td colspan="3" class="join" >
+								<input type="text" id="fm_name" name="fm_name" class="wid02" value="${f_name }" readonly="readonly">
+								</td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="fm_phone">연락처</label></th>
 								<td colspan="3" class="join"><input type="text"
-									id="fm_phone" name="fm_phone" class="wid02" value="회원연락처">
+									id="fm_phone" name="fm_phone" class="wid02" value="${f_phone }" readonly="readonly">
 								</td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> 이메일</th>
 								<td colspan="3"><label for></label> <input type="text"
-									id="fm_email_1" name="fm_email_1" class="wid04" value="회원메일"
-									readonly="readonly"> <span>@</span> <label
+									id="fm_email_1" name="fm_email_1" class="wid04" value="${f_email }"
+									readonly="readonly"> <!-- <span>@</span> <label
 									for="fm_email_2"></label> <input type="text" id="fm_email_2"
-									name="fm_email_2" class="wid04" value="도메인" readonly="readonly">
+									name="fm_email_2" class="wid04" value="도메인" readonly="readonly"> -->
 								</td>
 							</tr>
 							<tr>

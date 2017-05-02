@@ -30,11 +30,11 @@ public class memberCenterDao {
 		return new SqlSessionFactoryBuilder().build(in);
 	};
 	
-	public String f_name(memberCenter mc){
+	public memberCenter getFname(int f_num)throws Exception{
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		try {
-			return sqlsession.getMapper(memberCenter_mapper.class).getFname(mc);
+			return sqlsession.getMapper(memberCenter_mapper.class).getFname(f_num);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

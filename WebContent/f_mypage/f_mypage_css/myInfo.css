@@ -4428,17 +4428,18 @@ th.th_bor0 {
 }
 
 .star_rating {
-	font-size: 0;
-	letter-spacing: -4px;
+   font-size: 25px;
+   color: #2257ad;
 }
 
 .star_rating a {
-	font-size: 22px;
-	letter-spacing: 0;
-	display: inline-block;
-	margin-left: 5px;
-	color: #ccc;
-	text-decoration: none;
+   padding: 5px;
+   font-size: 30px;
+   letter-spacing: 0;
+   display: inline-block;
+   margin-left: 5px;
+   color: #e6e6e6;
+   text-decoration: none;
 }
 
 .star_rating a:first-child {
@@ -4446,9 +4447,15 @@ th.th_bor0 {
 }
 
 .star_rating a.on {
-	color: #ffff00;
+   color: #2257ad;
 }
 
+.star_rating a.half {
+   font-size: 30px;
+   background: -webkit-linear-gradient(left, #062ee6, #e6e6e6);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
 .myfl {
 	float: left;
 }
@@ -4461,3 +4468,4 @@ th.th_bor0 {
 #last_table {
 	border-bottom-color: 1px solid #2257ad;
 }
+

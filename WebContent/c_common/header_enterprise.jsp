@@ -27,7 +27,7 @@
 					src="/Matching_Project/c_common/c_common_img/header_center_icon.jpg">
 					<a href="/Matching_Project/member_center/member_centerMain.jsp">고객
 						센터</a></li>
-
+	
 				<li><img alt="log_img"
 					src="/Matching_Project/c_common/c_common_img/header_log_icon01.jpg">
 					<a href="/Matching_Project/f_main/f_main.jsp">로그 아웃</a></li>

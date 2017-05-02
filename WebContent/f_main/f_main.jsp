@@ -1,3 +1,4 @@
+<%@page import="lancer.f_main.model.member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -45,13 +46,20 @@ function drawMultSeries() {
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
+    
+/* 	window.location.href="f_main.fm" */
    </script>
 </head>
 <body>
+	<%-- <jsp:forward page="f_main.fm"/> --%>
+<%-- 	<%
+		RequestDispatcher dispatcher = request.getRequestDispatcher("f_main.fm");
+	%> --%>
 	<%@ include file="../c_common/header.jsp"%>
 	<section id="slides">
 	<div class="main_slide">
 		<div class="slideshow_images">
+		
 			<a href="#" class="slide"><img src="f_main_img/bg_visual01.jpg"
 				alt="" width="1911" height="432"></a> <a href="#" class="slide"><img
 				src="f_main_img/bg_visual02.jpg" alt="" width="1911" height="432"></a>
@@ -66,8 +74,8 @@ function drawMultSeries() {
 		<div class="left_news">
 
 			<ul>
-				<li><a href="#"><h3>[자바] 자바경력 10년</h3>
-						<br>프로젝트 다수</a></li>
+				<li><a href="#"><h3>[자바] 자바경력 10년ㅁㅁ</h3>
+						<br>프로젝트 다수^^</a></li>
 				<li><a href="http://www.daum.net"><h3>[Daum뉴스] 웹 개발자
 							선풍적인 인기~</h3>
 						<br>ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ<br>
@@ -101,7 +109,7 @@ function drawMultSeries() {
 					<table class="active_p">
 						<tr>
 							<th>
-							<td>1 프리랜서DB</td>
+							<td></td>
 							<td>2 프리랜서DB</td>
 							<td>3 프리랜서DB</td>
 							<td>4 프리랜서DB</td>
@@ -143,6 +151,11 @@ function drawMultSeries() {
 
 		</div>
 	</div>
+	<h1>${member3} 테스트영역</h1>
+		<form action="f_main.fm" method="get">
+		<input type="text" value="${member3 }"> 
+		<input type="submit" value="a" id="test">
+		</form>
 	</section>
 	<%@ include file="../c_common/footer.jsp"%>
 

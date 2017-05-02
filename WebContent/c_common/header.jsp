@@ -33,9 +33,11 @@
 				<li><img alt="join_img"
 					src="/Matching_Project/c_common/c_common_img/header_join_icon.jpg">
 					<a href="/Matching_Project/c_join/c_join_step1.jsp">회원가입</a></li>
-				<li><img alt="log_img"
+				<li class="login_checking"><img alt="log_img"
 					src="/Matching_Project/c_common/c_common_img/header_log_icon01.jpg">
-					<a href="/Matching_Project/c_login/login.jsp">로그인</a></li>
+					<!-- <a href="/Matching_Project/c_login/login.jsp" >로그인</a></li>  -->
+					<a href="remove_session.c_login" >로그인</a></li> 
+					
 				<li><img alt="home_img"
 					src="/Matching_Project/c_common/c_common_img/header_home_icon01.jpg">
 					<a href="/Matching_Project/f_main/f_main.jsp">홈</a></li>
@@ -57,7 +59,7 @@
 				<li id="point">:</li>
 				<li id="min"></li>
 				<li id="point">:</li>
-				<li id="sec"></li>
+				<li id="sec"></li>	
 			</ul>
 		</div>
 
@@ -65,7 +67,8 @@
 			<ul class="header_menus">
 				<li><a href="/Matching_Project/c_projectlist/project_list.jsp">프로젝트
 						목록</a></li>
-				<li><a href="/Matching_Project/c_freelancerlist/f_list.jsp">프리랜서 목록</a></li>
+				<!-- <li><a href="/Matching_Project/c_freelancerlist/f_list.jsp">프리랜서 목록</a></li> -->
+				<li><a href="freelist.f_list">프리랜서 목록</a></li>
 				<li><a href="/Matching_Project/f_mypage/myInfo.jsp">마이페이지</a>
 				</li>
 				<li><a href="/Matching_Project/c_using/service.jsp">이용
