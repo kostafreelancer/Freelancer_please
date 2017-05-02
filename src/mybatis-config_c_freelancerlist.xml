@@ -6,7 +6,10 @@
 <configuration>
 	<typeAliases>
 		<!-- <typeAlias type="lancer.c_login.model.c_login" alias="c_login" /> -->
-	
+		<typeAlias type="lancer.c_freelancerlist.model.c_freelancerlist_total" alias="c_freelancerlist_total"/>
+		<typeAlias type="lancer.c_freelancerlist.model.c_freelancerlist_school" alias="c_freelancerlist_school"/>
+		<typeAlias type="lancer.c_freelancerlist.model.c_freelancerlist_career" alias="c_freelancerlist_career"/>
+		<typeAlias type="lancer.c_freelancerlist.model.c_freelancerlist_portfolio" alias="c_freelancerlist_portfolio"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -20,7 +23,7 @@
 
 
 	<mappers>
-		<mapper resource="lancer/c_login/mapper/c_freelancer.xml" />
+		<mapper resource="lancer/c_freelancerlist/mapper/c_freelancer.xml" />
 	</mappers>
 
 </configuration>

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.corba.se.spi.orbutil.fsm.Action;
 
 import lancer.e_insertproject.action.E_InsertAction;
 import lancer.e_insertproject.action.E_InsertFormAction;
@@ -48,6 +47,8 @@ public class E_InsertController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}
+    		
     	
     	if(forward != null){
     		if(forward.isRedirect()){
@@ -57,7 +58,7 @@ public class E_InsertController extends HttpServlet {
     			dispatcher.forward(request, response);
     		}
     	}
-    }
+    
     }
 
 	

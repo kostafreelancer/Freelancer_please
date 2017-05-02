@@ -1,26 +1,27 @@
-package lancer.c_membercenter.model;
+package lancer.f_main.model;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import lancer.c_membercenter.mapper.memberCenter_mapper;
+import lancer.f_main.mapper.f_main_mapper;
 
-public class memberCenterDao {
-	public static memberCenterDao cDao = new memberCenterDao();
+public class memberDao {
+
+	public static memberDao dao = new memberDao();
 	
-	public static memberCenterDao getInstance(){
-		return cDao;
-	};
+	public static memberDao getInstance(){
+		return dao;
+	}
 	
 	public SqlSessionFactory getSqlSessionFactory(){
-	
-		String resource = "mybatis-config_c_membercenter.xml";
-		InputStream in = null;
 		
+		String resource = "mybatis-config_f_main.xml";
+		InputStream in = null;
 		try {
 			in = Resources.getResourceAsStream(resource);
 		} catch (Exception e) {
@@ -30,17 +31,16 @@ public class memberCenterDao {
 		return new SqlSessionFactoryBuilder().build(in);
 	};
 	
-	public memberCenter getFname(int f_num)throws Exception{
-		
+	public List<member> getF_info()throws Exception{
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		try {
-			return sqlsession.getMapper(memberCenter_mapper.class).getFname(f_num);
+			return sqlsession.getMapper(f_main_mapper.class).getF_info();
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			return null;
 		}finally {
 			sqlsession.close();
 		}
-		
-	}
+	};
 }

@@ -59,7 +59,7 @@
 				<li id="point">:</li>
 				<li id="min"></li>
 				<li id="point">:</li>
-				<li id="sec"></li>
+				<li id="sec"></li>	
 			</ul>
 		</div>
 
@@ -67,7 +67,8 @@
 			<ul class="header_menus">
 				<li><a href="/Matching_Project/c_projectlist/project_list.jsp">프로젝트
 						목록</a></li>
-				<li><a href="/Matching_Project/c_freelancerlist/f_list.jsp">프리랜서 목록</a></li>
+				<!-- <li><a href="/Matching_Project/c_freelancerlist/f_list.jsp">프리랜서 목록</a></li> -->
+				<li><a href="freelist.f_list">프리랜서 목록</a></li>
 				<li><a href="/Matching_Project/f_mypage/myInfo.jsp">마이페이지</a>
 				</li>
 				<li><a href="/Matching_Project/c_using/service.jsp">이용
