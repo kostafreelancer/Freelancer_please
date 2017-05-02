@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import lancer.e_mypage.action.ActionForward;
 import lancer.e_mypage.action.E_MypageAction;
-import lancer.e_mypage.action.E_MypageSelectAction;
+import lancer.e_mypage.action.E_InfoSelectAction;
+import lancer.e_mypage.action.E_InfoUpdateAction;
 
 
 @WebServlet("*.e_mypage")
@@ -36,9 +37,15 @@ public class E_MypageController extends HttpServlet {
 		
 		
 		
-		if(command.equals("selectAction.e_mypage")){
-			
-			action = new E_MypageSelectAction();
+		if(command.equals("e_infoSelectAction.e_mypage")){
+			action = new E_InfoSelectAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("e_infoUpdateAction.e_mypage")){
+			action = new E_InfoUpdateAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -85,7 +92,6 @@ public class E_MypageController extends HttpServlet {
 		try {
 			doProcess(request, response);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

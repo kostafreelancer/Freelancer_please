@@ -32,9 +32,7 @@ public class E_MypageDao {
 	
 	public Enterprise selectEnterprise(int e_num){
 		SqlSession session = getSqlSessionFactory().openSession();
-		System.out.println(e_num);
 		try {
-			
 			return session.getMapper(E_MypageMapper.class).selectEnterprise(e_num);
 		} catch (Exception e) {
 			e.printStackTrace();

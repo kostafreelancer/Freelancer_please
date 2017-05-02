@@ -8,7 +8,7 @@ import lancer.e_mypage.model.E_MypageDao;
 
 
 
-public class E_MypageSelectAction implements E_MypageAction {
+public class E_InfoUpdateAction implements E_MypageAction {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
