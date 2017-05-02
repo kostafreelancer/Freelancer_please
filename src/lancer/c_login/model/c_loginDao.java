@@ -17,7 +17,6 @@ public class c_loginDao {
 	public static c_loginDao getInstance() {
 		return dao;
 	}
-
 	public SqlSessionFactory getSqlSessionFacotry() { // SqlSessionFactory 媛�
 														// sqlsession�쓣 留뚮뱾湲� �쐞�븳
 														// 怨듭옣?
@@ -32,17 +31,70 @@ public class c_loginDao {
 		return new SqlSessionFactoryBuilder().build(in);
 
 	}
-	public int select_c_login(c_login client){
+	/*public checking_identity select_c_login(c_login client,String checking){
 		SqlSession session = getSqlSessionFacotry().openSession();
-		int f_num =0;
+		Integer f_num =0;
+		Integer e_num =0;
+		checking_identity identity = new checking_identity();
 
-		f_num = session.getMapper(c_loginMapper.class).select_c_login(client);
-		if(f_num != 0){
-			return f_num;
-		}else{
-			return 0;
+		if(checking.equals("freelancer")){
+			try{
+				if( session.getMapper(c_loginMapper.class).select_c_login_f(client) != null){
+					f_num = session.getMapper(c_loginMapper.class).select_c_login_f(client);
+					identity.setC_num(f_num);
+					identity.setIdentity("freelancer");
+					return identity;
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}finally{
+				session.close();
+			}
+			
+		}else if(checking.equals("enterprise")){
+			try{
+				if( session.getMapper(c_loginMapper.class).select_c_login_e(client) != null){
+					e_num = session.getMapper(c_loginMapper.class).select_c_login_e(client);
+					identity.setC_num(e_num);
+					identity.setIdentity("enterprise");
+					return identity;
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}finally{
+				session.close();
+			}
+		}
+		return null;
+	}*/
+	public checking_identity select_c_login_contents(c_login client,String checking){
+		SqlSession session = getSqlSessionFacotry().openSession();
+		c_login_freelancer free = new c_login_freelancer();
+		c_login_enterprise enter = new c_login_enterprise();
+		checking_identity identity = new checking_identity();
+		if(checking.equals("freelancer")){
+			try{
+				
+				free = session.getMapper(c_loginMapper.class).select_f_login(client);
+				identity.setIdentity("freelancer");
+				identity.setFree(free);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(checking.equals("enterprise")){
+			try{
+				enter = session.getMapper(c_loginMapper.class).select_e_login(client);
+				identity.setIdentity("enterprise");
+				identity.setEnter(enter);
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
+		return identity;
 	}
 	
 }
