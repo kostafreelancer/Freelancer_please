@@ -32,8 +32,8 @@ public class kwangsikController extends HttpServlet {
     	String command = requestURI.substring(contextPath.length()+1);
     	ActionForward forward = null;
     	Action action = null;
-  
-    	if(command.equals("showFreelancerInfo.f_mypage")){
+    	System.out.println(command);
+    	if(command.equals("f_mypage/showFreelancerInfo.f_mypage")){
 
     		action = new ShowFreelancerInfoAction();
     		try {
@@ -57,7 +57,6 @@ public class kwangsikController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doProcess(request, response);
-
 	}
 
 
