@@ -2,11 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="f_mypage_css/myInfo.css" type="text/css" media="screen" />
+<!-- <link rel="stylesheet" href="f_mypage_css/myInfo.css" type="text/css" media="screen" /> -->
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/myInfo.css" type="text/css" media="screen" />
 
@@ -18,6 +19,7 @@
 <script src="${pageContext.request.contextPath}/c_common/header.js"></script>
 <script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/myInfo.js"></script> 
 <script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/my.js"></script>
+ <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
 $(function(){
 	var checks = document.getElementsByName("fm_new_keyword[]");
@@ -31,6 +33,7 @@ $(function(){
 	for(var i=0; i<arr.length; i++){
 			checks[arr[i]-1].checked = true;
 	}
+	
 	
 	/* var hiddenscore = document.getElementById("hiddenscore");
 	for(var i=0; i<hiddenscore; i++){
@@ -47,6 +50,7 @@ $(function(){
 	});  */
 });
 
+
 </script>
 </head>
 <body>
@@ -61,7 +65,7 @@ $(function(){
 			<ul class="left_menu_contents">
 				<li><a href="">일정 관리</a></li>
 				<li><a href="">회계 관리</a></li>
-				<li><a href="showFreelancerInfo.f_mypage?f_num=1">내 정보</a></li><!-- 세션으로 바꿔야함 -->
+				<li><a href="showFreelancerInfo.f_mypage?f_num=${client.f_num}")>내 정보</a></li>
 			</ul>
 		</div>
 	</div>
@@ -76,14 +80,14 @@ $(function(){
 	</ul>
 
 	<div id="content">
+		
 		<div id="tab1">
-
+			<form method="post" action="updateFreelancerInfo.f_mypage">
+			<input type="text" hidden name="f_num" value="${client.f_num}">
 			<div class="tb_box">
 				<h4>아이디 및 비밀번호</h4>
 				<table class="tb_st01">
-					<form name="MemberModifyFm" method="post"
-						action="member_modify.php" enctype="multipart/form-data"
-						onsubmit="return false;"></form>
+					
 					<input type="hidden" name="EventUno" value="">
 					<input type="hidden" name="fm_keyword" value="">
 					<caption></caption>
@@ -97,16 +101,16 @@ $(function(){
 						<tr>
 							<th scope="row" class="ac"><span class="txt_or">*</span>
 								회원아이디</th>
-							<td colspan="3">${freelancer.f_id}</td>
+							<td colspan="3">${freelancer.f_id} </td>
 						</tr>
 						<tr>
 							<th scope="row" class="ac"><label for="fm_passwd1"><span
 									class="txt_or">*</span> 비밀번호</label></th>
-							<td><input type="password" id="fm_passwd1" name="fm_passwd1"
+							<td><input type="password" id="f_pwd" name="f_pwd"
 								class="wid02"></td>
 							<th scope="row" class="ac"><label for="fm_passwd2"><span
 									class="txt_or">*</span> 비밀번호 확인</label></th>
-							<td><input type="password" id="fm_passwd2" name="fm_passwd2"
+							<td><input type="password" id="f_pwd2" name="f_pwd2"
 								class="wid02"></td>
 						</tr>
 					</tbody>
@@ -129,26 +133,30 @@ $(function(){
 					<tbody>
 						<tr>
 							<td rowspan="4">
-								<!-- <img name="IMG1" id="IMG1" src="../img/item_noimage.gif">								<div class="file">
-									<div class="filebox"></div>
+							
+								<img name="IMG1" id="IMG1" src="../img/item_noimage.gif">	
+								<div class="file">
+								<input type="file" name="f_fname" width="20px">
+									<!-- <div class="filebox"></div>
 									<div class="filebutton"><span>사진업로드</span><input type="file" name="fm_file1" onchange="PreView(this.value, 'IMG1', '132', '176');" class="searchfile" title="파일 찾기" style="width:820px;"></div>
 									<div class="filebutton"><span>사진업로드</span><input type="file" name="fm_file1" onchange="readURL(this);" class="searchfile" title="파일 찾기" style="width:820px;"></div>
-								</div>
-                                <span class="pho_txt">최적 해상도:132x176 pixel</span> -->
+								 --> </div>
+                                <!-- <span class="pho_txt">최적 해상도:132x176 pixel</span> --> 
 								사진업로드
 							</td>
 							<th scope="row"><label for="fm_korname"><span
 									class="txt_or">*</span> 성명</label></th>
-							<td colspan="3"><input type="text" id="fm_korname"
-								name="fm_korname" class="wid04" value="${freelancer.f_name}"></td>
+							<td colspan="3"><input type="text" id="f_name"
+								name="f_name" class="wid04" value="${freelancer.f_name}"></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for=""><span class="txt_or">*</span>
 									생년월일</label></th>
-							<td colspan="3"><input type="text" id="fm_jumin1"
-								name="fm_jumin1" class="wid04" maxlength="6" value="${freelancer.f_birth}">
+							<td colspan="3"><input type="text" id="f_birth"
+								name="f_birth" class="wid04" maxlength="6" value="${freelancer.f_birth}">
 								<span> - </span> 
-								<select name="fm_jumin2" id="fm_jumin2">
+								
+								<select name="f_sex" id="f_sex">
 								<c:choose>
 									<c:when test="${freelancer.f_sex == '남'}">
 									<option value="1" selected="">남자</option>
@@ -260,16 +268,16 @@ $(function(){
 								<div class="mb10">
 									<label for="fm_zip"></label> 
 									<input type="text" id="fm_zip" name="fm_zip" class="wid60"
-										onclick="openDaumPostCode(); return false;" target="_blank"
 										title="주소검색 새창" value="${address1}" readonly=""> 
-										<a href="javascript:void(0);" class="btn_add"
-										onclick="openDaumPostCode(); return false;" target="_blank"
-										title="주소검색 새창">우편번호찾기</a>
+									<input type = "button" onClick = "openDaumZipAddress()" value = "주소 찾기" />
+ 
 								</div>
 								<div>
 									<label for="fm_address"></label> <input type="text"
 										id="fm_address" name="fm_address" class="wid"
-										value="${address2}">
+										value="${address2}"><input type="text"
+										id="fm_address_etc" name="fm_address_etc" class="wid"
+										value="${address3}">
 								</div>
 							</td>
 						</tr>
@@ -490,11 +498,13 @@ $(function(){
 				</table>
 			</div>
 			<div class="btn_box mb30 mb02">
-				<a href="javascript:MemberModifyIt();" class="btn_check06">수정하기</a>
-				<a href="javascript:MemberModifyFm.reset();" class="btn_check02">초기화</a>
+				<input type="submit" value="수정하기">
+				<input type="reset" value="초기화">
 			</div>
+			</form>
 		</div>
 
+			
 		<div id="tab2">
 			<div class="tb_box">
 				<div class="ct overf">

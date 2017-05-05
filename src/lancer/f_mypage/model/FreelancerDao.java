@@ -54,5 +54,24 @@ public class FreelancerDao {
 			session.close();
 		}
 	}
+	
+	public int updateFreelancerInfo(Freelancer freelancer){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {			
+			re =  session.getMapper(FreelancerMapper.class).updateFreelancerInfo(freelancer);
+			if(re >0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
 
 }
