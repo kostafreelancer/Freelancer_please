@@ -73,5 +73,93 @@ public class FreelancerDao {
 		return re;
 	}
 	
+	public void deleteFreelancerJobInfo(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {			
+			re =  session.getMapper(FreelancerMapper.class).deleteFreelancerJobInfo(f_num);
+			if(re >0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+	
+	public int insertFreelancerJobInfo(F_job f_job){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {			
+			re =  session.getMapper(FreelancerMapper.class).insertFreelancerJobInfo(f_job);
+			if(re >0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	public String getFreelancerPassword(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		String pwd="";
+		try {			
+			pwd =  session.getMapper(FreelancerMapper.class).getFreelancerPassword(f_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return pwd;
+	}
 
+	public List<Career> showCareerInfo(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {			
+			return session.getMapper(FreelancerMapper.class).showCareerInfo(f_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			session.close();
+		}
+	}
+	public int getCareerNum(){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).getCareerNum();
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	public int insertCareer(Career career){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).insertCareer(career);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
 }

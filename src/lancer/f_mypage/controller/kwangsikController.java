@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import lancer.f_mypage.action.Action;
 import lancer.f_mypage.action.ActionForward;
+import lancer.f_mypage.action.InsertCareerAction;
 import lancer.f_mypage.action.ShowFreelancerInfoAction;
 import lancer.f_mypage.action.UpdateFreelancerInfoAction;
 
@@ -44,6 +45,13 @@ public class kwangsikController extends HttpServlet {
 			}
     	}else if(command.equals("f_mypage/updateFreelancerInfo.f_mypage")){
     		action = new UpdateFreelancerInfoAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("f_mypage/insertCareer.f_mypage")){
+    		action = new InsertCareerAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

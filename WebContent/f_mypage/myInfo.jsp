@@ -16,7 +16,10 @@
 <!-- <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> -->
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-<script src="${pageContext.request.contextPath}/c_common/header.js"></script>
+
+<script type="text/javascript" src="f_mypage_js/myInfo.js"></script>
+<script type="text/javascript" src="f_mypage_js/my.js"></script>
+<script src="${pageContext.request.contextPath}/c_common/c_common_js/header.js"></script>
 <script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/myInfo.js"></script> 
 <script src="${pageContext.request.contextPath}/f_mypage/f_mypage_js/my.js"></script>
  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -34,23 +37,19 @@ $(function(){
 			checks[arr[i]-1].checked = true;
 	}
 	
+	var errorcheck = document.getElementById("pwd_error");
+	<c:if test="${pwd_error=='error'}">
+		alert("비밀번호가 틀립니다.");
+	</c:if>
 	
-	/* var hiddenscore = document.getElementById("hiddenscore");
-	for(var i=0; i<hiddenscore; i++){
-		$(".star_rating a").parent().childeren("a").removeClass("on");
-		$(".star_rating a").addClass("on").prevAll("a").addClass("on");
-		return false;
-	} */
-	
-	
- 	/* $( ".star_rating a" ).click(function() {
-	    $(this).parent().children("a").removeClass("on");
-	    $(this).addClass("on").prevAll("a").addClass("on");
-	    return false;
-	});  */
 });
 
-
+function addCareer(){
+	window.open('careerAdd.jsp','win','width=350, height=250');
+}
+function addCareerSubmit(){
+	document.tempCareerAdd.submit();
+}
 </script>
 </head>
 <body>
@@ -82,8 +81,9 @@ $(function(){
 	<div id="content">
 		
 		<div id="tab1">
-			<form method="post" action="updateFreelancerInfo.f_mypage">
+			<form name="updateForm" method="post" action="updateFreelancerInfo.f_mypage" onsubmit="return check();">
 			<input type="text" hidden name="f_num" value="${client.f_num}">
+			<input type="text" hidden id="pwd_error" name="pwd_error" value="${pwd_error}">
 			<div class="tb_box">
 				<h4>아이디 및 비밀번호</h4>
 				<table class="tb_st01">
@@ -134,15 +134,15 @@ $(function(){
 						<tr>
 							<td rowspan="4">
 							
-								<img name="IMG1" id="IMG1" src="../img/item_noimage.gif">	
-								<div class="file">
-								<input type="file" name="f_fname" width="20px">
+								<img name="IMG1" id="IMG1" >
+								<!-- <p>
+								<input type="file" name="f_fname"> -->
 									<!-- <div class="filebox"></div>
 									<div class="filebutton"><span>사진업로드</span><input type="file" name="fm_file1" onchange="PreView(this.value, 'IMG1', '132', '176');" class="searchfile" title="파일 찾기" style="width:820px;"></div>
 									<div class="filebutton"><span>사진업로드</span><input type="file" name="fm_file1" onchange="readURL(this);" class="searchfile" title="파일 찾기" style="width:820px;"></div>
-								 --> </div>
+								 -->
                                 <!-- <span class="pho_txt">최적 해상도:132x176 pixel</span> --> 
-								사진업로드
+								<!-- 사진업로드</p> -->
 							</td>
 							<th scope="row"><label for="fm_korname"><span
 									class="txt_or">*</span> 성명</label></th>
@@ -509,7 +509,7 @@ $(function(){
 			<div class="tb_box">
 				<div class="ct overf">
 					<h4 class="fl myfl">경력사항</h4>
-					<button id="add" class="career_add">추가하기</button>
+						<button id="add" class="career_add" onclick="addCareer();">추가하기</button>
 				</div>
 				<table class="tb_st01 tb_st03">
 					<caption></caption>
@@ -532,20 +532,28 @@ $(function(){
 						</tr>
 					</thead>
 					<tbody>
-
+						<c:forEach var="mycareer" items="${career}">
 						<tr>
-							<td>코스타 주식회사</td>
-							<td>회장님 비서실</td>
-							<td>비서실장</td>
-							<td>2000년 4월 27일 ~ 2010년 4월 26일</td>
-							<td>서울</td>
+							<td>${mycareer.company}</td>
+							<td>${mycareer.dept}</td>
+							<td>${mycareer.rank}</td>
+							<td>${mycareer.term}</td>
+							<td>${mycareer.location}</td>
 							<td class="last"><input type="button" value="수정">&nbsp;&nbsp;<input
 								type="button" value="삭제"></td>
 
 						</tr>
-
+					</c:forEach>
 					</tbody>
 				</table>
+				<form name="tempCareerAdd"  action="insertCareer.f_mypage">
+					<input type="text" hidden name="tempf_num" value="${client.f_num}">
+					<input type="text" hidden name="company">
+					<input type="text" hidden name="dept">
+					<input type="text" hidden name="rank">
+					<input type="text" hidden name="term">
+					<input type="text" hidden name="location">
+				</form>
 
 				<div id="ResumePANNEL3"
 					style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; background: url(../../images/popup/bg_popup.png) repeat; text-align: center; z-index: 5; display: none;">

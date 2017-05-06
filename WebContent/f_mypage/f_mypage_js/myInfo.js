@@ -21,11 +21,84 @@ $(document).ready(function() {
         }
         $('#fm_email12').val(e_mail);
      });
-
-  
-
-    
 });
+
+
+function check(){
+	var form = document.updateForm;
+	if(form.f_pwd.value == ""){
+		alert("비밀번호를 입력해주세요.");
+		updateForm.f_pwd.focus();
+		return false;
+	}else if(form.f_pwd2.value == ""){
+		alert("비밀번호 확인란을 입력해주세요.");
+		updateForm.f_pwd2.focus();
+		return false;
+	}else if(form.f_pwd.value != form.f_pwd2.value){
+		alert("비밀번호를 동일하게 입력해주세요.");
+		updateForm.f_pwd.focus();
+		return false;
+	}else if(form.f_name.value == ""){
+		alert("이름을 입력해주세요.");
+		updateForm.f_name.focus();
+		return false;
+	}else if(form.f_birth.value == ""){
+		alert("생년월일을 입력해주세요.");
+		updateForm.f_birth.focus();
+		return false;
+	}else if(form.f_sex.value == ""){
+		alert("성별을 입력해주세요.");
+		updateForm.f_sex.focus();
+		return false;
+	}else if(form.fm_tel1.value == ""){
+		alert("전화번호를 입력해주세요.");
+		updateForm.fm_tel1.focus();
+		return false;
+	}else if(form.fm_tel2.value == ""){
+		alert("전화번호를 입력해주세요.");
+		updateForm.fm_tel2.focus();
+		return false;
+	}else if(form.fm_tel3.value == ""){
+		alert("전화번호를 입력해주세요.");
+		updateForm.fm_tel3.focus();
+		return false;
+	}else if(form.fm_phone1.value == ""){
+		alert("휴대번 번호를 입력해주세요.");
+		updateForm.fm_tel1.focus();
+		return false;
+	}else if(form.fm_phone2.value == ""){
+		alert("휴대폰 번호를 입력해주세요.");
+		updateForm.fm_tel2.focus();
+		return false;
+	}else if(form.fm_phone3.value == ""){
+		alert("휴대폰 번호를 입력해주세요.");
+		updateForm.fm_tel3.focus();
+		return false;
+	}else if(form.fm_email11.value == ""){
+		alert("이메일을 입력해주세요.");
+		updateForm.fm_email11.focus();
+		return false;
+	}else if(form.fm_email12.value == ""){
+		alert("이메일을 입력해주세요.");
+		updateForm.fm_email12.focus();
+		return false;
+	}else if(form.fm_zip.value == ""){
+		alert("우편번호를 입력해주세요.");
+		updateForm.fm_zip.focus();
+		return false;
+	}else if(form.fm_address.value == ""){
+		alert("주소를 입력해주세요.");
+		updateForm.fm_address.focus();
+		return false;
+	}else if(form.fm_address_etc.value == ""){
+		alert("주소를 입력해주세요.");
+		updateForm.fm_address_etc.focus();
+		return false;
+	}
+	else{
+		return true;
+	}
+}
 
 function openDaumZipAddress() {
 
@@ -72,3 +145,4 @@ function openDaumZipAddress() {
         }
     }).open();
 }
+

@@ -18,9 +18,32 @@
 	<update id="updateFreelancerInfo" parameterType="Freelancer">
 		update freelancer set f_pwd = #{f_pwd}, f_name =#{f_name}, f_birth = #{f_birth},
 		f_sex = #{f_sex}, f_hphone = #{f_hphone}, f_phone = #{f_phone}, f_email = #{f_email},
-		f_address = #{f_address}, f_fname = #{f_fname} where f_num = #{f_num}
+		f_address = #{f_address} where f_num = #{f_num}
 	</update>
 	
+	<delete id="deleteFreelancerJobInfo" parameterType="int">
+		delete from f_job where f_num = #{f_num}
+	</delete>
+	
+	<insert id="insertFreelancerJobInfo" parameterType="F_job">
+		insert into f_job values(#{f_num}, #{job_id})
+	</insert>
+	
+	<select id="getFreelancerPassword" parameterType="int" resultType="String">
+		select f_pwd from freelancer where f_num = #{f_num}
+	</select>
+	
+	<select id="showCareerInfo" parameterType="int" resultType="Career">
+		select * from career where f_num = #{f_num}
+	</select>
+	
+	<select id="getCareerNum" resultType="int">
+		select nvl(max(career_num), 0) from career
+	</select>
+	
+	<insert id="insertCareer" parameterType="Career">
+		insert into career values(#{career_num}, #{f_num}, #{company}, #{dept}, #{rank}, #{term}, #{location})
+	</insert>
 </mapper>
 
 
