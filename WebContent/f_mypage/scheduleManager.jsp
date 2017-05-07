@@ -8,8 +8,43 @@
 <!-- 
 <link rel="stylesheet" href="../common/header.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../common/footer.css" type="text/css" media="screen" /> -->
-<link rel="stylesheet" href="f_mypage_css/scheduleManager.css"
-	type="text/css" media="screen" />
+<link rel="stylesheet" href="f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
+
+<script src="f_mypage_js/fullcalendar/jquery.min.js"></script>
+<script src="f_mypage_js/fullcalendar/moment.min.js"></script>
+<script src="f_mypage_js/fullcalendar/fullcalendar.js"></script>
+<script src="f_mypage_js/fullcalendar/ko.js"></script>
+<script type="text/javascript">
+var newJquery = $.noConflict(true);
+
+newJquery(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+	newJquery('#calendar').fullCalendar({
+	    events: [
+	        {
+	            title  : '점심약속',
+	            start  : '2017-05-07'
+	        },
+	        {
+	            title  : 'event2',
+	            start  : '2017-05-05',
+	            end    : '2017-05-06'
+	        },
+	        {
+	            title  : 'event3',
+	            start  : '2017-05-09T12:30:00',
+	            allDay : false // will make the time show
+	        }
+	    ]
+        // put your options and callbacks here
+    })
+});
+
+</script>
 </head>
 <body>
 
@@ -29,58 +64,7 @@
 	</div>
 
 	<section id="firstsection">
-
-	<div id="calendar">
-		<table id="calendar_table" border="1px solid" cellpadding="0"
-			cellspacing="0" height="250px">
-			<tr height="50px">
-				<th id="sun">일</th>
-				<th>월</th>
-				<th>화</th>
-				<th>수</th>
-				<th>목</th>
-				<th>금</th>
-				<th id="sat">토</th>
-			</tr>
-			<tr height="50px">
-				<td>1</td>
-				<td>2</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
-				<td>7</td>
-			</tr>
-			<tr height="50px">
-				<td>8</td>
-				<td>9</td>
-				<td>10</td>
-				<td>11</td>
-				<td>12</td>
-				<td>13</td>
-				<td>14</td>
-			</tr>
-			<tr height="50px">
-				<td>15</td>
-				<td>16</td>
-				<td>17</td>
-				<td>18</td>
-				<td>19</td>
-				<td>20</td>
-				<td>21</td>
-			</tr>
-			<tr height="50px">
-				<td>22</td>
-				<td>23</td>
-				<td>24</td>
-				<td>25</td>
-				<td>26</td>
-				<td>27</td>
-				<td>28</td>
-			</tr>
-		</table>
-		<br> <br> <br> <br> <br>
-	</div>
+	<div id="calendar"></div>
 
 	<div id="list">
 		<h5>프로젝트 이름</h5>
