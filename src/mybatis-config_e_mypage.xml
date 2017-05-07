@@ -8,6 +8,7 @@
 	<typeAliases>
 		<typeAlias type="lancer.e_mypage.model.Enterprise" alias="Enterprise"/>
 		<typeAlias type="lancer.c_login.model.c_login_enterprise" alias="c_login_enterprise"/>
+		<typeAlias type="lancer.e_mypage.model.Project" alias="Project"/>
 	</typeAliases>
 	
 	<environments default="development">
