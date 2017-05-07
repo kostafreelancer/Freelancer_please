@@ -199,7 +199,7 @@
 			<tr>
 				<th scope="row"><label for="fm_bizcontents">주요사업내용</label></th>
 				<td colspan="4"><input type="text" id="e_bf"
-					name="e_bf" class="wid" value="${enterprise.e_bf }"></td>
+					name="e_bf" class="wid" value="<%-- ${client.e_bf } --%>"></td>
 			</tr>
 			<tr>
 				<th scope="row"><label for="fm_managername">담당자명</label></th>

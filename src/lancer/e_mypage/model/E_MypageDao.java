@@ -1,6 +1,7 @@
 package lancer.e_mypage.model;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -34,6 +35,18 @@ public class E_MypageDao {
 		SqlSession session = getSqlSessionFactory().openSession();
 		try {
 			return session.getMapper(E_MypageMapper.class).selectEnterprise(e_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+	}
+	
+	public List<Project> listProject(int e_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {
+			return session.getMapper(E_MypageMapper.class).listProject(e_num);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
