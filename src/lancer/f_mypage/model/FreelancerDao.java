@@ -162,4 +162,39 @@ public class FreelancerDao {
 		}
 		return re;
 	}
+	public int updateCareer(Career career){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).updateCareer(career);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	public int deleteCareer(int career_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).deleteCareer(career_num);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
 }

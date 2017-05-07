@@ -145,4 +145,34 @@ function openDaumZipAddress() {
         }
     }).open();
 }
+function addCareer(){
+	window.open('careerAdd.jsp','win','width=350, height=250');
+}
+function addCareerSubmit(){
+	document.tempCareerAdd.submit();
+}
+/*function modifyCarrer(num){
+	child = window.open('careerModify.jsp','win', 'width=350, height=250');
+	var wantForm = 'mycareerModify'+num;
+	console.log(wantForm);
+	child.document.myform.company.value = document.wantForm.mycareer_company.value;
+	child.document.myform.dept.value =document.wantForm.mycareer_dept.value;
+	child.document.myform.rank.value = document.wantForm.mycareer_rank.value;
+	child.document.myform.term.value = document.wantForm.mycareer_term.value;
+	child.document.myform.location.value = document.wantForm.mycareer_location.value;
 
+}*/
+
+function modifyCareer(num){
+    window.open('about:blank','popup_window','width=350, height=250');
+    var wantForm = 'thisForm'+num;
+    var frm =document.getElementById(wantForm);
+    frm.submit();
+}
+function modifyCareerSubmit(){
+	document.tempCareerModify.submit();
+}
+function deleteCareer(num){
+	document.tempCareerDelete.deleteCareer_num.value = num;
+	document.tempCareerDelete.submit();
+}

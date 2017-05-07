@@ -44,12 +44,7 @@ $(function(){
 	
 });
 
-function addCareer(){
-	window.open('careerAdd.jsp','win','width=350, height=250');
-}
-function addCareerSubmit(){
-	document.tempCareerAdd.submit();
-}
+
 </script>
 </head>
 <body>
@@ -533,16 +528,24 @@ function addCareerSubmit(){
 					</thead>
 					<tbody>
 						<c:forEach var="mycareer" items="${career}">
-						<tr>
+						<form id="thisForm${mycareer.career_num}" name="mycareerModify${mycareer.career_num}" method="post" action="careerModify.jsp" target='popup_window'>
+						<input type="text" hidden name="mycareer_career_num" value="${mycareer.career_num}">
+						<input type="text" hidden name="mycareer_company" value="${mycareer.company}">
+						<input type="text" hidden name="mycareer_dept" value="${mycareer.dept}">
+						<input type="text" hidden name="mycareer_rank" value="${mycareer.rank}">
+						<input type="text" hidden name="mycareer_term" value="${mycareer.term}">
+						<input type="text" hidden name="mycareer_location" value="${mycareer.location}">
+						<tr>							
 							<td>${mycareer.company}</td>
 							<td>${mycareer.dept}</td>
 							<td>${mycareer.rank}</td>
 							<td>${mycareer.term}</td>
 							<td>${mycareer.location}</td>
-							<td class="last"><input type="button" value="수정">&nbsp;&nbsp;<input
-								type="button" value="삭제"></td>
+							<td class="last"><input type="button" value="수정" onclick="modifyCareer(${mycareer.career_num});">&nbsp;&nbsp;<input
+								type="button" value="삭제" onclick="deleteCareer(${mycareer.career_num});"></td>
 
 						</tr>
+						</form>
 					</c:forEach>
 					</tbody>
 				</table>
@@ -553,6 +556,17 @@ function addCareerSubmit(){
 					<input type="text" hidden name="rank">
 					<input type="text" hidden name="term">
 					<input type="text" hidden name="location">
+				</form>
+				<form name="tempCareerModify"  action="updateCareer.f_mypage">
+					<input type="text" hidden name="career_num">
+					<input type="text" hidden name="company">
+					<input type="text" hidden name="dept">
+					<input type="text" hidden name="rank">
+					<input type="text" hidden name="term">
+					<input type="text" hidden name="location">
+				</form>
+				<form name="tempCareerDelete" action="deleteCareer.f_mypage">
+					<input type="text" hidden name="deleteCareer_num">
 				</form>
 
 				<div id="ResumePANNEL3"

@@ -44,6 +44,14 @@
 	<insert id="insertCareer" parameterType="Career">
 		insert into career values(#{career_num}, #{f_num}, #{company}, #{dept}, #{rank}, #{term}, #{location})
 	</insert>
+	
+	<update id="updateCareer" parameterType="Career">
+		update career set company = #{company}, dept = #{dept}, rank = #{rank}, term = #{term}, location = #{location} where career_num = #{career_num}
+	</update>
+	
+	<delete id="deleteCareer" parameterType="int">
+		delete from career where career_num = #{career_num}
+	</delete>
 </mapper>
 
 

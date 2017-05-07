@@ -16,4 +16,6 @@ public interface FreelancerMapper {
 	public List<Career> showCareerInfo(int f_num);
 	public int getCareerNum();
 	public int insertCareer(Career career);
+	public int updateCareer(Career career);
+	public int deleteCareer(int career_num);
 }
