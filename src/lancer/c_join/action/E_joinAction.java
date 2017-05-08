@@ -55,7 +55,7 @@ public class E_joinAction implements Action {
 		String address1=request.getParameter("address1");
 		String address2=request.getParameter("address2");
 		String address3=request.getParameter("address3");
-		String e_address=address1+" "+address2+" "+address3;
+		String e_address=address1+"&"+address2+"&"+address3;
 		e_join.setE_address(e_address);
 		System.out.println(e_join.getE_address());
 		
