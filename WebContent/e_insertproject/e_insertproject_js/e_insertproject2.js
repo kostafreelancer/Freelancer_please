@@ -30,7 +30,7 @@ function fnSelect(obj){
     var i = 0; 
  
     eval(selectId+"_"+index).forEach( function(s) { 
-        options_str += '<option value="' + (i++) + '">' + s + '</option>'; 
+        options_str += '<option value="' + eval(selectId+"_"+index)[i++] + '">' + s + '</option>';
      }); 
     
     document.getElementById(selectId).innerHTML = options_str;
