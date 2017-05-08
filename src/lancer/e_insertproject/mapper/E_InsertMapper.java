@@ -8,4 +8,5 @@ import lancer.e_mypage.model.Enterprise;
 
 public interface E_InsertMapper {
 	int insertProject(E_Insert project);
+	int insertP_Job(int job_id);
 }

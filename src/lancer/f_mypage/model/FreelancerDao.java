@@ -197,4 +197,161 @@ public class FreelancerDao {
 		}
 		return re;
 	}
+	
+	public List<School> showSchoolInfo(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {			
+			return session.getMapper(FreelancerMapper.class).showSchoolInfo(f_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			session.close();
+		}
+	}
+	
+	public int getSchoolNum(){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).getCareerNum();
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	public int insertSchool(School school){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).insertSchool(school);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	public int updateSchool(School school){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).updateSchool(school);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	public int deleteSchool(int school_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).deleteSchool(school_num);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	public List<Certificate> showCertiInfo(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {			
+			return session.getMapper(FreelancerMapper.class).showCertiInfo(f_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			session.close();
+		}
+	}
+	public int getCertiNum(){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).getCertiNum();
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	public int insertCerti(Certificate certificate){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).insertCerti(certificate);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;	
+	}
+	
+	public int updateCerti(Certificate certificate){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).updateCerti(certificate);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	public int deleteCerti(int certificate_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re= session.getMapper(FreelancerMapper.class).deleteCerti(certificate_num);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
 }

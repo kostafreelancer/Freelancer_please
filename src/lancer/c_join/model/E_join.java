@@ -1,6 +1,8 @@
 package lancer.c_join.model;
 
-public class E_join {
+import java.io.Serializable;
+
+public class E_join implements Serializable{
 	private int e_num;		// 기업번호
 	private String e_id;		// 기업회원 아이디(접속할때)
 	private String e_pwd;	// 기업회원 비밀번호	(접속할때)
@@ -25,6 +27,8 @@ public class E_join {
 	private String e_scale;			// 기업규모 (대기업, 중소기업, 개인)
 	private String e_licensefile;		// 사업자등록증 사진파일 경로
 	private String e_check;		// 이메일인증을 통한 가입승인여부   가입승인됬을시 1,  인증 아직 안했으면 0
+	private double e_score;
+	
 	
 	public E_join(){
 		
@@ -33,7 +37,7 @@ public class E_join {
 	public E_join(int e_num, String e_id, String e_pwd, String e_mail, String e_name, String e_ename, String e_owner,
 			String e_ownerfile, String e_regno, String e_phone, String e_bf, String manager_name, String manager_hphone,
 			String manager_mail, String e_address, String e_homepage, int start_year, int e_enum, String e_listing,
-			int e_capital, int e_sales, String e_scale, String e_licensefile, String e_check) {
+			int e_capital, int e_sales, String e_scale, String e_licensefile, String e_check, double e_score) {
 		super();
 		this.e_num = e_num;
 		this.e_id = e_id;
@@ -59,6 +63,15 @@ public class E_join {
 		this.e_scale = e_scale;
 		this.e_licensefile = e_licensefile;
 		this.e_check = e_check;
+		this.e_score=e_score;
+	}
+
+	public double getE_score() {
+		return e_score;
+	}
+
+	public void setE_score(double e_score) {
+		this.e_score = e_score;
 	}
 
 	public int getE_num() {

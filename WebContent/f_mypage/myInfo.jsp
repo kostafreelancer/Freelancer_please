@@ -528,7 +528,7 @@ $(function(){
 					</thead>
 					<tbody>
 						<c:forEach var="mycareer" items="${career}">
-						<form id="thisForm${mycareer.career_num}" name="mycareerModify${mycareer.career_num}" method="post" action="careerModify.jsp" target='popup_window'>
+						<form id="careerForm${mycareer.career_num}" name="mycareerModify${mycareer.career_num}" method="post" action="careerModify.jsp" target='popup_window'>
 						<input type="text" hidden name="mycareer_career_num" value="${mycareer.career_num}">
 						<input type="text" hidden name="mycareer_company" value="${mycareer.company}">
 						<input type="text" hidden name="mycareer_dept" value="${mycareer.dept}">
@@ -583,7 +583,7 @@ $(function(){
 			<div class="tb_box">
 				<div class="ct overf">
 					<h4 class="fl myfl">학력사항</h4>
-					<button id="add" class="school_add">추가하기</button>
+					<button id="add" class="school_add" onclick="addSchool();">추가하기</button>
 				</div>
 				<table class="tb_st01 tb_st03">
 					<caption></caption>
@@ -605,17 +605,44 @@ $(function(){
 					</thead>
 					<tbody>
 
-						<tr>
-							<td>코스타대학교</td>
-							<td>컴퓨터공학</td>
-							<td>2000년 4월 27일 ~ 2010년 4월 26일</td>
-							<td>서울</td>
-							<td class="last"><input type="button" value="수정">&nbsp;&nbsp;<input
-								type="button" value="삭제"></td>
+						<c:forEach var="myschool" items="${school}">
+						<form id="schoolForm${myschool.school_num}" name="myschoolModify${myschool.school_num}" method="post" action="schoolModify.jsp" target='popup_window'>
+						<input type="text" hidden name="myschool_school_num" value="${myschool.school_num}">
+						<input type="text" hidden name="myschool_school_name" value="${myschool.school_name}">
+						<input type="text" hidden name="myschool_major" value="${myschool.major}">
+						<input type="text" hidden name="myschool_term" value="${myschool.term}">
+						<input type="text" hidden name="myschool_location" value="${myschool.location}">
+						<tr>							
+							<td>${myschool.school_name}</td>
+							<td>${myschool.major}</td>
+							<td>${myschool.term}</td>
+							<td>${myschool.location}</td>
+							<td class="last"><input type="button" value="수정" onclick="modifySchool(${myschool.school_num});">&nbsp;&nbsp;<input
+								type="button" value="삭제" onclick="deleteSchool(${myschool.school_num});"></td>
+
 						</tr>
+						</form>
+					</c:forEach>
 
 					</tbody>
 				</table>
+				<form name="tempSchoolAdd"  action="insertSchool.f_mypage">
+					<input type="text" hidden name="tempf_num" value="${client.f_num}">
+					<input type="text" hidden name="school_name">
+					<input type="text" hidden name="major">
+					<input type="text" hidden name="term">
+					<input type="text" hidden name="location">
+				</form>
+				<form name="tempSchoolModify"  action="updateSchool.f_mypage">
+					<input type="text" hidden name="school_num">
+					<input type="text" hidden name="school_name">
+					<input type="text" hidden name="major">
+					<input type="text" hidden name="term">
+					<input type="text" hidden name="location">
+				</form>
+				<form name="tempSchoolDelete" action="deleteSchool.f_mypage">
+					<input type="text" hidden name="deleteSchool_num">
+				</form>
 
 				<div id="ResumePANNEL1"
 					style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; background: url(../../images/popup/bg_popup.png) repeat; text-align: center; z-index: 5; display: none;">
@@ -631,7 +658,7 @@ $(function(){
 			<div class="tb_box">
 				<div class="ct overf">
 					<h4 class="fl myfl">자격증</h4>
-					<button id="add" class="right_add">추가하기</button>
+					<button id="add" class="right_add" onclick="addCerti();">추가하기</button>
 				</div>
 				<table class="tb_st01 tb_st03">
 					<caption></caption>
@@ -651,17 +678,42 @@ $(function(){
 					</thead>
 					<tbody>
 
-						<tr>
-							<td>정보처리기사</td>
-							<td>한국산업인력관리공단</td>
-							<td>2017년 4월 27일</td>
-							<td class="last"><input type="button" value="수정">&nbsp;&nbsp;<input
-								type="button" value="삭제"></td>
+					<c:forEach var="mycerti" items="${certificate}">
+						<form id="certiForm${mycerti.certificate_num}" name="mycertiModify${mycerti.certificate_num}" method="post" action="certiModify.jsp" target='popup_window'>
+						<input type="text" hidden name="mycerti_certi_num" value="${mycerti.certificate_num}">
+						<input type="text" hidden name="mycerti_certi_name" value="${mycerti.certificate_name}">
+						<input type="text" hidden name="mycerti_organization" value="${mycerti.organization}">
+						<input type="text" hidden name="mycerti_accept_date" value="${mycerti.accept_date}">
+						<tr>							
+			
+							<td>${mycerti.certificate_name}</td>
+							<td>${mycerti.organization}</td>
+							<td>${mycerti.accept_date}</td>
+							<td class="last"><input type="button" value="수정" onclick="modifyCerti(${mycerti.certificate_num});">&nbsp;&nbsp;<input
+								type="button" value="삭제" onclick="deleteCerti(${mycerti.certificate_num});"></td>
+
 						</tr>
+						</form>
+					</c:forEach>
 
 					</tbody>
 				</table>
-
+				<form name="tempCertiAdd"  action="insertCerti.f_mypage">
+					<input type="text" hidden name="tempf_num" value="${client.f_num}">
+					<input type="text" hidden name="certi_name">
+					<input type="text" hidden name="organization">
+					<input type="text" hidden name="accept_date">
+				</form>
+				<form name="tempCertiModify"  action="updateCerti.f_mypage">
+					<input type="text" hidden name="certi_num">
+					<input type="text" hidden name="certi_name">
+					<input type="text" hidden name="organization">
+					<input type="text" hidden name="accept_date">
+					
+				</form>
+				<form name="tempCertiDelete" action="deleteCerti.f_mypage">
+					<input type="text" hidden name="deleteCerti_num">
+				</form>
 
 				<div id="ResumePANNEL5"
 					style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; background: url(../../images/popup/bg_popup.png) repeat; text-align: center; z-index: 5; display: none;">

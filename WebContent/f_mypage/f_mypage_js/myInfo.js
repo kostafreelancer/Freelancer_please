@@ -148,31 +148,65 @@ function openDaumZipAddress() {
 function addCareer(){
 	window.open('careerAdd.jsp','win','width=350, height=250');
 }
+function addSchool(){
+	window.open('schoolAdd.jsp','win','width=350, height=250');
+}
+function addCerti(){
+	window.open('certiAdd.jsp','win','width=350, height=250');
+}
+
 function addCareerSubmit(){
 	document.tempCareerAdd.submit();
 }
-/*function modifyCarrer(num){
-	child = window.open('careerModify.jsp','win', 'width=350, height=250');
-	var wantForm = 'mycareerModify'+num;
-	console.log(wantForm);
-	child.document.myform.company.value = document.wantForm.mycareer_company.value;
-	child.document.myform.dept.value =document.wantForm.mycareer_dept.value;
-	child.document.myform.rank.value = document.wantForm.mycareer_rank.value;
-	child.document.myform.term.value = document.wantForm.mycareer_term.value;
-	child.document.myform.location.value = document.wantForm.mycareer_location.value;
+function addSchoolSubmit(){
+	document.tempSchoolAdd.submit();
+}
+function addCertiSubmit(){
+	document.tempCertiAdd.submit();
+}
 
-}*/
 
 function modifyCareer(num){
     window.open('about:blank','popup_window','width=350, height=250');
-    var wantForm = 'thisForm'+num;
+    var wantForm = 'careerForm'+num;
     var frm =document.getElementById(wantForm);
     frm.submit();
 }
+function modifySchool(num){
+    window.open('about:blank','popup_window','width=350, height=250');
+    var wantForm = 'schoolForm'+num;
+    var frm =document.getElementById(wantForm);
+    frm.submit();
+}
+function modifyCerti(num){
+    window.open('about:blank','popup_window','width=350, height=250');
+    var wantForm = 'certiForm'+num;
+    var frm =document.getElementById(wantForm);
+    frm.submit();
+}
+
+
 function modifyCareerSubmit(){
 	document.tempCareerModify.submit();
 }
+function modifySchoolSubmit(){
+	document.tempSchoolModify.submit();
+}
+function modifyCertiSubmit(){
+	document.tempCertiModify.submit();
+}
+
+
 function deleteCareer(num){
 	document.tempCareerDelete.deleteCareer_num.value = num;
 	document.tempCareerDelete.submit();
+}
+
+function deleteSchool(num){
+	document.tempSchoolDelete.deleteSchool_num.value = num;
+	document.tempSchoolDelete.submit();
+}
+function deleteCerti(num){
+	document.tempCertiDelete.deleteCerti_num.value = num;
+	document.tempCertiDelete.submit();
 }

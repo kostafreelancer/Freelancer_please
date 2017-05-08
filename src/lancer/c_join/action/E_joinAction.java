@@ -52,19 +52,22 @@ public class E_joinAction implements Action {
 		System.out.println(e_join.getE_regno());
 		
 		
-		e_join.setE_address(request.getParameter("e_adress"));
+		e_join.setE_address(request.getParameter("e_address"));
 		e_join.setManager_name(request.getParameter("manager_name"));
 		e_join.setE_bf(request.getParameter("e_bf"));
 		e_join.setE_capital(Integer.parseInt(request.getParameter("e_capital")));
-		e_join.setE_check(request.getParameter("e_check"));
+		//e_join.setE_check(request.getParameter("e_check"));
+		e_join.setE_check("0");
 		e_join.setE_ename(request.getParameter("e_ename"));
 		e_join.setE_enum(Integer.parseInt(request.getParameter("e_enum")));
 		e_join.setE_homepage(request.getParameter("e_homepage"));
 		e_join.setE_id(request.getParameter("e_id"));
-		e_join.setE_licensefile(request.getParameter("e_licensefile"));
+		//e_join.setE_licensefile(request.getParameter("e_licensefile"));
+		e_join.setE_licensefile("jj");
+		e_join.setE_score(0);
 		e_join.setE_listing(request.getParameter("e_listing"));
 		e_join.setE_name(request.getParameter("e_name"));
-		e_join.setE_num(100);
+		e_join.setE_num(dao.getnum()+1);
 		e_join.setE_owner(request.getParameter("e_owner"));
 		e_join.setE_ownerfile(request.getParameter("e_ownerfile"));
 		e_join.setE_pwd(request.getParameter("e_pwd"));
@@ -79,7 +82,7 @@ public class E_joinAction implements Action {
 
 		ActionForword forward = new ActionForword();
 		forward.setRedirect(true);
-		forward.setPath("Matching_Project/c_join/c_join_step4.jsp");
+		forward.setPath("/Matching_Project/c_join/c_join_step4.jsp");
 		
 		return forward;
 	}
