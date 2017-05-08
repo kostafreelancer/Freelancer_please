@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,7 +18,15 @@
 
 </head>
 <body>
-	<%@include file="../c_common/header.jsp"%>
+	<c:choose>
+		<c:when test="${identity.identity == 'freelancer' }">
+			<%@include file="../c_common/header.jsp"%>
+		</c:when>
+		<c:when test="${identity.identity == 'enterprise' }">
+			<%@include file="../c_common/header_enterprise.jsp"%>
+		</c:when>
+	</c:choose>
+
 
 	<section>
 
@@ -47,7 +56,7 @@
 			<div id="content">
 				<div id="tab1">
 					<h2>FAQ</h2>
-
+					<h2>어코디언 형식의 FAQ 메뉴 작성예정.</h2>
 				</div>
 				<div id="tab2">
 
@@ -70,28 +79,59 @@
 							<col style="width: 35%">
 						</colgroup>
 						<tbody>
-						<!-- 	<form name="" method="post" action="Fname"></form> -->
+							<!-- 	<form name="" method="post" action="Fname"></form> -->
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
-								<td colspan="3" class="join" >
-								<input type="text" id="fm_name" name="fm_name" class="wid02" value="${f_name }" readonly="readonly">
+								<td colspan="3" class="join">
+								<input type="text"
+									id="fm_name" name="fm_name" class="wid02"
+									value=<c:choose>
+									<c:when test="${identity.identity == 'freelancer' }">
+										${client.f_name }
+									</c:when>
+									<c:when test="${identity.identity == 'enterprise' }">
+										${client.e_name }
+									</c:when>
+									<c:otherwise>
+									이름을&nbsp;입력해&nbsp;주세요.
+									</c:otherwise>
+								</c:choose>>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="fm_phone">연락처</label></th>
 								<td colspan="3" class="join"><input type="text"
-									id="fm_phone" name="fm_phone" class="wid02" value="${f_phone }" readonly="readonly">
+									id="fm_phone" name="fm_phone" class="wid02"
+									value=<c:choose>
+									<c:when test="${identity.identity == 'freelancer' }">
+										${client.f_hphone }
+									</c:when>
+									<c:when test="${identity.identity == 'enterprise' }">
+										${client.e_phone}
+									</c:when>
+									<c:otherwise>
+									연락처를&nbsp;입력해&nbsp;주세요.
+									</c:otherwise>
+								</c:choose>>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> 이메일</th>
 								<td colspan="3"><label for></label> <input type="text"
-									id="fm_email_1" name="fm_email_1" class="wid04" value="${f_email }"
-									readonly="readonly"> <!-- <span>@</span> <label
-									for="fm_email_2"></label> <input type="text" id="fm_email_2"
-									name="fm_email_2" class="wid04" value="도메인" readonly="readonly"> -->
+									id="fm_email_1" name="fm_email_1" class="wid04"
+									value=<c:choose>
+									<c:when test="${identity.identity == 'freelancer' }">
+										${client.f_email }
+									</c:when>
+									<c:when test="${identity.identity == 'enterprise' }">
+										${client.e_mail }
+									</c:when>
+									<c:otherwise>
+									이메일을&nbsp;입력해&nbsp;주세요.
+									</c:otherwise>
+								</c:choose>>
 								</td>
 							</tr>
 							<tr>

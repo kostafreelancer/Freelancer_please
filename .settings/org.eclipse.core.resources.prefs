@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebContent/c_join/c_join_css/join.css=UTF-8
+encoding//WebContent/e_mail_test/NewFile.jsp=UTF-8
+encoding//WebContent/e_mail_test/sendMail.jsp=UTF-8
 encoding//src/lancer/c_freelancerlist/model/c_freelancerlistDao.java=UTF-8
 encoding//src/lancer/c_login/controller/c_loginController.java=UTF-8
 encoding//src/lancer/c_login/model/c_loginDao.java=UTF-8
