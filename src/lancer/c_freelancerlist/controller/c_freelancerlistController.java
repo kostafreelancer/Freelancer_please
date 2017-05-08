@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import lancer.c_freelancerlist.action.Action;
 import lancer.c_freelancerlist.action.ActionForward;
 import lancer.c_freelancerlist.action.c_freelancerlist_freeAction;
+import lancer.c_freelancerlist.model.c_freelancerlist_pading;
 
 
 @WebServlet("*.f_list")
@@ -36,6 +37,7 @@ public class c_freelancerlistController extends HttpServlet {
     		action = new c_freelancerlist_freeAction();
     		try {
 				forward = action.execute(request, response);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

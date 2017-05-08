@@ -15,7 +15,7 @@ public class PagingAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		c_freelancerlistDao dao = c_freelancerlistDao.getInstance();
 		List<c_freelancerlist_total> totallists = (List<c_freelancerlist_total>) request.getAttribute("totallists");
-		
+		System.out.println(totallists.get(0).getF_name());
 		
 		
 		return null;

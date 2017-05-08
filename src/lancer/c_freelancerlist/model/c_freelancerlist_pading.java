@@ -2,14 +2,14 @@ package lancer.c_freelancerlist.model;
 
 import java.util.List;
 
-public class c_freelancerlist_paging {
+public class c_freelancerlist_pading {
 	private List<c_freelancerlist_total> totallists;
 	private int requestPage;
 	private int totalPageCount;
 	private int startPage;
 	private int endPage;
-	public c_freelancerlist_paging(){}
-	public c_freelancerlist_paging(List<c_freelancerlist_total> totallists, int requestPage, int totalPageCount,
+	public c_freelancerlist_pading(){}
+	public c_freelancerlist_pading(List<c_freelancerlist_total> totallists, int requestPage, int totalPageCount,
 			int startPage, int endPage) {
 		super();
 		this.totallists = totallists;
