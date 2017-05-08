@@ -23,12 +23,16 @@ public class c_loginAction implements Action{
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
 		HttpSession session = request.getSession();
+		System.out.println(identity.getIdentity()+"이거야~");
 		if(identity.getIdentity().equals("freelancer")){
 			forward.setPath("/Matching_Project/f_main/f_main.jsp");
 			session.setAttribute("client", identity.getFree());
 		}else if(identity.getIdentity().equals("enterprise")){
 			forward.setPath("/Matching_Project/e_main/e_main.jsp");
 			session.setAttribute("client", identity.getEnter());
+		}else if(identity.getIdentity().equals("no")){
+			System.out.println("여기 안들어 오는거냐?");
+			forward.setPath("/Matching_Project/c_login/login.jsp");
 		}
 		System.out.println(identity.getIdentity());		
 		session.setAttribute("identity", identity);
