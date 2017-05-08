@@ -59,7 +59,7 @@
 	</div>
 
 
-<form action="e_infoEpdateAction.e_mypage" method="post" enctype="multipart/form-data">
+<form action="e_infoEpdateAction.e_mypage?e_num=${client.e_num }" method="post" enctype="multipart/form-data">
 	<div class="e_info_table1">
 		<h4>아이디 및 비밀번호</h4>
 		
