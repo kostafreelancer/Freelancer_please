@@ -47,7 +47,7 @@
 			<div id="content">
 				<div id="tab1">
 					<h2>FAQ</h2>
-
+					<h2>어코디언 형식의 FAQ 메뉴 작성예정.</h2>
 				</div>
 				<div id="tab2">
 
@@ -70,26 +70,32 @@
 							<col style="width: 35%">
 						</colgroup>
 						<tbody>
-						<!-- 	<form name="" method="post" action="Fname"></form> -->
+							<!-- 	<form name="" method="post" action="Fname"></form> -->
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
-								<td colspan="3" class="join" >
-								<input type="text" id="fm_name" name="fm_name" class="wid02" value="${f_name }" readonly="readonly">
+							 <td colspan="3" class="join" >
+								<input type="text" id="fm_name" name="fm_name" class="wid02" value="${client.f_name }">
 								</td>
+								
+								<!-- 테스트 영역 -->
+								<td colspan="3" class="join"><input type="text"
+									id="fm_name" name="fm_name" class="wid02"
+									value=""></td>
+								<!--테스트 영역 종료  -->
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
-									for="fm_phone">연락처</label></th>
+										for="fm_phone">연락처</label></th>
 								<td colspan="3" class="join"><input type="text"
-									id="fm_phone" name="fm_phone" class="wid02" value="${f_phone }" readonly="readonly">
-								</td>
+									id="fm_phone" name="fm_phone" class="wid02"
+									value="${client.f_hphone }"></td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> 이메일</th>
 								<td colspan="3"><label for></label> <input type="text"
-									id="fm_email_1" name="fm_email_1" class="wid04" value="${f_email }"
-									readonly="readonly"> <!-- <span>@</span> <label
+									id="fm_email_1" name="fm_email_1" class="wid04"
+									value="${client.f_email }"> <!-- <span>@</span> <label
 									for="fm_email_2"></label> <input type="text" id="fm_email_2"
 									name="fm_email_2" class="wid04" value="도메인" readonly="readonly"> -->
 								</td>
