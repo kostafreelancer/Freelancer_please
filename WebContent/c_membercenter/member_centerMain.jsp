@@ -17,7 +17,15 @@
 
 </head>
 <body>
-	<%@include file="../c_common/header.jsp"%>
+	<c:choose>
+		<c:when test="${identity.identity == 'freelancer' }">
+			<%@include file="../c_common/header.jsp"%>
+		</c:when>
+		<c:when test="${identity.identity == 'enterprise' }">
+			<%@include file="../c_common/header_enterprise.jsp" %>
+		</c:when>
+	</c:choose>
+	
 
 	<section>
 
@@ -75,9 +83,19 @@
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
 							 <td colspan="3" class="join" >
-								<input type="text" id="fm_name" name="fm_name" class="wid02" value="${client.f_name }">
+								<input type="text" id="fm_name" name="fm_name" class="wid02" value="${identity.identity }">
 								</td>
+								<h1>^^</h1>
+								<c:choose>
+									<c:when test="${identity.identity =='freelancer' }">
+										${client.f_name }
+									</c:when>
+									<c:when test="${identity.identity == 'enterprise' }">
+										${client.e_name }
+									</c:when>
+								</c:choose>
 								
+			
 								<!-- 테스트 영역 -->
 								<td colspan="3" class="join"><input type="text"
 									id="fm_name" name="fm_name" class="wid02"
