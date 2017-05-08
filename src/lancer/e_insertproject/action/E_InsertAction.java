@@ -18,9 +18,6 @@ public class E_InsertAction implements Action {
 		E_InsertDao dao = E_InsertDao.getInstance();
 		E_Insert project = new E_Insert();
 		
-		
-		
-
 		project.setE_num(Integer.parseInt(request.getParameter("e_num")));
 		project.setP_name(request.getParameter("p_name"));
 		project.setP_content(request.getParameter("p_content"));
@@ -41,8 +38,16 @@ public class E_InsertAction implements Action {
 
 		project.setP_experience(Integer.parseInt(request.getParameter("p_experience")));
 		
-	
 		dao.insertProject(project);
+		
+		String[] check = request.getParameterValues("check");
+		for(int i=0;i<check.length;i++)
+		{
+			int job_id = Integer.parseInt(check[i]);
+			dao.insertP_Job(job_id);
+		}
+
+
 		System.out.println(project);
 		
 		ActionForward forward = new ActionForward();

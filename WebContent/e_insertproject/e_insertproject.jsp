@@ -15,6 +15,7 @@
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/e_insertproject2.js"></script>
+<script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/e_insertproject.js"></script>
 <script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/calendar.js"></script>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_insertproject/e_insertproject_js/e_insertproject2.js"></script>
@@ -123,8 +124,7 @@
 							<tr>
 								<th scope="row" rowspan="3" class="ac"><span class="txt_or">*</span>기본분야</th>
 								<th scope="row" class="ac"><span class="txt_or"></span>개발</th>
-								<td colspan="5" style="border-bottom: solid 0px #dadada"
-									bgcolor="#ffffff">
+								<td colspan="5" style="border-bottom: solid 0px #dadada" bgcolor="#ffffff">
 
 									<table width="100%">
 										<colgroup>
@@ -137,74 +137,74 @@
 										<tr class="che_list011">
 											<td class="td_bor_bott">
 											<input type="checkbox"
-												name="check1" value=".NET"> .NET</td>
+												name="check" value="1"> .NET</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check2" value="ABAP"> ABAP</td>
+												name="check" value="2"> ABAP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check3" value="ANDROID"> ANDROID</td>
+												name="check" value="3"> ANDROID</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check4" value="ASP"> ASP</td>
+												name="check" value="4"> ASP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check5" value="ASP.NET"> ASP.NET</td>
+												name="check" value="5"> ASP.NET</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check6" value="C"> C</td>
+												name="check" value="6"> C</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check7" value="C#"> C#</td>
+												name="check" value="7"> C#</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check8" value="C++"> C++</td>
+												name="check" value="8"> C++</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check9" value="COBOL"> COBOL</td>
+												name="check" value="9"> COBOL</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check10" value="CSS"> CSS</td>
+												name="check" value="10"> CSS</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check11" value="DB"> DB</td>
+												name="check" value="11"> DB</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check12" value="DELPHI"> DELPHI</td>
+												name="check" value="12"> DELPHI</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check13" value="HTML"> HTML</td>
+												name="check" value="13"> HTML</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check14" value="IOS"> IOS</td>
+												name="check" value="14"> IOS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check15" value="JAVA"> JAVA</td>
+												name="check" value="15"> JAVA</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check16" value="JS"> JS</td>
+												name="check" value="16"> JS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check17" value="JSP"> JSP</td>
+												name="check" value="17"> JSP</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check18" value="LINUX"> LINUX</td>
+												name="check" value="18"> LINUX</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check19" value="NETWORK"> NETWORK</td>
+												name="check" value="19"> NETWORK</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check20" value="PHP"> PHP</td>
+												name="check" value="20"> PHP</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check21" value="POWER BUILDER">
+												name="check" value="21">
 												POWER BUILDER</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check22" value="PYTHON"> PYTHON</td>
+												name="check" value="22"> PYTHON</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check23" value="QA"> QA</td>
+												name="check" value="23"> QA</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check24" value="RUBY"> RUBY</td>
+												name="check" value="24"> RUBY</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check25" value="SERVER개발"> SERVER개발</td>
+												name="check" value="25"> SERVER개발</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check26" value="VB"> VB</td>
+												name="check" value="26"> VB</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check27" value="VC++"> VC++</td>
+												name="check" value="27"> VC++</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check28" value="WINDOWS"> WINDOWS</td>
+												name="check" value="28"> WINDOWS</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check29" value="임베디드"> 임베디드</td>
+												name="check29" value="29"> 임베디드</td>
 											<td class="td_bor_bott">&nbsp;</td>
 										</tr>
 									</table> <!--img src="../img/sb_category.gif" width="87" height="18" align="absmiddle"-->
@@ -225,31 +225,31 @@
 										</colgroup>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check30" value="HTML5"> HTML5</td>
+												name="check" value="30"> HTML5</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check31" value="그래픽디자인"> 그래픽디자인</td>
+												name="check" value="31"> 그래픽디자인</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check32" value="모바일"> 모바일</td>
+												name="check" value="32"> 모바일</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check33" value="액션스크립트"> 액션스크립트</td>
+												name="check" value="33"> 액션스크립트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check34" value="웹디자인"> 웹디자인</td>
+												name="check" value="34"> 웹디자인</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check35" value="웹표준"> 웹표준</td>
+												name="check" value="35"> 웹표준</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check36" value="파워포인트"> 파워포인트</td>
+												name="check" value="36"> 파워포인트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check37" value="퍼블리싱"> 퍼블리싱</td>
+												name="check" value="37"> 퍼블리싱</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check38" value="포토샵편집"> 포토샵편집</td>
+												name="check" value="38"> 포토샵편집</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check39" value="플래시"> 플래시</td>
+												name="check" value="39"> 플래시</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check40" value="3D"> 3D</td>
+												name="check" value="40"> 3D</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
@@ -273,22 +273,22 @@
 										</colgroup>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check41" value="Oracle컨설턴트">
+												name="check" value="41">
 												Oracle컨설턴트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check42" value="PM"> PM</td>
+												name="check" value="42"> PM</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check43" value="PMO"> PMO</td>
+												name="check" value="43"> PMO</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check44" value="SAP컨설턴트"> SAP컨설턴트</td>
+												name="check" value="44"> SAP컨설턴트</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check45" value="기획"> 기획</td>
+												name="check" value="45"> 기획</td>
 										</tr>
 										<tr class="che_list011">
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check46" value="모바일기획"> 모바일기획</td>
+												name="check" value="46"> 모바일기획</td>
 											<td class="td_bor_bott"><input type="checkbox"
-												name="check47" value="웹기획"> 웹기획</td>
+												name="check" value="47"> 웹기획</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
 											<td class="td_bor_bott">&nbsp;</td>
@@ -461,25 +461,27 @@
 							<tr>
 								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span>
 									근무지</th>
-								<td colspan="5"><select id="select1" name="p_location1" style="width: 80px; margin-top: 10px;" onchange="javscript:fnSelect(this);"> 
+								<td colspan="5">
+								<select id="select1" name="p_location1" style="width: 80px; margin-top: 10px;" onchange="javscript:fnSelect(this);"> 
 								<option value="">시, 도</option>
-<option>서울특별시</option>
-<option>부산광역시</option>
-<option>대구광역시</option>
-<option>인천광역시</option>
-<option>광주광역시</option>
-<option>대전광역시</option>
-<option>울산광역시</option>
-<option>경기도</option>
-<option>강원도</option>
-<option>충청북도</option>
-<option>충청남도</option>
-<option>전라북도</option>
-<option>전라남도</option>
-<option>경상북도</option>
-<option>경상남도</option>
-<option>제주특별자치도</option>
+								<option>서울특별시</option>
+								<option>부산광역시</option>
+								<option>대구광역시</option>
+								<option>인천광역시</option>
+								<option>광주광역시</option>
+								<option>대전광역시</option>
+								<option>울산광역시</option>
+								<option>경기도</option>
+								<option>강원도</option>
+								<option>충청북도</option>
+								<option>충청남도</option>
+								<option>전라북도</option>
+								<option>전라남도</option>
+								<option>경상북도</option>
+								<option>경상남도</option>
+								<option>제주특별자치도</option>
 								</select> 
+								
 								<select id="select2" name="p_location2" style="width: 80px; margin-top: 10px;" onchange="javscript:fnSelect(this);"> 
 								<option>시, 군, 구</option> 
 							
@@ -522,9 +524,7 @@
 				</div>
 				<!-- //tb_box : e -->
 				<div class="btn_box">
-					<input
-						class="btn btn-lg btn-client js-disable-on-click btn-submit"
-						autocomplete="off" data-loading-text="제출 중" name="post_a_job"
+					<input id="checkValue" class="btn btn-lg btn-client js-disable-on-click btn-submit" autocomplete="off" data-loading-text="제출 중" name="post_a_job"
 						value="프로젝트 정보 등록완료" type="submit">
 
 				</div>
