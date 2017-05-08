@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" href="e_insertproject_css/e_insertproject.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/e_insertproject/e_insertproject_css/e_insertproject.css"
 	type="text/css" media="screen" />
 	
 <link rel="stylesheet" href="${pageContext.request.contextPath}/e_insertproject/e_insertproject_css/e_insertproject.css"
@@ -14,10 +14,8 @@
 	
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-<script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/e_insertproject2.js"></script>
-<script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/e_insertproject.js"></script>
-<script type="text/javascript" src="/Matching_Project/e_insertproject/e_insertproject_js/calendar.js"></script>
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_insertproject/e_insertproject_js/e_insertproject.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_insertproject/e_insertproject_js/e_insertproject2.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_insertproject/e_insertproject_js/calendar.js"></script>
 
@@ -62,7 +60,6 @@
 					<div class="fr">
 						<p>
 							<span class="txt_or">(*) </span>표시는 필수 입력사항입니다.
-							<!--<a href="javascript:void(0);" class="btn_sam">샘플양식</a>-->
 						</p>
 					</div>
 				</div>
@@ -299,7 +296,7 @@
 
 
 							<tr>
-								<th scope="row" colspan="2" class="ac"><span class="txt_or">*</span><label
+								<th scope="row" colspan="2" class="ac"><span class="txt_or"></span><label
 									for="p_content">상세내용</label></th>
 								<td colspan="5"><textarea id="p_content" name="p_content"
 										class="txt_area">
@@ -440,10 +437,10 @@
 									금액(월단위)</th>
 								<td colspan="5"><label for="fm_minmoney"></label> 
 								<input type="text" id="p_lowerCost" name="p_lowerCost" class="wid03" onKeyPress="javascript:CheckMoney('ProjectWriteFm','fm_minmoney');" onKeyUp="javascript:CheckMoney('ProjectWriteFm','fm_minmoney');" />
-								<span>원 ~ </span>
+								<span>만원 ~ </span>
 								<label for="fm_maxmoney"></label>
 								<input type="text" id="p_upperCost" name="p_upperCost" class="wid03" onKeyPress="javascript:CheckMoney('ProjectWriteFm','fm_maxmoney');" onKeyUp="javascript:CheckMoney('ProjectWriteFm','fm_maxmoney');" />
-								<span>원 &nbsp;</span> 
+								<span>만원 &nbsp;</span> 
 							
 								<span class="txt_red">* VAT별도 금액입니다.</span> <br />
 							
@@ -464,26 +461,30 @@
 								<td colspan="5">
 								<select id="select1" name="p_location1" style="width: 80px; margin-top: 10px;" onchange="javscript:fnSelect(this);"> 
 								<option value="">시, 도</option>
-								<option>서울특별시</option>
-								<option>부산광역시</option>
-								<option>대구광역시</option>
-								<option>인천광역시</option>
-								<option>광주광역시</option>
-								<option>대전광역시</option>
-								<option>울산광역시</option>
-								<option>경기도</option>
-								<option>강원도</option>
-								<option>충청북도</option>
-								<option>충청남도</option>
-								<option>전라북도</option>
-								<option>전라남도</option>
-								<option>경상북도</option>
-								<option>경상남도</option>
-								<option>제주특별자치도</option>
+								<option value="서울특별시">서울특별시</option>
+								<option value="부산광역시">부산광역시</option>
+								<option value="대구광역시">대구광역시</option>
+								<option value="인천광역시">인천광역시</option>
+								<option value="광주광역시">광주광역시</option>
+								<option value="대전광역시">대전광역시</option>
+								<option value="울산광역시">울산광역시</option>
+								<option value="경기도">경기도</option>
+								<option value="강원도">강원도</option>
+								<option value="충청북도">충청북도</option>
+								<option value="충청남도">충청남도</option>
+								<option value="전라북도">전라북도</option>
+								<option value="전라남도">전라남도</option>
+								<option value="경상북도">경상북도</option>
+								<option value="경상남도">경상남도</option>
+								<option value="제주특별자치도">제주특별자치도</option>
 								</select> 
 								
 								<select id="select2" name="p_location2" style="width: 80px; margin-top: 10px;" onchange="javscript:fnSelect(this);"> 
-								<option>시, 군, 구</option> 
+								<option value="">시, 군, 구</option> 
+							
+							
+							
+							
 							
 								</select>
 
@@ -495,7 +496,7 @@
 									희망 경력년수</th>
 								<td colspan="5"><select class="wid03" name="p_experience"
 									id="p_experience">
-										<option value="99" selected>상관없음</option>
+										<option value="">상관없음</option>
 										<option value="01">1 년차</option>
 										<option value="02">2 년차</option>
 										<option value="03">3 년차</option>
@@ -522,16 +523,12 @@
 						</tbody>
 					</table>
 				</div>
-				<!-- //tb_box : e -->
 				<div class="btn_box">
 					<input id="checkValue" class="btn btn-lg btn-client js-disable-on-click btn-submit" autocomplete="off" data-loading-text="제출 중" name="post_a_job"
 						value="프로젝트 정보 등록완료" type="submit">
-
-				</div>
-			</div>
-			<!-- footer02 : e -->
-		</div>
-		<!-- footer_wrap : e  -->
+						</div>
+						</div>
+						</div>
 		</form>
 	</div>
 	<%@include file="../c_common/footer.jsp"%>
