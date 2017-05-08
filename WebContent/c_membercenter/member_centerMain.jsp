@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,10 +23,10 @@
 			<%@include file="../c_common/header.jsp"%>
 		</c:when>
 		<c:when test="${identity.identity == 'enterprise' }">
-			<%@include file="../c_common/header_enterprise.jsp" %>
+			<%@include file="../c_common/header_enterprise.jsp"%>
 		</c:when>
 	</c:choose>
-	
+
 
 	<section>
 
@@ -82,40 +83,55 @@
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
-							 <td colspan="3" class="join" >
-								<input type="text" id="fm_name" name="fm_name" class="wid02" value="${identity.identity }">
-								</td>
-								<h1>^^</h1>
-								<c:choose>
-									<c:when test="${identity.identity =='freelancer' }">
+								<td colspan="3" class="join">
+								<input type="text"
+									id="fm_name" name="fm_name" class="wid02"
+									value=<c:choose>
+									<c:when test="${identity.identity == 'freelancer' }">
 										${client.f_name }
 									</c:when>
 									<c:when test="${identity.identity == 'enterprise' }">
 										${client.e_name }
 									</c:when>
-								</c:choose>
-								
-			
-								<!-- 테스트 영역 -->
-								<td colspan="3" class="join"><input type="text"
-									id="fm_name" name="fm_name" class="wid02"
-									value=""></td>
-								<!--테스트 영역 종료  -->
+									<c:otherwise>
+									이름을&nbsp;입력해&nbsp;주세요.
+									</c:otherwise>
+								</c:choose>>
+								</td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> <label
-										for="fm_phone">연락처</label></th>
+									for="fm_phone">연락처</label></th>
 								<td colspan="3" class="join"><input type="text"
 									id="fm_phone" name="fm_phone" class="wid02"
-									value="${client.f_hphone }"></td>
+									value=<c:choose>
+									<c:when test="${identity.identity == 'freelancer' }">
+										${client.f_hphone }
+									</c:when>
+									<c:when test="${identity.identity == 'enterprise' }">
+										${client.e_phone}
+									</c:when>
+									<c:otherwise>
+									연락처를&nbsp;입력해&nbsp;주세요.
+									</c:otherwise>
+								</c:choose>>
+								</td>
 							</tr>
 							<tr>
 								<th scope="row"><span class="text_star">*</span> 이메일</th>
 								<td colspan="3"><label for></label> <input type="text"
 									id="fm_email_1" name="fm_email_1" class="wid04"
-									value="${client.f_email }"> <!-- <span>@</span> <label
-									for="fm_email_2"></label> <input type="text" id="fm_email_2"
-									name="fm_email_2" class="wid04" value="도메인" readonly="readonly"> -->
+									value=<c:choose>
+									<c:when test="${identity.identity == 'freelancer' }">
+										${client.f_email }
+									</c:when>
+									<c:when test="${identity.identity == 'enterprise' }">
+										${client.e_mail }
+									</c:when>
+									<c:otherwise>
+									이메일을&nbsp;입력해&nbsp;주세요.
+									</c:otherwise>
+								</c:choose>>
 								</td>
 							</tr>
 							<tr>
