@@ -29,9 +29,17 @@
 		e_bf
 	</update> -->
 	
-	<!-- 프로젝트 목록 출력 -->
-	<select id="listProject" resultType="Project">
-		SELECT * FROM e_request_project e, sign_project s WHERE  e.e_pr_num = s.e_pr_num AND e.e_num = #{e_num}
+	<!-- 프로젝트 목록 출력 (모집중) -->
+	<select id="listProjectReady" resultType="Project">
+		SELECT * FROM e_request_project e, sign_project s WHERE  e.e_pr_num = s.e_pr_num AND e.e_num = #{e_num} AND s.state = '모집중'
+	</select>
+	<!-- 프로젝트 목록 출력 (진행중) -->
+	<select id="listProjectDoing" resultType="Project">
+		SELECT * FROM e_request_project e, sign_project s WHERE  e.e_pr_num = s.e_pr_num AND e.e_num = #{e_num} AND s.state = '진행중'
+	</select>
+	<!-- 프로젝트 목록 출력 (완료) -->
+	<select id="listProjectDone" resultType="Project">
+		SELECT * FROM e_request_project e, sign_project s WHERE  e.e_pr_num = s.e_pr_num AND e.e_num = #{e_num} AND s.state = '완료'
 	</select>
 
 	

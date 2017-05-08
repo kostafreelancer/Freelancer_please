@@ -1,7 +1,7 @@
 $(function(){
 	
-/*	//아이디 중복확인 창 띄우기
-	$('#idCheckbox').click(function(){
+	//아이디 중복확인 창 띄우기
+/*	$('#idCheckbox').click(function(){
 		  window.name = "parentForm";
 		  window.open("idCheckForm.jsp",
 		            "chk", "width=500, height=300, resizable = no, scrollbars = no"); 
@@ -15,8 +15,8 @@ $(function(){
 				window.open(
 						url, 
 						"id check", "toolbar=no, width=350, height=150, top=150, left=150");
-			}*/
-	})
+			}
+	});*/
 	
 	
 	//사진이미지 미리보기
@@ -32,15 +32,15 @@ $(function(){
 		      }
 		      $('#manager_mail2').val(e_mail);
 		   });
-	$('#e_mail3').change(function(){
-		var e_mail = $(this).val();
-		if(e_mail == ""){
-			$('#e_mail2').removeAttr('readonly');
-		}else{
-			$('#e_mail2').attr('readonly', 'true')
-		}
-		$('#e_mail2').val(e_mail);
-	});
+	   $('#e_mail3').change(function(){
+		   var e_mail = $(this).val();
+		   if(e_mail == ""){
+			   $('#e_mail2').removeAttr('readonly');
+		   }else{
+			   $('#e_mail2').attr('readonly', 'true')
+		   }
+		   $('#e_mail2').val(e_mail);
+	   });
 
 	
 	
@@ -48,17 +48,8 @@ $(function(){
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	//회원가입 빈칸 확인
-	/*$('#checkValue').click(function(){
+	$('#checkValue').click(function(){
 		var form = document.userInfo;
         
         if(!form.e_id.value){
@@ -66,10 +57,10 @@ $(function(){
             return false;
         }
         
-        if(form.idDuplication.value != "idCheck"){
+/*        if(form.idDuplication.value != "idCheck"){
             alert("아이디 중복체크를 해주세요.");
             return false;
-        }
+        }*/
         
         if(!form.e_pwd.value){
             alert("비밀번호를 입력하세요.");
@@ -184,15 +175,15 @@ $(function(){
         	alert("회사주소를 입력하세요.");
         	return false;
         }
-        if(!form.e_licensefile.value){
+/*        if(!form.e_licensefile.value){
         	alert("사업자등록증을 등록해주세요.");
         	return false;
         }*/
         
         
-/*	});*/
+});
 	
-//});
+});
 
 
 

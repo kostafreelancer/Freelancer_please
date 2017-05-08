@@ -24,14 +24,15 @@ public class E_ProjectListAction implements E_MypageAction {
 		int e_num = enterprise.getE_num();
 		
 		E_MypageDao dao = E_MypageDao.getInstance();
-		List<Project> list = dao.listProject(e_num);
+		List<Project> readyList = dao.listProjectReady(e_num);
+		List<Project> doingList = dao.listProjectDoing(e_num);
+		List<Project> doneList = dao.listProjectDone(e_num);
 		
-		request.setAttribute("list", list);
+		request.setAttribute("readyList", readyList);
+		request.setAttribute("doingList", doingList);
+		request.setAttribute("doneList", doneList);
 		
-		
-		
-		
-		
+
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
