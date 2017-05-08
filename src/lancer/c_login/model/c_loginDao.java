@@ -78,17 +78,24 @@ public class c_loginDao {
 			try{
 				
 				free = session.getMapper(c_loginMapper.class).select_f_login(client);
-				identity.setIdentity("freelancer");
-				identity.setFree(free);
+				if(free == null){
+					identity.setIdentity("no");
+				}else{
+					identity.setIdentity("freelancer");
+					identity.setFree(free);
+				}
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
 		}else if(checking.equals("enterprise")){
 			try{
 				enter = session.getMapper(c_loginMapper.class).select_e_login(client);
-				identity.setIdentity("enterprise");
-				identity.setEnter(enter);
-				
+				if(enter == null){
+					identity.setIdentity("no");
+				}else{
+					identity.setIdentity("enterprise");
+					identity.setEnter(enter);
+				}
 			}catch (Exception e) {
 				e.printStackTrace();
 			}

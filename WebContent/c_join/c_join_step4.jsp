@@ -41,7 +41,7 @@
 				<li class="step04"><span>Step04</span>가입완료</li>
 			</ul>
 			<div class="completion">
-				<p class="comple01">님은 회원이 되었습니다.</p>
+				<p class="comple01">드림랜서 회원이 되었습니다.</p>
 				<p class="comple02">
 					<span class="color_or">반갑습니다!</span> IT프로젝트 중계분야 <span
 						class="color_or">으뜸</span>! 프로젝트 / 프리랜서 등록수 <span class="color_or">최고!</span>

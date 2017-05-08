@@ -30,7 +30,7 @@
 	
 				<li><img alt="log_img"
 					src="/Matching_Project/c_common/c_common_img/header_log_icon01.jpg">
-					<a href="/Matching_Project/f_main/f_main.jsp">로그 아웃</a></li>
+					<a href="remove_session.c_login">로그 아웃</a></li>
 				<li><img alt="home_img"
 					src="/Matching_Project/c_common/c_common_img/header_home_icon01.jpg">
 					<a href="/Matching_Project/c_main/c_main.jsp">홈</a></li>

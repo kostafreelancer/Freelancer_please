@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../common/footer.css" type="text/css" media="screen" />
 <title>로그인</title>
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-<script type="text/javascript" src="../common/header.js"></script>
+<script type="text/javascript" src="c_login_js/c_login.js"></script>
 </head>
 
 
@@ -33,9 +33,10 @@
                 	<div class="log_box">
                     	<div class="log_lef">
                         	<p>로그인을 위해 아이디와 패스워드를 입력해 주세요.</p>
-							<form method="post" name="MemberLoginFm" action="insert.c_login" >
+							<form method="post" name="MemberLoginFm" action="insert.c_login" class="c_login">
 							<input type="hidden" name="fm_url" value="">
 							<input type="hidden" name="fm_str" value="">
+							<input type="hidden" class="checking_login" value="${identity.identity }">
                             <label for="fm_id" class="tx_skip">아이디 입력</label>
                             <div><input type="text" id="fm_id"  class="log_inp01" name="c_id" /></div>
                             <div><input type="password" id="fm_passwd" class="log_inp02" name="pwd" onKeyPress="javascript:LoginEnterCheck();" /></div>
@@ -54,10 +55,11 @@
                                 <a href="javascript:FindID();" class="pass_find">아이디 패스워드 찾기 &gt;</a>
                              </div>
                             <p>
-                                <!-- <a href="javascript:LoginCheckIt();" class="btn_login">로그인
+                                <!-- <a href="javascript:;" class="btn_login">로그인
                                 	
-                                </a>   -->
-                           		<input class = "login_submit" type="submit" value="로그인"> 
+                                </a>  --> 
+                                <span class="btn_login">로그인</span> 
+                           		<!-- <input class = "login_submit" type="submit" value="로그인">  -->
 								<a href="/Matching_Project/c_join/c_join_step1.jsp" class="btn_join">회원가입</a>
                             </p>
 							</form>

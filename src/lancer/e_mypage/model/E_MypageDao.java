@@ -43,10 +43,32 @@ public class E_MypageDao {
 		}
 	}
 	
-	public List<Project> listProject(int e_num){
+	public List<Project> listProjectReady(int e_num){
 		SqlSession session = getSqlSessionFactory().openSession();
 		try {
-			return session.getMapper(E_MypageMapper.class).listProject(e_num);
+			return session.getMapper(E_MypageMapper.class).listProjectReady(e_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+	}
+	public List<Project> listProjectDoing(int e_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {
+			return session.getMapper(E_MypageMapper.class).listProjectDoing(e_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+	}
+	public List<Project> listProjectDone(int e_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {
+			return session.getMapper(E_MypageMapper.class).listProjectDone(e_num);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

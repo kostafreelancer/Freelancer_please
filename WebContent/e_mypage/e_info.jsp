@@ -55,10 +55,10 @@
 	</div>
 
 
-
+<form action="e_infoEpdateAction.e_mypage" method="post" enctype="multipart/form-data">
 	<div class="e_info_table1">
 		<h4>아이디 및 비밀번호</h4>
-		<form action="e_infoEpdateAction.e_mypage" method="post" enctype="multipart/form-data">
+		
 			<table class="tb_st01">
 				<colgroup>
 					<col style="width: 16%">
@@ -119,7 +119,7 @@
 					</span></td>
 				</tr>
 			</table>
-		</form>
+		
 	</div>
 
 
@@ -333,10 +333,10 @@
 	</div>
 
 	<div class="btn_box mb30 mb02">
-		<a href="javascript:MemberModifyIt();" class="btn_check06">수정하기</a> <a
-			href="javascript:MemberModifyFm.reset();" class="btn_check02">초기화</a>
+		<input type="submit" class="btn_check06" value="수정하기">
 	</div>
-
+	
+	</form>
 	</section>
 
 	<%@include file="../c_common/footer.jsp"%>
