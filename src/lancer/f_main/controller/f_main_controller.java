@@ -28,9 +28,9 @@ public class f_main_controller extends HttpServlet {
 
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
     	String requestURI = request.getRequestURI();
-    	System.out.println(request.getRequestURI() + "    URIaa");
+    	System.out.println(requestURI + "    URIaa");
     	String contextPath = request.getContextPath();
-    	
+    	System.out.println(contextPath + "   conpath");
     	String command = requestURI.substring(contextPath.length()+1);
     	System.out.println(command + "    aacommand");
     	
@@ -44,7 +44,7 @@ public class f_main_controller extends HttpServlet {
     		try {
 				forward = action.execute(request, response);
 				
-				System.out.println(request.getAttribute("member") + "이름");
+				System.out.println(request.getAttribute("member") + "이름 멤버");
 				
 			
 			} catch (Exception e) {
