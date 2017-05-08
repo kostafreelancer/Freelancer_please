@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import lancer.f_main.action.countFreelancerAction;
 import lancer.f_main.action.getF_infoAction;
 import lancer.f_main.action.mainAction;
 import lancer.f_main.action.mainActionForward;
@@ -38,13 +39,15 @@ public class f_main_controller extends HttpServlet {
     	 
     	mainActionForward forward = null;
     	mainAction action = null;
-    	
+    	mainAction action2 = null;
     	if(command.equals("f_main/f_main.fm")){
     		action = new getF_infoAction();
+    		action2 = new countFreelancerAction();
     		try {
 				forward = action.execute(request, response);
-				
-				System.out.println(request.getAttribute("member") + "이름 멤버");
+				forward = action2.execute(request, response);
+				System.out.println(request.getAttribute("count") + "카운트");
+				System.out.println(request.getAttribute("member1") + "이름 멤버");
 				
 			
 			} catch (Exception e) {

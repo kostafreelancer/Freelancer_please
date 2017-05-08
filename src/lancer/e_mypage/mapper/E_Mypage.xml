@@ -12,11 +12,11 @@
 	
 	<!-- 기업 하나의 정보를 데이터베이스에서 가져오기 -->
 	<select id="selectEnterprise" resultType="Enterprise">
-		select * from enterprise where e_num = #{e_num}
+		SELECT * FROM enterprise WHERE e_num = #{e_num}
 	</select>
 	
 	<!-- 기업 정보 업데이트 -->
-	<!-- <update id="updateEnterprise" parameterType="c_login_enterprise">
+	<update id="updateEnterprise" parameterType="c_login_enterprise">
 		update enterprise set
 		e_pwd=#{e_pwd},
 		e_mail
@@ -27,7 +27,7 @@
 		e_regno
 		e_phone
 		e_bf
-	</update> -->
+	</update>
 	
 	<!-- 프로젝트 목록 출력 (모집중) -->
 	<select id="listProjectReady" resultType="Project">
@@ -42,7 +42,13 @@
 		SELECT * FROM e_request_project e, sign_project s WHERE  e.e_pr_num = s.e_pr_num AND e.e_num = #{e_num} AND s.state = '완료'
 	</select>
 
+	<select id="selectProject" parameterType="java.util.HashMap" resultType="Project">
+		SELECT * FROM e_request_project WHERE e_num = #{e_num} AND e_pr_num = #{e_pr_num}
+	</select>
 	
+	<select id="selectP_job" resultType="Integer">
+		SELECT job_id FROM p_job WHERE e_pr_num = #{e_pr_num}
+	</select>
 
 
 

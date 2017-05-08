@@ -21,11 +21,15 @@ public class c_freelancerlist_total {
 	private List<c_freelancerlist_career> list_career;
 	private List<c_freelancerlist_portfolio> list_portfolio;
 	private List<String> list_job;
+	private int f_age;
+	private String f_highest_career;
+	private String f_highest_school;
 	public c_freelancerlist_total(){}
 	public c_freelancerlist_total(int f_num, String f_id, String f_pwd, String f_name, String f_birth, String f_sex,
 			String f_hphone, String f_phone, String f_email, String f_address, String f_major, String f_nowstate,
 			Date f_recentlogin, List<c_freelancerlist_school> list_school, List<c_freelancerlist_career> list_career,
-			List<c_freelancerlist_portfolio> list_portfolio, List<String> list_job) {
+			List<c_freelancerlist_portfolio> list_portfolio, List<String> list_job, int f_age, String f_highest_career,
+			String f_highest_school) {
 		super();
 		this.f_num = f_num;
 		this.f_id = f_id;
@@ -44,6 +48,9 @@ public class c_freelancerlist_total {
 		this.list_career = list_career;
 		this.list_portfolio = list_portfolio;
 		this.list_job = list_job;
+		this.f_age = f_age;
+		this.f_highest_career = f_highest_career;
+		this.f_highest_school = f_highest_school;
 	}
 	public int getF_num() {
 		return f_num;
@@ -147,6 +154,25 @@ public class c_freelancerlist_total {
 	public void setList_job(List<String> list_job) {
 		this.list_job = list_job;
 	}
+	public int getF_age() {
+		return f_age;
+	}
+	public void setF_age(int f_age) {
+		this.f_age = f_age;
+	}
+	public String getF_highest_career() {
+		return f_highest_career;
+	}
+	public void setF_highest_career(String f_highest_career) {
+		this.f_highest_career = f_highest_career;
+	}
+	public String getF_highest_school() {
+		return f_highest_school;
+	}
+	public void setF_highest_school(String f_highest_school) {
+		this.f_highest_school = f_highest_school;
+	}
+	
 	
 	
 }

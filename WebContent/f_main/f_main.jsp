@@ -23,23 +23,23 @@ google.charts.setOnLoadCallback(drawMultSeries);
  
 function drawMultSeries() {
       var data = google.visualization.arrayToDataTable([
-        ['주제', '주제', '주제'],
-        ['Java', 1234, 0], /* DB통계? */
-        ['C', 1958, 0],
+        ['주제', '3월', '4월'],
+        ['Java', ${count}, 0], /* DB통계? */
+        ['C', 0, 0],
         ['3', 0, 0],
         ['4', 0, 0],
-        ['5', 1237, 88]
+        ['5', 0, 0]
       ]);
  
       var options = {
         title: '차트주제',
         chartArea: {width: '50%'},
         hAxis: {
-          title: '인기도?',
+          title: '월별 언어 사용량 추이',
           minValue: 0
         },
         vAxis: {
-          title: '차트주제'
+          title: ''
         }
       };
  
@@ -70,11 +70,11 @@ function drawMultSeries() {
 	</div>
 
 	<div class="main_news">
-		<!-- <h1>뉴스 영역 or 프리랜서/기업소개 영역((추후 h1영역 삭제))</h1> -->
+		<h1>활동중인 프리랜서</h1>
 		<div class="left_news">
-
+			
 			<ul>
-				<li><a href="#"><h3>[자바] 자바경력 10년ㅁㅁ</h3>
+				<li><a href="#"><h3>${member1 }</h3>
 						<br>프로젝트 다수^^</a></li>
 				<li><a href="http://www.daum.net"><h3>[Daum뉴스] 웹 개발자
 							선풍적인 인기~</h3>
@@ -101,6 +101,7 @@ function drawMultSeries() {
 		<div id="content">
 			<div id="tab1">
 				<h2>프리랜서 정보</h2>
+				<h3>현재 활동중인 프리랜서는 ${count }명 입니다.</h3>
 				<img alt="" src="f_main_img/icon01_off.png"> <img alt=""
 					src="f_main_img/icon02_off.png"> <img alt=""
 					src="f_main_img/icon03_off.png"> <img alt=""
@@ -119,7 +120,7 @@ function drawMultSeries() {
 			</div>
 			<div id="tab2">
 				<h2>프로젝트 정보</h2>
-
+				<h3>현재 등록된 프로젝트 수</h3>
 				<img alt="" src="f_main_img/icon01_off.png"> <img alt=""
 					src="f_main_img/icon02_off.png"> <img alt=""
 					src="f_main_img/icon03_off.png"> <img alt=""
@@ -153,10 +154,11 @@ function drawMultSeries() {
 	</div>
 	<h1> 테스트영역</h1>
 		<form action="f_main.fm" method="post">
-		<input type="text" value="${member }">
+		<input type="text" value="${member0}">
 		<input type="submit" value="a" id="test">
 		</form>
-		<input type="text" value="${member }">
+		<input type="text" value="${member1 }">
+		<input type="text" value="${count }">
 	</section>
 	<%@ include file="../c_common/footer.jsp"%>
 

@@ -24,6 +24,97 @@ public class E_InfoUpdateAction implements E_MypageAction {
 		E_MypageDao dao = E_MypageDao.getInstance();
 		c_login_enterprise enterprise = new c_login_enterprise();
 		
+		String pwd1 = request.getParameter("e_pwd1");
+		String pwd2 = request.getParameter("e_pwd2");
+		
+		//회사이메일
+		String email1 = request.getParameter("e_mail_1");
+		String email2 = request.getParameter("e_mail_2");
+		String e_email = email1+"@"+email2;
+		enterprise.setE_mail(e_email);
+
+		enterprise.setE_ownerfile(request.getParameter("e_ownerfile"));
+		
+		enterprise.setE_name(request.getParameter("e_name"));
+		
+		enterprise.setE_ename(request.getParameter("e_ename"));
+		
+		enterprise.setE_owner(request.getParameter("e_owner"));
+		
+		//사업자번호
+		String regno_1 = request.getParameter("regno_1");
+		String regno_2 = request.getParameter("regno_2");
+		String regno_3 = request.getParameter("regno_3");
+		String e_regno = regno_1 + "-" + regno_2 + "-" + regno_3;
+		enterprise.setE_regno(e_regno);
+		
+		//대표번호e_phone1
+		String e_phone_1 = request.getParameter("e_phone_1");
+		String e_phone_2 = request.getParameter("e_phone_2");
+		String e_phone_3 = request.getParameter("e_phone_3");
+		String e_phone = e_phone_1 + "-" + e_phone_2 + "-" + e_phone_3;
+		enterprise.setE_phone(e_phone);
+		
+		enterprise.setE_bf(request.getParameter("e_bf"));
+		
+		enterprise.setManager_name(request.getParameter("manager_name"));
+		
+		//담당자 핸드폰번호
+		String manager_hphone_1 = request.getParameter("manager_hphone_1");
+		String manager_hphone_2 = request.getParameter("manager_hphone_2");
+		String manager_hphone_3 = request.getParameter("manager_hphone_3");
+		String manager_hphone = manager_hphone_1 + "-" + manager_hphone_2 + "-" + manager_hphone_3;
+		enterprise.setManager_hphone(manager_hphone);
+		
+		//매니저이메일
+		String manager_mail_1 = request.getParameter("manager_mail_1");
+		String manager_mail_2 = request.getParameter("manager_mail_2");
+		String manager_mail = manager_mail_1 + "@" + manager_mail_2;
+		enterprise.setManager_mail(manager_mail);
+		
+		//회사 주소
+		String e_address_1=request.getParameter("e_address_1");
+		String e_address_2=request.getParameter("e_address_2");
+		String e_address_3=request.getParameter("e_address_3");
+		String e_address=e_address_1 + "&" + e_address_2 + "&" + e_address_3;
+		enterprise.setE_address(e_address);
+		
+		enterprise.setE_homepage(request.getParameter("e_homepage"));
+		
+		enterprise.setStart_year(Integer.parseInt(request.getParameter("start_year")));
+
+		enterprise.setE_enum(Integer.parseInt(request.getParameter("e_enum")));	
+				
+		enterprise.setE_listing(request.getParameter("e_listing"));		
+				
+		enterprise.setE_capital(Integer.parseInt(request.getParameter("e_capital")));
+				
+		enterprise.setE_sales(Integer.parseInt(request.getParameter("e_sales")));		
+				
+		enterprise.setE_scale(request.getParameter("e_scale"));		
+				
+		enterprise.setE_licensefile(request.getParameter("e_licensefile"));		
+				
+		enterprise.setE_check("0");
+				
+		
+		dao.updateEnterprise(enterprise);		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
