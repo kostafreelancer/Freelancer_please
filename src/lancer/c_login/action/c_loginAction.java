@@ -32,7 +32,6 @@ public class c_loginAction implements Action{
 			forward.setPath("/Matching_Project/e_main/e_main.jsp");
 			session.setAttribute("client", identity.getEnter());
 		}else if(identity.getIdentity().equals("no")){
-			System.out.println("여기 안들어 오는거냐?");
 			forward.setPath("/Matching_Project/c_login/login.jsp");
 		}
 		System.out.println(identity.getIdentity());		

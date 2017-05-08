@@ -14,6 +14,7 @@
 <title>프리랜서 목록</title>
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="../common/header.js"></script>
+<script type="text/javascript" src="/Matching_Project/c_freelancerlist/f_list_js/f_list.js"></script>
 </head>
 <body>
 
@@ -192,7 +193,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr
+					<!-- 	<tr
 							onclick="javascript:getDetail('cGFnZT0xJmluY3JlbWVudD0wJnVzZXJfbm89MTE1MTA5Mg==');"
 							style="cursor: pointer;">
 							<td class="img_box"><a href="#none"
@@ -213,7 +214,7 @@
 									OZREPORT, XPLATFORM, 웹접근성, 전자정부프레임워크,</p>
 								<p class="txt_or">2년 10개월 / 대학(학사) 졸업</p>
 							</td>
-						</tr>
+						</tr> -->
 						
 						<c:forEach var="totallist" items="${totallists }">
 							<tr>
@@ -222,7 +223,7 @@
 								<div class="name">
 									<a href="#">
 										<strong>${totallist.f_id }</strong>
-										<p>(${totallist.f_name} ,"35세")</p>
+										<p>("${totallist.f_name}" ,"${totallist.f_age }세")</p>
 									</a>
 								</div></td>
 							<td class="last">
@@ -231,7 +232,7 @@
 										${totallist.list_job},&nbsp;
 									</c:forEach>
 								<%-- ${totallist.list_job[0]} --%></p>
-								<p class="txt_or">11년 5개월 / ${totallist.list_school[0].school_term} </p>
+								<p class="txt_or" id="date_or">${totallist.f_highest_career} / ${totallist.f_highest_school} </p>
 							</td>
 							</tr>
 						</c:forEach> 

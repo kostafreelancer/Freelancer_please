@@ -1,13 +1,13 @@
 package lancer.c_freelancerlist.model;
 
-public class certificate {
+public class c_freelancerlist_certificate {
 	private int certificate_num;
 	private int f_num;
 	private String certificate_name;
 	private String organization;
 	private String accept_date;
-	public certificate(){}
-	public certificate(int certificate_num, int f_num, String certificate_name, String organization,
+	public c_freelancerlist_certificate(){}
+	public c_freelancerlist_certificate(int certificate_num, int f_num, String certificate_name, String organization,
 			String accept_date) {
 		super();
 		this.certificate_num = certificate_num;
