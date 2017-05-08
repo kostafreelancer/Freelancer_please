@@ -52,6 +52,47 @@
 	<delete id="deleteCareer" parameterType="int">
 		delete from career where career_num = #{career_num}
 	</delete>
+	
+	<select id="showSchoolInfo" parameterType="int" resultType="School">
+		select * from school where f_num = #{f_num}
+	</select>
+	
+	<select id="getSchoolNum" resultType="int">
+		select nvl(max(school_num), 0) from school
+	</select>
+	
+	<insert id="insertSchool" parameterType="School">
+		insert into school values(#{school_num}, #{f_num}, #{school_name}, #{major}, #{term}, #{location})
+	</insert>
+	
+	<update id="updateSchool" parameterType="School">
+		update school set school_name=#{school_name}, major = #{major}, term = #{term}, location = #{location} where school_num = #{school_num}
+	</update>
+	
+	<delete id="deleteSchool" parameterType="int">
+		delete from school where school_num = #{school_num}
+	</delete>
+	
+	<select id="showCertiInfo" parameterType="int" resultType="Certificate">
+		select * from certificate where f_num = #{f_num}
+	</select>
+	
+	<select id="getCertiNum" resultType="int">
+		select nvl(max(certificate_num), 0) from certificate
+	</select>
+	
+	<insert id="insertCerti" parameterType="Certificate">
+		insert into certificate values(#{certificate_num}, #{f_num}, #{certificate_name}, #{organization}, #{accept_date})
+	</insert>
+	
+	<update id="updateCerti" parameterType="Certificate">
+		update certificate set certificate_name=#{certificate_name}, organization=#{organization}, accept_date = #{accept_date} where certificate_num = #{certificate_num}
+	</update>
+		
+	<delete id="deleteCerti" parameterType="int">
+		delete from certificate where certificate_num = #{certificate_num}
+	</delete>
+	
 </mapper>
 
 

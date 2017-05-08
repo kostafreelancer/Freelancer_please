@@ -5,7 +5,7 @@
 <%
 	String career_num = request.getParameter("mycareer_career_num");
 	String company = request.getParameter("mycareer_company");
-	String dept = request.getParameter("mycareer_company");
+	String dept = request.getParameter("mycareer_dept");
 	String rank = request.getParameter("mycareer_rank");
 	String term = request.getParameter("mycareer_term");
 	String location = request.getParameter("mycareer_location");

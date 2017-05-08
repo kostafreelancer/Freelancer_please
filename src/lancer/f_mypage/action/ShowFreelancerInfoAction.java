@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import lancer.f_mypage.model.Career;
+import lancer.f_mypage.model.Certificate;
 import lancer.f_mypage.model.Freelancer;
 import lancer.f_mypage.model.FreelancerDao;
+import lancer.f_mypage.model.School;
 
 public class ShowFreelancerInfoAction implements Action {
 
@@ -41,10 +43,15 @@ public class ShowFreelancerInfoAction implements Action {
 		
 		List<Integer> joblist = dao.showFreelancerJobInfo(f_num);
 		List<Career> career = dao.showCareerInfo(f_num);
+		List<School> school = dao.showSchoolInfo(f_num);
+		List<Certificate> certificate = dao.showCertiInfo(f_num);
 		
 		request.setAttribute("freelancer", freelancer);
 		request.setAttribute("joblist", joblist);
 		request.setAttribute("career", career);
+		request.setAttribute("school", school);
+		request.setAttribute("certificate", certificate);
+		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("/f_mypage/myInfo.jsp");
