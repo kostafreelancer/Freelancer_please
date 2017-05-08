@@ -8,6 +8,8 @@
 		<typeAlias type="lancer.f_mypage.model.Freelancer" alias="Freelancer"/>
 		<typeAlias type="lancer.f_mypage.model.F_job" alias="F_job"/>
 		<typeAlias type="lancer.f_mypage.model.Career" alias="Career"/>
+		<typeAlias type="lancer.f_mypage.model.School" alias="School"/>
+		<typeAlias type="lancer.f_mypage.model.Certificate" alias="Certificate"/>
 	</typeAliases>
 	
 	<environments default="development">

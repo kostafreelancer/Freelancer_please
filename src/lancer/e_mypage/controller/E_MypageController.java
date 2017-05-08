@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import lancer.e_mypage.action.ActionForward;
 import lancer.e_mypage.action.E_MypageAction;
 import lancer.e_mypage.action.E_ProjectListAction;
+import lancer.e_mypage.action.E_ProjectSelectAction;
 import lancer.e_mypage.action.E_InfoSelectAction;
 import lancer.e_mypage.action.E_InfoUpdateAction;
 
@@ -54,6 +55,13 @@ public class E_MypageController extends HttpServlet {
 			}
 		}else if(command.equals("e_projectListAction.e_mypage")){
 			action = new E_ProjectListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("e_projectSelectAction.e_mypage")){
+			action = new E_ProjectSelectAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

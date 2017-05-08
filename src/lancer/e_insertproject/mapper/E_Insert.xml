@@ -15,12 +15,16 @@
 		)
 	</insert>
 	
+	<insert id="insertP_Job">
+		insert into p_job(
+		e_pr_num, job_id
+		)
+		values(
+		e_request_project_seq.CURRVAL, #{job_id}
+		)
+	</insert>
 	
-
 	
-
-
-
 </mapper>
 
 
