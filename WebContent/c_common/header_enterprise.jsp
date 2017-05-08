@@ -25,7 +25,7 @@
 			<ul class="header_top_menus">
 				<li><img alt="center_img"
 					src="/Matching_Project/c_common/c_common_img/header_center_icon.jpg">
-					<a href="/Matching_Project/member_center/member_centerMain.jsp">고객
+					<a href="f_name.mc">고객
 						센터</a></li>
 	
 				<li><img alt="log_img"
@@ -33,7 +33,7 @@
 					<a href="remove_session.c_login">로그 아웃</a></li>
 				<li><img alt="home_img"
 					src="/Matching_Project/c_common/c_common_img/header_home_icon01.jpg">
-					<a href="/Matching_Project/c_main/c_main.jsp">홈</a></li>
+					<a href="/Matching_Project/e_main/e_main.jsp">홈</a></li>
 			</ul>
 
 		</div>
@@ -63,11 +63,11 @@
 			<ul class="header_menus_e">
 				<li><a href="/Matching_Project/insert_project/real.jsp">프로젝트
 						등록</a></li>
-				<li><a href="/Matching_Project/list/project_list.jsp">프로젝트
+				<li><a href="/Matching_Project/c_projectlist/project_list.jsp">프로젝트
 						목록</a></li>
-				<li><a href="/Matching_Project/list/f_list.jsp">프리랜서 목록</a></li>
+				<li><a href="freelist.f_list">프리랜서 목록</a></li>
 				<li><a href="/Matching_Project/e_mypage/e_info.jsp">마이페이지</a></li>
-				<li><a href="/Matching_Project/using_method/e_service.jsp">이용
+				<li><a href="/Matching_Project/c_using/service.jsp">이용
 						방법</a></li>
 
 			</ul>

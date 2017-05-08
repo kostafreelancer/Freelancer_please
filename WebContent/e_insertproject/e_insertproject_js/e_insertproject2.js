@@ -1,7 +1,6 @@
 function fnSelect(obj){ 
     var select1Index =  document.getElementById("select1").selectedIndex; 
-var selectId = "select" 
-+ (Number(obj.getAttribute("id").replace("select", ""))+1);
+    var selectId = "select" + (Number(obj.getAttribute("id").replace("select", ""))+1);
     document.getElementsByTagName(selectId).length=0 
  
     // 두번째 select 박스 지우기 
@@ -37,7 +36,12 @@ var selectId = "select"
     document.getElementById(selectId).innerHTML = options_str;
     
     if(obj.getAttribute("id") == "select1") {
-        document.getElementById(selectId).addEventListener("change"
-                , fnSelect(document.getElementById(selectId)));    
+        document.getElementById(selectId).addEventListener("change" , fnSelect(document.getElementById(selectId)));    
     }
+ 
+   
  } 
+
+
+
+    

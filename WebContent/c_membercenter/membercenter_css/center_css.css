@@ -255,6 +255,7 @@ h1 {
 	margin-bottom: 20px;
 	display: inline;
 	border-bottom: 1px solid #d6d6d6;
+	
 }
 
 .must {
@@ -295,6 +296,7 @@ h1 {
 	margin-bottom: 10px;
 	font-family: 'NanumGothic_b';
 }
+
 
 .text_area {
 	height: 770px;
@@ -351,3 +353,4 @@ h1 {
 	margin-left: 45%;
 	margin-top: 70px;
 }
+

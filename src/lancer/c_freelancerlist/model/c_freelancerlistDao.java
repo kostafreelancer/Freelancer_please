@@ -1,6 +1,7 @@
 package lancer.c_freelancerlist.model;
 
 import java.io.InputStream;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -34,6 +35,7 @@ public class c_freelancerlistDao {
 		SqlSession session = getSqlSessionFacotry().openSession();
 		c_freelancerlist_total totallist = null;
 		List<c_freelancerlist_total> totallists = null;
+		Calendar cal = Calendar.getInstance();
 		try{
 			totallists = session.getMapper(c_freelancerMapper.class).c_freelancerlist_select_basic();
 		}catch (Exception e) {
@@ -49,6 +51,33 @@ public class c_freelancerlistDao {
 			totallists.get(i).setList_portfolio(list_portfolio);
 			List<String> list_job = session.getMapper(c_freelancerMapper.class).c_freelancerlist_select_job(totallists.get(i).getF_num());
 			totallists.get(i).setList_job(list_job);
+			int age = cal.get(Calendar.YEAR)-Integer.parseInt(totallists.get(i).getF_birth().substring(0, 4))+1;
+			totallists.get(i).setF_age(age);
+			if(totallists.get(i).getList_school().get(0).getSchool_term().equals("2년")){
+				totallists.get(i).setF_highest_school("대학(전문 학사)졸업");
+			}else if(totallists.get(i).getList_school().get(0).getSchool_term().equals("4년")){
+				totallists.get(i).setF_highest_school("대학(학사)졸업");
+			}
+			int total_year=0;
+			int total_month =0;
+			for(int j=0;j<totallists.get(i).getList_career().size();j++){
+				String str = totallists.get(i).getList_career().get(j).getCareer_term();
+				String arr[] = str.split("년");
+				total_year += Integer.parseInt(arr[0]);
+				if(arr.length >= 2){
+					total_month += Integer.parseInt(arr[1].substring(1, 2));
+				}
+			}
+			if(total_month/12 >= 1){
+				total_year++;
+				total_month = total_month%12;
+			}
+			if(total_month == 0){
+				totallists.get(i).setF_highest_career(total_year+"년 ");
+			}else{
+				totallists.get(i).setF_highest_career(total_year+"년 "+total_month+"개월");
+			}
+			
 		}
 	
 		return totallists;
@@ -65,4 +94,5 @@ public class c_freelancerlistDao {
 		}
 		return f_name;
 	}
+	
 }

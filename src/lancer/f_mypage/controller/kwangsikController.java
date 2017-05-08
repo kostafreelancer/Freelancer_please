@@ -12,10 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import lancer.f_mypage.action.Action;
 import lancer.f_mypage.action.ActionForward;
 import lancer.f_mypage.action.DeleteCareerAction;
+import lancer.f_mypage.action.DeleteCertificateAction;
+import lancer.f_mypage.action.DeleteSchoolAction;
 import lancer.f_mypage.action.InsertCareerAction;
+import lancer.f_mypage.action.InsertCertificateAction;
+import lancer.f_mypage.action.InsertSchoolAction;
 import lancer.f_mypage.action.ShowFreelancerInfoAction;
 import lancer.f_mypage.action.UpdateCareerAction;
+import lancer.f_mypage.action.UpdateCertificateAction;
 import lancer.f_mypage.action.UpdateFreelancerInfoAction;
+import lancer.f_mypage.action.UpdateSchoolAction;
 
 
 
@@ -68,6 +74,48 @@ public class kwangsikController extends HttpServlet {
 			}
     	}else if(command.equals("f_mypage/deleteCareer.f_mypage")){
     		action = new DeleteCareerAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("f_mypage/insertSchool.f_mypage")){
+    		action = new InsertSchoolAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("f_mypage/updateSchool.f_mypage")){
+    		action = new UpdateSchoolAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("f_mypage/deleteSchool.f_mypage")){
+    		action = new DeleteSchoolAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("f_mypage/insertCerti.f_mypage")){
+    		action = new InsertCertificateAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("f_mypage/updateCerti.f_mypage")){
+    		action = new UpdateCertificateAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("f_mypage/deleteCerti.f_mypage")){
+    		action = new DeleteCertificateAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

@@ -25,7 +25,7 @@ public class E_InsertDao {
 		return dao;
 	}
 	
-	public SqlSessionFactory getSqlSessionFactory(){		// sqlsessionfactory를 얻어옴
+	public SqlSessionFactory getSqlSessionFactory(){		
 		String resource = "mybatis-config_e_insertproject.xml";
 		InputStream in = null;
 		try {
@@ -37,12 +37,30 @@ public class E_InsertDao {
 		return new SqlSessionFactoryBuilder().build(in);
 	}
 	
-	public void insertProject(E_Insert project)throws Exception{	// 글 넣기 메소드
+	public void insertProject(E_Insert project)throws Exception{	
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
 		
 		try {
 			re = session.getMapper(E_InsertMapper.class).insertProject(project);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+	
+	public void insertP_Job(int job_id)throws Exception{	
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = session.getMapper(E_InsertMapper.class).insertP_Job(job_id);
 			if(re > 0){
 				session.commit();
 			}else{

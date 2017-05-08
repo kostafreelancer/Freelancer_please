@@ -1,16 +1,20 @@
 package lancer.e_mypage.action;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import lancer.e_mypage.model.Enterprise;
+import lancer.e_mypage.model.Project;
 import lancer.c_login.model.c_login_enterprise;
 import lancer.e_mypage.model.E_MypageDao;
 
 
 
-public class E_InfoSelectAction implements E_MypageAction {
+public class E_ProjectSelectAction implements E_MypageAction {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -19,21 +23,7 @@ public class E_InfoSelectAction implements E_MypageAction {
 		HttpSession session = request.getSession();
 		c_login_enterprise enterprise = (c_login_enterprise)session.getAttribute("client");
 		
-		// 분리할 값들 분리
-		String[] e_mail = enterprise.getE_mail().split("@");
-		request.setAttribute("e_mail_1", e_mail[0]);
-		request.setAttribute("e_mail_2", e_mail[1]);
-		
-		String[] regno = enterprise.getE_regno().split("-");
-		request.setAttribute("regno_1", regno[0]);
-		request.setAttribute("regno_2", regno[1]);
-		request.setAttribute("regno_3", regno[2]);
-		
-		String[] e_phone = enterprise.getE_phone().split("-");
-		request.setAttribute("e_phone_1", e_phone[0]);
-		request.setAttribute("e_phone_2", e_phone[1]);
-		request.setAttribute("e_phone_3", e_phone[2]);
-		
+		// 기업 정보 구하기
 		String[] manager_hphone = enterprise.getManager_hphone().split("-");
 		request.setAttribute("manager_hphone_1", manager_hphone[0]);
 		request.setAttribute("manager_hphone_2", manager_hphone[1]);
@@ -42,15 +32,32 @@ public class E_InfoSelectAction implements E_MypageAction {
 		String[] manager_mail = enterprise.getManager_mail().split("@");
 		request.setAttribute("manager_mail_1", manager_mail[0]);
 		request.setAttribute("manager_mail_2", manager_mail[1]);
-	
-		String[] e_address = enterprise.getE_address().split("&");
-		request.setAttribute("e_address_1", e_address[0]);
-		request.setAttribute("e_address_2", e_address[1]);
+		
+
+		// 프로젝트 정보 구하기
+		
+		int e_num = enterprise.getE_num();
+		int e_pr_num = Integer.parseInt(request.getParameter("e_pr_num"));
+
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("e_num", e_num);
+		map.put("e_pr_num", e_pr_num);
+		
+		E_MypageDao dao = E_MypageDao.getInstance();
+		Project project = dao.selectProject(map);
+		
+		request.setAttribute("project", project);
+		
+		//상세분야 구하기
+		List<Integer> p_job = dao.selectP_job(e_pr_num);
+		request.setAttribute("p_job", p_job);
+		
 		
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("/e_mypage/e_info.jsp");
+		forward.setPath("/e_mypage/e_projectInfo.jsp");
 		
 		return forward;
 	}
