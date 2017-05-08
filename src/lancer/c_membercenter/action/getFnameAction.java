@@ -45,6 +45,7 @@ public class getFnameAction implements Action {
 		forward.setRedirect(true);
 		forward.setPath("/Matching_Project/c_membercenter/member_centerMain.jsp");
 		
+		
 	/*	HttpSession session2 = request.getSession();
 		session2.setAttribute("f_name", f_name);*/
 		

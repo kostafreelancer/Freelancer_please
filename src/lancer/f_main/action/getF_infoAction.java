@@ -24,17 +24,20 @@ public class getF_infoAction implements mainAction {
 			System.out.println("member = " + member.get(i).f_name);
 			request.setAttribute("member" + i , member.get(i).f_name);
 		}
-	
+	/*	request.setAttribute("member",member.get(1).f_name);
+		System.out.println(request.getAttribute("member")+ "누구야");*/
 		
 		/*request.setAttribute("member", member);*/
 		/*session.setAttribute("member", member);*/
 		/*session.setAttribute("member_name", meme);*/
 	/*	session.setAttribute("f_name", member.getF_name());*/
-		mainActionForward mActionForward = new mainActionForward();
-		mActionForward.setRedirect(true);
-		mActionForward.setPath("/Matching_Project/f_main/f_main.jsp");
 		
-		return mActionForward;
+		
+		mainActionForward ActionForward = new mainActionForward();
+		ActionForward.setRedirect(false);
+		ActionForward.setPath("/f_main/f_main.jsp");
+		
+		return ActionForward;
 	}
 
 }

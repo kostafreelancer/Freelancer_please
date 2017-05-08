@@ -1,4 +1,4 @@
-<%@page import="lancer.f_main.model.member"%>
+<%-- <%@page import="lancer.f_main.model.member"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -45,7 +45,7 @@ function drawMultSeries() {
  
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
       chart.draw(data, options);
-    }
+    } 
     
 /* 	window.location.href="f_main.fm" */
    </script>
@@ -109,10 +109,10 @@ function drawMultSeries() {
 					<table class="active_p">
 						<tr>
 							<th>
-							<td></td>
-							<td>2 프리랜서DB</td>
-							<td>3 프리랜서DB</td>
-							<td>4 프리랜서DB</td>
+							<td>${member0 }</td>
+							<td>${member1 }</td>
+							<td>${member2 }</td>
+							<td>${member3 }</td>
 						</tr>
 					</table>
 				</form>
@@ -151,11 +151,12 @@ function drawMultSeries() {
 
 		</div>
 	</div>
-	<h1>${member3} 테스트영역</h1>
-		<form action="f_main.fm" method="get">
-		<input type="text" value="${member3 }"> 
+	<h1> 테스트영역</h1>
+		<form action="f_main.fm" method="post">
+		<input type="text" value="${member }">
 		<input type="submit" value="a" id="test">
 		</form>
+		<input type="text" value="${member }">
 	</section>
 	<%@ include file="../c_common/footer.jsp"%>
 
