@@ -260,16 +260,16 @@
 				<td colspan="4">
 				<div class="mb10">
 					<label for="fm_zip"></label> 
-					<input type="text" id="fm_zip" name="fm_zip" class="wid60"
+					<input type="text" id="fm_zip" name="e_address_1" class="wid60"
 						title="주소검색 새창" value="${e_address_1}" readonly=""> 
 					<input type = "button" class="btn_add" onClick = "openDaumZipAddress()" value = "주소 찾기" />
 			 
 				</div>
 				<div>
 					<label for="fm_address"></label> <input type="text"
-						id="fm_address" name="fm_address" class="wid"
+						id="fm_address" name="e_address_2" class="wid"
 						value="${e_address_2}"><input type="text"
-						id="fm_address_etc" name="fm_address_etc" class="wid"
+						id="fm_address_etc" name="e_address_3" class="wid"
 						value="${e_address_3}">
 				</div>
 				</td>
