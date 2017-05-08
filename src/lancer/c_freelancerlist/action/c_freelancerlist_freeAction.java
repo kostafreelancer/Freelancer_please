@@ -27,11 +27,11 @@ public class c_freelancerlist_freeAction implements Action{
 		int age = cal.get(Calendar.YEAR)-Integer.parseInt(totallists.get(0).getF_birth().substring(0, 4))+1;
 		System.out.println(age);*/
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setPath("/Matching_Project/c_freelancerlist/f_list.jsp");
+		forward.setRedirect(false);
+		forward.setPath("/c_freelancerlist/f_list.jsp");
 		HttpSession session = request.getSession();
-		session.setAttribute("totallists", totallists);
-		/*request.setAttribute("totallists", totallists);*/
+		/*session.setAttribute("totallists", totallists);*/
+		request.setAttribute("totallists", totallists);
 		return forward;
 	}
 	
