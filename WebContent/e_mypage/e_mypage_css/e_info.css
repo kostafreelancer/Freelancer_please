@@ -201,7 +201,7 @@ img, fieldset {
 }
 
 .mb02 {
-	margin-top: 85px;
+	margin-top: 30px;
 }
 
 .mb30 {
@@ -216,22 +216,11 @@ img, fieldset {
 	margin-right: 10px;
 }
 
-.btn_check02 {
-	background: url(../e_mypage_img/bg_btn_ck02.jpg) no-repeat;
-	color: #666;
-	width: 95px;
-	padding: 17px 0 20px 60px;
-	display: inline-block;
-	font-size: 20px;
-	text-align: left;
-	line-height: 20px;
-}
-
 .btn_check06 {
 	background: url(../e_mypage_img/btn_modify.jpg) no-repeat;
 	color: #fff;
-	width: 95px;
-	padding: 17px 0 20px 50px;
+	width: 150px;
+	padding: 17px 0 17px 50px;
 	display: inline-block;
 	font-size: 20px;
 	text-align: left;

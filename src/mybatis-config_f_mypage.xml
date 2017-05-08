@@ -6,6 +6,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="lancer.f_mypage.model.Freelancer" alias="Freelancer"/>
+		<typeAlias type="lancer.f_mypage.model.F_job" alias="F_job"/>
+		<typeAlias type="lancer.f_mypage.model.Career" alias="Career"/>
 	</typeAliases>
 	
 	<environments default="development">

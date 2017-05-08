@@ -62,7 +62,7 @@ public class memberCenterController extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		}
-		
+		System.out.println(forward + "포워드");
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -14,6 +14,44 @@
 	<select id="showFreelancerJobInfo" resultType="Integer" parameterType="int">
 		select job_id from f_job where f_num = #{f_num}
 	</select> 
+	
+	<update id="updateFreelancerInfo" parameterType="Freelancer">
+		update freelancer set f_pwd = #{f_pwd}, f_name =#{f_name}, f_birth = #{f_birth},
+		f_sex = #{f_sex}, f_hphone = #{f_hphone}, f_phone = #{f_phone}, f_email = #{f_email},
+		f_address = #{f_address} where f_num = #{f_num}
+	</update>
+	
+	<delete id="deleteFreelancerJobInfo" parameterType="int">
+		delete from f_job where f_num = #{f_num}
+	</delete>
+	
+	<insert id="insertFreelancerJobInfo" parameterType="F_job">
+		insert into f_job values(#{f_num}, #{job_id})
+	</insert>
+	
+	<select id="getFreelancerPassword" parameterType="int" resultType="String">
+		select f_pwd from freelancer where f_num = #{f_num}
+	</select>
+	
+	<select id="showCareerInfo" parameterType="int" resultType="Career">
+		select * from career where f_num = #{f_num}
+	</select>
+	
+	<select id="getCareerNum" resultType="int">
+		select nvl(max(career_num), 0) from career
+	</select>
+	
+	<insert id="insertCareer" parameterType="Career">
+		insert into career values(#{career_num}, #{f_num}, #{company}, #{dept}, #{rank}, #{term}, #{location})
+	</insert>
+	
+	<update id="updateCareer" parameterType="Career">
+		update career set company = #{company}, dept = #{dept}, rank = #{rank}, term = #{term}, location = #{location} where career_num = #{career_num}
+	</update>
+	
+	<delete id="deleteCareer" parameterType="int">
+		delete from career where career_num = #{career_num}
+	</delete>
 </mapper>
 
 

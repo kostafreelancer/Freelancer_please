@@ -19,7 +19,7 @@ public class E_InfoSelectAction implements E_MypageAction {
 		HttpSession session = request.getSession();
 		c_login_enterprise enterprise = (c_login_enterprise)session.getAttribute("client");
 				
-		System.out.println(enterprise.getE_ownerfile());
+//		System.out.println(enterprise.getE_ownerfile());
 		
 		// 분리할 값들 분리
 		String[] e_mail = enterprise.getE_mail().split("@");

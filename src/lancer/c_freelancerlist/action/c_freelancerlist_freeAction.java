@@ -24,6 +24,7 @@ public class c_freelancerlist_freeAction implements Action{
 		forward.setPath("/Matching_Project/c_freelancerlist/f_list.jsp");
 		HttpSession session = request.getSession();
 		session.setAttribute("totallists", totallists);
+		/*request.setAttribute("totallists", totallists);*/
 		return forward;
 	}
 	

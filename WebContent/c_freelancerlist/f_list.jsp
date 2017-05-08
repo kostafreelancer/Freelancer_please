@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -213,28 +214,30 @@
 								<p class="txt_or">2년 10개월 / 대학(학사) 졸업</p>
 							</td>
 						</tr>
-
-
-
-						  <tr
-							onclick="javascript:getDetail('cGFnZT0xJmluY3JlbWVudD0wJnVzZXJfbm89MTE0MzY3OQ==');"
-							style="cursor: pointer;">
-							<td class="img_box"><a href="#none"
-								onclick="javascript:getDetail('cGFnZT0xJmluY3JlbWVudD0wJnVzZXJfbm89MTE0MzY3OQ==');"
-								class="tooltip" data-tooltip="Silver"> <img
-									src="/n_images/Silver.jpg" class="fl" width="50px" /></a>
+						
+						<c:forEach var="totallist" items="${totallists }">
+							<tr>
+								<td class="img_box"><a href="#none" class="tooltip" data-tooltip="Silver">
+								<img src="/n_images/Silver.jpg" class="fl" width="50px" /></a>
 								<div class="name">
-									<a
-										href="view.php?fm_str=cGFnZT0xJmluY3JlbWVudD0wJnVzZXJfbm89MTE0MzY3OQ==">
-										<strong>seg*****</strong>.
-										<p>(${totallists[0].f_name} ,"35세")</p>
+									<a href="#">
+										<strong>${totallist.f_id }</strong>
+										<p>(${totallist.f_name} ,"35세")</p>
 									</a>
 								</div></td>
 							<td class="last">
-								<p class="al txt12">${totallists[0].list_job[1]}</p>
-								<p class="txt_or">11년 5개월 / ${totallists[0].list_school[0].school_term} </p>
+								<p class="al txt12">
+									<c:forEach var="totallist.list_job" items="totallist">
+										${totallist.list_job},&nbsp;
+									</c:forEach>
+								<%-- ${totallist.list_job[0]} --%></p>
+								<p class="txt_or">11년 5개월 / ${totallist.list_school[0].school_term} </p>
 							</td>
-						</tr> 
+							</tr>
+						</c:forEach> 
+						
+						
+						
 						<!--
 						<tr
 							onclick="javascript:getDetail('cGFnZT0xJmluY3JlbWVudD0wJnVzZXJfbm89MTEyMzgwMw==');"

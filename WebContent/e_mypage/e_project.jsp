@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,7 +18,7 @@
 	type="text/css" media="screen" />
 
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-<script type="text/javascript" src="e_mypage_js/tabs.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/tabs.js"></script>
 
 </head>
 <body>
@@ -58,38 +59,37 @@
 			<div class="tb_box">
 				<table class="tb_st01 tb_st03">
 					<colgroup>
-						<col style="width: 7%">
-						<col style="width: 7%">
+						<col style="width: 9%">
 						<col style="width: *">
 						<col style="width: 8%">
+						<col style="width: 8%">
 						<col style="width: 11%">
-						<col style="width: 10%">
 						<col style="width: 10%">
 						<col style="width: 10%">
 					</colgroup>
 					<thead>
 						<tr>
 							<th scope="col">번호</th>
-							<th scope="col">구분</th>
 							<th scope="col">프로젝트명</th>
-							<th scope="col">참여</th>
-							<th scope="col">평균지원가</th>
+							<th scope="col">모집인원</th>
+							<th scope="col">희망연령</th>
+							<th scope="col">평균예산</th>
 							<th scope="col">등록일</th>
 							<th scope="col">마감일</th>
-							<th scope="col" class="last">진행상태</th>
 						</tr>
 					</thead>
 					<tbody>
+					<c:forEach var="p" items="${readyList }">
 						<tr>
-							<td class="ac">1</td>
-							<td class="ac">개발</td>
-							<td class="ac">드림랜서</td>
-							<td class="ac">15</td>
-							<td class="ac">2,000,000</td>
-							<td class="ac">2017-04-26</td>
-							<td class="ac">2017-05-27</td>
-							<td class="ac">진헹 중</td>
+							<td class="ac">${p.getE_pr_num()}</td>
+							<td class="ac">${p.getP_name()}</td>
+							<td class="ac">${p.getP_requirenum()}</td>
+							<td class="ac">${p.getP_lowerage()} ~ ${p.getP_upperage()}</td>
+							<td class="ac">${p.getP_lowercost()}</td>
+							<td class="ac">${p.getP_regdate()}</td>
+							<td class="ac">${p.getP_exdate()}</td>
 						</tr>
+					</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -105,48 +105,37 @@
 			<div class="tb_box">
 				<table class="tb_st01 tb_st03">
 					<colgroup>
-						<col style="width: 7%">
-						<col style="width: 7%">
+						<col style="width: 9%">
 						<col style="width: *">
 						<col style="width: 8%">
+						<col style="width: 8%">
 						<col style="width: 11%">
-						<col style="width: 10%">
 						<col style="width: 10%">
 						<col style="width: 10%">
 					</colgroup>
 					<thead>
 						<tr>
 							<th scope="col">번호</th>
-							<th scope="col">구분</th>
 							<th scope="col">프로젝트명</th>
-							<th scope="col">참여</th>
-							<th scope="col">평균지원가</th>
+							<th scope="col">모집인원</th>
+							<th scope="col">희망연령</th>
+							<th scope="col">평균예산</th>
 							<th scope="col">등록일</th>
 							<th scope="col">마감일</th>
-							<th scope="col" class="last">진행상태</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td class="ac">2</td>
-							<td class="ac">디자인</td>
-							<td class="ac">배너디자인</td>
-							<td class="ac">7</td>
-							<td class="ac">1,500,000</td>
-							<td class="ac">2017-05-26</td>
-							<td class="ac">2017-06-27</td>
-							<td class="ac">모집 중</td>
-						</tr>
-						<tr>
-							<td class="ac">4</td>
-							<td class="ac">기획</td>
-							<td class="ac">게임기획</td>
-							<td class="ac">3</td>
-							<td class="ac">1,700,000</td>
-							<td class="ac">2017-05-28</td>
-							<td class="ac">2017-06-14</td>
-							<td class="ac">모집 중</td>
-						</tr>
+						<c:forEach var="p" items="${doingList }">
+							<tr>
+								<td class="ac">${p.getE_pr_num()}</td>
+								<td class="ac">${p.getP_name()}</td>
+								<td class="ac">${p.getP_requirenum()}</td>
+								<td class="ac">${p.getP_lowerage()} ~ ${p.getP_upperage()}</td>
+								<td class="ac">${p.getP_lowercost()}</td>
+								<td class="ac">${p.getP_regdate()}</td>
+								<td class="ac">${p.getP_exdate()}</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -162,38 +151,37 @@
 			<div class="tb_box">
 				<table class="tb_st01 tb_st03">
 					<colgroup>
-						<col style="width: 7%">
-						<col style="width: 7%">
+						<col style="width: 9%">
 						<col style="width: *">
 						<col style="width: 8%">
+						<col style="width: 8%">
 						<col style="width: 11%">
-						<col style="width: 10%">
 						<col style="width: 10%">
 						<col style="width: 10%">
 					</colgroup>
 					<thead>
 						<tr>
 							<th scope="col">번호</th>
-							<th scope="col">구분</th>
 							<th scope="col">프로젝트명</th>
-							<th scope="col">참여</th>
-							<th scope="col">평균지원가</th>
+							<th scope="col">모집인원</th>
+							<th scope="col">희망연령</th>
+							<th scope="col">평균예산</th>
 							<th scope="col">등록일</th>
 							<th scope="col">마감일</th>
-							<th scope="col" class="last">진행상태</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td class="ac">3</td>
-							<td class="ac">개발</td>
-							<td class="ac">레이아웃</td>
-							<td class="ac">20</td>
-							<td class="ac">2,000,000</td>
-							<td class="ac">2017-03-26</td>
-							<td class="ac">2017-04-13</td>
-							<td class="ac">완료</td>
-						</tr>
+						<c:forEach var="p" items="${doneList }">
+							<tr>
+								<td class="ac">${p.getE_pr_num()}</td>
+								<td class="ac">${p.getP_name()}</td>
+								<td class="ac">${p.getP_requirenum()}</td>
+								<td class="ac">${p.getP_lowerage()} ~ ${p.getP_upperage()}</td>
+								<td class="ac">${p.getP_lowercost()}</td>
+								<td class="ac">${p.getP_regdate()}</td>
+								<td class="ac">${p.getP_exdate()}</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>

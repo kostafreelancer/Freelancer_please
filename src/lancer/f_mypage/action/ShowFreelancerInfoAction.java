@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import lancer.f_mypage.model.Career;
 import lancer.f_mypage.model.Freelancer;
 import lancer.f_mypage.model.FreelancerDao;
 
@@ -39,10 +40,11 @@ public class ShowFreelancerInfoAction implements Action {
 		}
 		
 		List<Integer> joblist = dao.showFreelancerJobInfo(f_num);
-		
+		List<Career> career = dao.showCareerInfo(f_num);
 		
 		request.setAttribute("freelancer", freelancer);
 		request.setAttribute("joblist", joblist);
+		request.setAttribute("career", career);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("/f_mypage/myInfo.jsp");
