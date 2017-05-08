@@ -2,6 +2,7 @@ package lancer.f_mypage.mapper;
 
 import java.util.List;
 
+import lancer.f_mypage.model.Calendar;
 import lancer.f_mypage.model.Career;
 import lancer.f_mypage.model.Certificate;
 import lancer.f_mypage.model.F_job;
@@ -30,4 +31,6 @@ public interface FreelancerMapper {
 	public int insertCerti(Certificate certificate);
 	public int updateCerti(Certificate certificate);
 	public int deleteCerti(int certificate_num);
+	public String getMyProjectName(int f_num);
+	public List<Calendar> getMySchedule(int f_num);
 }

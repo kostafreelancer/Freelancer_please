@@ -30,4 +30,7 @@
 		)
 	</insert>
 
+	<select id="getAllId" resultType="String">
+		select e_id from enterprise
+	</select>
 </mapper>

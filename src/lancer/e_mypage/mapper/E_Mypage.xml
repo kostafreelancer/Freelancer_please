@@ -16,7 +16,7 @@
 	</select>
 	
 	<!-- 기업 정보 업데이트 -->
-	<!-- <update id="updateEnterprise" parameterType="c_login_enterprise">
+	<update id="updateEnterprise" parameterType="c_login_enterprise">
 		update enterprise set
 		e_pwd=#{e_pwd},
 		e_mail
@@ -27,7 +27,7 @@
 		e_regno
 		e_phone
 		e_bf
-	</update> -->
+	</update>
 	
 	<!-- 프로젝트 목록 출력 (모집중) -->
 	<select id="listProjectReady" resultType="Project">
