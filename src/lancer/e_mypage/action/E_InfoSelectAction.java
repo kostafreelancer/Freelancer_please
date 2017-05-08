@@ -46,6 +46,7 @@ public class E_InfoSelectAction implements E_MypageAction {
 		String[] e_address = enterprise.getE_address().split("&");
 		request.setAttribute("e_address_1", e_address[0]);
 		request.setAttribute("e_address_2", e_address[1]);
+		request.setAttribute("e_address_3", e_address[2]);
 		
 		
 		ActionForward forward = new ActionForward();
