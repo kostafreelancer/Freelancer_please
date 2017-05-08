@@ -16,18 +16,17 @@
 			e_listing, e_capital, e_sales, e_scale, e_licensefile, e_check
 		 )
 		values(
-			20, 'wldnjf', '1234', 'wldnjf2000@naver.com', '지우너', '기업이름', '대표자', 3.14,
+<!-- 			30, 'snfl', '1234', 'wldnjf2000@naver.com', '지우너', '기업이름', '대표자', 3.14,
 			'/path', '123-1234-1234', '02-1234-2345', '제조업합니다', '매니저이름', '010-2222-3333',
 			'manager@naver.com', 'address', 'www.dfsdf.dfdd', 1992, 120,
-			'비상장', 2000, 200, '대기업', '/sdfsdf', 0
-		
-		
-			<!-- #{e_num}, #{e_id} , #{e_pwd}, #{e_mail}, #{e_name}, 
-			#{e_ename}, #{e_owner}, 3.14, #{e_ownerfile}, #{e_regno}, 
+			'비상장', 2000, 200, '대기업', '/sdfsdf', 0 -->
+				
+			#{e_num}, #{e_id}, #{e_pwd}, #{e_mail}, #{e_name}, 
+			#{e_ename}, #{e_owner}, #{e_score}, #{e_ownerfile}, #{e_regno}, 
 			#{e_phone}, #{e_bf}, #{manager_name}, #{manager_hphone},
 			#{manager_mail}, #{e_address}, #{e_homepage}, #{start_year}, 
 			#{e_enum}, #{e_listing}, #{e_capital}, #{e_sales}, #{e_scale}, 
-			'asas', 0  -->
+			#{e_licensefile}, #{e_check} 
 		)
 	</insert>
 

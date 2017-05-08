@@ -29,6 +29,33 @@ public class E_joinDAO {
 
 	public void insert_e_join(E_join e_join) throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
+/*		System.out.println(e_join.getE_address());
+		System.out.println(e_join.getE_bf());
+		System.out.println(e_join.getE_capital());
+		System.out.println(e_join.getE_check());
+		System.out.println(e_join.getE_ename());
+		System.out.println(e_join.getE_enum());
+		System.out.println(e_join.getE_homepage());
+		System.out.println(e_join.getE_id());
+		System.out.println(e_join.getE_licensefile());
+		System.out.println(e_join.getE_listing());
+		System.out.println(e_join.getE_mail());
+		System.out.println(e_join.getE_name());
+		System.out.println(e_join.getE_num());
+		System.out.println(e_join.getE_owner());
+		System.out.println(e_join.getE_ownerfile());
+		System.out.println(e_join.getE_phone());
+		System.out.println(e_join.getE_pwd());
+		System.out.println(e_join.getE_regno());
+		System.out.println(e_join.getE_sales());
+		System.out.println(e_join.getE_scale());
+		System.out.println(e_join.getE_score());
+		System.out.println(e_join.getManager_hphone());
+		System.out.println(e_join.getManager_mail());
+		System.out.println(e_join.getManager_name());
+		System.out.println(e_join.getStart_year());*/
+
+		
 		int re = -1;
 		try {
 			re = session.getMapper(E_joinMapper.class).insert_e_join(e_join);

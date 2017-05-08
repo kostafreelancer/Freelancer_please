@@ -15,7 +15,7 @@
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function checkValue(){
 	if(!document.userInfo.e_name.value){
 		alert("아이디를 입력하세요.");
@@ -33,10 +33,7 @@ function checkValue(){
 	}
 }
 
-
-
-
-</script>
+</script> -->
 
 
 </head>
@@ -105,7 +102,7 @@ function checkValue(){
 										class="txt_or">*</span> 비밀번호</label></th>
 								<td><input type="password" id="e_pwd"
 									name="e_pwd" class="wid02" /></td>
-								<th scope="row" class="ac"><label for="e_pwd"><span
+								<th scope="row" class="ac"><label for="e_pwdcheck"><span
 										class="txt_or">*</span> 비밀번호 확인</label></th>
 								<td><input type="password" id="e_pwdcheck"
 									name="e_pwdcheck" class="wid02" /></td>
@@ -265,7 +262,7 @@ function checkValue(){
 								</div>
 								<div>
 									<label for="e_address"></label> <input type="text"
-										id="e_address" name="fm_address" class="wid06">
+										id="e_address" name="e_address" class="wid06">
 								</div>
 							</td>
 						</tr>
@@ -309,9 +306,9 @@ function checkValue(){
 								name="e_sales" class="wid03" value=""> 만원</td>
 					</tr>
 					<tr>
-						<th><label for="s_scale">기업 형태</label></th>
-						<td colspan="5"><select class="wid07" name="s_scale"
-								id="s_scale">
+						<th><label for="e_scale">기업 형태</label></th>
+						<td colspan="5"><select class="wid07" name="e_scale"
+								id="e_scale">
 							<option value="">--기업형태--</option>
 							<option value="M040100">일반기업</option>
 							<option value="M040200">대기업</option>

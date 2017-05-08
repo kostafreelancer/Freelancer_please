@@ -2,6 +2,7 @@ package lancer.c_join.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,6 +49,14 @@ public class C_joinController extends HttpServlet {
 					e.printStackTrace();
 				}
 	    	}
+	    	   if(forward != null){
+	    	          if(forward.isRedirect()){
+	    	             response.sendRedirect(forward.getPath());
+	    	          }else{
+	    	             RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
+	    	             dispatcher.forward(request, response);
+	    	          }
+	    	       }
 	    	
 	    }
 
