@@ -51,8 +51,14 @@ public class E_joinAction implements Action {
 		e_join.setE_regno(e_regno);
 		System.out.println(e_join.getE_regno());
 		
+		//주소
+		String address1=request.getParameter("address1");
+		String address2=request.getParameter("address2");
+		String address3=request.getParameter("address3");
+		String e_address=address1+" "+address2+" "+address3;
+		e_join.setE_address(e_address);
+		System.out.println(e_join.getE_address());
 		
-		e_join.setE_address(request.getParameter("e_address"));
 		e_join.setManager_name(request.getParameter("manager_name"));
 		e_join.setE_bf(request.getParameter("e_bf"));
 		e_join.setE_capital(Integer.parseInt(request.getParameter("e_capital")));

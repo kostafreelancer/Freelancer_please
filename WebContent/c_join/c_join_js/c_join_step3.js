@@ -7,10 +7,12 @@ $(function(){
 		            "chk", "width=500, height=300, resizable = no, scrollbars = no"); 
 		  
 
-			if(userInfo.e_id.value == "") {
+		 if(userInfo.e_id.value == "") {
 				alert("id를 입력하시오.");
 				userInfo.e_id.focus();
 			} else {
+				
+				
 				url = "check_id.jsp?id=" + userInfo.e_id.value;
 				window.open(
 						url, 
@@ -18,6 +20,20 @@ $(function(){
 			}
 	});*/
 	
+
+    
+        $('#idCheckbox').click(function(){
+                  if($('input[name="e_id"]').val() == ""){           //속성을 통해 접근, var : name에 있는 값을 뽑아옴
+                            $('input[name="e_id"]').css('border', '1px solid red');
+                            $('#idCheckbox').after("<span>아이디을 입력하세요.</span>");               //after : 동생, 뒤에 붙여줌
+                  }
+/*                  if($('input[name="e_id]').val()==${e_id}){
+                	  $('input[name="e_id"]').css('border', '1px solid red');
+                  $('#idCheckbox').after("<span>이미 존재하는 아이디입니다.</span>");
+                  }*/
+                  return false;                   //form이 submit로 하려는 기본이벤트를 가지고 있다
+        });
+
 	
 	//사진이미지 미리보기
 
@@ -57,7 +73,7 @@ $(function(){
             return false;
         }
         
-/*        if(form.idDuplication.value != "idCheck"){
+/*       if(form.idDuplication.value != "idCheck"){
             alert("아이디 중복체크를 해주세요.");
             return false;
         }*/

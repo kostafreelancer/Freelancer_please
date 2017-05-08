@@ -12,28 +12,8 @@
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="c_join_js/c_join_step3.js"></script>
 <script type="text/javascript" src="../common/header.js"></script>
-
-
-
-<!-- <script type="text/javascript">
-function checkValue(){
-	if(!document.userInfo.e_name.value){
-		alert("아이디를 입력하세요.");
-		return false;
-	}
-	
-	if(!document.userInfo.e_pwd.value){
-		alert("비밀번호를 입력하세요.");
-		return false;
-	}
-
-	if(document.userInfo.e_pwd.value != document.userInfo.e_pwd.value){
-		alert("비밀번호를 동일하게 입력하세요.");
-		return false;
-	}
-}
-
-</script> -->
+<script type="text/javascript" src="c_join_js/zipAddress.js"></script>
+ <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
 
 </head>
@@ -92,10 +72,10 @@ function checkValue(){
 							<tr>
 								<th scope="row" class="ac"><label for="e_id"><span
 										class="txt_or">*</span> 회원아이디</label></th>
-								<td colspan="3"><input type="text" id="e_id" name="e_id" class="" onkeydown="inputIdChk()"> 
+								<td colspan="3">
+								<input type="text" id="e_id" name="e_id" > 
 								<input type="button"  id="idCheckbox" value="중복확인" class="btn_overlap" >							
-								<input type="hidden" name="idDuplication" value="idUncheck" >
-									* 6~15자의 영문, 영문+숫자, 일부 특수문자( _ - )만 사용 가능합니다.</td>
+									<br>* 6~15자의 영문, 영문+숫자, 일부 특수문자( _ - )만 사용 가능합니다.</td>
 							</tr>
 							<tr>
 								<th scope="row" class="ac"><label for="e_pwd"><span
@@ -254,15 +234,17 @@ function checkValue(){
 							<th><span class="txt_or">*</span> 회사주소</th>
 							<td colspan="5">
 								<div class="mb10">
-									<label for="e_zip"></label> <input type="text" id="e_zip"
-										name="e_zip" class="wid60"
-										onclick="openDaumPostCode(); return false;" readonly>
-									<a href="#" onclick="openDaumPostCode(); return false;"
-										class="btn_add">우편번호찾기</a>
+									<label for="address1"></label><input type="text" id="address1" 
+									name="address1" class="wid60" title="주소검색 새창" readonly=""> 
+									<input type = "button" onClick = "openDaumZipAddress()" value = "주소 찾기" class="btn_add"/>
 								</div>
-								<div>
-									<label for="e_address"></label> <input type="text"
-										id="e_address" name="e_address" class="wid06">
+								<div class="mb10">
+									<label for="address2"></label> 
+										<input type="text" id="address2" name="address2" class="wid06">
+								</div>
+								<div class="mb10">
+									<label for="address3"></label> 
+										<input type="text" id="address3" name="address3" class="wid06">
 								</div>
 							</td>
 						</tr>
