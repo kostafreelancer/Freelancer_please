@@ -21,6 +21,10 @@
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info_star.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info2.js"></script>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
 
 
 </head>
@@ -199,7 +203,7 @@
 			<tr>
 				<th scope="row"><label for="fm_bizcontents">주요사업내용</label></th>
 				<td colspan="4"><input type="text" id="e_bf"
-					name="e_bf" class="wid" value="<%-- ${client.e_bf } --%>"></td>
+					name="e_bf" class="wid" value="${client.e_bf }"></td>
 			</tr>
 			<tr>
 				<th scope="row"><label for="fm_managername">담당자명</label></th>
@@ -250,25 +254,30 @@
 						<option value="yahoo.co.kr">yahoo.co.kr</option>
 				</select></td>
 			</tr>
+			
 			<tr>
 				<th>회사 주소</th>
-				<td colspan="5">
-					<div class="mb10">
-						<input type="text" id="e_address_1" name="e_address_1" class="wid60"
-							onclick="openDaumPostCode(); return false;" target="_blank"
-							title="주소검색 새창" value="${e_address_1 }" readonly=""> <a
-							href="javascript:void(0);" class="btn_add"
-							onclick="openDaumPostCode(); return false;" target="_blank"
-							title="주소검색 새창">우편번호찾기</a>
-					</div>
-					<div>
-						<input type="text" id="e_address_2" name="e_address_2" class="wid"
-							value="${e_address_2 }">
-					</div>
+				<td colspan="4">
+				<div class="mb10">
+					<label for="fm_zip"></label> 
+					<input type="text" id="fm_zip" name="e_address_1" class="wid60"
+						title="주소검색 새창" value="${e_address_1}" readonly=""> 
+					<input type = "button" class="btn_add" onClick = "openDaumZipAddress()" value = "주소 찾기" />
+			 
+				</div>
+				<div>
+					<label for="fm_address"></label> <input type="text"
+						id="fm_address" name="e_address_2" class="wid"
+						value="${e_address_2}"><input type="text"
+						id="fm_address_etc" name="e_address_3" class="wid"
+						value="${e_address_3}">
+				</div>
 				</td>
 			</tr>
+			
+		
 			<tr>
-				<th>회사 홈페이지</label></th>
+				<th>회사 홈페이지</th>
 				<td colspan="5">
 					<div>
 						<span>http://</span> <input type="text" id="e_homepage"

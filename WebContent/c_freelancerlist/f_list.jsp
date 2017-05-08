@@ -1,3 +1,5 @@
+<%@page import="lancer.c_freelancerlist.model.c_freelancerlist_total"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -17,13 +19,29 @@
 <script type="text/javascript" src="/Matching_Project/c_freelancerlist/f_list_js/f_list.js"></script>
 </head>
 <body>
+	<c:choose>
+		<c:when test="${identity.identity == 'freelancer' }">
+			<%@include file="../c_common/header.jsp" %>
+		</c:when>
+		<c:when test="${identity.identity == 'enterprise' }">
+			<%@include file="../c_common/header_enterprise.jsp" %>
+		</c:when>
+	</c:choose>
 
-<%@include file="../c_common/header.jsp" %>
     <div  id="conainer">
     	<div id="nav">
         	<div class="nav_txt">
             	<p>
-                	<a href="/index.php">Home</a>
+            		<a href="
+            		<c:choose>
+						<c:when test="${identity.identity == 'freelancer' }">
+							/Matching_Project/f_main/f_main.jsp
+						</c:when>
+						<c:when test="${identity.identity == 'enterprise' }">
+							/Matching_Project/e_main/e_main.jsp
+						</c:when>
+					</c:choose>
+					">Home</a>
                     <span class="padd">&gt;</span>
                 	<span>프리랜서 목록</span>
             	</p>
@@ -222,6 +240,7 @@
 								<img src="/n_images/Silver.jpg" class="fl" width="50px" /></a>
 								<div class="name">
 									<a href="#">
+										
 										<strong>${totallist.f_id }</strong>
 										<p>("${totallist.f_name}" ,"${totallist.f_age }세")</p>
 									</a>

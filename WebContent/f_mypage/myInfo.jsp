@@ -57,7 +57,7 @@ $(function(){
 		</div>
 		<div class="left_menu_content">
 			<ul class="left_menu_contents">
-				<li><a href="">일정 관리</a></li>
+				<li><a href="showScheduleInfo.f_mypage?f_num=${client.f_num}">일정 관리</a></li>
 				<li><a href="">회계 관리</a></li>
 				<li><a href="showFreelancerInfo.f_mypage?f_num=${client.f_num}")>내 정보</a></li>
 			</ul>

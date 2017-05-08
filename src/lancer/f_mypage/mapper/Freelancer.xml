@@ -93,6 +93,15 @@
 		delete from certificate where certificate_num = #{certificate_num}
 	</delete>
 	
+	<select id="getMyProjectName" parameterType="int" resultType="String">
+		select p_name from sign_project sp, f_project_request fpr, e_request_project erp 
+		where sp.E_PR_NUM = fpr.F_PR_NUM and sp.E_PR_NUM=erp.E_PR_NUM and fpr.f_num = #{f_num}
+	</select>
+	
+	<select id="getMySchedule" parameterType="int" resultType="Calendar">
+		select * from calendar where f_num = #{f_num}
+	</select>
+	
 </mapper>
 
 
