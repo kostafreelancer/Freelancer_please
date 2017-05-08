@@ -354,4 +354,31 @@ public class FreelancerDao {
 		}
 		return re;
 	}
+	
+	public String getMyProjectName(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		String name = "";
+		try {			
+			name= session.getMapper(FreelancerMapper.class).getMyProjectName(f_num);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return name;
+	}
+	
+	public List<Calendar> getMySchedule(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {			
+			return session.getMapper(FreelancerMapper.class).getMySchedule(f_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			session.close();
+		}
+	}
+	
 }

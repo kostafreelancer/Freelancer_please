@@ -10,6 +10,7 @@
 		<typeAlias type="lancer.f_mypage.model.Career" alias="Career"/>
 		<typeAlias type="lancer.f_mypage.model.School" alias="School"/>
 		<typeAlias type="lancer.f_mypage.model.Certificate" alias="Certificate"/>
+		<typeAlias type="lancer.f_mypage.model.Calendar" alias="Calendar"/>
 	</typeAliases>
 	
 	<environments default="development">

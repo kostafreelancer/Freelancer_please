@@ -18,6 +18,7 @@ import lancer.f_mypage.action.InsertCareerAction;
 import lancer.f_mypage.action.InsertCertificateAction;
 import lancer.f_mypage.action.InsertSchoolAction;
 import lancer.f_mypage.action.ShowFreelancerInfoAction;
+import lancer.f_mypage.action.ShowScheduleInfoAction;
 import lancer.f_mypage.action.UpdateCareerAction;
 import lancer.f_mypage.action.UpdateCertificateAction;
 import lancer.f_mypage.action.UpdateFreelancerInfoAction;
@@ -121,7 +122,15 @@ public class kwangsikController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command.equals("f_mypage/showScheduleInfo.f_mypage")){
+    		action = new ShowScheduleInfoAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}
+    	
     	
     	if(forward != null){
     		if(forward.isRedirect()){
