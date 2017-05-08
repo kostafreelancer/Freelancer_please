@@ -43,4 +43,18 @@ public class memberDao {
 			sqlsession.close();
 		}
 	};
+	
+	public int countfreelancer() throws Exception{
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			return sqlsession.getMapper(f_main_mapper.class).countFreelancer();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlsession.close();
+		}
+		
+		return countfreelancer();
+	}
 }

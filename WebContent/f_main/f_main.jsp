@@ -24,7 +24,7 @@ google.charts.setOnLoadCallback(drawMultSeries);
 function drawMultSeries() {
       var data = google.visualization.arrayToDataTable([
         ['주제', '주제', '주제'],
-        ['Java', 1234, 0], /* DB통계? */
+        ['Java', 0, 0], /* DB통계? */
         ['C', 1958, 0],
         ['3', 0, 0],
         ['4', 0, 0],
@@ -70,11 +70,11 @@ function drawMultSeries() {
 	</div>
 
 	<div class="main_news">
-		<!-- <h1>뉴스 영역 or 프리랜서/기업소개 영역((추후 h1영역 삭제))</h1> -->
+		<h1>활동중인 프리랜서</h1>
 		<div class="left_news">
-
+			
 			<ul>
-				<li><a href="#"><h3>[자바] 자바경력 10년ㅁㅁ</h3>
+				<li><a href="#"><h3>${member1 }</h3>
 						<br>프로젝트 다수^^</a></li>
 				<li><a href="http://www.daum.net"><h3>[Daum뉴스] 웹 개발자
 							선풍적인 인기~</h3>
@@ -101,6 +101,7 @@ function drawMultSeries() {
 		<div id="content">
 			<div id="tab1">
 				<h2>프리랜서 정보</h2>
+				<h3>현재 활동중인 프리랜서의 수 ${count }</h3>
 				<img alt="" src="f_main_img/icon01_off.png"> <img alt=""
 					src="f_main_img/icon02_off.png"> <img alt=""
 					src="f_main_img/icon03_off.png"> <img alt=""

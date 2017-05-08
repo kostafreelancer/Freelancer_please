@@ -13,6 +13,10 @@
 		
 	</select>
 	
+	<select id="countFreelancer" resultType="int">
+		select count(*) from freelancer 
+	</select>
+	
 </mapper>
 
 
