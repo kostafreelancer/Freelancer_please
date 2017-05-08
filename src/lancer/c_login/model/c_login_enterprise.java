@@ -25,11 +25,14 @@ public class c_login_enterprise {
 	private String e_scale;
 	private String e_licensefile;
 	private String e_check;
+	private String e_bf;
+	
 	public c_login_enterprise(){}
 	public c_login_enterprise(int e_num, String e_id, String e_pwd, String e_mail, double e_score, String e_name,
 			String e_ename, String e_owner, String e_ownerfile, String e_regno, String e_phone, String manager_name,
 			String manager_hphone, String manager_mail, String e_address, String e_homepage, int start_year, int e_enum,
-			String e_listing, int e_capital, int e_sales, String e_scale, String e_licensefile, String e_check) {
+			String e_listing, int e_capital, int e_sales, String e_scale, String e_licensefile, String e_check,
+			String e_bf) {
 		super();
 		this.e_num = e_num;
 		this.e_id = e_id;
@@ -55,6 +58,7 @@ public class c_login_enterprise {
 		this.e_scale = e_scale;
 		this.e_licensefile = e_licensefile;
 		this.e_check = e_check;
+		this.e_bf = e_bf;
 	}
 	public int getE_num() {
 		return e_num;
@@ -200,6 +204,14 @@ public class c_login_enterprise {
 	public void setE_check(String e_check) {
 		this.e_check = e_check;
 	}
+	public String getE_bf() {
+		return e_bf;
+	}
+	public void setE_bf(String e_bf) {
+		this.e_bf = e_bf;
+	}
+	
+	
 	
 	
 }
