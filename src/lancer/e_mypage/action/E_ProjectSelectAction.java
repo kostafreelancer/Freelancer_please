@@ -43,6 +43,7 @@ public class E_ProjectSelectAction implements E_MypageAction {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("e_num", e_num);
 		map.put("e_pr_num", e_pr_num);
+
 		
 		E_MypageDao dao = E_MypageDao.getInstance();
 		Project project = dao.selectProject(map);

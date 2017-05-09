@@ -1,8 +1,3 @@
-
-
-
-
-
 $(document).ready(function() {
 
 	// 별점표시
