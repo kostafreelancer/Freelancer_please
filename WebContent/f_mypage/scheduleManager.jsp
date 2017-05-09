@@ -9,15 +9,18 @@
 <!-- 
 <link rel="stylesheet" href="../common/header.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../common/footer.css" type="text/css" media="screen" /> -->
-<link rel="stylesheet" href="f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
+<%-- <link rel="stylesheet" href="f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" /> --%>
+<link rel="stylesheet" href="/Matching_Project/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/Matching_Project/f_mypage/f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
 
-<script src="f_mypage_js/fullcalendar/jquery.min.js"></script>
-<script src="f_mypage_js/fullcalendar/moment.min.js"></script>
-<script src="f_mypage_js/fullcalendar/fullcalendar.js"></script>
-<script src="f_mypage_js/fullcalendar/ko.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/jquery.min.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/moment.min.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/fullcalendar.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/ko.js"></script>
+
 <script type="text/javascript">
 var newJquery = $.noConflict(true);
 
@@ -74,7 +77,7 @@ newJquery(document).ready(function() {
 		<div class="left_menu_content">
 			<ul class="left_menu_contents">
 				<li><a href="showScheduleInfo.f_mypage?f_num=${client.f_num}">일정 관리</a></li>
-				<li><a href="">회계 관리</a></li>
+				<li><a href="/Matching_Project/f_mypage/accountingManager.jsp?f_num=${client.f_num}">회계 관리</a></li>
 				<li><a href="showFreelancerInfo.f_mypage?f_num=${client.f_num}">내 정보</a></li>
 			</ul>
 		</div>

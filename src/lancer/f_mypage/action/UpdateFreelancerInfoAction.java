@@ -42,9 +42,9 @@ public class UpdateFreelancerInfoAction implements Action {
 			String f_sex;
 		
 			if(request.getParameter("f_sex").equals("1")){
-				f_sex = "ë‚¨";
+				f_sex = "³²";
 			}else{
-				f_sex = "ì—¬";
+				f_sex = "¿©";
 			}
 			
 			freelancer.setF_sex(f_sex);

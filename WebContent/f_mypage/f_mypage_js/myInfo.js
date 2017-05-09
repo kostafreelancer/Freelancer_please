@@ -146,13 +146,13 @@ function openDaumZipAddress() {
     }).open();
 }
 function addCareer(){
-	window.open('careerAdd.jsp','win','width=350, height=250');
+	window.open('/Matching_Project/f_mypage/careerAdd.jsp','win','width=350, height=250');
 }
 function addSchool(){
-	window.open('schoolAdd.jsp','win','width=350, height=250');
+	window.open('/Matching_Project/f_mypage/schoolAdd.jsp','win','width=350, height=250');
 }
 function addCerti(){
-	window.open('certiAdd.jsp','win','width=350, height=250');
+	window.open('/Matching_Project/f_mypage/certiAdd.jsp','win','width=350, height=250');
 }
 
 function addCareerSubmit(){

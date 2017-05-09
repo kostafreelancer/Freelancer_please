@@ -7,19 +7,20 @@ public class School implements Serializable{
 	private int f_num;
 	private String school_name;
 	private String major;
-	private String term;
-	private String location;
+	private String school_term;
+	private String school_location;
 	
 	public School(){}
-	
-	public School(int school_num, int f_num, String school_name, String major, String term, String location) {
+
+	public School(int school_num, int f_num, String school_name, String major, String school_term,
+			String school_location) {
 		super();
 		this.school_num = school_num;
 		this.f_num = f_num;
 		this.school_name = school_name;
 		this.major = major;
-		this.term = term;
-		this.location = location;
+		this.school_term = school_term;
+		this.school_location = school_location;
 	}
 
 	public int getSchool_num() {
@@ -54,21 +55,23 @@ public class School implements Serializable{
 		this.major = major;
 	}
 
-	public String getTerm() {
-		return term;
+	public String getSchool_term() {
+		return school_term;
 	}
 
-	public void setTerm(String term) {
-		this.term = term;
+	public void setSchool_term(String school_term) {
+		this.school_term = school_term;
 	}
 
-	public String getLocation() {
-		return location;
+	public String getSchool_location() {
+		return school_location;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setSchool_location(String school_location) {
+		this.school_location = school_location;
 	}
+	
+	
 	
 	
 }

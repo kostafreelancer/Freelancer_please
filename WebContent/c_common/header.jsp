@@ -68,19 +68,19 @@
 				<!-- <li><a href="/Matching_Project/c_freelancerlist/f_list.jsp">프리랜서 목록</a></li> -->
 				<li><a href="freelist.f_list">프리랜서 목록</a></li>
 				
-				<c:choose>
+			<%-- 	<c:choose>
 					<c:when test="${identity.identity == 'freelancer' }">
-						<a href="showScheduleInfo.f_mypage?f_num=${client.f_num}"">
+						<a href="showScheduleInfo.f_mypage?f_num=${client.f_num}">
 					</c:when>
 					<c:otherwise>
 						<a href="remove_session.c_login">
 					</c:otherwise>
-				</c:choose>
+				</c:choose> --%>
 				
 				<!-- <li><a href="/Matching_Project/f_mypage/myInfo.jsp">마이페이지</a> -->
 				<li> <c:choose>
 					<c:when test="${identity.identity == 'freelancer' }">
-						<a href="/Matching_Project/f_mypage/myInfo.jsp">
+						<a href="showScheduleInfo.f_mypage?f_num=${client.f_num}">
 					</c:when>
 					<c:otherwise>
 						<a href="remove_session.c_login">

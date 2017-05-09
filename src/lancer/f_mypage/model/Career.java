@@ -8,20 +8,21 @@ public class Career implements Serializable{
 	private String company;
 	private String dept;
 	private String rank;
-	private String term;
-	private String location;
+	private String career_term;
+	private String career_location;
 	
 	public Career(){}
 
-	public Career(int career_num, int f_num, String company, String dept, String rank, String term, String location) {
+	public Career(int career_num, int f_num, String company, String dept, String rank, String career_term,
+			String career_location) {
 		super();
 		this.career_num = career_num;
 		this.f_num = f_num;
 		this.company = company;
 		this.dept = dept;
 		this.rank = rank;
-		this.term = term;
-		this.location = location;
+		this.career_term = career_term;
+		this.career_location = career_location;
 	}
 
 	public int getCareer_num() {
@@ -64,21 +65,22 @@ public class Career implements Serializable{
 		this.rank = rank;
 	}
 
-	public String getTerm() {
-		return term;
+	public String getCareer_term() {
+		return career_term;
 	}
 
-	public void setTerm(String term) {
-		this.term = term;
+	public void setCareer_term(String career_term) {
+		this.career_term = career_term;
 	}
 
-	public String getLocation() {
-		return location;
+	public String getCareer_location() {
+		return career_location;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setCareer_location(String career_location) {
+		this.career_location = career_location;
 	}
+
 	
 	
 }

@@ -48,6 +48,9 @@ public class ShowFreelancerInfoAction implements Action {
 		List<Certificate> certificate = dao.showCertiInfo(f_num);
 		List<ApplyProject> applyproject = dao.getApplyProject(f_num);
 
+		for(int i=0; i<applyproject.size(); i++){
+			System.out.println(i);
+		}
 		if(career.size()==0){
 			request.setAttribute("careercheck", "0");
 		}else{
