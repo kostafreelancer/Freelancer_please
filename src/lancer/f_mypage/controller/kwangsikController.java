@@ -40,97 +40,100 @@ public class kwangsikController extends HttpServlet {
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
     	String requestURI = request.getRequestURI();
 
-    	String contextPath = request.getContextPath();
-    	String command = requestURI.substring(contextPath.length()+1);
+    	//String contextPath = request.getContextPath();
+    	//String command = requestURI.substring(contextPath.length()+1);
     	ActionForward forward = null;
     	Action action = null;
-    	System.out.println(command);
+    	//System.out.println(command);
+        String command[] = requestURI.split("/");
+        
     	
-    	if(command.equals("f_mypage/showFreelancerInfo.f_mypage")){
+    	
+    	if(command[command.length-1].equals("showFreelancerInfo.f_mypage")){
     		action = new ShowFreelancerInfoAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/updateFreelancerInfo.f_mypage")){
+    	}else if(command[command.length-1].equals("updateFreelancerInfo.f_mypage")){
     		action = new UpdateFreelancerInfoAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/insertCareer.f_mypage")){
+    	}else if(command[command.length-1].equals("insertCareer.f_mypage")){
     		action = new InsertCareerAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/updateCareer.f_mypage")){
+    	}else if(command[command.length-1].equals("updateCareer.f_mypage")){
     		action = new UpdateCareerAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/deleteCareer.f_mypage")){
+    	}else if(command[command.length-1].equals("deleteCareer.f_mypage")){
     		action = new DeleteCareerAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/insertSchool.f_mypage")){
+    	}else if(command[command.length-1].equals("insertSchool.f_mypage")){
     		action = new InsertSchoolAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/updateSchool.f_mypage")){
+    	}else if(command[command.length-1].equals("updateSchool.f_mypage")){
     		action = new UpdateSchoolAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/deleteSchool.f_mypage")){
+    	}else if(command[command.length-1].equals("deleteSchool.f_mypage")){
     		action = new DeleteSchoolAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/insertCerti.f_mypage")){
+    	}else if(command[command.length-1].equals("insertCerti.f_mypage")){
     		action = new InsertCertificateAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/updateCerti.f_mypage")){
+    	}else if(command[command.length-1].equals("updateCerti.f_mypage")){
     		action = new UpdateCertificateAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/deleteCerti.f_mypage")){
+    	}else if(command[command.length-1].equals("deleteCerti.f_mypage")){
     		action = new DeleteCertificateAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/showScheduleInfo.f_mypage")){
+    	}else if(command[command.length-1].equals("showScheduleInfo.f_mypage")){
     		action = new ShowScheduleInfoAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("f_mypage/deleteApplyProject.f_mypage")){
+    	}else if(command[command.length-1].equals("deleteApplyProject.f_mypage")){
     		action = new DeleteApplyProject();
     		try {
 				forward = action.execute(request, response);

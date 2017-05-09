@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 public class JoinFormAction implements Action {
 
 	@Override
-	public ActionForword execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	
 
-		ActionForword forward = new ActionForword();
+		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
 		forward.setPath("/Matching_Project/c_join/c_join_step1.jsp");
 		

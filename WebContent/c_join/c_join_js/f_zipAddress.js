@@ -33,17 +33,14 @@ function openDaumZipAddress() {
                 fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
             }
 
+            
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('address1').value = data.zonecode; //5자리 새우편번호 사용
-            document.getElementById('address2').value = fullAddr;
-
+            document.getElementById('f_address1').value = data.zonecode; //5자리 새우편번호 사용
+            document.getElementById('f_address2').value = fullAddr;
+            
             // 커서를 상세주소 필드로 이동한다.
-            document.getElementById('address3').value="";
-            document.getElementById('address3').focus();
-            
-            
-            
-       
+            document.getElementById('f_address3').value="";
+            document.getElementById('f_address3').focus();
         }
     }).open();
 }

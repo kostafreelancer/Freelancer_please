@@ -11,7 +11,7 @@ import lancer.c_join.model.E_joinDAO;
 public class MemberIdCheckAction implements Action {
 
 	@Override
-	public ActionForword execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		 	String id = request.getParameter("userId");
 		 	E_joinDAO dao = E_joinDAO.getInstance();
 	        
@@ -25,7 +25,7 @@ public class MemberIdCheckAction implements Action {
 	       }
 	       request.setAttribute("check", check);
 	       System.out.println(check);
-	       ActionForword forword = new ActionForword();
+	       ActionForward forword = new ActionForward();
 	       forword.setRedirect(false);
 	       forword.setPath("/e_join/e_join_step3.jsp");
 	       

@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 @WebFilter("*.e_join")
-public class c_joinfilter implements Filter {
+public class C_joinfilter implements Filter {
  
    public void destroy() {}
 
