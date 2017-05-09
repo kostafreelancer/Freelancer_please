@@ -95,6 +95,7 @@ public class c_loginDao {
 				}else{
 					identity.setIdentity("enterprise");
 					identity.setEnter(enter);
+					
 				}
 			}catch (Exception e) {
 				e.printStackTrace();

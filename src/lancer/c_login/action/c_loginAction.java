@@ -34,6 +34,8 @@ public class c_loginAction implements Action{
 			forward.setPath("e_maincount.e_main");
 			session.setAttribute("client", identity.getEnter());
 		}else if(identity.getIdentity().equals("no")){
+			System.out.println("요기 no들어 오는거지?");
+			
 			/*forward.setPath("/Matching_Project/c_login/login.jsp");*/
 			forward.setPath("remove_session.c_login");
 		}
