@@ -12,7 +12,7 @@
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="c_join_js/c_join_step3.js"></script>
 <script type="text/javascript" src="../common/header.js"></script>
-<script type="text/javascript" src="c_join_js/zipAddress.js"></script>
+<script type="text/javascript" src="c_join_js/f_zipAddress.js"></script>
  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 </head>
 <body>
@@ -50,7 +50,7 @@
                     <p class="star_txt"><span class="color_or">(*)</span>표시는 필수 입력사항입니다</p>
                 </div>
                 <table class="tb_st01">
-				<form name="userInfo" method="post" action="c_joinAction.c_join">
+				<form name="userInfo" method="post" action="f_joinAction.f_join">
 					<input type="hidden" name="fm_type" value="이랜서">
 					<input type="hidden" name="fm_format" value="개인">
 					<input type="hidden" name="fm_str" value="Zm1fbmFtZT0mZm1fanVtaW49LTk5OTk5OSZzdHJWbm89">
@@ -463,7 +463,7 @@
 
 					<!-- //tb_box01 : e -->
 					<div class="btn_box">
-						<a href="c_join_step4.jsp" class="btn_check04">회원가입</a>
+						<input type="submit" class="btn_check04" id="checkValue" value="회원가입">
 						<a href="javascript:MemberWriteFm.reset();" class="btn_check02">초기화</a>
 					</div>
 				</div>

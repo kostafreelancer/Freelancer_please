@@ -1,6 +1,6 @@
 package lancer.c_join.action;
 
-public class ActionForword {
+public class ActionForward {
 	private boolean isRedirect;
 	private String path;
 	

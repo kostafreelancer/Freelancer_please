@@ -22,6 +22,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info_star.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_mypage/e_mypage_js/e_info3.js"></script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
@@ -59,7 +60,7 @@
 	</div>
 
 
-<form action="e_infoUpdateAction.e_mypage?e_num=${client.e_num }" method="post">
+<form action="e_infoUpdateAction.e_mypage?e_num=${client.e_num }" method="post" name="EnterpriseWriteFm">
 	<div class="e_info_table1">
 		<h4>아이디 및 비밀번호</h4>
 		
@@ -88,7 +89,7 @@
 						value="${e_mail_1 }"> <span>@</span> <input type="text"
 						id="e_mail_2" name="e_mail_2" class="wid04" value="${e_mail_2 }"  readonly="readonly"> <select
 						id="e_mail_select" class="wid04" name="">
-							<option value="선택해주세요" selected="">선택해주세요.</option>
+							<option value="" selected="">선택해주세요.</option>
 							<option value="">직접입력</option>
 							<option value="chollian.net">chollian.net</option>
 							<option value="daum.net">daum.net</option>
@@ -231,7 +232,7 @@
 					type="text" id="manager_mail_2" name="manager_mail_2" class="wid04"
 					value="${manager_mail_2 }" readonly="readonly"> <select class="wid04"
 					name="manager_mail_select" id="manager_mail_select">
-						<option value="선택해주세요" selected="">선택해주세요.</option>
+						<option value="" selected="">선택해주세요.</option>
 						<option value="">직접입력</option>
 						<option value="chollian.net">chollian.net</option>
 						<option value="daum.net">daum.net</option>
@@ -342,7 +343,7 @@
 	</div>
 
 	<div class="btn_box mb30 mb02">
-		<input type="submit" class="btn_check06" value="수정하기">
+		<input type="submit" class="btn_check06" id="checkValue" value="수정하기">
 	</div>
 	
 	</form>
