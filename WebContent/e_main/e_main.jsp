@@ -37,7 +37,7 @@
 	</section>
 
 	<section class="news">
-	<h3>IT 뉴스</h3>
+	<h3 class="e_main_h3">IT 뉴스</h3>
 	<div class="news1tab">
 		<div class="news1">
 			<a
