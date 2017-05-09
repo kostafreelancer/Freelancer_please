@@ -3,6 +3,7 @@ package lancer.c_join.model;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -15,6 +16,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 
 import lancer.c_join.mapper.F_joinMapper;
+import lancer.e_insertproject.mapper.E_InsertMapper;
 
 public class F_joinDAO {
 	private static F_joinDAO dao = new F_joinDAO();
@@ -89,5 +91,23 @@ public class F_joinDAO {
 		} finally {
 			session.close();
 		}
+	}
+	
+	public int insert_F_Job(F_job f_job){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(F_joinMapper.class).insert_F_Job(f_job);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
 	}
 }

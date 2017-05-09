@@ -7,6 +7,7 @@
 	<typeAliases>
 		<typeAlias type="lancer.c_join.model.E_join" alias="E_join" />
 		<typeAlias type="lancer.c_join.model.F_join" alias="F_join" />
+		<typeAlias type="lancer.c_join.model.F_job" alias="F_job" />
 	</typeAliases>
 
 	<environments default="development">

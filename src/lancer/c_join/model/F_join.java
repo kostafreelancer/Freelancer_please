@@ -18,6 +18,7 @@ public class F_join implements Serializable{
 	private String f_nowstate;
 	private String f_recentlogin;
 	private double  f_score;
+		
 	
 	public F_join(){}
 
@@ -40,7 +41,12 @@ public class F_join implements Serializable{
 		this.f_nowstate = f_nowstate;
 		this.f_recentlogin = f_recentlogin;
 		this.f_score = f_score;
+	
 	}
+	
+	
+
+	
 
 	public int getF_num() {
 		return f_num;
