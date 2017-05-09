@@ -1,5 +1,7 @@
 package lancer.e_insertproject.action;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,6 +20,9 @@ public class E_InsertAction implements Action {
 		E_InsertDao dao = E_InsertDao.getInstance();
 		E_Insert project = new E_Insert();
 		
+		int e_pr_num = dao.getnum()+1;
+		
+		project.setE_pr_num(e_pr_num);
 		project.setE_num(Integer.parseInt(request.getParameter("e_num")));
 		project.setP_name(request.getParameter("p_name"));
 		project.setP_content(request.getParameter("p_content"));
@@ -41,10 +46,20 @@ public class E_InsertAction implements Action {
 		dao.insertProject(project);
 		
 		String[] check = request.getParameterValues("check");
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("e_pr_num", e_pr_num);
+		
+		
 		for(int i=0;i<check.length;i++)
 		{
-			int job_id = Integer.parseInt(check[i]);
-			dao.insertP_Job(job_id);
+			if(map.get("job_id") == null){
+				map.put("job_id", Integer.parseInt(check[i]));
+			}else{
+				map.replace("job_id", Integer.parseInt(check[i]));
+			}
+			System.out.println(map);
+			dao.insertP_Job(map);
 		}
 
 

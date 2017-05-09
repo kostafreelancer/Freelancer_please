@@ -6,21 +6,25 @@
 <mapper namespace="lancer.e_insertproject.mapper.E_InsertMapper">
 	<cache />
 	
+	<select id="getnum" resultType="int">
+		select nvl(max(e_pr_num),0) from e_request_project
+	</select>
+	
 	<insert id="insertProject" parameterType="E_Insert">
 		insert into e_request_project(
 		e_pr_num,e_num,p_name, p_content,p_lowerAge, p_upperAge,p_academic,p_requireNum,p_regDate,p_exDate,p_lowerCost,p_upperCost,p_startDate,p_endDate,p_location,p_experience
 		)
 		values(
-		e_request_project_seq.nextval, #{e_num}, #{p_name}, #{p_content}, #{p_lowerAge}, #{p_upperAge},#{p_academic},#{p_requireNum}, SYSDATE, #{p_exDate},#{p_lowerCost},#{p_upperCost},#{p_startDate},#{p_endDate},#{p_location},#{p_experience}	<!-- #변수명# 으로 사용. -->
+		#{e_pr_num}, #{e_num}, #{p_name}, #{p_content}, #{p_lowerAge}, #{p_upperAge},#{p_academic},#{p_requireNum}, SYSDATE, #{p_exDate},#{p_lowerCost},#{p_upperCost},#{p_startDate},#{p_endDate},#{p_location},#{p_experience}	<!-- #변수명# 으로 사용. -->
 		)
 	</insert>
 	
-	<insert id="insertP_Job">
+	<insert id="insertP_Job" parameterType="java.util.HashMap">
 		insert into p_job(
 		e_pr_num, job_id
 		)
 		values(
-		e_request_project_seq.CURRVAL, #{job_id}
+		#{e_pr_num}, #{job_id}
 		)
 	</insert>
 	

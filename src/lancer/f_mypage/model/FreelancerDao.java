@@ -381,4 +381,33 @@ public class FreelancerDao {
 		}
 	}
 	
+	public List<ApplyProject> getApplyProject(int f_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {			
+			return session.getMapper(FreelancerMapper.class).getApplyProject(f_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			session.close();
+		}
+	}
+	public int deleteApplyProject(int f_pr_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {			
+			re = session.getMapper(FreelancerMapper.class).deleteApplyProject(f_pr_num);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		
+		}finally {
+			session.close();
+		}
+		return re;
+	}
 }

@@ -527,6 +527,9 @@ $(function(){
 						</tr>
 					</thead>
 					<tbody>
+					<c:if test="${careercheck == 0}">
+							<tr><td colspan="5">등록된 경력사항이 없습니다.</td></tr>
+					</c:if>
 						<c:forEach var="mycareer" items="${career}">
 						<form id="careerForm${mycareer.career_num}" name="mycareerModify${mycareer.career_num}" method="post" action="careerModify.jsp" target='popup_window'>
 						<input type="text" hidden name="mycareer_career_num" value="${mycareer.career_num}">
@@ -604,7 +607,9 @@ $(function(){
 						</tr>
 					</thead>
 					<tbody>
-
+					<c:if test="${schoolcheck == 0}">
+							<tr><td colspan="5">등록된 학력사항이 없습니다.</td></tr>
+					</c:if>
 						<c:forEach var="myschool" items="${school}">
 						<form id="schoolForm${myschool.school_num}" name="myschoolModify${myschool.school_num}" method="post" action="schoolModify.jsp" target='popup_window'>
 						<input type="text" hidden name="myschool_school_num" value="${myschool.school_num}">
@@ -677,7 +682,9 @@ $(function(){
 						</tr>
 					</thead>
 					<tbody>
-
+					<c:if test="${certificatecheck == 0}">
+							<tr><td colspan="5">등록된 자격사항이 없습니다.</td></tr>
+					</c:if>
 					<c:forEach var="mycerti" items="${certificate}">
 						<form id="certiForm${mycerti.certificate_num}" name="mycertiModify${mycerti.certificate_num}" method="post" action="certiModify.jsp" target='popup_window'>
 						<input type="text" hidden name="mycerti_certi_num" value="${mycerti.certificate_num}">
@@ -781,14 +788,23 @@ $(function(){
 				</thead>
 
 				<tbody>
-
-					<tr>
-						<td>코스타 프로젝트</td>
-						<td>010-5914-8532</td>
-						<td>2017-04-27</td>
-						<td>확인 대기 중</td>
-						<td><input type="button" value="지원 취소"></td>
-					</tr>
+					<c:if test="${applyprojectcheck == 0}">
+							<tr><td colspan="5">지원한 내역이 없습니다.</td></tr>
+					</c:if>
+					
+					<c:forEach var="myApplyProject" items="${applyproject}">
+						
+						 <form method="post" action="deleteApplyProject.f_mypage">
+						 <input type="text" hidden name="f_pr_num" value="${myApplyProject.f_pr_num}">
+						 <tr>							
+							<td>${myApplyProject.p_name}</td>
+							<td>${myApplyProject.manager_hphone}</td>
+							<td>${myApplyProject.f_pr_date}</td>
+							<td>${myApplyProject.state}</td>
+							<td class="last"><input type="submit" value="지원 취소"></td>
+						</tr>
+						</form>
+					</c:forEach>
 
 				</tbody>
 			</table>

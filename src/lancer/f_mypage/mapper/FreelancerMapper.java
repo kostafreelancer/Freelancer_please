@@ -2,6 +2,7 @@ package lancer.f_mypage.mapper;
 
 import java.util.List;
 
+import lancer.f_mypage.model.ApplyProject;
 import lancer.f_mypage.model.Calendar;
 import lancer.f_mypage.model.Career;
 import lancer.f_mypage.model.Certificate;
@@ -33,4 +34,6 @@ public interface FreelancerMapper {
 	public int deleteCerti(int certificate_num);
 	public String getMyProjectName(int f_num);
 	public List<Calendar> getMySchedule(int f_num);
+	public List<ApplyProject> getApplyProject(int f_num);
+	public int deleteApplyProject(int f_pr_num);
 }
