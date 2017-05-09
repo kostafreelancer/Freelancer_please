@@ -9,15 +9,18 @@
 <!-- 
 <link rel="stylesheet" href="../common/header.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../common/footer.css" type="text/css" media="screen" /> -->
-<link rel="stylesheet" href="f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
+<%-- <link rel="stylesheet" href="f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" /> --%>
+<link rel="stylesheet" href="/Matching_Project/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/Matching_Project/f_mypage/f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
 
-<script src="f_mypage_js/fullcalendar/jquery.min.js"></script>
-<script src="f_mypage_js/fullcalendar/moment.min.js"></script>
-<script src="f_mypage_js/fullcalendar/fullcalendar.js"></script>
-<script src="f_mypage_js/fullcalendar/ko.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/jquery.min.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/moment.min.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/fullcalendar.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/ko.js"></script>
+
 <script type="text/javascript">
 var newJquery = $.noConflict(true);
 
