@@ -33,26 +33,28 @@ newJquery(document).ready(function() {
 		arrEnd.push("${item.enddate}");
 	</c:forEach>
 
-/* 	$.ajax({
-		url:'temp.jsp',
-		type: 'get',
-		datatType : 'json',
-		success : function(data){
-			setCalendar(data);
-		}
-		
-	}); */
 	
 	   newJquery('#calendar').fullCalendar({
 		    
-	    	eventSources: '/temp.jsp'
-		/* 	events: [
+	    	
+		 	events: [
 					{	      
-			            title  : arrContents[i],
-			            start  : arrStart[i],
-			            end : arrEnd[i]
+			            title  : arrContents[0],
+			            start  : arrStart[0],
+			            end : arrEnd[0]
+					},
+					{	      
+			            title  : arrContents[1],
+			            start  : arrStart[1],
+			            end : arrEnd[1]
+					},
+					{	      
+			            title  : arrContents[2],
+			            start  : arrStart[2],
+			            end : arrEnd[2]
 					}
-		    ] */
+				
+		    ] 
 	        // put your options and callbacks here
 	    })
 

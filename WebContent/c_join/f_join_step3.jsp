@@ -10,7 +10,10 @@
 <link rel="stylesheet" href="../common/footer.css" type="text/css" media="screen" />
 <title>회원가입</title>
 <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="c_join_js/c_join_step3.js"></script>
 <script type="text/javascript" src="../common/header.js"></script>
+<script type="text/javascript" src="c_join_js/zipAddress.js"></script>
+ <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 </head>
 <body>
 <%@include file="../c_common/header.jsp" %>
@@ -47,7 +50,7 @@
                     <p class="star_txt"><span class="color_or">(*)</span>표시는 필수 입력사항입니다</p>
                 </div>
                 <table class="tb_st01">
-				<form name="MemberWriteFm" method="post" action="member_write.php" onSubmit="return false;">
+				<form name="userInfo" method="post" action="c_joinAction.c_join">
 					<input type="hidden" name="fm_type" value="이랜서">
 					<input type="hidden" name="fm_format" value="개인">
 					<input type="hidden" name="fm_str" value="Zm1fbmFtZT0mZm1fanVtaW49LTk5OTk5OSZzdHJWbm89">
@@ -62,22 +65,22 @@
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th scope="row" class="ac"><label for="fm_id"><span class="txt_or">*</span> 회원아이디</label></th>
+                            <th scope="row" class="ac"><label for="f_id"><span class="txt_or">*</span> 회원아이디</label></th>
                             <td colspan="3">
-                               <input type="text" id="fm_id" name="fm_id" />
+                               <input type="text" id="f_id" name="f_id" />
                                <a href="javascript:IDCheckIt();" class="btn_overlap">중복확인</a>
                                 * 6~15자의 영문, 영문+숫자, 일부 특수문자( _ - )만 사용 가능합니다.
 								<input type="hidden" name="f_id" id="idcheck">
                             </td>
                         </tr>
                         <tr>
-                             <th scope="row" class="ac"><label for="fm_passwd1"><span class="txt_or">*</span> 비밀번호</label></th>
+                             <th scope="row" class="ac"><label for="f_pwd"><span class="txt_or">*</span> 비밀번호</label></th>
                             <td>
-                                <input type="password" id="fm_passwd1" name="f_pwd1"  class="wid02"/>
+                                <input type="password" id="f_pwd" name="f_pwd"  class="wid02"/>
                             </td>
-                             <th scope="row" class="ac"><label for="fm_passwd2"><span class="txt_or">*</span> 비밀번호 확인</label></th>
+                             <th scope="row" class="ac"><label for="f_pwdcheck"><span class="txt_or">*</span> 비밀번호 확인</label></th>
                             <td>
-                                <input type="password" id="fm_passwd2" name="f_pwd2"  class="wid02"/>
+                                <input type="password" id="f_pwdcheck" name="f_pwdcheck"  class="wid02"/>
                             </td>
                         </tr>
                     </tbody>
@@ -96,19 +99,18 @@
                         <tr>
                             <td rowspan="5">
                               	<img src="c_join_img/join_photo.jpg" alt="사진" />
-								<input type="file" name="fm_file1" onchange="PreView(this.value, 'IMG1', '132', '176');" style="width:130px;" />
-                                <!--<a href="#" class="photo_up">사진업로드</a>-->
+								<input type="file" name="f_fname" onchange="PreView(this.value, 'IMG1', '132', '176');" style="width:130px;" />
                                 <span class="pho_txt">최적 해상도:132x176 pixel</span>
                             </td>
-                            <th scope="row"><label for="fm_name"><span class="txt_or">*</span> 성명</label></th>
-                            <td>
-                            	<input type="text" id="fm_name" name="f_name"  class="wid04" value=""/>
+                            <th scope="row"><label for="f_name"><span class="txt_or">*</span> 성명</label></th>
+                            <td colspan="4">
+                            	<input type="text" id="f_name" name="f_name"  class="wid04" value=""/>
                             </td>
                         </tr>
                          <tr>
-                            <th scope="row"><label for="fm_birth"><span class="txt_or">*</span> 생년월일</label></th>
-                            <td>
-                            	<input type="text" id="fm_birth" name="f_birth"  class="wid04" maxlength="6"/>
+                            <th scope="row"><label for="f_birth"><span class="txt_or">*</span> 생년월일</label></th>
+                            <td colspan="4">
+                            	<input type="text" id="f_birth" name="f_birth"  class="wid04" maxlength="6"/>
                                 <select name="f_sex">
                                 	<option value="1" selected>남자</option>
                                     <option value="2">여자</option>
@@ -117,9 +119,9 @@
                             </td>
                         </tr>
                          <tr>
-                            <th scope="row"><label for="fm_phone1"><span class="txt_or">*</span> 연락처(휴대폰)</label></th>
-                            <td>
-								<select name="f_phone1">
+                            <th scope="row"><label for="f_hphone1"><span class="txt_or">*</span> 연락처(휴대폰)</label></th>
+                            <td colspan="4">
+								<select name="f_hphone1">
 									<option value="" selected>----</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
@@ -129,18 +131,18 @@
 									<option value="019">019</option>
 								</select>
                                     <span>-</span>
-                                    <label for="fm_phone2"></label>
-                                    <input type="text" id="fm_phone2" name="f_phone2" class="wid03" maxlength="4">
+                                    <label for="f_hphone2"></label>
+                                    <input type="text" id="f_hphone2" name="f_hphone2" class="wid03" maxlength="4">
                                     <span>-</span>
-                                    <label for="fm_phone3"></label>
-                                    <input type="text" id="fm_phone3" name="f_phone3" class="wid03" maxlength="4">
+                                    <label for="f_hphone3"></label>
+                                    <input type="text" id="f_hphone3" name="f_hphone3" class="wid03" maxlength="4">
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="fm_tel1">연락처(전화)</label></th>
-                            <td>
-                            	  <label for="f_tel1"></label>
-                                    <select class="wid03" name="fm_tel1">
+                            <th scope="row"><label for="f_phone1">연락처(전화)</label></th>
+                            <td colspan="4">
+                            	  <label for="f_phone1"></label>
+                                    <select class="wid03" name="f_phone1">
 										<option value="">----</option>
 										<option value="02">02</option>
 										<option value="031">031</option>
@@ -166,28 +168,28 @@
 										<option value="0130">0130</option>
                                     </select>
                                     <span>-</span>
-                                    <label for="fm_tel2"></label>
-                                    <input type="text" id="fm_tel2" name="f_tel2" class="wid03"  maxlength="4">
+                                    <label for="f_phone2"></label>
+                                    <input type="text" id="f_phone2" name="f_phone2" class="wid03"  maxlength="4">
                                     <span>-</span>
                                     <label for="fm_tel3"></label>
-                                    <input type="text" id="fm_tel3" name="f_tel3" class="wid03"  maxlength="4">
+                                    <input type="text" id="f_phone3" name="f_phone3" class="wid03"  maxlength="4">
                             </td>
                         </tr>
                         <tr>
                         	<th><span class="txt_or">*</span> 이메일</th>
-                            <td>
-                                <label for="fm_email11"></label>
-                                <input type="text" id="fm_email11" name="f_email" class="wid04">
+                            <td colspan="4">
+                                <label for="f_email1"></label>
+                                <input type="text" id="f_email1" name="f_email1" class="wid04">
                                 <span>@</span>
-                                <label for="fm_email22"></label>
-                                <input type="text" id="fm_email12" name="f_email2" class="wid04">
-                                <label for="fm_emailSel1"></label>
-                                <select class="wid04" name="f_emailSel1" id="fm_emailSel1" onChange="javascript:ChangeEMailIt('1');">
+                                <label for="f_email2"></label>
+                                <input type="text" id="f_email2" name="f_email2" class="wid04">
+                                <label for="f_email2"></label>
+                                <select class="wid04" name="f_email3" id="f_email3">
 									<option value="">선택해주세요.</option>
 									<option value="etc">직접입력</option>
 									<option value="gmail.com"> gmail.com</option>
 									<option value="naver.com"> naver.com</option>
-									<!--<option value="nate.com"> nate.com</option>-->
+									<option value="nate.com"> nate.com</option>
 									<option value="daum.net"> daum.net</option>
 									<option value="dreamwiz.com"> dreamwiz.com</option>
 									<option value="lycos.co.kr"> lycos.co.kr</option>
@@ -204,19 +206,23 @@
                             </td>
                         </tr>
                         <tr>
-                        	<th><span class="txt_or">*</span>주소</th>
-                            <td colspan="2">
-                            	<div class="mb10">
-                                	 <label for="fm_zip"></label>
-                                    <input type="text" id="fm_zip" name="f_zip" class="wid60" onclick="openDaumPostCode(); return false;" readonly>
-                                    <a href="#"  onclick="openDaumPostCode(); return false;" class="btn_add">우편번호찾기</a>
-                                </div>
-                                <div>
-                                	 <label for="fm_address"></label>
-                                    <input type="text" id="fm_address" name="f_address" class="wid">
-                                </div>
-                            </td>
-                        </tr>
+							<th><span class="txt_or">*</span> 주소</th>
+							<td colspan="5">
+								<div class="mb10">
+									<label for="f_address1"></label><input type="text" id="f_address1" 
+									name="f_address1" class="wid60" title="주소검색 새창" readonly=""> 
+									<input type = "button" onClick = "openDaumZipAddress()" value = "주소 찾기" class="btn_add"/>
+								</div>
+								<div class="mb10">
+									<label for="f_address2"></label> 
+										<input type="text" id="f_address2" name="f_address2" class="wid06">
+								</div>
+								<div class="mb10">
+									<label for="f_address3"></label> 
+										<input type="text" id="f_address3" name="f_address3" class="wid06">
+								</div>
+							</td>
+						</tr>
                     </tbody>
                 </table>
             </div>
@@ -282,7 +288,6 @@
 									<th scope="row" class="ac"><span class="txt_or">*</span>개발</th>
 									<td colspan="5" style="border-bottom: solid 0px #dadada"
 										bgcolor="#ffffff">
-
 										<table width="100%">
 											<colgroup>
 												<col width="20%" />

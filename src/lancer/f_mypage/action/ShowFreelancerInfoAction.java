@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import lancer.f_mypage.model.ApplyProject;
 import lancer.f_mypage.model.Career;
 import lancer.f_mypage.model.Certificate;
 import lancer.f_mypage.model.Freelancer;
@@ -45,12 +46,35 @@ public class ShowFreelancerInfoAction implements Action {
 		List<Career> career = dao.showCareerInfo(f_num);
 		List<School> school = dao.showSchoolInfo(f_num);
 		List<Certificate> certificate = dao.showCertiInfo(f_num);
+		List<ApplyProject> applyproject = dao.getApplyProject(f_num);
+
+		if(career.size()==0){
+			request.setAttribute("careercheck", "0");
+		}else{
+			request.setAttribute("career", career);
+		}
+		
+		if(school.size()==0){
+			request.setAttribute("schoolcheck", "0");
+		}else{
+			request.setAttribute("school", school);
+		}
+		
+		if(certificate.size()==0){
+			request.setAttribute("certificatecheck", "0");
+		}else{
+			request.setAttribute("certificate", certificate);
+		}
+		
+		if(applyproject.size()==0){
+			request.setAttribute("applyprojectcheck", "0");
+		}else{
+			request.setAttribute("applyproject", applyproject);
+		}
 		
 		request.setAttribute("freelancer", freelancer);
 		request.setAttribute("joblist", joblist);
-		request.setAttribute("career", career);
-		request.setAttribute("school", school);
-		request.setAttribute("certificate", certificate);
+
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
