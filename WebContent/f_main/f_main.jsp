@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="f_main_css/main.css">
+<link rel="stylesheet" href="/Matching_Project/f_main/f_main_css/main.css">
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="f_main_js/f_main.js"></script>
+<script src="/Matching_Project/f_main/f_main_js/f_main.js"></script>
 <!-- <script src="js/vendor/modernizr.custom.min.js"></script>
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
 <script src="js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
@@ -23,9 +23,9 @@ google.charts.setOnLoadCallback(drawMultSeries);
  
 function drawMultSeries() {
       var data = google.visualization.arrayToDataTable([
-        ['주제', '3월', '4월'],
-        ['Java', ${count}, 0],
-        ['C', 0, 0],
+        ['주제', '4월', ''],
+        ['프리랜서', ${count}, 0],
+        ['프로젝트', ${count_p}, 0],
         ['3', 0, 0],
         ['4', 0, 0],
         ['5', 0, 0]
@@ -35,7 +35,7 @@ function drawMultSeries() {
         title: '차트주제',
         chartArea: {width: '50%'},
         hAxis: {
-          title: '월별 언어 사용량 추이',
+          title: '5월 프리랜서, 프로젝트 등록 수',
           minValue: 0
         },
         vAxis: {
@@ -60,12 +60,12 @@ function drawMultSeries() {
 	<div class="main_slide">
 		<div class="slideshow_images">
 		
-			<a href="#" class="slide"><img src="f_main_img/bg_visual01.jpg"
+			<a href="#" class="slide"><img src="/Matching_Project/f_main/f_main_img/bg_visual01.jpg"
 				alt="" width="1911" height="432"></a> <a href="#" class="slide"><img
-				src="f_main_img/bg_visual02.jpg" alt="" width="1911" height="432"></a>
-			<a href="#" class="slide"><img src="f_main_img/bg_visual03.jpg"
+				src="/Matching_Project/f_main/f_main_img/bg_visual02.jpg" alt="" width="1911" height="432"></a>
+			<a href="#" class="slide"><img src="/Matching_Project/f_main/f_main_img/bg_visual03.jpg"
 				alt="" width="1911" height="432"></a> <a href="#" class="slide"><img
-				src="f_main_img/bg_visual04.jpg" alt="" width="1911" height="432"></a>
+				src="/Matching_Project/f_main/f_main_img/bg_visual04.jpg" alt="" width="1911" height="432"></a>
 		</div>
 	</div>
 
@@ -102,18 +102,26 @@ function drawMultSeries() {
 			<div id="tab1">
 				<h2>프리랜서 정보</h2>
 				<h3>현재 활동중인 프리랜서는 ${count }명 입니다.</h3>
-				<img alt="" src="f_main_img/icon01_off.png"> <img alt=""
-					src="f_main_img/icon02_off.png"> <img alt=""
-					src="f_main_img/icon03_off.png"> <img alt=""
-					src="f_main_img/icon04_off.png">
+				<img alt="" src="/Matching_Project/f_main/f_main_img/icon01_off.png"> <img alt=""
+					src="/Matching_Project/f_main/f_main_img/icon02_off.png"> <img alt=""
+					src="/Matching_Project/f_main/f_main_img/icon03_off.png"> <img alt=""
+					src="/Matching_Project/f_main/f_main_img/icon04_off.png">
 				<form action="" method="post">
 					<table class="active_p">
 						<tr>
-							<th>
-							<td>${member0 }</td>
+						
+						<!-- 추후 삭제영역 -->
+							<h1>--분야별 프리랜서 활동 명수, 현재는 프리랜서 회원 목록 출력--</h1><br>
+							<!-- 삭제영역 끝 -->
+							<th>							
+							<td>&nbsp;&nbsp;${member0 }</td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<td>${member1 }</td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<td>${member2 }</td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<td>${member3 }</td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</tr>
 					</table>
 				</form>
@@ -121,10 +129,12 @@ function drawMultSeries() {
 			<div id="tab2">
 				<h2>프로젝트 정보</h2>
 				<h3>현재 등록된 프로젝트 수</h3>
-				<img alt="" src="f_main_img/icon01_off.png"> <img alt=""
-					src="f_main_img/icon02_off.png"> <img alt=""
-					src="f_main_img/icon03_off.png"> <img alt=""
-					src="f_main_img/icon04_off.png">
+				<h3>현재 등록된 프로젝트 수는 ${count_p }개 입니다.</h3>
+				<img alt="" src="/Matching_Project/f_main/f_main_img/icon01_off.png"> <img alt=""
+					src="/Matching_Project/f_main/f_main_img/icon02_off.png"> <img alt=""
+					src="/Matching_Project/f_main/f_main_img/icon03_off.png"> <img alt=""
+					src="/Matching_Project/f_main/f_main_img/icon04_off.png">
+				<h3>--분야별 프로젝트 수 구현예정--</h3>
 				<tr>
 					<td>1 프로젝트DB</td>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -145,20 +155,20 @@ function drawMultSeries() {
 		<br>
 		<div id="introduce_img">
 
-			<img alt="" src="f_main_img/cont04_icon01.png"> <img alt=""
-				src="f_main_img/cont04_icon02.png"> <img alt=""
-				src="f_main_img/cont04_icon03.png"> <img alt=""
-				src="f_main_img/cont04_icon04.png">
+			<img alt="" src="/Matching_Project/f_main/f_main_img/cont04_icon01.png"> <img alt=""
+				src="/Matching_Project/f_main/f_main_img/cont04_icon02.png"> <img alt=""
+				src="/Matching_Project/f_main/f_main_img/cont04_icon03.png"> <img alt=""
+				src="/Matching_Project/f_main/f_main_img/cont04_icon04.png">
 
 		</div>
 	</div>
-	<h1> 테스트영역</h1>
+	<%-- <h1> 테스트영역</h1>
 		<form action="f_main.fm" method="post">
 		<input type="text" value="${member0}">
 		<input type="submit" value="a" id="test">
 		</form>
 		<input type="text" value="${member1 }">
-		<input type="text" value="${count }">
+		<input type="text" value="${count }"> --%>
 	</section>
 	<%@ include file="../c_common/footer.jsp"%>
 

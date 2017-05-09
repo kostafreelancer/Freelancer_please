@@ -17,6 +17,9 @@
 		select count(*) from freelancer 
 	</select>
 	
+	<select id="countProject" resultType="int">
+		select count(*) from sign_project
+	</select>
 </mapper>
 
 
