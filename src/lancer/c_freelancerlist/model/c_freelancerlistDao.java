@@ -44,9 +44,11 @@ public class c_freelancerlistDao {
 			e.printStackTrace();
 		}
 		for(int i = 0 ;i<totallists.size();i++){
-			/*totallists.set(i, session.getMapper(c_freelancerMapper.class).c_freelancerlist_select_school(totallists.get(i).getF_num())); */ 
+			System.out.println("망할 드오냐?"+i);
+			
 			List<c_freelancerlist_school> list_school = session.getMapper(c_freelancerMapper.class).c_freelancerlist_select_school(totallists.get(i).getF_num());
 			totallists.get(i).setList_school(list_school);
+			
 			List<c_freelancerlist_career> list_career = session.getMapper(c_freelancerMapper.class).c_freelancerlist_select_career(totallists.get(i).getF_num());
 			totallists.get(i).setList_career(list_career);
 			List<c_freelancerlist_portfolio> list_portfolio = session.getMapper(c_freelancerMapper.class).c_freelancerlist_select_portfolio(totallists.get(i).getF_num());
@@ -55,10 +57,15 @@ public class c_freelancerlistDao {
 			totallists.get(i).setList_job(list_job);
 			int age = cal.get(Calendar.YEAR)-Integer.parseInt(totallists.get(i).getF_birth().substring(0, 4))+1;
 			totallists.get(i).setF_age(age);
-			if(totallists.get(i).getList_school().get(0).getSchool_term().equals("2년")){
-				totallists.get(i).setF_highest_school("대학(전문 학사)졸업");
-			}else if(totallists.get(i).getList_school().get(0).getSchool_term().equals("4년")){
-				totallists.get(i).setF_highest_school("대학(학사)졸업");
+			
+			/*System.out.println(totallists.get(i).getList_school()+"첫번째 학위");*/
+			if(totallists.get(i).getList_school().size() != 0){
+				System.out.println("요기가 문제인거지?"+i+":"+totallists.get(i).getList_school());
+				if(totallists.get(i).getList_school().get(0).getSchool_term().equals("2년")){
+					totallists.get(i).setF_highest_school("대학(전문 학사)졸업");
+				}else if(totallists.get(i).getList_school().get(0).getSchool_term().equals("4년")){
+					totallists.get(i).setF_highest_school("대학(학사)졸업");
+				}
 			}
 			int total_year=0;
 			int total_month =0;

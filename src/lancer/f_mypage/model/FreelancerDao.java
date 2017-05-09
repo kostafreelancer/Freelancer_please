@@ -17,7 +17,7 @@ public class FreelancerDao {
 		return dao;
 	}
 	
-	public SqlSessionFactory getSqlSessionFactory(){      // sqlsessionfactory를 얻어옴
+	public SqlSessionFactory getSqlSessionFactory(){      // sqlsessionfactory瑜� �뼸�뼱�샂
 	      String resource = "mybatis-config_f_mypage.xml";
 	      InputStream in = null;
 	      try {
@@ -359,7 +359,7 @@ public class FreelancerDao {
 		SqlSession session = getSqlSessionFactory().openSession();
 		String name = "";
 		try {			
-			name= session.getMapper(FreelancerMapper.class).getMyProjectName(f_num);
+			name = session.getMapper(FreelancerMapper.class).getMyProjectName(f_num);
 
 		} catch (Exception e) {
 			e.printStackTrace();
