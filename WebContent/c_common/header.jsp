@@ -32,7 +32,7 @@
 						센터</a></li>
 				<li class="header_join"><img alt="join_img"
 					src="/Matching_Project/c_common/c_common_img/header_join_icon.jpg">
-					<a href="e_joinActionForm.e_join">회원가입</a></li>
+					<a href="e_joinForm.e_join">회원가입</a></li>
 				<li class="login_checking"><img alt="log_img"
 					src="/Matching_Project/c_common/c_common_img/header_log_icon01.jpg">
 					<!-- <a href="/Matching_Project/c_login/login.jsp" >로그인</a></li>  -->
