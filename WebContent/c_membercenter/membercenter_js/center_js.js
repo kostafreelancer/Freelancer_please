@@ -11,4 +11,3 @@ $(document).ready(function() {
         $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
     });
 });
-

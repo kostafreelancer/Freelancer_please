@@ -61,12 +61,12 @@
 
 		<div class="header_menu">
 			<ul class="header_menus_e">
-				<li><a href="/Matching_Project/insert_project/real.jsp">프로젝트
+				<li><a href="insertForm.e_insertproject">프로젝트
 						등록</a></li>
 				<li><a href="/Matching_Project/c_projectlist/project_list.jsp">프로젝트
 						목록</a></li>
 				<li><a href="freelist.f_list">프리랜서 목록</a></li>
-				<li><a href="/Matching_Project/e_mypage/e_info.jsp">마이페이지</a></li>
+				<li><a href="e_infoSelectAction.e_mypage">마이페이지</a></li>
 				<li><a href="/Matching_Project/c_using/service.jsp">이용
 						방법</a></li>
 

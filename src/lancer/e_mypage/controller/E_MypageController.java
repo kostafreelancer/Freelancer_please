@@ -26,41 +26,46 @@ public class E_MypageController extends HttpServlet {
 	}
 	
 	public void doProcess(HttpServletRequest request, HttpServletResponse response) {
-		// 내가 만든 메소드, get으로 요청하든 post로 요청하든 수행하게 해줌
+		// �궡媛� 留뚮뱺 硫붿냼�뱶, get�쑝濡� �슂泥��븯�뱺 post濡� �슂泥��븯�뱺 �닔�뻾�븯寃� �빐以�
 		
-		String requestURI = request.getRequestURI();
+		/*String requestURI = request.getRequestURI();
 		// requestURI = "MVC_Project/insert.do"
 		String contextPath = request.getContextPath();
 		String command = requestURI.substring(contextPath.length() + 1);
 		// command = "insert.do"
 		System.out.println(command);
 		ActionForward forward = null;
-		E_MypageAction action = null;
+		E_MypageAction action = null;*/
 		
+		   String requestURI = request.getRequestURI();
+	       String command[] = requestURI.split("/");
+	       
+	       E_MypageAction action = null;
+	       ActionForward forward = null;
 		
-		
-		if(command.equals("e_infoSelectAction.e_mypage")){
+		System.out.println(command[command.length-1]);
+		if(command[command.length-1].equals("e_infoSelectAction.e_mypage")){
 			action = new E_InfoSelectAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("e_infoUpdateAction.e_mypage")){
+		}else if(command[command.length-1].equals("e_infoUpdateAction.e_mypage")){
 			action = new E_InfoUpdateAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("e_projectListAction.e_mypage")){
+		}else if(command[command.length-1].equals("e_projectListAction.e_mypage")){
 			action = new E_ProjectListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("e_projectSelectAction.e_mypage")){
+		}else if(command[command.length-1].equals("e_projectSelectAction.e_mypage")){
 			action = new E_ProjectSelectAction();
 			try {
 				forward = action.execute(request, response);
@@ -71,9 +76,9 @@ public class E_MypageController extends HttpServlet {
 		
 		if (forward != null) {
 			try {
-				if (forward.isRedirect()) { // redirect 시키겠다
+				if (forward.isRedirect()) { // redirect �떆�궎寃좊떎
 					response.sendRedirect(forward.getPath());
-				} else { // dispatch 시키겠다
+				} else { // dispatch �떆�궎寃좊떎
 					RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 					dispatcher.forward(request, response);
 

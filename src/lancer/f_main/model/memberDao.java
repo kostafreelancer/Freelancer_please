@@ -57,4 +57,17 @@ public class memberDao {
 		
 		return countfreelancer();
 	}
+	
+	public int countProject() throws Exception{
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			return sqlsession.getMapper(f_main_mapper.class).countProject();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlsession.close();
+		}
+		return countProject();
+	}
 }

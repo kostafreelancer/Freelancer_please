@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +20,17 @@
 
 </head>
 <body>
-	<%@include file="../c_common/header.jsp"%>
+	<c:choose>
+		<c:when test="${identity.identity == 'freelancer' }">
+			<%@include file="../c_common/header.jsp" %>
+		</c:when>
+		<c:when test="${identity.identity == 'enterprise' }">
+			<%@include file="../c_common/header_enterprise.jsp" %>
+		</c:when>
+		<c:otherwise>
+			<%@include file="../c_common/header.jsp" %>
+		</c:otherwise>
+	</c:choose>
 	<div class="left_menu">
 		<div class="left_menu_title">
 			<h2>이용방법</h2>

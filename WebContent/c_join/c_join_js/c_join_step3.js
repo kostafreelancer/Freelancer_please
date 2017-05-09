@@ -1,43 +1,43 @@
+
 $(function(){
 	
 	//아이디 중복확인 창 띄우기
-/*	$('#idCheckbox').click(function(){
-		  window.name = "parentForm";
-		  window.open("idCheckForm.jsp",
-		            "chk", "width=500, height=300, resizable = no, scrollbars = no"); 
-		  
 
-		 if(userInfo.e_id.value == "") {
-				alert("id를 입력하시오.");
-				userInfo.e_id.focus();
-			} else {
-				
-				
-				url = "check_id.jsp?id=" + userInfo.e_id.value;
-				window.open(
-						url, 
-						"id check", "toolbar=no, width=350, height=150, top=150, left=150");
-			}
-	});*/
-	
-
+$('#idCheckbox').click(function(){
+    var id = document.getElementById("e_id").value;
     
-        $('#idCheckbox').click(function(){
-                  if($('input[name="e_id"]').val() == ""){           //속성을 통해 접근, var : name에 있는 값을 뽑아옴
+    if (!id) {
+        alert("아이디를 입력하지 않았습니다.");
+        return false;
+    } 
+    else if((id < "0" || id > "9") && (id < "A" || id > "Z") && (id < "a" || id > "z")){ 
+        alert("한글 및 특수문자는 아이디로 사용하실 수 없습니다.");
+        return false;
+    }
+    else
+    {
+       $('#checkForm').submit();
+    }
+});
+
+   
+	/*        $('#idCheckbox').click(function(){
+                 if($('input[name="e_id"]').val() == ""){           //속성을 통해 접근, var : name에 있는 값을 뽑아옴
                             $('input[name="e_id"]').css('border', '1px solid red');
                             $('#idCheckbox').after("<span>아이디을 입력하세요.</span>");               //after : 동생, 뒤에 붙여줌
                   }
-/*                  if($('input[name="e_id]').val()==${e_id}){
+                  if($('input[name="e_id]').val()==${e_id}){
                 	  $('input[name="e_id"]').css('border', '1px solid red');
                   $('#idCheckbox').after("<span>이미 존재하는 아이디입니다.</span>");
-                  }*/
+                  }
                   return false;                   //form이 submit로 하려는 기본이벤트를 가지고 있다
-        });
-
+                  
+                  
+        });*/
 	
+
 	//사진이미지 미리보기
 
-	
 	//이메일 주소
 	   $('#manager_mail3').change(function(){
 		      var e_mail = $(this).val();
@@ -57,11 +57,19 @@ $(function(){
 		   }
 		   $('#e_mail2').val(e_mail);
 	   });
+	   $('#f_email3').change(function(){
+		   var e_mail = $(this).val();
+		   if(e_mail == ""){
+			   $('#f_email2').removeAttr('readonly');
+		   }else{
+			   $('#f_email2').attr('readonly', 'true')
+		   }
+		   $('#f_email2').val(e_mail);
+	   });
 
 	
 	
-	
-	
+
 	
 	
 	//회원가입 빈칸 확인
@@ -198,8 +206,9 @@ $(function(){
         
         
 });
-	
+
 });
+
 
 
 

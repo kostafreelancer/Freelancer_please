@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import lancer.c_login.model.c_login_enterprise;
 import lancer.e_mypage.mapper.E_MypageMapper;
 
 
@@ -39,6 +40,24 @@ public class E_MypageDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
+		} finally {
+			session.close();
+		}
+	}
+	
+	public void updateEnterprise(c_login_enterprise enterprise) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+
+		try {
+			re = session.getMapper(E_MypageMapper.class).updateEnterprise(enterprise);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}

@@ -14,7 +14,23 @@
 <script type="text/javascript" src="../common/header.js"></script>
 <script type="text/javascript" src="c_join_js/zipAddress.js"></script>
  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript">
+/* function inputIdChk(){
+    document.userInfo.idDuplication.value ="idUncheck";
+}
 
+	
+	if(document.getElementById("check").value != null){
+		if(check == "1"){
+			alert('그거쓰지마');
+		}else{
+			alert('중복확인 성공');
+		}	
+	}
+ */
+
+
+</script>
 
 </head>
 <body>
@@ -73,9 +89,13 @@
 								<th scope="row" class="ac"><label for="e_id"><span
 										class="txt_or">*</span> 회원아이디</label></th>
 								<td colspan="3">
-								<input type="text" id="e_id" name="e_id" > 
-								<input type="button"  id="idCheckbox" value="중복확인" class="btn_overlap" >							
-									<br>* 6~15자의 영문, 영문+숫자, 일부 특수문자( _ - )만 사용 가능합니다.</td>
+								<!-- <form id="checkForm" name="checkForm" action="e_memberIdCheck.e_join" method="post"> -->
+								<input type="text" id="e_id" name="e_id"> 
+								<input type="button"  id="idCheckbox" value="중복확인" class="btn_overlap" >	
+								<input type="hidden" name="idDuplication" value="idUncheck" >				
+									* 6~15자의 영문, 영문+숫자, 일부 특수문자( _ - )만 사용 가능합니다.</td>
+								<!-- </form> -->
+								<input type="text" hidden id="check" value="${check}">
 							</tr>
 							<tr>
 								<th scope="row" class="ac"><label for="e_pwd"><span
@@ -133,13 +153,21 @@
 								name="e_mail3" id="e_mail3">
 									<option value="선택해주세요.">선택해주세요.</option>
 									<option value="">직접입력</option>
-									<option value="gmail.com">gmail.com</option>
-									<option value="naver.com">naver.com</option>
-									<option value="nate.com">nate.com</option>
-									<option value="daum.net">daum.net</option>
-									<option value="dreamwiz.com">dreamwiz.com</option>
-									<option value="hotmail.com">hotmail.com</option>
-									<option value="hanmail.net">hanmail.net</option>
+									<option value="gmail.com"> gmail.com</option>
+									<option value="naver.com"> naver.com</option>
+									<option value="nate.com"> nate.com</option>
+									<option value="daum.net"> daum.net</option>
+									<option value="dreamwiz.com"> dreamwiz.com</option>
+									<option value="lycos.co.kr"> lycos.co.kr</option>
+									<option value="empal.com"> empal.com</option>
+									<option value="yahoo.co.kr"> yahoo.co.kr</option>
+									<option value="chol.com"> chol.com</option>
+									<option value="korea.com"> korea.com</option>										
+									<option value="paran.com"> paran.com</option>
+									<option value="hanafos.com"> hanafos.com</option>
+									<option value="hanmir.com"> hanmir.com</option>								
+									<option value="hotmail.com"> hotmail.com</option>
+									<option value="hanmail.net"> hanmail.net</option>
 							</select></td>
 						</tr>
 						<tr>
@@ -221,13 +249,21 @@
 								name="manager_mail3" id="manager_mail3" >
 									<option value="선택해주세요.">선택해주세요.</option>
 									<option value="">직접입력</option>
-									<option value="gmail.com">gmail.com</option>
-									<option value="naver.com">naver.com</option>
-									<option value="nate.com">nate.com</option>
-									<option value="daum.net">daum.net</option>
-									<option value="dreamwiz.com">dreamwiz.com</option>
-									<option value="hotmail.com">hotmail.com</option>
-									<option value="hanmail.net">hanmail.net</option>
+									<option value="gmail.com"> gmail.com</option>
+									<option value="naver.com"> naver.com</option>
+									<option value="nate.com"> nate.com</option>
+									<option value="daum.net"> daum.net</option>
+									<option value="dreamwiz.com"> dreamwiz.com</option>
+									<option value="lycos.co.kr"> lycos.co.kr</option>
+									<option value="empal.com"> empal.com</option>
+									<option value="yahoo.co.kr"> yahoo.co.kr</option>
+									<option value="chol.com"> chol.com</option>
+									<option value="korea.com"> korea.com</option>										
+									<option value="paran.com"> paran.com</option>
+									<option value="hanafos.com"> hanafos.com</option>
+									<option value="hanmir.com"> hanmir.com</option>								
+									<option value="hotmail.com"> hotmail.com</option>
+									<option value="hanmail.net"> hanmail.net</option>
 							</select></td>
 						</tr>
 						<tr>

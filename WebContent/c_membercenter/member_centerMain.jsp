@@ -25,6 +25,9 @@
 		<c:when test="${identity.identity == 'enterprise' }">
 			<%@include file="../c_common/header_enterprise.jsp"%>
 		</c:when>
+		<c:otherwise>
+			<%@include file="../c_common/header.jsp"%>
+		</c:otherwise>
 	</c:choose>
 
 
@@ -34,7 +37,7 @@
 		<div id=member_nav>
 			<div class="nav_txt">
 				<p>
-					<a href="#">Home</a> <span class="padd">></span> <span id="aaa">고객센터</span>
+					<a href="/Matching_Project/f_main/f_main.fm">Home</a> <span class="padd">></span> <span id="aaa">고객센터</span>
 				</p>
 			</div>
 		</div>
@@ -84,6 +87,7 @@
 								<th scope="row"><span class="text_star">*</span> <label
 									for="q_name">작성자</label></th>
 								<td colspan="3" class="join">
+								
 								<input type="text"
 									id="fm_name" name="fm_name" class="wid02"
 									value=<c:choose>
@@ -97,6 +101,7 @@
 									이름을&nbsp;입력해&nbsp;주세요.
 									</c:otherwise>
 								</c:choose>>
+								
 								</td>
 							</tr>
 							<tr>

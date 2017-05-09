@@ -4,11 +4,11 @@ import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import kosta.model.ImageUtil;
 import lancer.e_mypage.model.Enterprise;
 import lancer.c_login.model.c_login_enterprise;
 import lancer.e_mypage.model.E_MypageDao;
@@ -22,10 +22,29 @@ public class E_InfoUpdateAction implements E_MypageAction {
 		request.setCharacterEncoding("utf-8");
 		
 		E_MypageDao dao = E_MypageDao.getInstance();
-		c_login_enterprise enterprise = new c_login_enterprise();
+		HttpSession session = request.getSession();
+		c_login_enterprise enterprise = (c_login_enterprise)session.getAttribute("client");
+		
+		int e_num = Integer.parseInt(request.getParameter("e_num"));
+		enterprise.setE_num(e_num);
+		
 		
 		String pwd1 = request.getParameter("e_pwd1");
 		String pwd2 = request.getParameter("e_pwd2");
+		
+		if(pwd1.equals(pwd2)){
+			// 비밀번호와 비밀번호 확인이 일치할 경우 변경
+			System.out.println(pwd1);
+			enterprise.setE_pwd(pwd1);
+		}else{
+			// 일치하지 않을 경우 실패
+			ActionForward forward = new ActionForward();
+			forward.setRedirect(true);
+			forward.setPath("Matching_Project/e_infoSelectAction.e_mypage");
+			
+			return forward;
+		}
+		
 		
 		//회사이메일
 		String email1 = request.getParameter("e_mail_1");
@@ -48,7 +67,7 @@ public class E_InfoUpdateAction implements E_MypageAction {
 		String e_regno = regno_1 + "-" + regno_2 + "-" + regno_3;
 		enterprise.setE_regno(e_regno);
 		
-		//대표번호e_phone1
+		//대표번호
 		String e_phone_1 = request.getParameter("e_phone_1");
 		String e_phone_2 = request.getParameter("e_phone_2");
 		String e_phone_3 = request.getParameter("e_phone_3");
@@ -95,10 +114,8 @@ public class E_InfoUpdateAction implements E_MypageAction {
 				
 		enterprise.setE_licensefile(request.getParameter("e_licensefile"));		
 				
-		enterprise.setE_check("0");
-				
 		
-		dao.updateEnterprise(enterprise);		
+		dao.updateEnterprise(enterprise);
 		
 		
 		
@@ -107,17 +124,7 @@ public class E_InfoUpdateAction implements E_MypageAction {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		/*
 		//파일업로드 (경로, 사이즈, 인코딩, 중첩정책)
 		String uploadPath = request.getRealPath("e_mypage_ownerfile");	// e_mypage_ownerfile란 폴더의 절대경로
 		int size = 20 * 1024 * 1024;		// 20MB
@@ -152,10 +159,14 @@ public class E_InfoUpdateAction implements E_MypageAction {
 			}		
 		
 		
+		*/
+		
+		
+		session.setAttribute("client", enterprise);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("Matching_Project/e_mypage/e_project.jsp");
+		forward.setPath("e_infoSelectAction.e_mypage");
 		
 		return forward;
 	}

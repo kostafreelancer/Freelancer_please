@@ -1,6 +1,14 @@
 package lancer.c_join.model;
 
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -9,12 +17,27 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import lancer.c_join.mapper.E_joinMapper;
 
+
 public class E_joinDAO {
 	private static E_joinDAO dao = new E_joinDAO();
 
 	public static E_joinDAO getInstance() {
 		return dao;
 	}
+
+	//connection 추가
+    public Connection getConnection(){
+        DataSource ds = null;
+        try{
+                  Context ctx = new InitialContext();
+                  ds = (DataSource)ctx.lookup("java:comp/env/jdbc/oracle");
+                  return ds.getConnection();
+        }catch (Exception e) {
+                  e.printStackTrace();
+        }
+        return null;
+}
+
 
 	public SqlSessionFactory getSqlSessionFactory() {
 		String resource = "mybatis-config_c_join.xml";
@@ -79,6 +102,19 @@ public class E_joinDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return -1;
+		} finally {
+			session.close();
+		}
+	}
+	
+	public List<String> getAllId(){
+		SqlSession session = getSqlSessionFactory().openSession();
+	
+		try {
+			return session.getMapper(E_joinMapper.class).getAllId();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		} finally {
 			session.close();
 		}
