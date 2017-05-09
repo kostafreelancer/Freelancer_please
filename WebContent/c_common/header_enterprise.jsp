@@ -61,7 +61,7 @@
 
 		<div class="header_menu">
 			<ul class="header_menus_e">
-				<li><a href="/Matching_Project/e_insertproject/e_insertproject.jsp">프로젝트
+				<li><a href="insertForm.e_insertproject">프로젝트
 						등록</a></li>
 				<li><a href="/Matching_Project/c_projectlist/project_list.jsp">프로젝트
 						목록</a></li>
