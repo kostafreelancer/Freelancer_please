@@ -15,7 +15,7 @@
 <script type="text/javascript" src="c_join_js/zipAddress.js"></script>
  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
-function inputIdChk(){
+/* function inputIdChk(){
     document.userInfo.idDuplication.value ="idUncheck";
 }
 
@@ -27,7 +27,7 @@ function inputIdChk(){
 			alert('중복확인 성공');
 		}	
 	}
-
+ */
 
 
 </script>
@@ -89,12 +89,12 @@ function inputIdChk(){
 								<th scope="row" class="ac"><label for="e_id"><span
 										class="txt_or">*</span> 회원아이디</label></th>
 								<td colspan="3">
-								<form id="checkForm" name="checkForm" action="e_memberIdCheck.e_join" method="post">
-								<input type="text" id="e_id" name="e_id" onkeydown="inputIdChk()"> 
+								<!-- <form id="checkForm" name="checkForm" action="e_memberIdCheck.e_join" method="post"> -->
+								<input type="text" id="e_id" name="e_id"> 
 								<input type="button"  id="idCheckbox" value="중복확인" class="btn_overlap" >	
 								<input type="hidden" name="idDuplication" value="idUncheck" >				
 									* 6~15자의 영문, 영문+숫자, 일부 특수문자( _ - )만 사용 가능합니다.</td>
-								</form>
+								<!-- </form> -->
 								<input type="text" hidden id="check" value="${check}">
 							</tr>
 							<tr>
