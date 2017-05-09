@@ -97,8 +97,12 @@ public class E_joinDAO {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
 		try {
-			return session.getMapper(E_joinMapper.class).getnum();
 			
+			if(session.getMapper(E_joinMapper.class).getnum() == null){
+				return 0;
+			}else{
+				return session.getMapper(E_joinMapper.class).getnum();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return -1;

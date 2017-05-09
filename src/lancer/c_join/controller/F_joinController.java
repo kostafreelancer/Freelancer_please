@@ -12,16 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import lancer.c_join.action.Action;
 import lancer.c_join.action.ActionForward;
 import lancer.c_join.action.E_joinAction;
-import lancer.c_join.action.E_joinActionForm;
+import lancer.c_join.action.F_joinAction;
 import lancer.c_join.action.JoinFormAction;
 import lancer.c_join.action.MemberIdCheckAction;
 
-
-
-@WebServlet("*.e_join")
-public class C_joinController extends HttpServlet {
+@WebServlet("*.f_join")
+public class F_joinController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	 public C_joinController(){
+	 public F_joinController(){
 		 super();
 	 }
 	 
@@ -35,16 +33,16 @@ public class C_joinController extends HttpServlet {
 	    	ActionForward forward=null;
 	    	Action action=null;
 	    	
-	    	if(command[command.length-1].equals("e_joinAction.e_join")){
-	    		action=new E_joinAction();
+	    	if(command[command.length-1].equals("f_joinAction.f_join")){
+	    		action=new F_joinAction();
 	    		
 	    		try{
 	    		forward =action.execute(request, response);
 	    		}catch (Exception e) {
 					e.printStackTrace();
 				}
-	    	}else if(command[command.length-1].equals("e_joinActionForm.e_join")){
-	    		action = new E_joinAction();
+	    	}else if(command[command.length-1].equals("f_joinActionForm.f_join")){
+	    		action = new F_joinAction();
 	    		try {
 					forward = action.execute(request, response);
 				} catch (Exception e) {
@@ -87,6 +85,4 @@ public class C_joinController extends HttpServlet {
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			doProcess(request, response);
 		}
-
-	 
 }
