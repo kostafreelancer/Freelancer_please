@@ -38,8 +38,8 @@
 	</div>
 	<div class="left_menu_content">
 		<ul class="left_menu_contents">
-			<li><a href="e_info.jsp">기업 정보</a></li>
-			<li><a href="e_project.jsp">프로젝트 관리</a></li>
+			<li><a href="e_infoSelectAction.e_mypage">기업 정보</a></li>
+			<li><a href="e_projectListAction.e_mypage">프로젝트 관리</a></li>
 		</ul>
 	</div>
 	</nav>
@@ -59,7 +59,7 @@
 	</div>
 
 
-<form action="e_infoEpdateAction.e_mypage?e_num=${client.e_num }" method="post" enctype="multipart/form-data">
+<form action="e_infoUpdateAction.e_mypage?e_num=${client.e_num }" method="post">
 	<div class="e_info_table1">
 		<h4>아이디 및 비밀번호</h4>
 		
@@ -143,7 +143,7 @@
 				<td rowspan="5"><img name="IMG1" id="e_ownerimage"
 					src="${client.e_ownerfile }">
 					<div class="filebutton">
-						<span>사진업로드</span> <input type="file" name="e_ownerfile" id="e_ownerfile"
+						<span>사진업로드</span> <input type="file" name="e_ownerfile" id="e_ownerfile" value="${client.e_ownerfile }"
 							class="searchfile" title="파일 찾기"
 							style="width: 820px;">
 					</div></td>
