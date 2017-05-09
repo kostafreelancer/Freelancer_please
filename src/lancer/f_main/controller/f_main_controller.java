@@ -46,13 +46,13 @@ public class f_main_controller extends HttpServlet {
     		try {
 				forward = action.execute(request, response);
 				forward = action2.execute(request, response);
-				System.out.println(request.getAttribute("count") + "카운트");
-				System.out.println(request.getAttribute("member1") + "이름 멤버");
+				System.out.println(request.getAttribute("count") + "移댁슫�듃");
+				System.out.println(request.getAttribute("member1") + "�씠由� 硫ㅻ쾭");
 				
 			
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("실패?");
+				System.out.println("�떎�뙣?");
 			}
     	}
     	
