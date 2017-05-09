@@ -26,13 +26,16 @@ public class c_loginAction implements Action{
 		HttpSession session = request.getSession();
 		System.out.println(identity.getIdentity()+"¿Ã∞≈æﬂ~");
 		if(identity.getIdentity().equals("freelancer")){
-			forward.setPath("/Matching_Project/f_main/f_main.jsp");
+			/*forward.setPath("/Matching_Project/f_main/f_main.jsp");*/
+			forward.setPath("f_main.fm");
 			session.setAttribute("client", identity.getFree());
 		}else if(identity.getIdentity().equals("enterprise")){
-			forward.setPath("/Matching_Project/e_main/e_main.jsp");
+			/*forward.setPath("/Matching_Project/e_main/e_main.jsp");*/
+			forward.setPath("e_maincount.e_main");
 			session.setAttribute("client", identity.getEnter());
 		}else if(identity.getIdentity().equals("no")){
-			forward.setPath("/Matching_Project/c_login/login.jsp");
+			/*forward.setPath("/Matching_Project/c_login/login.jsp");*/
+			forward.setPath("remove_session.c_login");
 		}
 		System.out.println(identity.getIdentity());		
 		session.setAttribute("identity", identity);
