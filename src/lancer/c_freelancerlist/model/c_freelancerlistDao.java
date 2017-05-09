@@ -4,6 +4,8 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -14,7 +16,7 @@ import lancer.c_login.model.c_loginDao;
 
 public class c_freelancerlistDao {
 	private static c_freelancerlistDao dao = new c_freelancerlistDao();
-
+	private static int PAGE_SIZE = 2;
 	public static c_freelancerlistDao getInstance() {
 		return dao;
 	}
@@ -93,6 +95,35 @@ public class c_freelancerlistDao {
 			e.printStackTrace();
 		}
 		return f_name;
+	}	
+
+	public lancer.c_freelancerlist.model.c_freelancerlist_pading c_freelancerlist_pading(HttpServletRequest request, int requestPage){
+		
+		int totalPageCount;
+		int startPage;
+		int endPage;
+		List<c_freelancerlist_pading> pading_list;
+		List<c_freelancerlist_total> list = null;
+		List<c_freelancerlist_total> totallists = (List<c_freelancerlist_total>) request.getAttribute("totallists");
+		int totalCount = totallists.size();
+		totalPageCount = totalCount/PAGE_SIZE;
+		if(totalCount%PAGE_SIZE > 0){
+			totalPageCount++;
+		}
+		startPage = requestPage - (requestPage-1)%5;
+		endPage = startPage+4;
+		if(endPage > totalPageCount){
+			endPage = totalPageCount;
+		}
+		
+		int startRow = (requestPage -1) * PAGE_SIZE;
+		int j=0;
+		for(int i=startRow;i<startRow+PAGE_SIZE;i++){
+			list.set(j,totallists.get(i));
+			j++;
+		}
+		
+		return new c_freelancerlist_pading(list, requestPage, totalPageCount, startPage, endPage);
 	}
 	
 }

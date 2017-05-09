@@ -17,16 +17,28 @@
 	
 	<!-- 기업 정보 업데이트 -->
 	<update id="updateEnterprise" parameterType="c_login_enterprise">
-		update enterprise set
+		UPDATE enterprise SET
 		e_pwd=#{e_pwd},
-		e_mail
-		e_name
-		e_ename
-		e_owner
-		e_ownerfile
-		e_regno
-		e_phone
-		e_bf
+		e_mail=#{e_mail},
+		e_ownerfile=#{e_ownerfile},
+		e_name=#{e_name},
+		e_ename=#{e_ename},
+		e_owner=#{e_owner},
+		e_regno=#{e_regno},
+		e_phone=#{e_phone},
+		e_bf=#{e_bf},
+		manager_name=#{manager_name},
+		manager_hphone=#{manager_hphone},
+		manager_mail=#{manager_mail},
+		e_address=#{e_address},
+		e_homepage=#{e_homepage},
+		start_year=#{start_year},
+		e_enum=#{e_enum},
+		e_listing=#{e_listing},
+		e_capital=#{e_capital},
+		e_sales=#{e_sales},
+		e_scale=#{e_scale},
+		e_licensefile=#{e_licensefile} WHERE e_num=#{e_num}
 	</update>
 	
 	<!-- 프로젝트 목록 출력 (모집중) -->

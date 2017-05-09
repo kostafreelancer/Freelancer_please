@@ -4,6 +4,7 @@ import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -24,8 +25,24 @@ public class E_InfoUpdateAction implements E_MypageAction {
 		E_MypageDao dao = E_MypageDao.getInstance();
 		c_login_enterprise enterprise = new c_login_enterprise();
 		
+		int e_num = Integer.parseInt(request.getParameter("e_num"));
+		enterprise.setE_num(e_num);
+		
 		String pwd1 = request.getParameter("e_pwd1");
 		String pwd2 = request.getParameter("e_pwd2");
+		
+		if(pwd1.equals(pwd2)){
+			// 비밀번호와 비밀번호 확인이 일치할 경우 변경
+			enterprise.setE_pwd(pwd1);
+		}else{
+			// 일치하지 않을 경우 실패
+			ActionForward forward = new ActionForward();
+			forward.setRedirect(true);
+			forward.setPath("Matching_Project/e_infoSelectAction.e_mypage");
+			
+			return forward;
+		}
+		
 		
 		//회사이메일
 		String email1 = request.getParameter("e_mail_1");
@@ -48,7 +65,7 @@ public class E_InfoUpdateAction implements E_MypageAction {
 		String e_regno = regno_1 + "-" + regno_2 + "-" + regno_3;
 		enterprise.setE_regno(e_regno);
 		
-		//대표번호e_phone1
+		//대표번호
 		String e_phone_1 = request.getParameter("e_phone_1");
 		String e_phone_2 = request.getParameter("e_phone_2");
 		String e_phone_3 = request.getParameter("e_phone_3");
@@ -95,20 +112,8 @@ public class E_InfoUpdateAction implements E_MypageAction {
 				
 		enterprise.setE_licensefile(request.getParameter("e_licensefile"));		
 				
-		enterprise.setE_check("0");
-				
 		
 		dao.updateEnterprise(enterprise);		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -150,6 +155,10 @@ public class E_InfoUpdateAction implements E_MypageAction {
 			}else{
 				board.setB_fname("");
 			}		
+		
+		
+		
+		
 		
 		
 		

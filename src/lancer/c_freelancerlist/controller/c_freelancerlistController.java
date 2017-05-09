@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import lancer.c_freelancerlist.action.Action;
 import lancer.c_freelancerlist.action.ActionForward;
 import lancer.c_freelancerlist.action.c_freelancerlist_freeAction;
+import lancer.c_freelancerlist.model.c_freelancerlist_pading;
 
 
 @WebServlet("*.f_list")
@@ -30,12 +31,11 @@ public class c_freelancerlistController extends HttpServlet {
     	String command[] = requestURI.split("/");
     	Action action = null;
     	ActionForward forward = null;
-    	System.out.println("드오징?");
     	if(command[command.length-1].equals("freelist.f_list")){
-    		System.out.println("리스트에 안드오냐?");
     		action = new c_freelancerlist_freeAction();
     		try {
 				forward = action.execute(request, response);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
