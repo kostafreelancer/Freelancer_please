@@ -33,7 +33,8 @@
 					<a href="remove_session.c_login">로그 아웃</a></li>
 				<li><img alt="home_img"
 					src="/Matching_Project/c_common/c_common_img/header_home_icon01.jpg">
-					<a href="/Matching_Project/e_main/e_main.jsp">홈</a></li>
+					<!-- <a href="/Matching_Project/e_main/e_main.jsp">홈</a></li> -->
+					<a href="e_maincount.e_main">홈</a></li>
 			</ul>
 
 		</div>
