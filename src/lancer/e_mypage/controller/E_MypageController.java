@@ -28,39 +28,44 @@ public class E_MypageController extends HttpServlet {
 	public void doProcess(HttpServletRequest request, HttpServletResponse response) {
 		// 내가 만든 메소드, get으로 요청하든 post로 요청하든 수행하게 해줌
 		
-		String requestURI = request.getRequestURI();
+		/*String requestURI = request.getRequestURI();
 		// requestURI = "MVC_Project/insert.do"
 		String contextPath = request.getContextPath();
 		String command = requestURI.substring(contextPath.length() + 1);
 		// command = "insert.do"
 		System.out.println(command);
 		ActionForward forward = null;
-		E_MypageAction action = null;
+		E_MypageAction action = null;*/
+		
+		   String requestURI = request.getRequestURI();
+	       String command[] = requestURI.split("/");
+	       
+	       E_MypageAction action = null;
+	       ActionForward forward = null;
 		
 		
-		
-		if(command.equals("e_infoSelectAction.e_mypage")){
+		if(command[command.length-1].equals("e_infoSelectAction.e_mypage")){
 			action = new E_InfoSelectAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("e_infoUpdateAction.e_mypage")){
+		}else if(command[command.length-1].equals("e_infoUpdateAction.e_mypage")){
 			action = new E_InfoUpdateAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("e_projectListAction.e_mypage")){
+		}else if(command[command.length-1].equals("e_projectListAction.e_mypage")){
 			action = new E_ProjectListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("e_projectSelectAction.e_mypage")){
+		}else if(command[command.length-1].equals("e_projectSelectAction.e_mypage")){
 			action = new E_ProjectSelectAction();
 			try {
 				forward = action.execute(request, response);
