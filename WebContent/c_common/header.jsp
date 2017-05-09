@@ -73,7 +73,7 @@
 				
 				<c:choose>
 					<c:when test="${identity.identity == 'freelancer' }">
-						<a href="/Matching_Project/f_mypage/myInfo.jsp">
+						<a href="showScheduleInfo.f_mypage?f_num=${client.f_num}"">
 					</c:when>
 					<c:otherwise>
 						<a href="remove_session.c_login">

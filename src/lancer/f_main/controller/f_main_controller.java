@@ -21,7 +21,6 @@ import lancer.f_main.action.mainActionForward;
 public class f_main_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
     public f_main_controller() {
         super();
         
