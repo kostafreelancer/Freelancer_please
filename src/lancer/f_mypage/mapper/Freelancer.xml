@@ -42,11 +42,11 @@
 	</select>
 	
 	<insert id="insertCareer" parameterType="Career">
-		insert into career values(#{career_num}, #{f_num}, #{company}, #{dept}, #{rank}, #{term}, #{location})
+		insert into career values(#{career_num}, #{f_num}, #{company}, #{dept}, #{rank}, #{career_term}, #{career_location})
 	</insert>
 	
 	<update id="updateCareer" parameterType="Career">
-		update career set company = #{company}, dept = #{dept}, rank = #{rank}, term = #{term}, location = #{location} where career_num = #{career_num}
+		update career set company = #{company}, dept = #{dept}, rank = #{rank}, career_term = #{career_term}, career_location = #{career_location} where career_num = #{career_num}
 	</update>
 	
 	<delete id="deleteCareer" parameterType="int">
@@ -62,11 +62,11 @@
 	</select>
 	
 	<insert id="insertSchool" parameterType="School">
-		insert into school values(#{school_num}, #{f_num}, #{school_name}, #{major}, #{term}, #{location})
+		insert into school values(#{school_num}, #{f_num}, #{school_name}, #{major}, #{school_term}, #{school_location})
 	</insert>
 	
 	<update id="updateSchool" parameterType="School">
-		update school set school_name=#{school_name}, major = #{major}, term = #{term}, location = #{location} where school_num = #{school_num}
+		update school set school_name=#{school_name}, major = #{major}, school_term = #{school_term}, school_location = #{school_location} where school_num = #{school_num}
 	</update>
 	
 	<delete id="deleteSchool" parameterType="int">

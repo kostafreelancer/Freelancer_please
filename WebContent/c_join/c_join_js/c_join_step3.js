@@ -76,11 +76,11 @@ $('#idCheckbox').click(function(){
 	$('#checkValue').click(function(){
 		var form = document.userInfo;
         
+		//기업
         if(!form.e_id.value){
             alert("아이디를 입력하세요.");
             return false;
         }
-        
 /*       if(form.idDuplication.value != "idCheck"){
             alert("아이디 중복체크를 해주세요.");
             return false;
@@ -90,17 +90,18 @@ $('#idCheckbox').click(function(){
             alert("비밀번호를 입력하세요.");
             return false;
         }
-        
         if(form.e_pwd.value != form.e_pwdcheck.value ){
             alert("비밀번호를 동일하게 입력하세요.");
             return false;
         }    
-        
+        if(!form.e_name.value){
+        	alert("가입자명을 입력하세요.");
+        	return false;
+        }
         if(!form.e_ename.value){
             alert("회사명을 입력하세요.");
             return false;
         }
-        
         if(!form.e_owner.value){
             alert("대표자명을 입력하세요.");
             return false;
@@ -195,7 +196,7 @@ $('#idCheckbox').click(function(){
         	return false;
         }
         
-        if(!form.e_address.value){
+        if(!form.address2.value){
         	alert("회사주소를 입력하세요.");
         	return false;
         }
@@ -203,8 +204,89 @@ $('#idCheckbox').click(function(){
         	alert("사업자등록증을 등록해주세요.");
         	return false;
         }*/
+	});
+	
+	
+	
+	
+	
+	 //프리랜서
+	$('#f_checkValue').click(function(){
+		var form1 = document.f_userInfo;  
+        if(!form1.f_id.value){
+        	alert("아이디를 입력하세요.");
+        	return false;
+        }
         
+        /*       if(form.idDuplication.value != "idCheck"){
+            alert("아이디 중복체크를 해주세요.");
+            return false;
+        }*/
         
+        if(!form1.f_pwd.value){
+        	alert("비밀번호를 입력하세요.");
+        	return false;
+        }
+        
+        if(form1.f_pwd.value != form1.f_pwdcheck.value ){
+        	alert("비밀번호를 동일하게 입력하세요.");
+        	return false;
+        }    
+        
+        if(!form1.f_name.value){
+        	alert("성명을 입력하세요.");
+        	return false;
+        }
+        if(!form1.f_birth.value){
+        	alert("생일을 입력하세요.");
+        	return false;
+        }
+        if(isNaN(form1.f_birth.value)){
+        	alert("생년월일은 숫자만 입력해주세요.");
+        	return false;
+        }
+        if(form1.f_hphone1.value == ""){
+        	alert("핸드폰번호를 선택하세요.");
+        	return false;
+        }
+        if(!form1.f_hphone2.value){
+        	alert("핸드폰번호를 입력하세요.");
+        	return false;
+        }
+        if(isNaN(form1.f_hphone2.value)){
+        	alert("핸드폰번호는 숫자만 입력해주세요.");
+        	return false;
+        }
+        
+        if(!form1.f_hphone3.value){
+        	alert("핸드폰번호를 입력하세요.");
+        	return false;
+        }
+        if(isNaN(form1.f_hphone3.value)){
+        	alert("핸드폰번호는 숫자만 입력해주세요.");
+        	return false;
+        }
+        if(!form1.f_email1.value){
+        	alert("이메일을 입력하세요.");
+        	return false;
+        }
+        if(!form1.f_email2.value){
+        	alert("이메일을 입력하세요.");
+        	return false;
+        }
+        if(!form1.f_address2.value){
+        	alert("주소를 입력하세요.");
+        	return false;
+        }        
+        if($('input:checkbox[name="f_major"]:checked').length != 1){
+        	alert("주 분야를 선택하세요.");
+        	return false;
+        }
+   });
+
+        $(".f_major").click(function() { 
+        	$(".f_major").attr("checked", false); 
+        	$(this).attr("checked", true);
 });
 
 });

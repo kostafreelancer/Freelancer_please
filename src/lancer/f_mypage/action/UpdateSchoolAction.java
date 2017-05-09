@@ -14,8 +14,8 @@ public class UpdateSchoolAction implements Action {
 		school.setSchool_num(Integer.parseInt(request.getParameter("school_num")));
 		school.setSchool_name(request.getParameter("school_name"));
 		school.setMajor(request.getParameter("major"));
-		school.setTerm(request.getParameter("term"));
-		school.setLocation(request.getParameter("location"));
+		school.setSchool_term(request.getParameter("term"));
+		school.setSchool_location(request.getParameter("location"));
 		FreelancerDao dao = FreelancerDao.getInstance();
 		dao.updateSchool(school);
 

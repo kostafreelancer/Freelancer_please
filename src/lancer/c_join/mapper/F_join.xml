@@ -20,7 +20,13 @@
 			#{f_major}, #{f_nowstate}, #{f_recentlogin}, #{f_score}
 		)
 	</insert>
-
+	
+	<insert id="insert_F_Job" parameterType="F_job">
+		insert into f_job values(
+		#{f_num}, #{job_id}
+		)
+	</insert>
+	
 	<select id="getAllId" resultType="String">
 		select f_id from freelancer
 	</select>
