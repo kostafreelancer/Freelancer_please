@@ -13,6 +13,7 @@ import lancer.c_join.action.Action;
 import lancer.c_join.action.ActionForword;
 import lancer.c_join.action.E_joinAction;
 import lancer.c_join.action.E_joinActionForm;
+import lancer.c_join.action.JoinFormAction;
 import lancer.c_join.action.MemberIdCheckAction;
 
 
@@ -51,6 +52,13 @@ public class C_joinController extends HttpServlet {
 				}
 	    	}else if(command[command.length-1].equals("e_memberIdCheck.e_join")){
 	    		action = new MemberIdCheckAction();
+	    		try {
+					forward = action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+	    	}else if(command[command.length-1].equals("e_joinForm.e_join")){
+	    		action = new JoinFormAction();
 	    		try {
 					forward = action.execute(request, response);
 				} catch (Exception e) {
