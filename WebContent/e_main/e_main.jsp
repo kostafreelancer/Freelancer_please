@@ -1,21 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
-<link rel="stylesheet" type="text/css" href="e_main_css/slide.css">
-<link rel="stylesheet" type="text/css" href="e_main_css/news.css">
-<link rel="stylesheet" type="text/css" href="e_main_css/info.css">
-<link rel="stylesheet" type="text/css" href="e_main_css/sponsor.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/e_main/e_main_css/slide.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/e_main/e_main_css/news.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/e_main/e_main_css/info.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/e_main/e_main_css/sponsor.css">
 
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
 </script>
-<script type="text/javascript" src="../common/header.js"></script>
-<script type="text/javascript" src="e_main_js/slide.js"></script>
-<script type="text/javascript" src="e_main_js/news.js"></script>
-<script type="text/javascript" src="e_main_js/info.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_main/e_main_js/slide.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_main/e_main_js/news.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/e_main/e_main_js/info.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
@@ -76,7 +77,7 @@
 	<div id="FreeLancer" class="tabcontent">
 		<div class="content">
 			<h3>프리랜서</h3>
-			<p>현재 활동 중인 프리랜서 : 000,000명</p>
+			<p>현재 활동 중인 프리랜서 : ${fnumber }명</p>
 
 			<ul class="e_main_content_ul">
 
@@ -95,7 +96,7 @@
 	<div id="Project" class="tabcontent">
 		<div class="content">
 			<h3>프로젝트</h3>
-			<p>현재 등록된 프로젝트 : 000,000개</p>
+			<p>현재 등록된 프로젝트 : ${pnumber }개</p>
 			<ul class="e_main_content_ul">
 
 				<li class="icon4"><a href=''><img
