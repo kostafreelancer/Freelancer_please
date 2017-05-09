@@ -49,8 +49,8 @@
 
 	<section>
 	<ul id="tabs">
-		<li><a href="#" title="tab1">진행 중</a></li>
-		<li><a href="#" title="tab2">모집 중</a></li>
+		<li><a href="#" title="tab1">모집 중</a></li>
+		<li><a href="#" title="tab2">진행 중</a></li>
 		<li><a href="#" title="tab3">완료</a></li>
 	</ul>
 
