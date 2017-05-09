@@ -30,7 +30,7 @@
 						센터</a></li> -->
 					<a href="f_name.mc">고객
 						센터</a></li>
-				<li><img alt="join_img"
+				<li class="header_join"><img alt="join_img"
 					src="/Matching_Project/c_common/c_common_img/header_join_icon.jpg">
 					<a href="/Matching_Project/c_join/c_join_step1.jsp">회원가입</a></li>
 				<li class="login_checking"><img alt="log_img"
@@ -70,7 +70,25 @@
 						목록</a></li>
 				<!-- <li><a href="/Matching_Project/c_freelancerlist/f_list.jsp">프리랜서 목록</a></li> -->
 				<li><a href="freelist.f_list">프리랜서 목록</a></li>
-				<li><a href="/Matching_Project/f_mypage/myInfo.jsp">마이페이지</a>
+				
+				<c:choose>
+					<c:when test="${identity.identity == 'freelancer' }">
+						<a href="showScheduleInfo.f_mypage?f_num=${client.f_num}"">
+					</c:when>
+					<c:otherwise>
+						<a href="remove_session.c_login">
+					</c:otherwise>
+				</c:choose>
+				
+				<!-- <li><a href="/Matching_Project/f_mypage/myInfo.jsp">마이페이지</a> -->
+				<li> <c:choose>
+					<c:when test="${identity.identity == 'freelancer' }">
+						<a href="/Matching_Project/f_mypage/myInfo.jsp">
+					</c:when>
+					<c:otherwise>
+						<a href="remove_session.c_login">
+					</c:otherwise>
+				</c:choose>마이페이지</a>
 				</li>
 				<li><a href="/Matching_Project/c_using/service.jsp">이용
 						방법</a></li>
