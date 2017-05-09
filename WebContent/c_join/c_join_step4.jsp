@@ -50,7 +50,7 @@
 			</div>
 			<!-- //completion : e -->
 			<div class="btn_box">
-				<a href="/index.php" class="btn_check04">메인으로</a>
+				<a href="../c_login/login.jsp" class="btn_check04"><span> Go Login</a>
 			</div>
 		</div>
 		<!-- //content : e -->

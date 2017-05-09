@@ -57,6 +57,15 @@ $('#idCheckbox').click(function(){
 		   }
 		   $('#e_mail2').val(e_mail);
 	   });
+	   $('#f_email3').change(function(){
+		   var e_mail = $(this).val();
+		   if(e_mail == ""){
+			   $('#f_email2').removeAttr('readonly');
+		   }else{
+			   $('#f_email2').attr('readonly', 'true')
+		   }
+		   $('#f_email2').val(e_mail);
+	   });
 
 	
 	

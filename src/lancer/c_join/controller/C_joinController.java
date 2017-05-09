@@ -28,13 +28,13 @@ public class C_joinController extends HttpServlet {
 
 	    	String requestURI = request.getRequestURI();
 	    	String contextPath = request.getContextPath();
-	    	String command = requestURI.substring(contextPath.length()+1);
+	    	String command[] = requestURI.split("/");
 	    	System.out.println(command);
 	    	
 	    	ActionForword forward=null;
 	    	Action action=null;
 	    	
-	    	if(command.equals("c_join/e_joinAction.e_join")){
+	    	if(command[command.length-1].equals("e_joinAction.e_join")){
 	    		action=new E_joinAction();
 	    		
 	    		try{
@@ -42,14 +42,14 @@ public class C_joinController extends HttpServlet {
 	    		}catch (Exception e) {
 					e.printStackTrace();
 				}
-	    	}else if(command.equals("e_joinActionForm.e_join")){
+	    	}else if(command[command.length-1].equals("e_joinActionForm.e_join")){
 	    		action = new E_joinAction();
 	    		try {
 					forward = action.execute(request, response);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-	    	}else if(command.equals("e_memberIdCheck.e_join")){
+	    	}else if(command[command.length-1].equals("e_memberIdCheck.e_join")){
 	    		action = new MemberIdCheckAction();
 	    		try {
 					forward = action.execute(request, response);
