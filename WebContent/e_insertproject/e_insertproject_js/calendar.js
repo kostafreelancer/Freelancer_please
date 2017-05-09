@@ -7,7 +7,7 @@
 	var startAt = 0			// 0 - sunday ; 1 - monday
 	var showWeekNumber = 0	// 0 - don't show; 1 - show
 	var showToday = 1		// 0 - don't show; 1 - show
-	var imgDir = "Matching_Project/e_insertproject/e_insertproject_img/"			// directory for images ... e.g. var imgDir="/img/"
+	var imgDir = '/Matching_Project/e_insertproject/e_insertproject_img/'		// directory for images ... e.g. var imgDir="/img/"
 
 	var gotoString = "현재 달로 이동"
 	var todayString = "오늘은"
@@ -115,7 +115,7 @@
 			img[i] = new Image
 			img[i].src = imgDir + imgsrc[i]
 		}
-		document.write ("<div onclick='bShow=true' id='calendar' style='z-index:+999;position:absolute;visibility:hidden;'><table cellspacing='0' width="+((showWeekNumber==1)?250:250)+" style='font-family:arial;font-size:13px;border-width:1;border-style:solid;border-color:#395d9c;' bgcolor='#396da5'><tr style='border-width:1;border-style:solid;border-color:#395d9c;' bgcolor='#F3EFEC'><td><table width='"+((showWeekNumber==1)?248:240)+"'><tr><td style='padding:2px;font-family:arial; font-size:13px;'><font color='#000000'><B><span id='caption'></span></B></font></td><td align=right><a href='javascript:hideCalendar()'><IMG SRC='"+imgDir+"close.png' WIDTH='15' HEIGHT='13' BORDER='0' ALT='Close the Calendar'></a></td></tr></table></td></tr><tr><td style='padding:5px' bgcolor=#ffffff><span id='content'></span></td></tr>")
+		document.write ("<div onclick='bShow=true' id='calendar' style='z-index:+999;position:absolute;visibility:hidden;'><table cellspacing='0' width="+((showWeekNumber==1)?250:250)+" style='font-family:arial;font-size:13px;border-width:1;border-style:solid;border-color:#395d9c;' bgcolor='#396da5'><tr style='border-width:1;border-style:solid;border-color:#395d9c;' bgcolor='#F3EFEC'><td><table width='"+((showWeekNumber==1)?248:240)+"'><tr><td style='padding:2px;font-family:arial; font-size:13px;'><font color='#000000'><B><span id='caption'></span></B></font></td><td align=right style='width:20px'><a href='javascript:hideCalendar()'><IMG SRC='"+imgDir+"close.png' WIDTH='15' HEIGHT='13' BORDER='0' ALT='Close the Calendar'></a></td></tr></table></td></tr><tr><td style='padding:5px' bgcolor=#ffffff><span id='content'></span></td></tr>")
 			
 		if (showToday==1)
 		{
