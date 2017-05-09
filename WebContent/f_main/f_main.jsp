@@ -24,7 +24,7 @@ google.charts.setOnLoadCallback(drawMultSeries);
 function drawMultSeries() {
       var data = google.visualization.arrayToDataTable([
         ['주제', '3월', '4월'],
-        ['Java', ${count}, 0], /* DB통계? */
+        ['Java', ${count}, 0],
         ['C', 0, 0],
         ['3', 0, 0],
         ['4', 0, 0],
@@ -45,7 +45,7 @@ function drawMultSeries() {
  
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
       chart.draw(data, options);
-    } 
+    }  
     
 /* 	window.location.href="f_main.fm" */
    </script>

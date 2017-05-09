@@ -29,30 +29,30 @@ public class f_main_controller extends HttpServlet {
 
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
     	String requestURI = request.getRequestURI();
-    	System.out.println(requestURI + "    URIaa");
+    	/*System.out.println(requestURI + "    URIaa");
     	String contextPath = request.getContextPath();
     	System.out.println(contextPath + "   conpath");
     	String command = requestURI.substring(contextPath.length()+1);
-    	System.out.println(command + "    aacommand");
-    	
+    	System.out.println(command + "    aacommand");*/
+    	String command[] = requestURI.split("/");
     
     	 
     	mainActionForward forward = null;
     	mainAction action = null;
     	mainAction action2 = null;
-    	if(command.equals("f_main/f_main.fm")){
+    	if(command[command.length-1].equals("f_main.fm")){
     		action = new getF_infoAction();
     		action2 = new countFreelancerAction();
     		try {
 				forward = action.execute(request, response);
 				forward = action2.execute(request, response);
-				System.out.println(request.getAttribute("count") + "카운트");
-				System.out.println(request.getAttribute("member1") + "이름 멤버");
+				System.out.println(request.getAttribute("count") + "移댁슫�듃");
+				System.out.println(request.getAttribute("member1") + "�씠由� 硫ㅻ쾭");
 				
 			
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("실패?");
+				System.out.println("�떎�뙣?");
 			}
     	}
     	

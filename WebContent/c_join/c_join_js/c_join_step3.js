@@ -2,7 +2,6 @@
 $(function(){
 	
 	//아이디 중복확인 창 띄우기
-	
 
 $('#idCheckbox').click(function(){
     var id = document.getElementById("e_id").value;
@@ -33,10 +32,10 @@ $('#idCheckbox').click(function(){
                   }
                   return false;                   //form이 submit로 하려는 기본이벤트를 가지고 있다
                   
-                  */
-        });
+                  
+        });*/
 	
-	
+
 	//사진이미지 미리보기
 
 	//이메일 주소
@@ -61,8 +60,7 @@ $('#idCheckbox').click(function(){
 
 	
 	
-	
-	
+
 	
 	
 	//회원가입 빈칸 확인
@@ -198,6 +196,8 @@ $('#idCheckbox').click(function(){
         }*/
         
         
+});
+
 });
 
 
