@@ -26,6 +26,9 @@
 		<c:when test="${identity.identity == 'enterprise' }">
 			<%@include file="../c_common/header_enterprise.jsp" %>
 		</c:when>
+		<c:otherwise>
+			<%@include file="../c_common/header.jsp" %>
+		</c:otherwise>
 	</c:choose>
 
     <div  id="conainer">

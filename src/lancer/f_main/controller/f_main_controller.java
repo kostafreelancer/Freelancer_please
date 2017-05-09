@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import lancer.f_main.action.countFreelancerAction;
+import lancer.f_main.action.countProjectAction;
 import lancer.f_main.action.getF_infoAction;
 import lancer.f_main.action.mainAction;
 import lancer.f_main.action.mainActionForward;
@@ -21,7 +22,6 @@ import lancer.f_main.action.mainActionForward;
 public class f_main_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
     public f_main_controller() {
         super();
         
@@ -40,15 +40,18 @@ public class f_main_controller extends HttpServlet {
     	mainActionForward forward = null;
     	mainAction action = null;
     	mainAction action2 = null;
+    	mainAction action3 = null;
     	if(command[command.length-1].equals("f_main.fm")){
     		action = new getF_infoAction();
     		action2 = new countFreelancerAction();
+    		action3 = new countProjectAction();
     		try {
 				forward = action.execute(request, response);
 				forward = action2.execute(request, response);
+				forward = action3.execute(request, response);
 				System.out.println(request.getAttribute("count") + "移댁슫�듃");
 				System.out.println(request.getAttribute("member1") + "�씠由� 硫ㅻ쾭");
-				
+				System.out.println(request.getAttribute("count_p") + "프로젝트 수");
 			
 			} catch (Exception e) {
 				e.printStackTrace();
