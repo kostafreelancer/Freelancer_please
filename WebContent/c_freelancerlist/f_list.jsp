@@ -38,11 +38,14 @@
             		<a href="
             		<c:choose>
 						<c:when test="${identity.identity == 'freelancer' }">
-							/Matching_Project/f_main/f_main.jsp
+							f_main.fm
 						</c:when>
 						<c:when test="${identity.identity == 'enterprise' }">
 							/Matching_Project/e_main/e_main.jsp
 						</c:when>
+						<c:otherwise>
+							f_main.fm
+						</c:otherwise>
 					</c:choose>
 					">Home</a>
                     <span class="padd">&gt;</span>

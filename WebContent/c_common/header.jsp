@@ -26,8 +26,7 @@
 			<ul class="header_top_menus">
 				<li><img alt="center_img"
 					src="/Matching_Project/c_common/c_common_img/header_center_icon.jpg">
-					<!-- <a href="/Matching_Project/c_membercenter/member_centerMain.jsp">고객
-						센터</a></li> -->
+				
 					<a href="f_name.mc">고객
 						센터</a></li>
 				<li class="header_join"><img alt="join_img"
@@ -35,12 +34,10 @@
 					<a href="e_joinForm.e_join">회원가입</a></li>
 				<li class="login_checking"><img alt="log_img"
 					src="/Matching_Project/c_common/c_common_img/header_log_icon01.jpg">
-					<!-- <a href="/Matching_Project/c_login/login.jsp" >로그인</a></li>  -->
 					<a href="remove_session.c_login" >로그인</a></li> 
 					
 				<li><img alt="home_img"
 					src="/Matching_Project/c_common/c_common_img/header_home_icon01.jpg">
-					<!-- <a href="/Matching_Project/f_main/f_main.jsp">홈</a></li> -->
 					<a href="f_main.fm">홈</a></li>
 			</ul>
 
