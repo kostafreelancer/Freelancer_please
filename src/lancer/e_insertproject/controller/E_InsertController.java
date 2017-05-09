@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import lancer.e_insertproject.action.E_InsertAction;
 import lancer.e_insertproject.action.E_InsertFormAction;
+import lancer.e_mypage.action.ActionForward;
+import lancer.e_mypage.action.E_MypageAction;
 
 
 @WebServlet("*.e_insertproject")
@@ -23,24 +25,22 @@ public class E_InsertController extends HttpServlet {
     }
     
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-    	//요청하는 url을 식별해야 한다.
-    	String requestURI = request.getRequestURI();
-    	//System.out.println(requestURI); // /MVC_project: context이다/insert.do가 출력됨
-    	String contextPath = request.getContextPath();
-    	String command = requestURI.substring(contextPath.length()+1);
-    	System.out.println(command); // insert.do만 출력됨
+
+		   String requestURI = request.getRequestURI();
+	       String command[] = requestURI.split("/");
+	       
+	       lancer.e_insertproject.action.Action action = null;
+	       lancer.e_insertproject.action.ActionForward forward = null;    	
     	
-    	lancer.e_insertproject.action.ActionForward forward = null;
-    	lancer.e_insertproject.action.Action action = null;
     	
-    	if(command.equals("insertForm.e_insertproject")){
+    	if(command[command.length-1].equals("insertForm.e_insertproject")){
     		action = new E_InsertFormAction();
     		try {
     			forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("insertAction.e_insertproject")){
+    	}else if(command[command.length-1].equals("insertAction.e_insertproject")){
     		action = new E_InsertAction();
     		try {
 				forward = action.execute(request, response);
