@@ -531,19 +531,19 @@ $(function(){
 							<tr><td colspan="5">등록된 경력사항이 없습니다.</td></tr>
 					</c:if>
 						<c:forEach var="mycareer" items="${career}">
-						<form id="careerForm${mycareer.career_num}" name="mycareerModify${mycareer.career_num}" method="post" action="careerModify.jsp" target='popup_window'>
+						<form id="careerForm${mycareer.career_num}" name="mycareerModify${mycareer.career_num}" method="post" action="/Matching_Project/f_mypage/careerModify.jsp" target='popup_window'>
 						<input type="text" hidden name="mycareer_career_num" value="${mycareer.career_num}">
 						<input type="text" hidden name="mycareer_company" value="${mycareer.company}">
 						<input type="text" hidden name="mycareer_dept" value="${mycareer.dept}">
 						<input type="text" hidden name="mycareer_rank" value="${mycareer.rank}">
-						<input type="text" hidden name="mycareer_term" value="${mycareer.term}">
-						<input type="text" hidden name="mycareer_location" value="${mycareer.location}">
+						<input type="text" hidden name="mycareer_career_term" value="${mycareer.career_term}">
+						<input type="text" hidden name="mycareer_career_location" value="${mycareer.career_location}">
 						<tr>							
 							<td>${mycareer.company}</td>
 							<td>${mycareer.dept}</td>
 							<td>${mycareer.rank}</td>
-							<td>${mycareer.term}</td>
-							<td>${mycareer.location}</td>
+							<td>${mycareer.career_term}</td>
+							<td>${mycareer.career_location}</td>
 							<td class="last"><input type="button" value="수정" onclick="modifyCareer(${mycareer.career_num});">&nbsp;&nbsp;<input
 								type="button" value="삭제" onclick="deleteCareer(${mycareer.career_num});"></td>
 
@@ -611,17 +611,17 @@ $(function(){
 							<tr><td colspan="5">등록된 학력사항이 없습니다.</td></tr>
 					</c:if>
 						<c:forEach var="myschool" items="${school}">
-						<form id="schoolForm${myschool.school_num}" name="myschoolModify${myschool.school_num}" method="post" action="schoolModify.jsp" target='popup_window'>
+						<form id="schoolForm${myschool.school_num}" name="myschoolModify${myschool.school_num}" method="post" action="/Matching_Project/f_mypage/schoolModify.jsp" target='popup_window'>
 						<input type="text" hidden name="myschool_school_num" value="${myschool.school_num}">
 						<input type="text" hidden name="myschool_school_name" value="${myschool.school_name}">
 						<input type="text" hidden name="myschool_major" value="${myschool.major}">
-						<input type="text" hidden name="myschool_term" value="${myschool.term}">
-						<input type="text" hidden name="myschool_location" value="${myschool.location}">
+						<input type="text" hidden name="myschool_school_term" value="${myschool.school_term}">
+						<input type="text" hidden name="myschool_school_location" value="${myschool.school_location}">
 						<tr>							
 							<td>${myschool.school_name}</td>
 							<td>${myschool.major}</td>
-							<td>${myschool.term}</td>
-							<td>${myschool.location}</td>
+							<td>${myschool.school_term}</td>
+							<td>${myschool.school_location}</td>
 							<td class="last"><input type="button" value="수정" onclick="modifySchool(${myschool.school_num});">&nbsp;&nbsp;<input
 								type="button" value="삭제" onclick="deleteSchool(${myschool.school_num});"></td>
 
@@ -686,7 +686,7 @@ $(function(){
 							<tr><td colspan="5">등록된 자격사항이 없습니다.</td></tr>
 					</c:if>
 					<c:forEach var="mycerti" items="${certificate}">
-						<form id="certiForm${mycerti.certificate_num}" name="mycertiModify${mycerti.certificate_num}" method="post" action="certiModify.jsp" target='popup_window'>
+						<form id="certiForm${mycerti.certificate_num}" name="mycertiModify${mycerti.certificate_num}" method="post" action="/Matching_Project/f_mypage/certiModify.jsp" target='popup_window'>
 						<input type="text" hidden name="mycerti_certi_num" value="${mycerti.certificate_num}">
 						<input type="text" hidden name="mycerti_certi_name" value="${mycerti.certificate_name}">
 						<input type="text" hidden name="mycerti_organization" value="${mycerti.organization}">

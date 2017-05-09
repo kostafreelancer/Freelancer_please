@@ -23,8 +23,8 @@ public class InsertCareerAction implements Action {
 		career.setCompany(request.getParameter("company"));
 		career.setDept(request.getParameter("dept"));
 		career.setRank(request.getParameter("rank"));
-		career.setTerm(request.getParameter("term"));
-		career.setLocation(request.getParameter("location"));
+		career.setCareer_term(request.getParameter("term"));
+		career.setCareer_location(request.getParameter("location"));
 		dao.insertCareer(career);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);

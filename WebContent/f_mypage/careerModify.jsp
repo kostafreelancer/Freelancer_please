@@ -7,8 +7,8 @@
 	String company = request.getParameter("mycareer_company");
 	String dept = request.getParameter("mycareer_dept");
 	String rank = request.getParameter("mycareer_rank");
-	String term = request.getParameter("mycareer_term");
-	String location = request.getParameter("mycareer_location");
+	String term = request.getParameter("mycareer_career_term");
+	String location = request.getParameter("mycareer_career_location");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

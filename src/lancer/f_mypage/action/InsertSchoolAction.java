@@ -21,8 +21,8 @@ public class InsertSchoolAction implements Action {
 		school.setF_num(f_num);
 		school.setSchool_name(request.getParameter("school_name"));
 		school.setMajor(request.getParameter("major"));
-		school.setTerm(request.getParameter("term"));
-		school.setLocation(request.getParameter("location"));
+		school.setSchool_term(request.getParameter("term"));
+		school.setSchool_location(request.getParameter("location"));
 		dao.insertSchool(school);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);

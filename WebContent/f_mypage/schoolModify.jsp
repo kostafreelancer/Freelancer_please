@@ -5,8 +5,8 @@
 	String school_num = request.getParameter("myschool_school_num");
 	String school_name = request.getParameter("myschool_school_name");
 	String major = request.getParameter("myschool_major");
-	String term = request.getParameter("myschool_term");
-	String location = request.getParameter("myschool_location");
+	String term = request.getParameter("myschool_school_term");
+	String location = request.getParameter("myschool_school_location");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
