@@ -36,4 +36,5 @@ public interface FreelancerMapper {
 	public List<Calendar> getMySchedule(int f_num);
 	public List<ApplyProject> getApplyProject(int f_num);
 	public int deleteApplyProject(int f_pr_num);
+
 }

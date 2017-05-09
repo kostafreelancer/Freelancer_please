@@ -4,8 +4,8 @@
 
 <mapper namespace="lancer.c_join.mapper.E_joinMapper">
 <cache />
-	<select id="getnum" resultType="int">
-		select nvl(max(e_num),0) from enterprise
+	<select id="getnum" resultType="Integer">
+		select max(e_num) from enterprise
 	</select>
 	
 	<insert id="insert_e_join" parameterType="E_join">

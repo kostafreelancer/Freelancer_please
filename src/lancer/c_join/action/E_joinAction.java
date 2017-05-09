@@ -9,7 +9,7 @@ import lancer.c_join.model.E_joinDAO;
 public class E_joinAction implements Action {
 
 	@Override
-	public ActionForword execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		E_joinDAO dao = E_joinDAO.getInstance();
 		E_join e_join = new E_join();
 		
@@ -86,7 +86,7 @@ public class E_joinAction implements Action {
 		
 		dao.insert_e_join(e_join);
 
-		ActionForword forward = new ActionForword();
+		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
 		forward.setPath("/Matching_Project/c_join/c_join_step4.jsp");
 		

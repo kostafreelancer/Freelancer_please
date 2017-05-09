@@ -110,6 +110,7 @@
 	<delete id="deleteApplyProject" parameterType="int">
 		delete from f_project_request where f_pr_num = #{f_pr_num}
 	</delete>
+
 </mapper>
 
 
