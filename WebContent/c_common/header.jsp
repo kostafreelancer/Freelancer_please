@@ -40,7 +40,8 @@
 					
 				<li><img alt="home_img"
 					src="/Matching_Project/c_common/c_common_img/header_home_icon01.jpg">
-					<a href="/Matching_Project/f_main/f_main.jsp">홈</a></li>
+					<!-- <a href="/Matching_Project/f_main/f_main.jsp">홈</a></li> -->
+					<a href="/Matching_Project/f_main/f_main.fm">홈</a></li>
 			</ul>
 
 		</div>

@@ -24,7 +24,7 @@ public class c_freelancerlist_freeAction implements Action{
 		c_freelancerlist_pading list;
 		List<c_freelancerlist_total> totallists = new ArrayList<c_freelancerlist_total>();
 		totallists = dao.select_freelancer_basic();
-		list = dao.c_freelancerlist_pading(request, requestPage);
+		/*list = dao.c_freelancerlist_pading(request, requestPage);*/
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("/c_freelancerlist/f_list.jsp");

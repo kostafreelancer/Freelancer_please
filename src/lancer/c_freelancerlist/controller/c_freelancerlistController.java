@@ -31,9 +31,7 @@ public class c_freelancerlistController extends HttpServlet {
     	String command[] = requestURI.split("/");
     	Action action = null;
     	ActionForward forward = null;
-    	System.out.println("드오징?");
     	if(command[command.length-1].equals("freelist.f_list")){
-    		System.out.println("리스트에 안드오냐?");
     		action = new c_freelancerlist_freeAction();
     		try {
 				forward = action.execute(request, response);
