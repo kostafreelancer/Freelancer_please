@@ -544,7 +544,7 @@ table th {
 	border: 1px solid #d1d1d1;
 	/* padding: .4em .8em; */
 	padding: 5px;
-	background: #ccffff
+	background: #f4f4f4
 		url(/wordpress/wp-content/themes/skeleton/images/gradient_small_trans.png)
 		repeat-x 0 top;
 	font-weight: bold;
@@ -2363,7 +2363,7 @@ input[type="checkbox"] {
 }
 
 th {
-	color: blue;
+	color: black;
 	background-color: aqua;
 }
 
