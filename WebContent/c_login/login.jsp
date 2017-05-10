@@ -16,6 +16,7 @@
 
 <body onload = 'document.MemberLoginFm.fm_id.focus();'>
 <%@include file="../c_common/header.jsp" %>
+
     <div  id="conainer">
     	<div id="nav">
         	<div class="nav_txt">

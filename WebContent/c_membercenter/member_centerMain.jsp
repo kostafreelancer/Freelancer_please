@@ -29,7 +29,7 @@
 			<%@include file="../c_common/header.jsp"%>
 		</c:otherwise>
 	</c:choose>
-
+	<%@include file="../c_common/chatting.jsp" %>
 
 	<section>
 

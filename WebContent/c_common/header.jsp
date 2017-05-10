@@ -47,7 +47,7 @@
 			<a href="https://www.facebook.com/produce101" target="_blank"
 				class="header_btn_f">fa</a> <a href="https://www.twitter.com/mnetkr"
 				target="_blank" class="header_btn_t">tw</a> <a
-				href="https://www.instagram.com/produce101_official" target="_blank"
+				href="https://www.instagram.com/taeyeon_ss/" target="_blank"
 				class="header_btn_i">in</a>
 		</div>
 		<div class="clock">
