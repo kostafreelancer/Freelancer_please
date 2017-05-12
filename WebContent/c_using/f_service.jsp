@@ -93,16 +93,28 @@
 						<img src="c_using_img/partners_process_three_none.png"> <img
 							src="c_using_img/partners_intro_arrow.png">
 					</div>
+					
 					<a href="#p5-clientUsage-step-4">
 						<div class="p5-clientUsage-hover-four"></div>
 					</a>
+					
 					<div>
 						<img src="c_using_img/partners_process_four_none.png"> <img
 							src="c_using_img/partners_intro_arrow.png">
 					</div>
+				
+					
 					<a href="#p5-clientUsage-step-5">
 						<div class="p5-clientUsage-hover-five"></div>
-					</a> <img src="c_using_img/partners_process_five_none.png">
+					</a>
+					<div>
+						<img src="c_using_img/partners_process_five_none.png">
+						<img src="c_using_img/partners_intro_arrow.png">
+					</div>
+					
+					
+					 
+				
 				</div>
 				</section>
 
