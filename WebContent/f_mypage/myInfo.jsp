@@ -525,11 +525,13 @@ $(function(){
 							<th scope="col" class="ac">소재지</th>
 							<th scope="col" class="last ac">관리</th>
 						</tr>
+						
 					</thead>
 					<tbody>
 					<c:if test="${careercheck == 0}">
 							<tr><td colspan="5">등록된 경력사항이 없습니다.</td></tr>
 					</c:if>
+				
 						<c:forEach var="mycareer" items="${career}">
 						<form id="careerForm${mycareer.career_num}" name="mycareerModify${mycareer.career_num}" method="post" action="/Matching_Project/f_mypage/careerModify.jsp" target='popup_window'>
 						<input type="text" hidden name="mycareer_career_num" value="${mycareer.career_num}">

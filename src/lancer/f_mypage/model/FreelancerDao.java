@@ -1,6 +1,7 @@
 package lancer.f_mypage.model;
 
 import java.io.InputStream;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -410,5 +411,23 @@ public class FreelancerDao {
 		}
 		return re;
 	}
-	
+	public Date getTemp(){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		Date date = new Date();
+		try {			
+			date = session.getMapper(FreelancerMapper.class).getTemp();
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		
+		}finally {
+			session.close();
+		}
+		return date;
+	}
 }

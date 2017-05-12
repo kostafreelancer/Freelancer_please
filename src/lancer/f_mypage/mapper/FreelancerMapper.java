@@ -1,5 +1,6 @@
 package lancer.f_mypage.mapper;
 
+import java.util.Date;
 import java.util.List;
 
 import lancer.f_mypage.model.ApplyProject;
@@ -36,5 +37,6 @@ public interface FreelancerMapper {
 	public List<Calendar> getMySchedule(int f_num);
 	public List<ApplyProject> getApplyProject(int f_num);
 	public int deleteApplyProject(int f_pr_num);
+	public Date getTemp();
 
 }

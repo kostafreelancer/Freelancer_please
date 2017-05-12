@@ -1,5 +1,6 @@
 package lancer.f_mypage.action;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,7 +48,9 @@ public class ShowFreelancerInfoAction implements Action {
 		List<School> school = dao.showSchoolInfo(f_num);
 		List<Certificate> certificate = dao.showCertiInfo(f_num);
 		List<ApplyProject> applyproject = dao.getApplyProject(f_num);
-
+		Date date = dao.getTemp();
+		System.out.println(date);
+		
 		for(int i=0; i<applyproject.size(); i++){
 			System.out.println(i);
 		}

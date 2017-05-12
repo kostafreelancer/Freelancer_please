@@ -111,6 +111,9 @@
 		delete from f_project_request where f_pr_num = #{f_pr_num}
 	</delete>
 
+	<select id="getTemp" resultType="Date">
+		select p_startdate from e_request_project where e_pr_num = 1 
+	</select>
 </mapper>
 
 
