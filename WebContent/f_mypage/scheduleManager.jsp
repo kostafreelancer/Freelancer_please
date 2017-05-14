@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,16 +17,24 @@
 <link rel="stylesheet" href="/Matching_Project/f_mypage/f_mypage_css/fullcalendar.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="/Matching_Project/f_mypage/f_mypage_css/scheduleManager.css" type="text/css" media="screen" />
 
-<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/jquery.min.js"></script>
-<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/moment.min.js"></script>
-<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/fullcalendar.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/jquery.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/jquery-ui-custom.js"></script>
+<script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/fullcalendar.min.js"></script>
 <script src="/Matching_Project/f_mypage/f_mypage_js/fullcalendar/ko.js"></script>
 
 <script type="text/javascript">
 var newJquery = $.noConflict(true);
 
+
 newJquery(document).ready(function() {
+
+	 
 	
+	var date = new Date();
+	var d = date.getDate();
+	var m = date.getMonth();
+	var y = date.getFullYear();
+/* 	
 	var arrContents= new Array();
 	var arrStart= new Array();
 	var arrEnd= new Array();
@@ -34,37 +43,116 @@ newJquery(document).ready(function() {
 		arrContents.push("${item.contents}");
 		arrStart.push("${item.startdate}");
 		arrEnd.push("${item.enddate}");
-	</c:forEach>
+	</c:forEach> */
 
+	
 	
 	   newJquery('#calendar').fullCalendar({
 		    
-	    	
-		 	events: [
-					{	      
-			            title  : arrContents[0],
-			            start  : arrStart[0],
-			            end : arrEnd[0]
-					},
-					{	      
-			            title  : arrContents[1],
-			            start  : arrStart[1],
-			            end : arrEnd[1]
-					},
-					{	      
-			            title  : arrContents[2],
-			            start  : arrStart[2],
-			            end : arrEnd[2]
-					}
-				
-		    ] 
-	        // put your options and callbacks here
+		   header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,basicWeek,basicDay'
+			},
+			editable: true,
+			events : function(start, end, callback) {
+				$.ajax({
+				url : "scheduleInfoAjax.f_mypage",
+				type : "get",
+				data : {num : $('#clientnum').val()},
+				dataType : 'json',
+				success : function(data){
+					/* $.each(responseData, function(index, scheduleList){
+						$('#resultPrint').val = scheduleList.contents;	
+					})
+					 */
+					
+			        callback(data);
+				}
+				})
+			},
+			/* eventDrop: function(event, delta, revertFunc) {
+
+		        alert(event.title + " was dropped on " + event.start);
+
+		        if (!confirm("Are you sure about this change?")) {
+		            revertFunc();
+		        }
+
+		    } */
+
+		    dayClick: function() {
+		        alert('a day has been clicked!');
+		    }
+			/* events: [
+				{
+					title: 'All메롱 Event',
+					start: new Date(y, m, 1)
+				},
+				{
+					title: 'Long Event',
+					start: new Date(y, m, d-5),
+					end: new Date(y, m, d-2)
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: new Date(y, m, d-3, 16, 0),
+					allDay: false
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: new Date(y, m, d+4, 16, 0),
+					allDay: false
+				},
+				{
+					title: 'Meeting',
+					start: new Date(y, m, d, 10, 30),
+					allDay: false
+				},
+				{
+					title: 'Lunch',
+					start: new Date(y, m, d, 12, 0),
+					end: new Date(y, m, d, 14, 0),
+					allDay: false
+				},
+				{
+					title: 'Birthday Party',
+					start: new Date(y, m, d+1, 19, 0),
+					end: new Date(y, m, d+1, 22, 30),
+					allDay: false
+				},
+				{
+					title: 'Click for Google',
+					start: new Date(y, m, 28),
+					end: new Date(y, m, 29),
+					url: 'http://google.com/'
+				}
+			] */
+			 
 	    })
 
 });	
  
 
 </script>
+
+<style type='text/css'>
+
+	body {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		}
+
+	#calendar {
+		width: 900px;
+		margin: 0 auto;
+		}
+
+</style>
 </head>
 <body>
 
@@ -85,7 +173,7 @@ newJquery(document).ready(function() {
 
 	<section id="firstsection">
 	<div id="calendar"></div>
-
+	<input type = "text" hidden id="clientnum" name="clientnum" value="${client.f_num}">
 	<div id="list">
 		<table border="1px solid" cellpadding="0" cellspacing="0">
 			<tr><td>${proName}</td></tr>
@@ -96,9 +184,31 @@ newJquery(document).ready(function() {
 		</table>
 	</div>
 	<div id="space"></div>
+	<input type="text" id="resultPrint" value="">
+<ul>
+<li><span id="firstSch">첫번</span></li>
+<li><span id="secondSch">두번째</span></li>
+<li><span id="thirdSch">메롱</span></li>
+</ul> 
 
 	</section>
 
 	<%@include file="../c_common/footer.jsp"%>
 </body>
+<script type="text/javascript">
+
+/*  	 $.ajax({
+	url : "scheduleInfoAjax.f_mypage",
+	type : "get",
+	data : {num : $('#clientnum').val()},
+	dataType : 'json',
+	success : function(responseData){
+		 $.each(responseData, function(index, scheduleList){
+			$('#resultPrint').val = scheduleList.contents;	
+		})
+		 
+		$('#resultPrint').val = responseData;
+	}
+})   */
+</script>
 </html>

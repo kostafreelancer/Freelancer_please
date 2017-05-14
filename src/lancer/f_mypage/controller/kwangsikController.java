@@ -1,6 +1,9 @@
 package lancer.f_mypage.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,12 +21,15 @@ import lancer.f_mypage.action.DeleteSchoolAction;
 import lancer.f_mypage.action.InsertCareerAction;
 import lancer.f_mypage.action.InsertCertificateAction;
 import lancer.f_mypage.action.InsertSchoolAction;
+import lancer.f_mypage.action.ScheduleAjax;
 import lancer.f_mypage.action.ShowFreelancerInfoAction;
 import lancer.f_mypage.action.ShowScheduleInfoAction;
 import lancer.f_mypage.action.UpdateCareerAction;
 import lancer.f_mypage.action.UpdateCertificateAction;
 import lancer.f_mypage.action.UpdateFreelancerInfoAction;
 import lancer.f_mypage.action.UpdateSchoolAction;
+import lancer.f_mypage.model.Calendar;
+import lancer.f_mypage.model.FreelancerDao;
 
 
 
@@ -140,6 +146,9 @@ public class kwangsikController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command[command.length-1].equals("scheduleInfoAjax.f_mypage")){
+    		ScheduleAjax scheduleAjax = new ScheduleAjax();
+    		scheduleAjax.ScheduleAjaxPrint(request, response);
     	}
     	
     	
